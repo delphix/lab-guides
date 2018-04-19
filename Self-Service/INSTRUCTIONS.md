@@ -221,7 +221,7 @@ In this exercise, you will:
 ### Steps
 1. Login to Self-Service as the *qa* user
    - Username: *qa*
-  - Password: *delphix*
+   - Password: *delphix*
 1. Once you are logged, click on ORCL QA Container to see the default timeline for the *qa* user
 1. View the **Summary, Sources, History, Bookmarks** and **Usage** views on the left.
 1. Click on the **Bookmarks** tab to view bookmarks owned, shared by, and available to the *qa* user
