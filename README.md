@@ -1,2 +1,2 @@
-# tutorials
-Delphix tutorials and exercises for use with LabAlchemy.
+# Tutorials
+Delphix tutorials and lab exercises for use with LabAlchemy.
