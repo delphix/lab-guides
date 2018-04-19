@@ -98,46 +98,42 @@ In this exercise, you will:
    - Enter “Yes” if prompted to accept the SSH connection
    - Provide the delphix password: *delphix*
    - Enter the following commands at the UNIX command-line on *linuxsource*
-    ```BASH
-    sqlplus / as sysdba
-    ```
-    ```SQL
-    CREATE TABLE sourcetab1 AS SELECT * FROM dba_objects;
-    SELECT COUNT(*) FROM sourcetab1;
-    ```
-
+   ```
+   sqlplus / as sysdba
+   
+   CREATE TABLE sourcetab1 AS SELECT * FROM dba_objects;
+   SELECT COUNT(*) FROM sourcetab1;
+   ```
 1. Open a browser window on your Delphix student lab desktop and enter the IP address of your Delphix engine
 1. Login to the Self-Service interface
    - Username: *dev*
    - Password: *delphix*
 1. You will be prompted to reset the dev user password
-  - Enter *dev* as the new password
+   - Enter *dev* as the new password
 1. Create a SSH connection to the *linuxtarget* host as the delphix user by entering the following commands in the terminal window:
    - *ssh delphix@10.0.x.30*  (Replace x with your assigned student number)
    - Enter “Yes” if prompted to accept the SSH connection
    - Provide the delphix password: *delphix*
    - Enter the following commands on the *linuxtarget*
-   ```BASH
+   ```
    export ORACLE_SID=devdb
    sqlplus / as sysdba
-   ```
-   ```SQL
+   
    SELECT COUNT(*) FROM sourcetab1;
    ```
-Why did you get an error message stating “table or view does not exist”?
+   Why did you get an error message stating “table or view does not exist”?
 1. Switch back to the Delphix GUI in the browser showing the Self-Service interface, logged in as *dev*
 1. Click on *ORCL Dev Container* and click **Refresh** option
 1. After the Refresh operation completes, go back to the terminal window:
    - Exit from the SQL*Plus command if it is still connected
    - Enter the following commands on the *linuxtarget*
-   ```BASH
-   sqlplus / as sysdba
    ```
-   ```SQL
+   sqlplus / as sysdba
+   
    SELECT COUNT(*) FROM sourcetab1;
    ```
-Why did the `COUNT(*)` command work this time?
-Does the SOURCETAB1 table have the same number of rows as it had on the source database on the linuxsource server?
+  Why did the `COUNT(*)` command work this time?
+  Does the SOURCETAB1 table have the same number of rows as it had on the source database on the linuxsource server?
 
 <a name="exercise5"></a>
 ## Exercise 5 – Create a new Branch
@@ -189,14 +185,12 @@ In this exercise, you will:
    - Enter “Yes” if prompted to accept the SSH connection
    - Provide the delphix password: *delphix*
    - Enter the following commands on the linuxtarget:
-   ```BASH
+   ```
    export ORACLE_SID=devdb
    sqlplus / as sysdba
-   ```
-   ```SQL
    CREATE TABLE defect1_tab AS SELECT * FROM dba_objects;
    SELECT COUNT(*) FROM defect1_tab;
-  ```
+   ```
 1. Open a browser window and enter the IP address of your Delphix engine
 1. Login to the Self-Service interface as the *dev* user
 1. Select a point on the default timeline and click on the **Bookmark** icon
@@ -257,20 +251,19 @@ In this exercise, you will:
 ### Steps
 1. Create a SSH session to your *linuxtarget* hosting your *devdb*
 1. Connect to the devdb database and query the HR.JOB_HISTORY table
-  ```BASH
-  sqlplus / as sysdba
-  ```
-  ```SQL
-  SELECT COUNT(*) FROM hr.job_history;
-  ```
+   ```
+   sqlplus / as sysdba
+   
+   SELECT COUNT(*) FROM hr.job_history;
+   ```
    Note the number or rows in the table.
 1. Login to Self-Service as the dev user
-  - Username: *dev*
-  - Password: *Delphix*
-  - Select the *ORCL Dev Container*
+   - Username: *dev*
+   - Password: *Delphix*
+   - Select the *ORCL Dev Container*
 1. Create a new bookmark called *JobHistory*
 1. On your *devdb* database execute the following SQL statements:
-   ```SQL
+   ```
    DELETE FROM hr.job_history WHERE employee_id=101;
    ```
    You should have two rows deleted.
