@@ -1,66 +1,6 @@
-This content cannot be displayed without JavaScript.  
-Please enable JavaScript and reload the page.
-
-[]()
-
-#  LAB ![](spacelogo.png)
-
-## LabAlchemy Documentation
-
-  * Table of Contents
-  * Getting Started0
-    * Welcome to the Delphix Admin Training for Oracle Lab Guide
-    * Lab Requirements
-    * The Delphix Admin Training Cloud Lab
-    * Important IP Addresses
-    * Cloud Lab Usernames and Passwords
-    * Guide Layout
-  * Lab Exercises
-    * Optional Advanced Exercise - Perform a Storage Performance Test through the CLI
-    * Exercise 1 - Delphix Data Platform Configuration
-    * Exercise 2 - Create the "delphix_db" User
-    * Exercise 3 - Validate the Source Environment with Hostchecker
-    * Exercise 4 - Add a Source Environment and Link a dSource
-    * Exercise 5 - Validate the Target Environment with Hostchecker
-    * Exercise 6 - Add Target Environments
-    * Exercise 7 - Provision a VDB
-    * Exercise 8 - Refresh a VDB
-    * Exercise 9 - Rewind a VDB
-    * Exercise 10 - Set a New Retention Policy
-    * Exercise 11 - Create and Save a Hook Operation Template
-    * Exercise 12 - Create a VDB Template
-    * Exercise 13 - Provision a VDB with Hook and VDB Template
-    * Optional Advanced Exercise - Measure Network Performance Test through the CLI
-    * Optional Advanced Exercise - Configure Delphix Replication
-  * Lab Solutions
-    * Exercise 1 - Delphix Data Platform Setup
-    * Exercise 2 - Create the "delphix_db" User0
-    * Exercise 3 - Validate the Source Environment with Hostchecker0
-    * Exercise 4 - Add a Source Environment and Link a dSource0
-    * Exercise 5 - Validate the Target Environment with Hostchecker0
-    * Exercise 6 - Add Target Environment
-    * Exercise 7 - Provision a VDB0
-    * Exercise 8 - Refresh a VDB0
-    * Exercise 9 - Rewind a VDB0
-    * Exercise 10 - Set a New Retention Policy0
-    * Exercise 11 - Create and Save a Hook Operation Template0
-    * Exercise 12 - Create a VDB Template0
-    * Exercise 13 - Provision a VDB with Hook and VDB Template0
-
-  * LabAlchemy Documentation
-
 #  Delphix Admin for Oracle Lab Guide
 
 # Table of Contents
-
-**Table of Contents**  
-**Getting Started**  
-**Welcome to the Delphix Admin Training for Oracle Lab Guide**  
-**Lab Requirements**  
-**The Delphix Admin Training Cloud Lab**  
-**Important IP Addresses**  
-**Cloud Lab Usernames and Passwords**  
-**Guide Layout**  
 **Lab Exercises**  
 **Optional Advanced Exercise - Perform a Storage Performance Test through the
 CLI**  
@@ -94,117 +34,6 @@ CLI**
 **Exercise 11 - Create and Save a Hook Operation Template**  
 **Exercise 12 - Create a VDB Template**  
 **Exercise 13 - Provision a VDB with Hook and VDB Template**
-
-# Getting Started0
-
-## Welcome to the Delphix Admin Training for Oracle Lab Guide
-
-This guide is a supplement to the Delphix Admin Training for Oracle course,
-and provides several exercises to perform throughout the class. If you
-encounter any issues during the exercises, please do not hesitate to ask your
-instructor for advice.
-
-## Lab Requirements
-
-In order to perform these lab exercises, you will need:
-
-  * A modern HTML5 capable web browser (IE9+, Chrome, Firefox, Safari) 
-
-## The Delphix Admin Training Cloud Lab
-
-Your instructor should have provided you with a **Class Name** and a **Student
-Number**. In order access your lab server, point your web browser to: http://
-**classname**.agile.today/ **studentnumber**  
-For example, if your **Class Name** is  "acmetech" and your **Student Number**
-is 5, you would go to the site: <http://acmetech.agile.today/5>  
-  
-![images/download/attachments/90014947/worddav9a8e19107bb12a1034a2f25f9f5a909f.png](images/download/attachments/90014947/worddav9a8e19107bb12a1034a2f25f9f5a909f.png)  
-The Delphix Labs Login Dialog  
-  
-At the login screen, enter the username and password: delphix/delphix  
-Once you have logged in, you will be connected to your lab server. This server
-contains everything you will need to perform your lab exercises including:
-
-  * Terminal with SSH (or Putty) to connect to Linux source/target database servers 
-
-  * Chrome Web Browser to connect to your Delphix Data Platform 
-
-  * A copy of this lab guide 
-
-  * Notepad for class notes 
-
-  * Oracle SQL Developer for remote connections 
-
-**IMPORTANT NOTE:** Do not use the  "Log Out" function on your lab server. If
-you do, it will break your lab connection.  
-  
-  
-  
-![images/download/attachments/90014947/worddav177dbea07c3e4a6fa6757816c62ad647.png](images/download/attachments/90014947/worddav177dbea07c3e4a6fa6757816c62ad647.png)  
-The Delphix Lab Server
-
-## Important IP Addresses
-
-**Delphix Data Platform**
-
-|
-
-10.0.x.10  
-  
----|---  
-  
-**Linux Source**
-
-|
-
-10.0.x.20  
-  
-**Linux Target**
-
-|
-
-10.0.x.30  
-  
-  
-In the above IP addresses, the "x" denotes your **Student Number**. For
-example, if your student number is  "5," your Delphix Data Platform will be
-located at "10.0.5.10".
-
-## Cloud Lab Usernames and Passwords
-
-Initial Delphix **sysadmin** password
-
-|
-
-sysadmin  
-  
----|---  
-  
-Initial Delphix **delphix_admin** password
-
-|
-
-delphix  
-  
-Source and Target **delphix** user password (via SSH)
-
-|
-
-delphix  
-  
-Source and Target **oracle** user password (via SSH)
-
-|
-
-delphix  
-  
-## Guide Layout
-
-This guide is composed of two main sections: **Lab Exercises** and **Lab
-Solutions**. The Lab Exercises section will cover the requirements of each Lab
-Exercise, without providing the full details to perform each operation. If you
-need assistance completing an Exercise, the **Lab Solutions** section will
-provide detailed instructions.
 
 #  Lab Exercises
 
@@ -984,7 +813,7 @@ _Figure 2_ _Delphix Data Platform Login_
 ![images/download/attachments/90014980/worddaveb7137980f717f6ec84593bf29eb5cd5.png](images/download/attachments/90014980/worddaveb7137980f717f6ec84593bf29eb5cd5.png)  
 _Figure 3_ _Delphix Data Platform Home Page_
 
-##  Exercise 2 - Create the "delphix_db" User0
+##  Exercise 2 - Create the "delphix_db" User
 
   1. Connect to your Linux Source by opening **Terminal** on your Lab Server and running: conn 10.0.x.20 ('x' will be your **Student Number** ). 
 
@@ -1015,7 +844,7 @@ _Figure 3_ _Delphix Data Platform Home Page_
 ![images/download/attachments/90014984/worddavcc5beabba99812ed323b1a4c642a1f82.png](images/download/attachments/90014984/worddavcc5beabba99812ed323b1a4c642a1f82.png)  
 _Figure 4_ _hostchecker createDelphixUser.sh_
 
-##  Exercise 3 - Validate the Source Environment with Hostchecker0
+##  Exercise 3 - Validate the Source Environment with Hostchecker
 
   1. Connect to your Linux Source by opening **Terminal** on your Lab Server and running: conn 10.0.x.20 ('x' will be your **Student Number** ). 
 
@@ -1088,7 +917,7 @@ _Figure 5_ _Hostchecker Options_
 
   10. Type "quit" to exit hostchecker. 
 
-## Exercise 4 - Add a Source Environment and Link a dSource0
+## Exercise 4 - Add a Source Environment and Link a dSource
 
 Add Source Environment
 
@@ -1195,7 +1024,7 @@ _Figure 10 Add dSource Summary_
 ![images/download/attachments/90014988/worddave89d449f4724681413577b38c45eab54.png](images/download/attachments/90014988/worddave89d449f4724681413577b38c45eab54.png)  
 _Figure 11 Completed dSource_
 
-##  Exercise 5 - Validate the Target Environment with Hostchecker0
+##  Exercise 5 - Validate the Target Environment with Hostchecker
 
   1. Connect to your Linux Target A by opening **Terminal** on your Lab Server and running: conn 10.0.x.30 ('x' will be your **Student Number** ). 
 
@@ -1306,7 +1135,7 @@ _Figure 13 Add Target Environment_
 
 ![images/download/attachments/90015000/worddav700443e673fbfa191ffbfd0e690470d1.png](images/download/attachments/90015000/worddav700443e673fbfa191ffbfd0e690470d1.png)
 
-## Exercise 7 - Provision a VDB0
+## Exercise 7 - Provision a VDB
 
   1. Go the Datasets Home page by Clicking on the Manage menu and selecting Datasets 
 
@@ -1399,7 +1228,7 @@ select name from v$database;
 ![images/download/attachments/90015004/worddav778ba7ea300ef97f096a94007d8263f3.png](images/download/attachments/90015004/worddav778ba7ea300ef97f096a94007d8263f3.png)  
 _Figure 19 Validate VDB_
 
-##  Exercise 8 - Refresh a VDB0
+##  Exercise 8 - Refresh a VDB
 
   1. Open Terminal on your Lab Server desktop and type: ssh delphix@10.0.x.20 ('x' will be your **Student Number** ) 
 
@@ -1464,7 +1293,7 @@ from sourcetab;
 _Figure 24 Validate Refresh_  
 If this returns a count of rows, the snapshot/refresh was successful.
 
-## Exercise 9 - Rewind a VDB0
+## Exercise 9 - Rewind a VDB
 
   1. On the Delphix main screen, select the _devdb_ VDB 
 
@@ -1531,7 +1360,7 @@ from dba_objects;
 ![images/download/attachments/90015018/worddav0bc5f85f988526df169c88ee2c1d76da.png](images/download/attachments/90015018/worddav0bc5f85f988526df169c88ee2c1d76da.png)  
 _Figure 29 Validate VDB Rewind_
 
-##  Exercise 10 - Set a New Retention Policy0
+##  Exercise 10 - Set a New Retention Policy
 
   1. In the top menu bar, click on _Manage_ and then _Policies_
 
@@ -1565,7 +1394,7 @@ applied to the _devdb_ VDB.
 ![images/download/attachments/90015024/worddavd0368a84bb343d0bb229d9ff5b37909a.png](images/download/attachments/90015024/worddavd0368a84bb343d0bb229d9ff5b37909a.png)  
 _Figure 32 Retention Policy Settings_
 
-##  Exercise 11 - Create and Save a Hook Operation Template0
+##  Exercise 11 - Create and Save a Hook Operation Template
 
   1. In the top menu bar, click _Manage_ , then _Operation Templates_
 
@@ -1594,7 +1423,7 @@ _Figure 34 Hook Template_
 
   1. Figure Verify Hook Operation Template 
 
-## Exercise 12 - Create a VDB Template0
+## Exercise 12 - Create a VDB Template
 
   1. In the top menu bar, click _Manage_ , then _VDB Config Templates_
 
@@ -1621,7 +1450,7 @@ _Figure 34 Hook Template_
 ![images/download/attachments/90015031/worddav3c33aac4d97f34b4d862fb8068a134b2.png](images/download/attachments/90015031/worddav3c33aac4d97f34b4d862fb8068a134b2.png)  
 _Figure 35 Create VDB Configuration Template_
 
-##  Exercise 13 - Provision a VDB with Hook and VDB Template0
+##  Exercise 13 - Provision a VDB with Hook and VDB Template
 
   1. Return to the Delphix home screen by clicking the Delphix logo on the top left of the screen 
 
