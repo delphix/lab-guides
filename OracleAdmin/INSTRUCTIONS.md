@@ -2,8 +2,7 @@
 
 # Table of Contents
 **Lab Exercises**  
-**Optional Advanced Exercise - Perform a Storage Performance Test through the
-CLI**  
+**Optional Advanced Exercise - Perform a Storage Performance Test through the CLI**  
 **Exercise 1 - Delphix Data Platform Configuration**  
 **Exercise 2 - Create the "delphix_db" User**  
 **Exercise 3 - Validate the Source Environment with Hostchecker**  
@@ -17,8 +16,7 @@ CLI**
 **Exercise 11 - Create and Save a Hook Operation Template**  
 **Exercise 12 - Create a VDB Template**  
 **Exercise 13 - Provision a VDB with Hook and VDB Template**  
-**Optional Advanced Exercise - Measure Network Performance Test through the
-CLI**  
+**Optional Advanced Exercise - Measure Network Performance Test through the CLI**  
 **Optional Advanced Exercise - Configure Delphix Replication**  
 **Lab Solutions**  
 **Exercise 1 - Delphix Data Platform Setup**  
@@ -39,40 +37,27 @@ CLI**
 
 Perform these exercises when instructed by your Delphix Instructor.
 
-## Optional Advanced Exercise - Perform a Storage Performance Test through the
-CLI
+## Optional Advanced Exercise - Perform a Storage Performance Test through the CLI
 
 In this exercise, you will:
 
   * Log into the Delphix Data Platform prior to configuration via the Delphix Command Line Interface (CLI) 
-
   * Perform a Storage Test 
-
   * View the Storage Test results 
 
-**Steps**  
+### Steps  
 As an advanced exercise, this lab has no corresponding Lab Solution. Instead,
 we will walk through the steps to get you acquainted with your lab system and
 the Delphix CLI.
-
   1. On your Lab Server desktop, double-click on Terminal 
-
   2. Type: _ssh sysadmin@10.0.x.10_ ('x' is your **Student Number** assigned by your instructor) 
-
     1. If you receive a prompt asking you if you are sure you want to connect, enter: Yes 
-
     2. Enter the password: sysadmin 
-
     3. Escape to the standard CLI prompt by typing _discard_ and then press the enter key 
-
     4. You are now at the root of the Delphix CLI as a System Administrator 
-
-  3. Create a storage test by typing: **storage test create** and press the enter key 
-
+  2. Create a storage test by typing: **storage test create** and press the enter key 
     1. List the default storage test parameters by typing: **get**
-
     2. Override the duration and set it to 5 minutes: **set duration=5**
-
     3. Begin the storage test by typing: **commit**
 
 _Note: The actual duration of the test may vary depending on the performance
@@ -82,20 +67,15 @@ between 6 - 8 minutes to complete with duration set to 5._
 Example Storage Test Configuration
 
   1. View the storage test results 
-
     1. Get back to the storage test section of the CLI by typing: **storage test** and press the enter key 
-
-    2. Type the command **list** and press the enter key 
+    2. Type the command `list` and press the enter key 
 
 You should see the completed test listed.
+  2. Type `select` followed by the name of the test from the list. For example: 
+     `select STORAGE_TEST-1`
 
-  1.     1. Type "select" followed by the name of the test from the list. For example: 
-
-**select STORAGE_TEST-1**
-
-  1.     1. Enter the result command by typing: **result**
-
-    2. Then type: **commit**
+  3. Enter the result command by typing: `result`
+  4. Then type: `commit`
 
 ![images/download/attachments/90014954/worddav4cc92cfa22a23a274b16db2c2edc3fa2.png](images/download/attachments/90014954/worddav4cc92cfa22a23a274b16db2c2edc3fa2.png)  
 Example Storage Test Results
