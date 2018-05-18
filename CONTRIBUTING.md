@@ -19,8 +19,8 @@ You can learn the basics of Markdown in just a few minutes.  To get started, che
 
 To make substantial changes to an existing exercise, add or change images, or contribute a new exercise, you will need to create a local clone of our content repo.
 
-## Using issues to provide feedback on UWP Conceptual documentation
+## Using issues to provide feedback on lab guides
 
-If you just want to provide feedback rather than directly modifying actual documentation pages, you can [create an issue in the public repo](https://github.com/DelphixEdu/tutorials/issues). Click the "Issues" tab and then click the **New issue** button. Be sure to include the topic title and the URL for the page.
+If you just want to provide feedback rather than directly modifying actual documentation pages, you can [create an issue in the public repo](https://github.com/DelphixEdu/lab-guides/issues). Click the "Issues" tab and then click the **New issue** button. Be sure to include the topic title and the URL for the page.
 
 Members of the LabAlchemy team review issues regularly and will triage, assign, and address them accordingly.
