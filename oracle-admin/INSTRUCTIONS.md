@@ -82,14 +82,14 @@ the Delphix CLI.
 
 1. On your Lab Server desktop, double-click on Terminal 
 2. Type: _ssh sysadmin@10.0.x.10_ ('x' is your **Student Number** assigned by your instructor) 
-  1. If you receive a prompt asking you if you are sure you want to connect, enter: Yes 
-  2. Enter the password: sysadmin 
-  3. Escape to the standard CLI prompt by typing _discard_ and then press the enter key 
-  4. You are now at the root of the Delphix CLI as a System Administrator 
-2. Create a storage test by typing: **storage test create** and press the enter key 
-  1. List the default storage test parameters by typing: **get**
-  2. Override the duration and set it to 5 minutes: **set duration=5**
-  3. Begin the storage test by typing: **commit**
+    - If you receive a prompt asking you if you are sure you want to connect, enter: Yes 
+    - Enter the password: sysadmin 
+    - Escape to the standard CLI prompt by typing _discard_ and then press the enter key 
+    - You are now at the root of the Delphix CLI as a System Administrator 
+3. Create a storage test by typing: **storage test create** and press the enter key 
+    - List the default storage test parameters by typing: **get**
+    - Override the duration and set it to 5 minutes: **set duration=5**
+    - Begin the storage test by typing: **commit**
 
 _Note: The actual duration of the test may vary depending on the performance
 of the attached storage._ _It is expected that this test will take anywhere
@@ -97,16 +97,14 @@ between 6 - 8 minutes to complete with duration set to 5._
 ![images/download/attachments/90014954/worddav7d1b92b5995f4a0e72c9c086f21df7ea.png](images/download/attachments/90014954/worddav7d1b92b5995f4a0e72c9c086f21df7ea.png)  
 Example Storage Test Configuration
 
-  1. View the storage test results 
-    1. Get back to the storage test section of the CLI by typing: **storage test** and press the enter key 
-    2. Type the command `list` and press the enter key 
-
-You should see the completed test listed.
-  2. Type `select` followed by the name of the test from the list. For example: 
-     `select STORAGE_TEST-1`
-
-  3. Enter the result command by typing: `result`
-  4. Then type: `commit`
+4. View the storage test results 
+    - Get back to the storage test section of the CLI by typing: **storage test** and press the enter key 
+    - Type the command `list` and press the enter key 
+      You should see the completed test listed.
+    - Type `select` followed by the name of the test from the list. For example: 
+      `select STORAGE_TEST-1`
+    - Enter the result command by typing: `result`
+    - Then type: `commit`
 
 ![images/download/attachments/90014954/worddav4cc92cfa22a23a274b16db2c2edc3fa2.png](images/download/attachments/90014954/worddav4cc92cfa22a23a274b16db2c2edc3fa2.png)  
 Example Storage Test Results
@@ -131,29 +129,29 @@ In this exercise, you will:
 
 ### Steps
 
-  1. Connect to your Delphix Data Platform using Chrome on your lab server (see the **Important IP Addresses** section of the Getting Started guide above). 
+1. Connect to your Delphix Data Platform using Chrome on your lab server (see the **Important IP Addresses** section of the Getting Started guide above). 
 
-  2. Set the new sysadmin password to: delphix 
+2. Set the new sysadmin password to: delphix 
 
-  3. Configure the Delphix Data Platform with the following details: 
+3. Configure the Delphix Data Platform with the following details: 
 
-    * NTP on using pool.ntp.org with your local timezone 
+    - NTP on using pool.ntp.org with your local timezone 
 
-    * Default network settings 
+    - Default network settings 
 
-    * Three 8GB volumes in the data pool 
+    - Three 8GB volumes in the data pool 
 
-    * Uncheck the "Enable phone home service" box in the Serviceability tab 
+    - Uncheck the "Enable phone home service" box in the Serviceability tab 
 
-    * Default Authentication Service options 
+    - Default Authentication Service options 
 
-    * Registration is not required for this lab 
+    - Registration is not required for this lab 
 
-    * Completed and saved System setup. 
+    - Completed and saved System setup. 
 
-  4. Log in with the initial delphix_admin user credentials 
+4. Log in with the initial _delphix_admin_ user credentials 
 
-  5. Set the new delphix_admin password to: delphix 
+5. Set the new delphix_admin password to: delphix 
 
 You will know this is successful when you see the main Delphix UI screen with
 a single group (Untitled) on the left hand side.  
@@ -171,26 +169,28 @@ In this exercise, you will:
 
 ### Steps
 
-  1. Use **Terminal** to SSH into your Linux Source (see the **Important IP Addresses** section of the Getting Started guide above). 
+1. Use **Terminal** to SSH into your Linux Source (see the **Important IP Addresses** section of the Getting Started guide above). 
 
-  2. Untar the hostchecker_linux_x86.tar file in your home directory 
+2. Untar the hostchecker_linux_x86.tar file in your home directory 
 
-  3. Inside the hostchecker folder run the _createDelphixDBUser.sh_ command 
+3. Inside the hostchecker folder run the _createDelphixDBUser.sh_ command 
 
-    1. export ORACLE_SID= **orcl**
-    2. export ORACLE_HOME= **/u01/app/oracle/product/11.2.0/dbhome_1**
-    3. cd hostchecker 
-    4. ./createDelphixDBUser.sh 
+    ```
+    export ORACLE_SID= orcl
+    export ORACLE_HOME= /u01/app/oracle/product/11.2.0/dbhome_1
+    cd hostchecker 
+    ./createDelphixDBUser.sh 
+    ```
 
-  4. Use the following details during the running of this script: 
+4. Use the following details during the running of this script: 
 
-    1. Instance Name: **orcl**
+    - Instance Name: **orcl**
 
-    2. Delphix DB User Username: **delphix_db**
+    - Delphix DB User Username: **delphix_db**
 
-    3. Delphix DB User Password: **delphix_db**
+    - Delphix DB User Password: **delphix_db**
 
-    4. Decline the SELECT ANY DICTIONARY privilege. This is a sweeping privilege that is not required, but optional. 
+    - Decline the SELECT ANY DICTIONARY privilege. This is a sweeping privilege that is not required, but optional. 
 
 The script should configure and create the user without error.
 
@@ -202,9 +202,9 @@ In this exercise, you will:
 
 ### Steps
 
-  1. Use **Terminal** to SSH into your Linux Source (see the **Important IP Addresses** section of the Getting Started guide above). 
+1. Use **Terminal** to SSH into your Linux Source (see the **Important IP Addresses** section of the Getting Started guide above). 
 
-  2. Go to the hostchecker directory created in the previous exercise and type: ./hostchecker.sh 
+2. Go to the hostchecker directory created in the previous exercise and type: ./hostchecker.sh 
 
 **Note: If you exited your session or created a new session after completing
 the previous exercise, you need to set your environment variables again.**  
@@ -212,25 +212,16 @@ the previous exercise, you need to set your environment variables again.**
   export ORACLE_SID=orcl  
   export ORACLE_HOME=/u01/app/oracle/product/11.2.0/dbhome_1
   ```
-  1. Run hostchecker for a source and perform the following checks: 
-
-    1. Check on the delphix homedir 
-
-    2. Check the following ports on your Delphix Data Platform (10.0.x.10): 8415, 8341, 50001, and 873 
-
-    3. Check the Oracle installation for your current $ORACLE_HOME value 
-
-    4. Check the oratab file 
-
-    5. Check all instances on the machine 
-
-    6. Check for ssh connectivity 
-
-    7. Check for sudo privileges as the delphix user 
-
-    8. Check sshd_config for timeout 
-
-    9. Check the toolkit path of: /u01/app/toolkit 
+1. Run hostchecker for a source and perform the following checks: 
+    - Check on the delphix homedir 
+    - Check the following ports on your Delphix Data Platform (10.0.x.10): 8415, 8341, 50001, and 873 
+    - Check the Oracle installation for your current $ORACLE_HOME value 
+    - Check the oratab file 
+    - Check all instances on the machine 
+    - Check for ssh connectivity 
+    - Check for sudo privileges as the delphix user 
+    - Check sshd_config for timeout 
+    - Check the toolkit path of: /u01/app/toolkit 
 
 Were all tests successful? If not, which ones failed and why?  
  **Note** : The sshd_config test will return a WARNING response, which is
@@ -242,40 +233,28 @@ hostchecker is run as root for this test, it will perform the test properly.
 In this exercise, you will:
 
   * Connect Delphix to your Source Oracle Database server 
-
   * Create an Oracle dSource by syncing with your Source Oracle Database 
-
   * Create a Delphix Group to hold your dSource object 
 
 ### Steps
 
-  1. Log into the Delphix Data Platform as _delphix_admin_
+1. Log into the Delphix Data Platform as _delphix_admin_
 
-  2. Add your Linux Source as an Environment with the following details: 
-
-    1. Host OS: Unix/Linux 
-
-    2. Server Type: Standalone 
-
-    3. Environment Name: Source 
-
-    4. Host Address: 10.0.x.20 ('x' will be your **Student Number** ) 
-
-    5. OS Username: delphix 
-
-    6. OS Password: delphix 
-
-    7. Toolkit Path: /u01/app/toolkit 
+2. Add your Linux Source as an Environment with the following details: 
+    - Host OS: Unix/Linux 
+    - Server Type: Standalone 
+    - Environment Name: Source 
+    - Host Address: 10.0.x.20 ('x' will be your **Student Number** ) 
+    - OS Username: delphix 
+    - OS Password: delphix 
+    - Toolkit Path: /u01/app/toolkit 
 
 Now, link the **_orcl_** dSource:
 
-  1. Add the **_orcl_** dSource with the following details: 
-
-    1. DB Username and Password: The username/password you created in Exercise 2 
-
-    2. Use a new Group called: **DB Sources**
-
-    3. Accept defaults for the Loading Options and Hooks 
+1. Add the **_orcl_** dSource with the following details: 
+    - DB Username and Password: The username/password you created in Exercise 2 
+    - Use a new Group called: **DB Sources**
+    - Accept defaults for the Loading Options and Hooks 
 
 You will know this is successful if the dSource completes in the **Actions**
 pane without Errors. Click on **Actions** in the top menu bar if you don't see
@@ -289,19 +268,19 @@ In this exercise, you will:
 
 ### Steps
 
-  1. Use **Terminal** to SSH into your Linux Target A (see the **Important IP Addresses** section of the Getting Started guide above). 
+1. Use **Terminal** to SSH into your Linux Target A (see the **Important IP Addresses** section of the Getting Started guide above). 
 
-  2. Untar the hostchecker_linux_x86.tar file in your home directory 
+2. Untar the hostchecker_linux_x86.tar file in your home directory 
 
-  3. Set the Oracle environment variables for the delphix os user as follows: 
+3. Set the Oracle environment variables for the delphix os user as follows: 
 
-    1. export ORACLE_SID= **orcl**
+    ```bash
+    export ORACLE_SID= orcl
+    export ORACLE_HOME= /u01/app/oracle/product/11.2.0/dbhome_1
+    ```
+4. Run hostchecker for a target and perform the following checks: 
 
-    2. export ORACLE_HOME= **/u01/app/oracle/product/11.2.0/dbhome_1**
-
-  4. Run hostchecker for a target and perform the following checks: 
-
-  5. Check on the delphix homedir 
+5. Check on the delphix homedir 
 
   6. Check the following ports on your Delphix Data Platform (10.0.x.10): 8415, 873, 22, 80, 443 
 
