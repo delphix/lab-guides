@@ -273,32 +273,24 @@ In this exercise, you will:
 2. Untar the hostchecker_linux_x86.tar file in your home directory 
 
 3. Set the Oracle environment variables for the delphix os user as follows: 
-
     ```bash
     export ORACLE_SID= orcl
     export ORACLE_HOME= /u01/app/oracle/product/11.2.0/dbhome_1
     ```
 4. Run hostchecker for a target and perform the following checks: 
 
-5. Check on the delphix homedir 
-
-  6. Check the following ports on your Delphix Data Platform (10.0.x.10): 8415, 873, 22, 80, 443 
-
-  7. Check the Oracle installation for your current $ORACLE_HOME value 
-
-  8. Check for ssh connectivity 
-
-  9. Check the oratab file 
-
-  10. Check for sudo privileges as the delphix user 
-
-  11. Check sshd_config for timeout 
-
-  12. Check the toolkit path of: /u01/app/toolkit 
+    - Check on the delphix homedir 
+    - Check the following ports on your Delphix Data Platform (10.0.x.10): 8415, 873, 22, 80, 443 
+    - Check the Oracle installation for your current $ORACLE_HOME value 
+    - Check for ssh connectivity 
+    - Check the oratab file 
+    - Check for sudo privileges as the delphix user 
+    - Check sshd_config for timeout 
+    -  Check the toolkit path of: /u01/app/toolkit 
 
 If you have completed all of the checks and they have returned SUCCESS and ALL
 OK, you have completed this exercise.  
- **Note** : The sshd_config test will return a WARNING response, which is
+ **Note** : The _sshd_config_ test will return a WARNING response, which is
 normal in a production installation due to permissions on the file. If
 hostchecker is run as root for this test, it will perform the test properly.
 
@@ -310,17 +302,13 @@ In this exercise, you will:
 
 ### Steps
 
-  1. Add your Linux Target Environment with the following details: 
+1. Add your Linux Target Environment with the following details: 
 
-    1. Environment Name: **Target**
-
-    2. Host Address: 10.0.x.30 ('x' will be your **Student Number** ) 
-
-    3. OS Username: **delphix**
-
-    4. OS Password: **delphix**
-
-    5. Toolkit Path: **/u01/app/toolkit**
+    - Environment Name: **Target**
+    - Host Address: 10.0.x.30 ('x' will be your **Student Number** ) 
+    - OS Username: **delphix**
+    - OS Password: **delphix**
+    - Toolkit Path: **/u01/app/toolkit**
 
 You can verify that this is complete by waiting for the _Create and discover
 environment "10.0.x.30"_ action to complete on the right hand side of the
@@ -335,21 +323,15 @@ In this exercise, you will:
 
 ### Steps
 
-  1. Select the **orcl** dSource and Provision a VDB with the following details: 
+1. Select the **orcl** dSource and Provision a VDB with the following details: 
+    - Destination Environment: **Target**
+    - Database Unique Name: **devdb**
+    - SID: **devdb**
+    - Database Name: **devdb**
+    - Mount Base: **/mnt/provision**
+2. Add the VDB to a new group called **DB Targets**
 
-    1. Destination Environment: **Target**
-
-    2. Database Unique Name: **devdb**
-
-    3. SID: **devdb**
-
-    4. Database Name: **devdb**
-
-    5. Mount Base: **/mnt/provision**
-
-  2. Add the VDB to a new group called **DB Targets**
-
-  3. Complete the VDB creation 
+3. Complete the VDB creation 
 
 It may take a couple minutes for the VDB creation to complete. You can monitor
 the progress on the left-hand side of the screen next to the **devdb** object
@@ -383,9 +365,9 @@ In this exercise, you will:
 
 ### Steps
 
-  1. Connect to your Linux Source server as the delphix user via SSH 
+1. Connect to your Linux Source server as the delphix user via SSH 
 
-  2. Run the following commands: 
+2. Run the following commands: 
   ```
   export ORACLE_HOME=/u01/app/oracle/product/11.2.0/dbhome_1  
   export ORACLE_SID=orcl  
@@ -394,19 +376,19 @@ In this exercise, you will:
   create table sourcetab as select * from dba_objects;
   ```
 
-  1. Go back to the Delphix Data Platform GUI 
+3. Go back to the Delphix Data Platform GUI 
 
-  2. Take a snapshot of the **orcl** dSource 
+4. Take a snapshot of the **orcl** dSource 
 
-  3. Select the _devdb_ VDB and click the _Refresh_ button 
+5. Select the _devdb_ VDB and click the _Refresh_ button 
 
-  4. Refresh the _devdb_ VDB using the latest snapshot from the **orcl** dSource 
+6. Refresh the _devdb_ VDB using the latest snapshot from the **orcl** dSource 
 
   Once the refresh has completed, you can log into **devdb** to confirm.
 
-  1. Connect to your Linux Target server as the delphix user via SSH 
+1. Connect to your Linux Target server as the delphix user via SSH 
 
-  2. Run the following commands: 
+2. Run the following commands: 
 
   ```
   export ORACLE_HOME=/u01/app/oracle/product/11.2.0/dbhome_1  
@@ -417,7 +399,7 @@ In this exercise, you will:
   from sourcetab;  
   ```
 
-  If this returns a count of rows, the snapshot/refresh was successful.
+If this returns a count of rows, the snapshot/refresh was successful.
 
 ## Exercise 9 - Rewind a VDB
 
@@ -431,11 +413,11 @@ In this exercise, you will:
 
 ### Steps
 
-  1. Take a snapshot of the _devdb_ VDB and note the time 
+1. Take a snapshot of the _devdb_ VDB and note the time 
 
-  2. Connect to your Linux Target server as the delphix user via SSH 
+2. Connect to your Linux Target server as the delphix user via SSH 
 
-  3. Run the following commands: 
+3. Run the following commands: 
 
   ```
   export ORACLE_HOME=/u01/app/oracle/product/11.2.0/dbhome_1  
@@ -451,19 +433,18 @@ Note that the database is unable to come online due to a bootstrap error. The
 _devdb_ database is now corrupted. Now we will rewind the VDB to the last good
 snapshot to fix this.
 
-  1. Select the _devdb_ VDB 
+1. Select the _devdb_ VDB 
 
-  2. Select the snapshot associated with the date/time you recorded prior to corrupting your database. 
+2. Select the snapshot associated with the date/time you recorded prior to corrupting your database. 
 
-  3. Rewind the VDB to the snapshot you took prior to the corruption. 
+3. Rewind the VDB to the snapshot you took prior to the corruption. 
 
 Once the rewind operation is complete, you can confirm the rewind was
 successful by connecting to the server again and querying the database:
 
-  1. Connect to your Linux Target server as the delphix user via SSH 
+1. Connect to your Linux Target server as the delphix user via SSH 
 
-  2. Run the following commands: 
-
+2. Run the following commands: 
   ```
   export ORACLE_HOME=/u01/app/oracle/product/11.2.0/dbhome_1  
   export ORACLE_SID=devdb  
@@ -486,15 +467,13 @@ There are four types of Policies in Delphix. In this exercise, you will:
 
 ### Steps
 
-  1. Navigate to Manage -> Policies 
+1. Navigate to Manage -> Policies 
 
-  2. Create a new retention policy for **devdb** with the following details: 
+2. Create a new retention policy for **devdb** with the following details: 
 
-    1. Name: Long Term 
-
-    2. 30 days of snapshot and log retention 
-
-    3. 3 monthly snapshots taken on the 1st of the month 
+    - Name: Long Term 
+    - 30 days of snapshot and log retention 
+    - 3 monthly snapshots taken on the 1st of the month 
 
 ## Exercise 11 - Create and Save a Hook Operation Template
 
@@ -506,12 +485,10 @@ In this exercise, you will:
 
 ### Steps
 
-  1. Create a new Hook Operation Template called: Create APPUSER 
+1. Create a new Hook Operation Template called: Create APPUSER 
 
-    1. Type: Shell Command 
-
-    2. Contents (enter exactly): 
-
+    - Type: Shell Command 
+    - Contents (enter exactly): 
   ```
   $ORACLE_HOME/bin/sqlplus / as sysdba << EOF  
   create user appuser identified by appuser;  
@@ -519,10 +496,10 @@ In this exercise, you will:
   exit;  
   EOF
   ```
- **IMPORTANT:** Make sure the carriage returns you see here are the same in
+**IMPORTANT:** Make sure the carriage returns you see here are the same in
 the pasted contents.
 
-  1. Finish and verify the Hook Operation Template appears in the list. 
+2. Finish and verify the Hook Operation Template appears in the list. 
 
 ## Exercise 12 - Create a VDB Template
 
@@ -534,15 +511,14 @@ In this exercise, you will:
 
 ### Steps
 
-  1. Navigate to Manage -> VDB Config Templates 
+1. Navigate to Manage -> VDB Config Templates 
 
-  2. Create a new Template with the name: 1G Template 
+2. Create a new Template with the name: 1G Template 
 
-  3. Add a parameter to the template with the details: 
+3. Add a parameter to the template with the details: 
 
-    1. Name: **memory_target**
-
-    2. Value: **1G**
+    - Name: **memory_target**
+    - Value: **1G**
 
 You can verify that this was successful by returning to the _VDB Configuration
 Templates Wizard_ and clicking on the _1G Template_ item.
@@ -563,25 +539,18 @@ In this exercise, you will:
 
 ### Steps
 
-  1. Select the **orcl** dSource and Provision a VDB with the following details: 
+1. Select the **orcl** dSource and Provision a VDB with the following details: 
 
-    1. Destination Environment: Target 
+    - Destination Environment: Target 
+    - Database Unique Name: **qadb**
+    - SID: **qadb**
+    - Database Name: **qadb**
+    - Mount Base: **/mnt/provision**
+    - Configuration Template: **1G Template**
+    - Group: **DB Targets**
+    - Configure Clone hook: Create APPUSER 
 
-    2. Database Unique Name: **qadb**
-
-    3. SID: **qadb**
-
-    4. Database Name: **qadb**
-
-    5. Mount Base: **/mnt/provision**
-
-    6. Configuration Template: **1G Template**
-
-    7. Group: **DB Targets**
-
-    8. Configure Clone hook: Create APPUSER 
-
-  2. Complete the VDB creation 
+2. Complete the VDB creation 
 
 It may take a couple minutes for the VDB creation to complete. You can monitor
 the progress on the left-hand side of the screen next to the _qadb_ object in
@@ -590,9 +559,9 @@ screen, you should see the _Provision virtual database "qadb"_ item move to
 the _Recently completed_ pane without error. Once the VDB is created, you can
 verify that the VDB is operational by:
 
-  1. SSH to Linux Target as the delphix user 
+3. SSH to Linux Target as the delphix user 
 
-  2. Run the following commands: 
+4. Run the following commands: 
 
   ```
   export ORACLE_HOME=/u01/app/oracle/product/11.2.0/dbhome_1  
@@ -621,64 +590,52 @@ As an advanced exercise, this lab has no corresponding Lab Solution. Instead,
 we will walk through the steps to get you acquainted the Delphix CLI for
 delphix_admin.
 
-  1. On your Lab Server desktop, double-click on Terminal 
+1. On your Lab Server desktop, double-click on Terminal 
 
-  2. Type: **ssh delphix_admin@10.0.x.10** ('x' is your **Student Number** assigned by your instructor) 
+2. Type: `ssh delphix_admin@10.0.x.10` ('x' is your **Student Number** assigned by your instructor) 
 
-    * If you receive a prompt asking you if you are sure you want to connect, enter: Yes 
+    - If you receive a prompt asking you if you are sure you want to connect, enter: Yes 
+    - Enter the password: `delphix`
+    - You are now at the root of the Delphix CLI as a Delphix Administrator 
 
-    * Enter the password: **delphix**
+3. Create a network latency test by typing: **network test latency create**
 
-    * You are now at the root of the Delphix CLI as a Delphix Administrator 
-
-  3. Create a network latency test by typing: **network test latency create**
-
-    * List the default/required parameters by typing: **get**
-
-    * Set the remoteHost value to the TargetA environment IP address: set remoteHost=10.0.x.30 ('x' will be your **Student Number** ) 
-
-    * Begin the test by typing: **commit**
+    - List the default/required parameters by typing: **get**
+    - Set the remoteHost value to the TargetA environment IP address: set remoteHost=10.0.x.30 ('x' will be your **Student Number** ) 
+    - Begin the test by typing: **commit**
 
 ![images/download/attachments/90014970/worddav0139095d623cae0998262de02bb1691f.png](images/download/attachments/90014970/worddav0139095d623cae0998262de02bb1691f.png)  
 Example Network Latency Test Submission
 
-  1. View the results of the latency test: 
-    1. Get to the latency test section again by typing: **network test latency**
-    2. List the completed tests by typing: **ls**
-    3. Type "select" followed by the name of the test from the list. For example: 
+4. View the results of the latency test: 
+    - Get to the latency test section again by typing: **network test latency**
+    - List the completed tests by typing: **ls**
+    - Type "select" followed by the name of the test from the list. For example: 
       `select 10.0.1.30-2015-09-18T12:47:19.711Z`
-  1.  View the results of the test by typing: **get**
+    - View the results of the test by typing: **get**
 
 ![images/download/attachments/90014970/worddav5cd595732a91c4949a7d45cc11817a03.png](images/download/attachments/90014970/worddav5cd595732a91c4949a7d45cc11817a03.png)  
 Example Network Latency Test Results
 
-  1. Create a network throughput test 
-
-    1. While still logged into the CLI, return to the root by typing: **cd /**
-
-    2. Begin a network throughput test by typing: **network test throughput create**
-
-    3. List the default/required parameters by typing: **get**
-
-    4. Set the remoteHost value to the TargetA environment IP address: **set remoteHost=10.0.x.30** ('x' will be your **Student Number** ) 
-
-    5. Begin the test by typing: **commit**
+5. Create a network throughput test 
+    - While still logged into the CLI, return to the root by typing: **cd /**
+    - Begin a network throughput test by typing: **network test throughput create**
+    - List the default/required parameters by typing: **get**
+    - Set the remoteHost value to the TargetA environment IP address: **set remoteHost=10.0.x.30** ('x' will be your **Student Number** ) 
+    - Begin the test by typing: **commit**
 
 ![images/download/attachments/90014970/worddave239dfc61608945149c6149c28b02a47.png](images/download/attachments/90014970/worddave239dfc61608945149c6149c28b02a47.png)  
 Example Network Throughput Test Submission
 
-  1. View the results of the throughput test: 
+6. View the results of the throughput test: 
 
-    1. Get to the throughput test section again by typing: **network test throughput**
-
-    2. List the completed tests by typing: **ls**
-
-    3. Type "select" followed by the name of the test from the list. 
-
+    - Get to the throughput test section again by typing: **network test throughput**
+    - List the completed tests by typing: **ls**
+    - Type "select" followed by the name of the test from the list. 
 For example:  
- **select 10.0.1.30-2015-09-18T13:13:08.152Z**
+ `select 10.0.1.30-2015-09-18T13:13:08.152Z`
 
-  1.     1. View the results of the test by typing: **get**
+    - View the results of the test by typing: **get**
 
 ![images/download/attachments/90014970/worddav9e53b8c32beb01659562abff9d1d08f2.png](images/download/attachments/90014970/worddav9e53b8c32beb01659562abff9d1d08f2.png)  
 Example Network Throughput Test Results
@@ -695,7 +652,7 @@ In this exercise, you will:
 
   * View the replicas in the target Delphix Data Platform 
 
-**Steps**  
+### Steps
 As an advanced exercise, this lab has no corresponding Lab Solution. Instead,
 we will walk through the steps to get you acquainted the Delphix Replication
 capability.
