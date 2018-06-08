@@ -1,29 +1,36 @@
 #  Delphix Admin for MS SQL Lab Guide
 
-## Table of Contents
+### Table of Contents
+* [Prerequisite - Join the Delphix Domain](#joindomain)
+* [Optional Advanced Exercise - Perform a Storage Performance Test through the CLI](#stroragetest)
+* [Exercise 1 - Delphix Engine Configuration](#exercise1)
+* [Exercise 2 - Configure the DB User on the Source](#exercise2)
+* [Exercise 3 - Take a Backup of the Source Database](#exercise3)
+* [Exercise 4 - Configure the Windows Target/Staging Server](#exercise4)
+* [Exercise 5 - Create a Target Environment](#exercise5)
+* [Exercise 6 - Add the Source Environment](#exercise6)
+* [Exercise 7 - Add the dSource](#exercise7)
+* [Exercise 8 - Provision a VDB](#exercise8)
+* [Exercise 9 - Refresh a VDB](#exercise9)
+* [Exercise10 - Rewind a VDB](#exercise10)
+* [Exercise 11 - Set a New Retention Policy](#exercise11)
+* [Exercise 12 - Create and Save a Hook Operation Template](#exercise12)
+* [Exercise 13 - Provision a VDB with Hook Template](#exercise13)
+* [Exercise 14 - Recovering a deleted table using log sync](#exercise14)
+* [Exercise 15 - Delink a dSource](#exercise15)
+* [Exercise 16 - Create a new User with Delphix_Admin privileges](#exercise16)
+* [Exercise 17- Check the Audit logs for user related actions](#exercise17)
 
-* Prerequisite - Join the Delphix Domain
-* Optional Advanced Exercise - Perform a Storage Performance Test through the CLI
-* Exercise 1 - Delphix Engine Configuration
-* Exercise 2 - Configure the DB User on the Source  
-* Exercise 3 - Take a Backup of the Source Database
-* Exercise 4 - Configure the Windows Target/Staging Server
-* Exercise 5 - Create a Target Environment
-* Exercise 6 - Add the Source Environment
-* Exercise 7 - Add the dSource  
-* Exercise 8 - Provision a VDB  
-* Exercise 9 - Refresh a VDB  
-* Exercise10 - Rewind a VDB
-* Exercise 11 - Set a New Retention Policy
-* Exercise 12 - Create and Save a Hook Operation Template
-* Exercise 13 - Provision a VDB with Hook Template
-
+## Hands-On Lab Guides
+ * [Getting Started](/README.md/#mssqlipaddresses)
+ * [Oracle](/oracle-admin/INSTRUCTIONS.md)
+ * [Self-Service ](/self-service/INSTRUCTIONS.md)
 
 ## Lab Exercises
 
 Perform these exercises when instructed by your Delphix Instructor.
 
-###  Prerequisite - Join the Delphix Domain
+###  <a id="joindomain"></a>Prerequisite - Join the Delphix Domain
 From your Student Desktop home screen, double click the **RDP** icon. This
 will open Remmina Remote Desktop client. Before we can continue these labs,
 you must connect to your Windows Source and Target and join them to the
@@ -31,7 +38,7 @@ _delphix.local_ domain.
 
 Please note, it may take some time for the Windows servers to come online. If
 the _Connecting_ dialog stays open for more than 5-10 seconds, cancel and try
-again in a few minutes.  
+again in a few minutes.
 ### Steps
 
   1. Double click on **Windows Source**
@@ -71,7 +78,7 @@ Once you have completed these steps, perform the following steps to set up the
 See **The RDP Client** under **Getting Started** for more information on using
 the RDP application.
 
-##  Optional Advanced Exercise - Perform a Storage Performance Test through the CLI
+##  <a id="stroragetest"></a>Optional Advanced Exercise - Perform a Storage Performance Test through the CLI
 
 In this exercise, you will:
 
@@ -93,7 +100,7 @@ In this exercise, you will:
     * Begin the storage test by typing: `commit`
     * Note that this test will take anywhere between 7-10 minutes to complete
 
-![images/download/attachments/90015915/worddavc276fac4332b81539a6114b6f823b7ec.png](images/download/attachments/90015915/worddavc276fac4332b81539a6114b6f823b7ec.png)  
+![images/download/attachments/90015915/worddavc276fac4332b81539a6114b6f823b7ec.png](images/download/attachments/90015915/worddavc276fac4332b81539a6114b6f823b7ec.png)
 Example Storage Test Configuration
   1. View the storage test results
     * Get back to the storage test section of the CLI by typing: `storage test`
@@ -103,10 +110,10 @@ Example Storage Test Configuration
     * Then type: `commit`
     * Scroll up to view the Test Grades section
 
-![images/download/attachments/90015915/worddav83df38c4c21b62a68a39b3286e9634f4.png](images/download/attachments/90015915/worddav83df38c4c21b62a68a39b3286e9634f4.png)  
+![images/download/attachments/90015915/worddav83df38c4c21b62a68a39b3286e9634f4.png](images/download/attachments/90015915/worddav83df38c4c21b62a68a39b3286e9634f4.png)
 Example Storage Test Results
 
-## Exercise 1 - Delphix Engine Configuration
+## <a id="exercise1"></a>Exercise 1 - Delphix Engine Configuration
 
 In this exercise, you will:
   * Access the Delphix Engine GUI for the first time
@@ -133,15 +140,15 @@ In this exercise, you will:
   5. Set the new _delphix_admin_ password to: delphix
 
 You will know this is successful when you see the main Delphix UI screen with
-a single group (Untitled) on the left hand side.  
+a single group (Untitled) on the left hand side.
 
- **Related Links**  
+ **Related Links**
 [The delphix_admin and sysadmin User
-Roles](https://docs.delphix.com/display/DOCS43/The+delphix_admin+and+sysadmin+User+Roles)  
+Roles](https://docs.delphix.com/display/DOCS43/The+delphix_admin+and+sysadmin+User+Roles)
 [Setting Up the Delphix
 Engine](https://docs.delphix.com/display/DOCS43/Setting+Up+the+Delphix+Engine)
 
-##  Exercise 2 - Configure the DB User on the Source
+##  <a id="exercise2"></a>Exercise 2 - Configure the DB User on the Source
 
 In this exercise, you will:
 
@@ -196,7 +203,7 @@ In this exercise, you will:
 
     * Click OK
 
-## Exercise 3 - Take a Backup of the Source Database
+## <a id="exercise3"></a>Exercise 3 - Take a Backup of the Source Database
 
 In this exercise, you will:
 
@@ -225,7 +232,7 @@ In this exercise, you will:
 
   11. Click Cancel
 
-## Exercise 4 - Configure the Windows Target/Staging Server
+## <a id="exercise4"></a>Exercise 4 - Configure the Windows Target/Staging Server
 
 In this exercise, you will:
 
@@ -237,7 +244,7 @@ Before we start this exercise is important to mention that in Delphix, a
 Target and Staging server have the same configuration. It's a Delphix best
 practice to isolate the Staging workload from the VDB workload, so that's why
 we call them in a different way, but from a requirements point of view, they
-are the same.  
+are the same.
 ### Steps
 
   1. Double click "RDP" icon on the Student Desktop
@@ -282,37 +289,37 @@ are the same.
 
   ![images/download/attachments/90015915/worddav415115917b3a7248c896f65fd5e67a0a.png](images/download/attachments/90015915/worddav415115917b3a7248c896f65fd5e67a0a.png)
 
-## Exercise 5 - Create a Target Environment
+## <a id="exercise5"></a>Exercise 5 - Create a Target Environment
 
 In this exercise, you will:
 
   * Connect Delphix to your Windows Target server
 
-## Steps  
-1. Navigate to your Delphix Engine at 10.0.x.10 ('x' is your **Student Number** )  
-  * Log in as the delphix_admin user  
-  * Go to Manage -> Environments  
+## Steps
+1. Navigate to your Delphix Engine at 10.0.x.10 ('x' is your **Student Number** )
+  * Log in as the delphix_admin user
+  * Go to Manage -> Environments
   * Click the ellipses (…) and select _Add Environment_
 ![images/download/attachments/90015915/worddava57004a26ec15405b106bc030428200a.png](images/download/attachments/90015915/worddava57004a26ec15405b106bc030428200a.png)
 
 2. On the _Host and Server_ tab choose **Windows** as the _Host OS_ and **Target** as the _Host Type_ then click Next
 
-  ![images/download/attachments/90015915/worddav8207f96e2ec2346bb3593fca6d19d381.png](images/download/attachments/90015915/worddav8207f96e2ec2346bb3593fca6d19d381.png)  
-3. Under the Environment Settings tab, enter the details:  
-  * Environment Name: WINTARGET  
-  * Host Address: 10.0.x.60 (`x` is your **Student Number** )  
-  * Delphix Connector port: 9100  
-  * OS Username: delphix\delphix_trgt  
-  * OS Password: delphix  
-  * Click Validate Credentials  
-  * Click Submit  
+  ![images/download/attachments/90015915/worddav8207f96e2ec2346bb3593fca6d19d381.png](images/download/attachments/90015915/worddav8207f96e2ec2346bb3593fca6d19d381.png)
+3. Under the Environment Settings tab, enter the details:
+  * Environment Name: WINTARGET
+  * Host Address: 10.0.x.60 (`x` is your **Student Number** )
+  * Delphix Connector port: 9100
+  * OS Username: delphix\delphix_trgt
+  * OS Password: delphix
+  * Click Validate Credentials
+  * Click Submit
 The creation is successful when "Create and discover environment 10.0.x.60"
 completes without error and WINTARGET appears on your Delphix Environments
-page  
+page
 
   ![images/download/attachments/90015915/worddavb5ed0882a1929025813b0acc1a617a87.png](images/download/attachments/90015915/worddavb5ed0882a1929025813b0acc1a617a87.png)
 
-## Exercise 6 - Add the Source Environment
+## <a id="exercise6"></a>Exercise 6 - Add the Source Environment
 
 In this exercise, you will:
 
@@ -334,13 +341,13 @@ In this exercise, you will:
   7. Click Validate Credentials
   8. Click Submit
 
-  ![images/download/attachments/90015915/worddave7d4c3b1ae491d7bf599dd31fc8b7dce.png](images/download/attachments/90015915/worddave7d4c3b1ae491d7bf599dd31fc8b7dce.png)  
+  ![images/download/attachments/90015915/worddave7d4c3b1ae491d7bf599dd31fc8b7dce.png](images/download/attachments/90015915/worddave7d4c3b1ae491d7bf599dd31fc8b7dce.png)
 
 The creation is successful when "Create and discover environment 10.0.x.50"
 completes without error and WINSOURCE appears on your Delphix Environments
-page  
+page
 
-## Exercise 7 - Add the dSource 
+## <a id="exercise7">Exercise 7 - Add the dSource
 In this exercise, you will:
 
   * Add the AdventureWorks2008R2 dSource into Delphix and bring in the initial backup
@@ -402,7 +409,7 @@ In this exercise, you will:
 
   2. Monitor the AdventureWorks dSource addition via the progress bar and the Actions pane
 
-##  Exercise 8 - Provision a VDB
+##  <a id="exercise8">Exercise 8 - Provision a VDB
 
 In this exercise, you will:
 
@@ -438,8 +445,8 @@ In this exercise, you will:
 
   5. Verify settings and click Submit
 
-![images/download/attachments/90015915/worddavedaf9dd2350c832578b57088bdf5261c.png](images/download/attachments/90015915/worddavedaf9dd2350c832578b57088bdf5261c.png)  
-![images/download/attachments/90015915/worddavd168a0bfbee6ce0b7c49ad670fae3cfd.png](images/download/attachments/90015915/worddavd168a0bfbee6ce0b7c49ad670fae3cfd.png)  
+![images/download/attachments/90015915/worddavedaf9dd2350c832578b57088bdf5261c.png](images/download/attachments/90015915/worddavedaf9dd2350c832578b57088bdf5261c.png)
+![images/download/attachments/90015915/worddavd168a0bfbee6ce0b7c49ad670fae3cfd.png](images/download/attachments/90015915/worddavd168a0bfbee6ce0b7c49ad670fae3cfd.png)
 It may take a couple minutes for the VDB creation to complete. You can monitor
 the progress on the left hand side of the screen next to the _devdb_ object in
 the MS SQL Databases group. On the _Actions_ pane on the right hand side of
@@ -461,7 +468,7 @@ can verify that the VDB is operational by:
 
 ![images/download/attachments/90015915/worddavb25e4fbd60b085d4fe46430358b42272.png](images/download/attachments/90015915/worddavb25e4fbd60b085d4fe46430358b42272.png)
 
-## Exercise 9 - Refresh a VDB
+## <a id="exercise9">Exercise 9 - Refresh a VDB
 
 In this exercise, you will:
 
@@ -530,10 +537,10 @@ Once the refresh has completed, you can log into _devdb_ to confirm.
 
 _select
 count![images/s/en_GB/7104/0e21dd459285e7b3b5e0deaa2193b2af8bbb7c8b/_/images/icons/emoticons/star_yellow.png](images/s/en_GB/7104/0e21dd459285e7b3b5e0deaa2193b2af8bbb7c8b/_/images/icons/emoticons/star_yellow.png)
-from_ _sourcetab;_  
+from_ _sourcetab;_
 If this returns a count of rows, the snapshot/refresh was successful.
 
-## Exercise10 - Rewind a VDB
+## <a id="exercise10">Exercise10 - Rewind a VDB
 
 In this exercise, you will:
 
@@ -563,12 +570,12 @@ In this exercise, you will:
 
   5. Run the following commands:
 
-_drop table sourcetab;_  
+_drop table sourcetab;_
  _select
 count![images/s/en_GB/7104/0e21dd459285e7b3b5e0deaa2193b2af8bbb7c8b/_/images/icons/emoticons/star_yellow.png](images/s/en_GB/7104/0e21dd459285e7b3b5e0deaa2193b2af8bbb7c8b/_/images/icons/emoticons/star_yellow.png)
-from sourcetab;_  
-You will receive an error "Invalid Object name 'sourctab'.  
-Do not close the query window.  
+from sourcetab;_
+You will receive an error "Invalid Object name 'sourctab'.
+Do not close the query window.
 Now we will rewind the VDB to the last good snapshot to recover the table.
 
   1. Select the _devdb_ VDB
@@ -578,15 +585,15 @@ Now we will rewind the VDB to the last good snapshot to recover the table.
   3. Rewind the VDB to the snapshot card.
 
 Once the rewind operation is complete, you can confirm the table has been
-recovered:  
+recovered:
 Go to SQL Server Management Studio on Target SQL server and run the following
-command.  
+command.
  _select
 count![images/s/en_GB/7104/0e21dd459285e7b3b5e0deaa2193b2af8bbb7c8b/_/images/icons/emoticons/star_yellow.png](images/s/en_GB/7104/0e21dd459285e7b3b5e0deaa2193b2af8bbb7c8b/_/images/icons/emoticons/star_yellow.png)
-from sourcetab;_  
+from sourcetab;_
 The should receive a count of the table.
 
-## Exercise 11 - Set a New Retention Policy
+## <a id="exercise11">Exercise 11 - Set a New Retention Policy
 
 There are four types of Policies in Delphix. In this exercise, you will:
 
@@ -614,7 +621,7 @@ There are four types of Policies in Delphix. In this exercise, you will:
 
   1. Click Next and select **devdb** on the bottom of the pop up and then click Submit.
 
-##  Exercise 12 - Create and Save a Hook Operation Template
+##  <a id="exercise12">Exercise 12 - Create and Save a Hook Operation Template
 
 In this exercise, you will:
 
@@ -645,38 +652,38 @@ In this exercise, you will:
 
 |
 
-[System.Reflection.Assembly]::LoadWithPartialName('Microsoft.SqlServer.SMO')  
-]]></ac:plain-text-body></ac:structured-macro>  
-$sqlserver = "."  
-$dbname = $env:VDB_DATABASE_NAME  
-$name = "appuser"  
-$Server = New-Object ('Microsoft.SqlServer.Management.Smo.Server') $sqlserver  
-if (-Not $Server.Logins.Contains($name))  
-{  
+[System.Reflection.Assembly]::LoadWithPartialName('Microsoft.SqlServer.SMO')
+]]></ac:plain-text-body></ac:structured-macro>
+$sqlserver = "."
+$dbname = $env:VDB_DATABASE_NAME
+$name = "appuser"
+$Server = New-Object ('Microsoft.SqlServer.Management.Smo.Server') $sqlserver
+if (-Not $Server.Logins.Contains($name))
+{
 $Login = New-Object -TypeName Microsoft.SqlServer.Management.Smo.Login
--ArgumentList $Server, $name  
-$Login.LoginType = 'SqlLogin'  
-$Login.Create('delphix')  
-}  
+-ArgumentList $Server, $name
+$Login.LoginType = 'SqlLogin'
+$Login.Create('delphix')
+}
 <ac:structured-macro ac:name="unmigrated-wiki-markup" ac:schema-version="1" ac
 :macro-id="2da4592c-e576-41bf-9411-2ab5384400cf"><ac:plain-text-
-body><![CDATA[$database = $server.Databases["$dbname"]  
-]]></ac:plain-text-body></ac:structured-macro>  
+body><![CDATA[$database = $server.Databases["$dbname"]
+]]></ac:plain-text-body></ac:structured-macro>
 $user = new-object ('Microsoft.SqlServer.Management.Smo.User') $database,
-$name  
-$user.Login = $name  
-$user.Create()  
+$name
+$user.Login = $name
+$user.Create()
 
----|---  
+---|---
 
-The Hook Operation Template should look like the screenshot below  
+The Hook Operation Template should look like the screenshot below
 ![images/download/attachments/90015915/worddav776c4bc8f6c814c302fb74e649b7599b.png](images/download/attachments/90015915/worddav776c4bc8f6c814c302fb74e649b7599b.png)
 
   2. Click Create
 
   3. Click Close
 
-## Exercise 13 - Provision a VDB with Hook Template
+## <a id="exercise13">Exercise 13 - Provision a VDB with Hook Template
 
 In this exercise, you will:
 
@@ -724,9 +731,9 @@ In this exercise, you will:
 
   1. Verify settings and click Submit
 
-![images/download/attachments/90015915/worddav3757b2259242a2385de9cf75736032ff.png](images/download/attachments/90015915/worddav3757b2259242a2385de9cf75736032ff.png)  
+![images/download/attachments/90015915/worddav3757b2259242a2385de9cf75736032ff.png](images/download/attachments/90015915/worddav3757b2259242a2385de9cf75736032ff.png)
 It may take a couple minutes for the VDB creation to complete. You can monitor
-the progress on the left hand  
+the progress on the left hand
 side of the screen next to the _qadb_ object in the MS SQL Databases group. On
 the Actions pane on the right hand side of the screen, you should see the
 Provision virtual database _qadb_ item move to the Recently completed pane
@@ -748,7 +755,7 @@ operational by:
 This will verify that the VDB is online and that the APPUSER user was created
 by our hook.
 
-## Exercise 14 - Recovering a deleted table using log sync
+## <a id="exercise14">Exercise 14 - Recovering a deleted table using log sync
 
   * Create a table
 
@@ -763,14 +770,14 @@ by our hook.
   1. Create a table as follows on source server
 
 _select * into Logsync_tab from
-AdventureWorks2008R2.HumanResources.vEmployee;_  
+AdventureWorks2008R2.HumanResources.vEmployee;_
 (  Note the time  )
 
   1. Wait for few mins
 
   2. Drop the table _Logsync_tab_
 
-Drop table _Logsync_tab;_  
+Drop table _Logsync_tab;_
 (  Note the time  )
 
   1. Take a transaction log backup
@@ -780,7 +787,7 @@ Drop table _Logsync_tab;_
   3. Create a VDB by selecting date and time from the Timeflow
 
 Choose the transaction log prior to latest log (Latest log is the log that has
-create and drop table actions).  
+create and drop table actions).
 ![images/download/attachments/90015915/worddav5e4ee402d32c897fd7e2fb7945d31400.png](images/download/attachments/90015915/worddav5e4ee402d32c897fd7e2fb7945d31400.png)
 
   1. Expand the log by clicking on "Open LogSync" (second icon)
@@ -807,7 +814,7 @@ create and drop table actions).
 
   * Expand the " RecoverTable " virtual database
 
-## Exercise 15: Delink a dSource
+## <a id="exercise15">Exercise 15 - Delink a dSource
 
 In this exercise you will
 
@@ -835,7 +842,7 @@ Steps
 
   4. Connect to the target VDB and confirm it is still running.
 
-## Exercise 16- Create a new User with Delphix_Admin privileges
+## <a id="exercise16">Exercise 16 - Create a new User with Delphix_Admin privileges
 
 In this exercise you will
 
@@ -861,7 +868,7 @@ In this exercise you will
 
   1. Login to the Delphix UI as **DA_User**
 
-##  Exercise 17- Check the Audit logs for user related actions
+##  <a id="exercise17">Exercise 17 - Check the Audit logs for user related actions
 
 In this exercise you will:
 
