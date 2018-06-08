@@ -17,6 +17,10 @@
 11.  [Statement of Support](#statement-of-support)
 12.  [License](#license)
 
+## Hands-On Lab Guides
+ * [Oracle](/oracle-admin/INSTRUCTIONS.md)
+ * [MS SQL Server](/mssql-admin/INSTRUCTIONS.md)
+ * [Self-Service ](/self-service/INSTRUCTIONS.md)
 
 ## <a id="welcome"></a>Welcome to the Lab Guide
 
@@ -49,9 +53,9 @@ contains everything you will need to perform your lab exercises including:
 
   * RDP Client (Remmina) to connect to Windows Source and Target servers
   * Terminal and PuTTY to connect to Linux Source and Target servers
-  * Firefox Web Browser to connect to your Delphix Engine
   * Chrome Web Browser
   * Notepad for class notes
+  *	Oracle SQL Developer for remote connections to Oracle Databases
   * Lab Guides folder on the Desktop containing any exercises for this course, including this guide.
 
 **IMPORTANT NOTE:** Do not use the  "Log Out" function on your lab server. If
@@ -110,7 +114,6 @@ screen will be larger than your Student Desktop. You can use the toolbar at
 the top of the RDP client to switch to Full Screen mode. When you wish to
 leave Full Screen mode, you can hover your mouse over the top of the Windows
 screen until the RDP menu drops down, and toggle off Full Screen.
-
 
 ## <a id="links"></a>Links
 
