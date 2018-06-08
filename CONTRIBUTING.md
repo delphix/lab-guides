@@ -1,26 +1,21 @@
 # Contributing to LabAlchemy Guides
 
-Thank you for your interest in the LabAlchemy lab guides! We appreciate your feedback, edits, and additions to our docs.
+Thank you for your interest in the LabAlchemy lab guides! We appreciate your feedback.
 
 This page covers the basic steps for contributing to our LabAlchemy lab guides.
 
 
-## Editing topics on the public repo
+Contributions must be signed as `User Name <user@email.com>`. Make sure to [set up Git with user name and email address](https://git-scm.com/book/en/v2/Getting-Started-First-Time-Git-Setup). Bug fixes should branch from the current stable branch. New features should be based on the `master` branch.
 
-We've tried to make editing an existing file as simple as possible.
-- If you're already in the repo, just navigate to the file and click the **Edit** button.  
-- Alternatively, you can fork the repo and make your edits locally
+#### <a id="code-of-conduct"></a>Code of Conduct
 
- When you're done, submit a pull request back to the MASTER branch. After you create the pull request, a member of the LabAlchemy team will review your changes.
+This project operates under the [Delphix Code of Conduct](https://delphix.github.io/code-of-conduct.html). By participating in this project you agree to abide by its terms.
 
-You can learn the basics of Markdown in just a few minutes.  To get started, check out [Mastering Markdown](https://guides.github.com/features/mastering-markdown/).
+#### <a id="contributor-agreement"></a>Contributor Agreement
 
-## Making more substantial changes
+All contributors are required to sign the Delphix Contributor agreement prior to contributing code to an open source repository. This process is handled automatically by [cla-assistant](https://cla-assistant.io/). Simply open a pull request and a bot will automatically check to see if you have signed the latest agreement. If not, you will be prompted to do so as part of the pull request process.
 
-To make substantial changes to an existing exercise, add or change images, or contribute a new exercise, you will need to create a local clone of our content repo.
 
-## Using issues to provide feedback on lab guides
+## <a id="reporting_issues"></a>Reporting Issues
 
-If you just want to provide feedback rather than directly modifying actual documentation pages, you can [create an issue in the public repo](https://github.com/DelphixEdu/lab-guides/issues). Click the "Issues" tab and then click the **New issue** button. Be sure to include the topic title and the URL for the page.
-
-Members of the LabAlchemy team review issues regularly and will triage, assign, and address them accordingly.
+Issues should be reported in the GitHub repo's issue tab. Include a link to it.
