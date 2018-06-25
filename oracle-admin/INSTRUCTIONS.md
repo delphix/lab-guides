@@ -3,71 +3,44 @@
 # Table of Contents
 Lab Exercises  
 
-Optional Advanced Exercise - Perform a Storage Performance Test through the CLI 
-
-Exercise 1 - Delphix Data Platform Configuration 
-
-Exercise 2 - Create the "delphix_db" User 
-
-Exercise 3 - Validate the Source Environment with Hostchecker 
-
-Exercise 4 - Add a Source Environment and Link a dSource 
-
-Exercise 5 - Validate the Target Environment with Hostchecker 
-
-Exercise 6 - Add Target Environments 
-
-Exercise 7 - Provision a VDB 
-
-Exercise 8 - Refresh a VDB  
-
-Exercise 9 - Rewind a VDB 
-
-Exercise 10 - Set a New Retention Policy
-
-Exercise 11 - Create and Save a Hook Operation Template
-
-Exercise 12 - Create a VDB Template
-
-Exercise 13 - Provision a VDB with Hook and VDB Template
-
-Optional Advanced Exercise - Measure Network Performance Test through the CLI
-
-Optional Advanced Exercise - Configure Delphix Replication
+* [Optional Advanced Exercise - Perform a Storage Performance Test through the CLI](#stroragetest)
+* [Exercise 1 - Delphix Data Platform Configuration](#exercise1)
+* [Exercise 2 - Create the "delphix_db" User](#exercise2)
+* [Exercise 3 - Validate the Source Environment with Hostchecker](#exercise3)
+* [Exercise 4 - Add a Source Environment and Link a dSource](#exercise4)
+* [Exercise 5 - Validate the Target Environment with Hostchecker](#exercise5)
+* [Exercise 6 - Add Target Environments](#exercise6)
+* [Exercise 7 - Provision a VDB](#exercise7)
+* [Exercise 8 - Refresh a VDB](#exercise8)
+* [Exercise 9 - Rewind a VDB](#exercise9)
+* [Exercise 10 - Set a New Retention Policy](#exercise10)
+* [Exercise 11 - Create and Save a Hook Operation Template](#exercise11)
+* [Exercise 12 - Create a VDB Template](#exercise12)
+* [Exercise 13 - Provision a VDB with Hook and VDB Template](#exercise13)
+* [Optional Advanced Exercise - Measure Network Performance Test through the CLI]
+* [Optional Advanced Exercise - Configure Delphix Replication]
 
 Lab Solutions
 
-Exercise 1 - Delphix Data Platform Setup
-
-Exercise 2 - Create the "delphix_db" User
-
-Exercise 3 - Validate the Source Environment with Hostchecker
-
-Exercise 4 - Add a Source Environment and Link a dSource
-
-Exercise 5 - Validate the Target Environment with Hostchecker
-
-Exercise 6 - Add Target Environment
-
-Exercise 7 - Provision a VDB
-
-Exercise 8 - Refresh a VDB  
-
-Exercise 9 - Rewind a VDB  
-
-Exercise 10 - Set a New Retention Policy
-
-Exercise 11 - Create and Save a Hook Operation Template
-
-Exercise 12 - Create a VDB Template
-
-Exercise 13 - Provision a VDB with Hook and VDB Template
+* [Exercise 1 - Delphix Data Platform Setup](#exercise1_sol)
+* [Exercise 2 - Create the "delphix_db" User](#exercise2_sol)
+* [Exercise 3 - Validate the Source Environment with Hostchecker](#exercise3_sol)
+* [Exercise 4 - Add a Source Environment and Link a dSource](#exercise4_sol)
+* [Exercise 5 - Validate the Target Environment with Hostchecker](#exercise5_sol)
+* [Exercise 6 - Add Target Environment](#exercise6_sol)
+* [Exercise 7 - Provision a VDB](#exercise7_sol)
+* [Exercise 8 - Refresh a VDB](#exercise8_sol)
+* [Exercise 9 - Rewind a VDB](#exercise9_sol)
+* [Exercise 10 - Set a New Retention Policy](#exercise10_sol)
+* [Exercise 11 - Create and Save a Hook Operation Template](#exercise11_sol)
+* [Exercise 12 - Create a VDB Template](#exercise12_sol)
+* [Exercise 13 - Provision a VDB with Hook and VDB Template](#exercise13_sol)
 
 #  Lab Exercises
 
 Perform these exercises when instructed by your Delphix Instructor.
 
-## Optional Advanced Exercise - Perform a Storage Performance Test through the CLI
+## <a id="stroragetest"></a>Optional Advanced Exercise - Perform a Storage Performance Test through the CLI
 
 In this exercise, you will:
 
@@ -109,7 +82,7 @@ Example Storage Test Configuration
 ![images/download/attachments/90014954/worddav4cc92cfa22a23a274b16db2c2edc3fa2.png](images/download/attachments/90014954/worddav4cc92cfa22a23a274b16db2c2edc3fa2.png)  
 Example Storage Test Results
 
-## Exercise 1 - Delphix Data Platform Configuration
+## <a id="exercise1"></a>Exercise 1 - Delphix Data Platform Configuration
 
 In this exercise, you will:
 
@@ -161,7 +134,7 @@ Roles](https://docs.delphix.com/docs/system-installation-configuration-and-manag
 [Setting Up the Delphix Data
 Platform](https://docs.delphix.com/docs/system-installation-configuration-and-management/installation-and-initial-system-configuration/setting-up-the-delphix-engine)
 
-##  Exercise 2 - Create the "delphix_db" User
+##  <a id="exercise2"></a>Exercise 2 - Create the "delphix_db" User
 
 In this exercise, you will:
 
@@ -194,7 +167,7 @@ In this exercise, you will:
 
 The script should configure and create the user without error.
 
-## Exercise 3 - Validate the Source Environment with Hostchecker
+##  <a id="exercise3"></a>Exercise 3 - Validate the Source Environment with Hostchecker
 
 In this exercise, you will:
 
@@ -228,7 +201,7 @@ Were all tests successful? If not, which ones failed and why?
 normal in a production installation due to permissions on the file. If
 hostchecker is run as root for this test, it will perform the test properly.
 
-## Exercise 4 - Add a Source Environment and Link a dSource
+##  <a id="exercise4"></a>Exercise 4 - Add a Source Environment and Link a dSource
 
 In this exercise, you will:
 
@@ -260,7 +233,7 @@ You will know this is successful if the dSource completes in the **Actions**
 pane without Errors. Click on **Actions** in the top menu bar if you don't see
 this pane.
 
-##  Exercise 5 - Validate the Target Environment with Hostchecker
+##   <a id="exercise5"></a>Exercise 5 - Validate the Target Environment with Hostchecker
 
 In this exercise, you will:
 
@@ -294,7 +267,7 @@ OK, you have completed this exercise.
 normal in a production installation due to permissions on the file. If
 hostchecker is run as root for this test, it will perform the test properly.
 
-## Exercise 6 - Add Target Environments
+##  <a id="exercise6"></a>Exercise 6 - Add Target Environments
 
 In this exercise, you will:
 
@@ -315,7 +288,7 @@ environment "10.0.x.30"_ action to complete on the right hand side of the
 screen in the _Actions_ pane. Once it is complete, the _Target_ environment
 will appear on the left side of the _Environments_ page.
 
-##  Exercise 7 - Provision a VDB
+##   <a id="exercise7"></a>Exercise 7 - Provision a VDB
 
 In this exercise, you will:
 
@@ -351,7 +324,7 @@ verify that the VDB is operational by:
   sqlplus / as sysdba  
   select name from v$database;
   ```
-## Exercise 8 - Refresh a VDB
+##  <a id="exercise8"></a>Exercise 8 - Refresh a VDB
 
 In this exercise, you will:
 
@@ -401,7 +374,7 @@ In this exercise, you will:
 
 If this returns a count of rows, the snapshot/refresh was successful.
 
-## Exercise 9 - Rewind a VDB
+##  <a id="exercise9"></a>Exercise 9 - Rewind a VDB
 
 In this exercise, you will:
 
@@ -455,7 +428,7 @@ successful by connecting to the server again and querying the database:
   ```
 The count should come back clean, and the database is online
 
-## Exercise 10 - Set a New Retention Policy
+##  <a id="exercise10"></a>Exercise 10 - Set a New Retention Policy
 
 There are four types of Policies in Delphix. In this exercise, you will:
 
@@ -475,7 +448,7 @@ There are four types of Policies in Delphix. In this exercise, you will:
     - 30 days of snapshot and log retention 
     - 3 monthly snapshots taken on the 1st of the month 
 
-## Exercise 11 - Create and Save a Hook Operation Template
+##  <a id="exercise11"></a>Exercise 11 - Create and Save a Hook Operation Template
 
 In this exercise, you will:
 
@@ -501,7 +474,7 @@ the pasted contents.
 
 2. Finish and verify the Hook Operation Template appears in the list. 
 
-## Exercise 12 - Create a VDB Template
+## <a id="exercise12"></a>Exercise 12 - Create a VDB Template
 
 In this exercise, you will:
 
@@ -523,7 +496,7 @@ In this exercise, you will:
 You can verify that this was successful by returning to the _VDB Configuration
 Templates Wizard_ and clicking on the _1G Template_ item.
 
-##  Exercise 13 - Provision a VDB with Hook and VDB Template
+##  <a id="exercise13"></a>Exercise 13 - Provision a VDB with Hook and VDB Template
 
 In this exercise, you will:
 
@@ -721,7 +694,7 @@ Example Received Replica
 
 #  Lab Solutions
 
-## Exercise 1 - Delphix Data Platform Setup
+## <a id="exercise1_sol"></a>Exercise 1 - Delphix Data Platform Setup
 
   1. Connect to your Delphix Data Platform using Firefox on your lab server. The IP address will be 10.0.x.10, where "x" is your **Student Number**. 
 
@@ -764,7 +737,7 @@ _Figure 2_ _Delphix Data Platform Login_
 ![images/download/attachments/90014980/worddaveb7137980f717f6ec84593bf29eb5cd5.png](images/download/attachments/90014980/worddaveb7137980f717f6ec84593bf29eb5cd5.png)  
 _Figure 3_ _Delphix Data Platform Home Page_
 
-##  Exercise 2 - Create the "delphix_db" User
+##  <a id="exercise2_sol"></a>Exercise 2 - Create the "delphix_db" User
 
   1. Connect to your Linux Source by opening **Terminal** on your Lab Server and running: conn 10.0.x.20 ('x' will be your **Student Number** ). 
 
@@ -795,7 +768,7 @@ _Figure 3_ _Delphix Data Platform Home Page_
 ![images/download/attachments/90014984/worddavcc5beabba99812ed323b1a4c642a1f82.png](images/download/attachments/90014984/worddavcc5beabba99812ed323b1a4c642a1f82.png)  
 _Figure 4_ _hostchecker createDelphixUser.sh_
 
-##  Exercise 3 - Validate the Source Environment with Hostchecker
+##  <a id="exercise3_sol"></a>Exercise 3 - Validate the Source Environment with Hostchecker
 
   1. Connect to your Linux Source by opening **Terminal** on your Lab Server and running: conn 10.0.x.20 ('x' will be your **Student Number** ). 
 
@@ -868,7 +841,7 @@ _Figure 5_ _Hostchecker Options_
 
   10. Type "quit" to exit hostchecker. 
 
-## Exercise 4 - Add a Source Environment and Link a dSource
+## <a id="exercise4_sol"></a>Exercise 4 - Add a Source Environment and Link a dSource
 
 Add Source Environment
 
@@ -975,7 +948,7 @@ _Figure 10 Add dSource Summary_
 ![images/download/attachments/90014988/worddave89d449f4724681413577b38c45eab54.png](images/download/attachments/90014988/worddave89d449f4724681413577b38c45eab54.png)  
 _Figure 11 Completed dSource_
 
-##  Exercise 5 - Validate the Target Environment with Hostchecker
+##  <a id="exercise5_sol"></a>Exercise 5 - Validate the Target Environment with Hostchecker
 
   1. Connect to your Linux Target A by opening **Terminal** on your Lab Server and running: conn 10.0.x.30 ('x' will be your **Student Number** ). 
 
@@ -1038,7 +1011,7 @@ _Figure 12_ _Hostchecker Target Options_
 
   9. Type "quit" to exit hostchecker. 
 
-## Exercise 6 - Add Target Environment
+## <a id="exercise6_sol"></a>Exercise 6 - Add Target Environment
 
   1. If you are not already logged in, login to your Delphix Data Platform as _delphix_admin_ using the password you set in the last exercise. 
 
@@ -1086,7 +1059,7 @@ _Figure 13 Add Target Environment_
 
 ![images/download/attachments/90015000/worddav700443e673fbfa191ffbfd0e690470d1.png](images/download/attachments/90015000/worddav700443e673fbfa191ffbfd0e690470d1.png)
 
-## Exercise 7 - Provision a VDB
+## <a id="exercise7_sol"></a>Exercise 7 - Provision a VDB
 
   1. Go the Datasets Home page by Clicking on the Manage menu and selecting Datasets 
 
@@ -1170,16 +1143,17 @@ Once the VDB is created, you can verify that the VDB is operational by:
   3. Enter the password: delphix 
 
   4. Run the following commands: 
-
+```
 export ORACLE_HOME=/u01/app/oracle/product/11.2.0/dbhome_1  
 export ORACLE_SID=devdb  
 export PATH=$ORACLE_HOME/bin:$PATH  
 sqlplus / as sysdba  
 select name from v$database;  
+```
 ![images/download/attachments/90015004/worddav778ba7ea300ef97f096a94007d8263f3.png](images/download/attachments/90015004/worddav778ba7ea300ef97f096a94007d8263f3.png)  
 _Figure 19 Validate VDB_
 
-##  Exercise 8 - Refresh a VDB
+##  <a id="exercise8_sol"></a>Exercise 8 - Refresh a VDB
 
   1. Open Terminal on your Lab Server desktop and type: ssh delphix@10.0.x.20 ('x' will be your **Student Number** ) 
 
@@ -1188,12 +1162,13 @@ _Figure 19 Validate VDB_
   3. Enter the password: delphix 
 
   4. Run the following commands: 
-
+```
 export ORACLE_HOME=/u01/app/oracle/product/11.2.0/dbhome_1  
 export ORACLE_SID=orcl  
 export PATH=$ORACLE_HOME/bin:$PATH  
 sqlplus / as sysdba  
 create table sourcetab as select * from dba_objects;
+```
 
   1. Go back to the Delphix Data Platform in your browser (click the Delphix logo to go back to the main screen if required) 
 
@@ -1232,19 +1207,19 @@ Log into _devdb_ to confirm.
   3. Enter the password: delphix 
 
   4. Run the following commands: 
-
+```
 export ORACLE_HOME=/u01/app/oracle/product/11.2.0/dbhome_1  
 export ORACLE_SID=devdb  
 export PATH=$ORACLE_HOME/bin:$PATH  
 sqlplus / as sysdba  
-select count
-![images/s/en_GB/7104/0e21dd459285e7b3b5e0deaa2193b2af8bbb7c8b/_/images/icons/emoticons/star_yellow.png](images/s/en_GB/7104/0e21dd459285e7b3b5e0deaa2193b2af8bbb7c8b/_/images/icons/emoticons/star_yellow.png)
-from sourcetab;  
+select count (*)
+from sourcetab; 
+```
 ![images/download/attachments/90015012/worddav6ca36a61e719ef0579cd3dee626b0fb7.png](images/download/attachments/90015012/worddav6ca36a61e719ef0579cd3dee626b0fb7.png)  
 _Figure 24 Validate Refresh_  
 If this returns a count of rows, the snapshot/refresh was successful.
 
-## Exercise 9 - Rewind a VDB
+## <a id="exercise9_sol"></a>Exercise 9 - Rewind a VDB
 
   1. On the Delphix main screen, select the _devdb_ VDB 
 
@@ -1262,13 +1237,14 @@ _Figure 25 Snapshot VDB_
   4. Enter the password: delphix 
 
   5. Run the following commands: 
-
+```
 export ORACLE_SID=devdb  
 sqlplus / as sysdba  
 delete from sys.obj$;  
 commit;  
 shutdown abort;  
-startup;  
+startup; 
+```
 ![images/download/attachments/90015018/worddav1a870f563672c4eb83819214421fe5f9.png](images/download/attachments/90015018/worddav1a870f563672c4eb83819214421fe5f9.png)  
 _Figure 26 Corrupt VDB_  
 Note that the database is unable to come online due to a bootstrap error. The
@@ -1300,18 +1276,18 @@ successful by connecting to the server again and querying the database:
   3. Enter the password: delphix 
 
   4. Run the following commands: 
-
+```
 export ORACLE_HOME=/u01/app/oracle/product/11.2.0/dbhome_1  
 export ORACLE_SID=devdb  
 export PATH=$ORACLE_HOME/bin:$PATH  
 sqlplus / as sysdba  
 select count
-![images/s/en_GB/7104/0e21dd459285e7b3b5e0deaa2193b2af8bbb7c8b/_/images/icons/emoticons/star_yellow.png](images/s/en_GB/7104/0e21dd459285e7b3b5e0deaa2193b2af8bbb7c8b/_/images/icons/emoticons/star_yellow.png)
 from dba_objects;  
+```
 ![images/download/attachments/90015018/worddav0bc5f85f988526df169c88ee2c1d76da.png](images/download/attachments/90015018/worddav0bc5f85f988526df169c88ee2c1d76da.png)  
 _Figure 29 Validate VDB Rewind_
 
-##  Exercise 10 - Set a New Retention Policy
+##  <a id="exercise10_sol"></a>Exercise 10 - Set a New Retention Policy
 
   1. In the top menu bar, click on _Manage_ and then _Policies_
 
@@ -1345,7 +1321,7 @@ applied to the _devdb_ VDB.
 ![images/download/attachments/90015024/worddavd0368a84bb343d0bb229d9ff5b37909a.png](images/download/attachments/90015024/worddavd0368a84bb343d0bb229d9ff5b37909a.png)  
 _Figure 32 Retention Policy Settings_
 
-##  Exercise 11 - Create and Save a Hook Operation Template
+##  <a id="exercise11_sol"></a>Exercise 11 - Create and Save a Hook Operation Template
 
   1. In the top menu bar, click _Manage_ , then _Operation Templates_
 
@@ -1374,7 +1350,7 @@ _Figure 34 Hook Template_
 
   1. Figure Verify Hook Operation Template 
 
-## Exercise 12 - Create a VDB Template
+## <a id="exercise12_sol"></a>Exercise 12 - Create a VDB Template
 
   1. In the top menu bar, click _Manage_ , then _VDB Config Templates_
 
@@ -1401,7 +1377,7 @@ _Figure 34 Hook Template_
 ![images/download/attachments/90015031/worddav3c33aac4d97f34b4d862fb8068a134b2.png](images/download/attachments/90015031/worddav3c33aac4d97f34b4d862fb8068a134b2.png)  
 _Figure 35 Create VDB Configuration Template_
 
-##  Exercise 13 - Provision a VDB with Hook and VDB Template
+##  <a id="exercise13_sol"></a>Exercise 13 - Provision a VDB with Hook and VDB Template
 
   1. Return to the Delphix home screen by clicking the Delphix logo on the top left of the screen 
 
@@ -1476,13 +1452,14 @@ Once the VDB is created, you can verify that the VDB is operational by:
   3. Enter the password: delphix 
 
   4. Run the following commands: 
-
+```
 export ORACLE_SID=qadb  
 export ORACLE_HOME=/u01/app/oracle/product/11.2.0/dbhome_1  
 export PATH=$ORACLE_HOME/bin:$PATH  
 sqlplus / as sysdba  
 show parameter memory_target  
-connect appuser/appuser  
+connect appuser/appuser
+```
 This will verify that the VDB is online with the VDB Configuration Template we
 specified, and that the APPUSER user was created by our hook.  
 ![images/download/attachments/90015033/worddav577a9fc094da1d2e2115572064923b12.png](images/download/attachments/90015033/worddav577a9fc094da1d2e2115572064923b12.png)  
