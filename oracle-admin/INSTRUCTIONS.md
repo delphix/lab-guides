@@ -17,8 +17,8 @@ Lab Exercises
 * [Exercise 11 - Create and Save a Hook Operation Template](#exercise11)
 * [Exercise 12 - Create a VDB Template](#exercise12)
 * [Exercise 13 - Provision a VDB with Hook and VDB Template](#exercise13)
-* [Optional Advanced Exercise - Measure Network Performance Test through the CLI]
-* [Optional Advanced Exercise - Configure Delphix Replication]
+* [Optional Advanced Exercise - Measure Network Performance Test through the CLI](#opt_network_perf_test)
+* [Optional Advanced Exercise - Configure Delphix Replication](#opt_delphix_replication)
 
 Lab Solutions
 
@@ -547,8 +547,7 @@ verify that the VDB is operational by:
 This will verify that the VDB is online with the VDB Configuration Template we
 specified, and that the APPUSER user was created by our hook.
 
-## Optional Advanced Exercise - Measure Network Performance Test through the
-CLI
+## <a id="opt_network_perf_test"></a>Optional Advanced Exercise - Measure Network Performance Test through the CLI
 
 In this exercise, you will:
 
@@ -613,7 +612,7 @@ For example:
 ![images/download/attachments/90014970/worddav9e53b8c32beb01659562abff9d1d08f2.png](images/download/attachments/90014970/worddav9e53b8c32beb01659562abff9d1d08f2.png)  
 Example Network Throughput Test Results
 
-## Optional Advanced Exercise - Configure Delphix Replication
+## <a id="opt_delphix_replication"></a>Optional Advanced Exercise - Configure Delphix Replication
 
 Note: This exercise is only possible if your classroom has been configured
 with 2 or more students.  
