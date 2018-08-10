@@ -101,6 +101,7 @@ In this exercise, you will:
     * Note that this test will take anywhere between 7-10 minutes to complete
 
 ![images/download/attachments/90015915/worddavc276fac4332b81539a6114b6f823b7ec.png](images/download/attachments/90015915/worddavc276fac4332b81539a6114b6f823b7ec.png)
+
 Example Storage Test Configuration
   1. View the storage test results
     * Get back to the storage test section of the CLI by typing: `storage test`
@@ -201,7 +202,7 @@ In this exercise, you will:
 
   ![images/download/attachments/90015915/worddavee9552067446e2d322be3c53ec4cb20f.png](images/download/attachments/90015915/worddavee9552067446e2d322be3c53ec4cb20f.png)
 
-    * Click OK
+  9. Click OK
 
 ## <a id="exercise3"></a>Exercise 3 - Take a Backup of the Source Database
 
