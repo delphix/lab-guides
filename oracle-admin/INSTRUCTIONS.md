@@ -46,7 +46,8 @@ In this exercise, you will:
 
   * Log into the Delphix Data Platform prior to configuration via the Delphix Command Line Interface (CLI) 
   * Perform a Storage Test 
-  * View the Storage Test results 
+  * View the Storage Test results
+  * Added a bullet
 
 ### Steps  
 As an advanced exercise, this lab has no corresponding Lab Solution. Instead,
