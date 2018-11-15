@@ -20,7 +20,8 @@
 ## Hands-On Lab Guides
  * [Oracle](/oracle-admin/INSTRUCTIONS.md)
  * [MS SQL Server](/mssql-admin/INSTRUCTIONS.md)
- * [Self-Service ](/self-service/INSTRUCTIONS.md)
+ * [Self-Service](/self-service/INSTRUCTIONS.md)
+ * [Masking ](/masking/INSTRUCTIONS.md)
 
 ## <a id="welcome"></a>Welcome to the Lab Guide
 
