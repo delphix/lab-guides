@@ -297,11 +297,9 @@ In the next part of the exercise we will create and execute a profiling job.
 
     h.  Leave other fields at their default values
 
- ![](./images/image19.png
+    ![](./images/image19.png)
 
-i.  Click the Save button
-
-<!-- -->
+    i.  Click the Save button
 
 9.  The newly created profiling job will be displayed at the bottom of the Environment Overview screen with a status of *Created*
 
