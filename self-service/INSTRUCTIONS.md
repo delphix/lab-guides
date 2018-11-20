@@ -94,7 +94,7 @@ In this exercise, you will:
 ### Steps
 1. Open a terminal session on the Delphix student lab desktop by double-clicking on the Terminal app on the desktop
 1. Create a SSH connection to the *linuxsource* host as the delphix user by entering the following commands in the terminal window:
-   - *ssh delphix@10.0.x.20*  (Replace x with your assigned student number)
+   - `ssh delphix@10.0.x.20`  (Replace x with your assigned student number)
    - Enter “Yes” if prompted to accept the SSH connection
    - Provide the delphix password: *delphix*
    - Enter the following commands at the UNIX command-line on *linuxsource*
@@ -111,7 +111,7 @@ In this exercise, you will:
 1. You will be prompted to reset the dev user password
    - Enter *dev* as the new password
 1. Create a SSH connection to the *linuxtarget* host as the delphix user by entering the following commands in the terminal window:
-   - *ssh delphix@10.0.x.30*  (Replace x with your assigned student number)
+   - `ssh delphix@10.0.x.30`  (Replace x with your assigned student number)
    - Enter “Yes” if prompted to accept the SSH connection
    - Provide the delphix password: *delphix*
    - Enter the following commands on the *linuxtarget*
@@ -181,7 +181,7 @@ In this exercise, you will:
 
 ### Steps
 1. Create a SSH connection to the *linuxtarget* host as the delphix user by entering the following commands in the terminal window:
-   - *ssh delphix@10.0.x.30*               (Replace x with your assigned student number)
+   - `ssh delphix@10.0.x.30`               (Replace x with your assigned student number)
    - Enter “Yes” if prompted to accept the SSH connection
    - Provide the delphix password: *delphix*
    - Enter the following commands on the linuxtarget:
@@ -231,7 +231,7 @@ In this exercise, you will:
 1. Click on the available shared bookmark named Defect1 created from the dev user
 1. Click on the **Branch** icon   on the right to create a new branch within the ORCL QA container based on the bookmark named *Defect1* shared from the ORCL Dev container
 1. Create a SSH connection to the other *linuxtarget* host as the delphix user by entering the following commands in the terminal window:
-   - *ssh delphix@10.0.x.30*  (Replace x with your assigned student number)
+   - `ssh delphix@10.0.x.30`  (Replace x with your assigned student number)
    - Enter “Yes” if prompted to accept the SSH connection
    - Provide the *delphix* password: *delphix*
    - Enter the following commands on the *linuxtarget*:
