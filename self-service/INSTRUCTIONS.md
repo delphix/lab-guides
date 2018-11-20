@@ -230,6 +230,8 @@ In this exercise, you will:
 1. Click on the **Available** icon to see books created by other users and shared with this user
 1. Click on the available shared bookmark named Defect1 created from the dev user
 1. Click on the **Branch** icon   on the right to create a new branch within the ORCL QA container based on the bookmark named *Defect1* shared from the ORCL Dev container
+   - Name the branch "Dev Defect1"
+   - Click the Create button
 1. Create a SSH connection to the other *linuxtarget* host as the delphix user by entering the following commands in the terminal window:
    - `ssh delphix@10.0.x.30`  (Replace x with your assigned student number)
    - Enter “Yes” if prompted to accept the SSH connection
