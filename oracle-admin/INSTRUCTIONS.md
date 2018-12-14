@@ -88,7 +88,7 @@ In this exercise, you will:
 
   * Access the Delphix Data Platform GUI for the first time 
 
-  * Set up the Delphix SYSADMIN user 
+  * Set the passwords for the default System Administrator and Delphix Engine Administrator 
 
   * Configure Timezone Preferences 
 
@@ -98,33 +98,39 @@ In this exercise, you will:
 
   * Complete the Delphix Data Platform configuration 
 
-  * Set up the DELPHIX_ADMIN user 
+  
 
 ### Steps
 
 1. Connect to your Delphix Data Platform using Chrome on your lab server (see the **Important IP Addresses** section of the Getting Started guide above). 
 
-2. Set the new sysadmin password to: delphix 
+2. Enter an email address for the default System Administrator
+
+2. Set the password for the default System Administrator **sysadmin** to **delphix** 
+
+3. Set the password for the default Delphix Engine Administrator **delphix_admin**  to **delphix**
 
 3. Configure the Delphix Data Platform with the following details: 
 
-    - NTP on using pool.ntp.org with your local timezone 
+    - Select NTP on using pool.ntp.org 
 
-    - Default network settings 
+    - Accept default network settings 
+    
+    - Accept Network Security settings defaults
 
-    - Three 8GB volumes in the data pool 
+    - Three 8GB storage devices should be assigned to the data pool 
 
-    - Uncheck the "Enable phone home service" box in the Serviceability tab 
+    - Uncheck the "Phone Home Service" and "User-click Analytics" checkboxes in the Serviceability tab 
 
-    - Default Authentication Service options 
+    - Leave default Authentication Service options unchecked
 
     - Registration is not required for this lab 
 
-    - Completed and saved System setup. 
+    - Submit and save configuration settings 
 
-4. Log in with the initial _delphix_admin_ user credentials 
+4. Log in with the initial _delphix_admin_ user credentials set during the inital configuration
 
-5. Set the new delphix_admin password to: delphix 
+5. Set the new delphix_admin password to: **delphix** 
 
 You will know this is successful when you see the main Delphix UI screen with
 a single group (Untitled) on the left hand side.  
