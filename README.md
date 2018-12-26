@@ -2,7 +2,7 @@
 
 #### Table of Contents
 1. [Welcome to the Lab Guide](#welcome)
-2. [The Delphix Admin Training Cloud Lab](#requirements)
+2. [Lab Requirements](#requirements)
 3. [The Delphix Admin Training Cloud Lab](#traininglab)
 4. [Important IP addresses for Oracle labs](#oracleipaddresses)
 5. [Cloud lab usernames and passwords for Oracle labs](#oraclecreds)
