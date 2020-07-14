@@ -84,7 +84,7 @@ Linux Target| 10.0.x.30
 Server | Username | Default Password
 ------ | -- | ----------
 Delphix Engine | (Sysadmin) sysadmin | sysadmin
-Delphix Engine | (Delphix Admin) delphix_admin | delphix
+Delphix Engine | (Delphix Admin) admin | delphix
 Linux Source | delphix |delphix
 Linux Target | delphix |delphix
 
