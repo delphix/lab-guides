@@ -959,12 +959,12 @@ As an advanced exercise, this lab has no corresponding Lab Solution. Instead, we
 8. Click **Add**
 9. Back on the **Target Configuration** page make sure the new Dataset group **Ora12C Targets** is selected.
 10. Add the following details. (Database Name and SID limited to 8 characters).
-   - Pluggable Database Name : devPDB
-   - vPDB Name : devPDB
-   - Database Name: VCWINTER
-   - vCDB Name : VCWINTER
-   - Database Unique Name: VCWINTER
-   - SID: VCWINTER
+    - Pluggable Database Name : devPDB
+    - vPDB Name : devPDB
+    - Database Name: VCWINTER
+    - vCDB Name : VCWINTER
+    - Database Unique Name: VCWINTER
+    - SID: VCWINTER
 11. Click **Next**.
 
 ![](images/new/image55.png)
@@ -996,7 +996,7 @@ Note: Once Action is completed you can see the vCDB we added and the VPDB just p
     - Type export PATH=$ORACLE\_HOME/bin:$PATH
 21. Connect to sqlplus and verify the CDB and PDB details
     - Type sqlplus / as sysdba
-22. At the SQL\&gt; prompt type
+22. At the SQL> prompt type
     - select name from v$database;
     - alter session set container=DEVPDB;
     - show CON\_NAME
@@ -1025,15 +1025,11 @@ As an advanced exercise, this lab has no corresponding Lab Solution. Instead, we
 
 ![](images/new/image58.png)
 
-_Figure 48 Example Network Latency Test Submission_
-
 4. View the results of the latency test:
    - Get to the latency test section again by typing: network test latency
    - List the completed tests by typing: ls
    - Type select followed by the name of the test from the list. For example:
-
-select 10.0.1.30-2015-09-18T12:47:19.711Z
-
+   ```select 10.0.1.30-2015-09-18T12:47:19.711Z```
    - View the results of the test by typing: get
 
 ![](images/new/image59.png)
