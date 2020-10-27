@@ -376,7 +376,7 @@ vi ~/.ssh/authorized\_keys
 
  It should look like:
 
- ![](RackMultipart20201027-4-98fydx_html_b4123d4ca7f46cbb.png)
+ ![](images/image6.png)
 9. Run the following to allow only the file&#39;s owner to read and write to it:
 
 chmod 600 ~/.ssh/authorized\_keys
