@@ -60,9 +60,9 @@
 
 This guide will get you started with Delphix&#39;s virtualization for Oracle. You will learn how to to securely copy and share datasets. Using virtualization, you will ingest data sources and create virtual data copies, which are full read-write capable database instances that use a small fraction of the resources a normal database copy would require.
 
-Virtualization has two interfaces: management and self-service. Through the management interface, DB administrators connect to source datasets and control decisions on resources such as virtual databases. This guide focuses on that interface. The self-service interface is used by non-admin users to access and operate on the data that was provided by the administrators. A guide for self-service can be found <a href="self-service/INSTRUCTIONS.md">here</a>.
+Virtualization has two interfaces: management and self-service. Through the management interface, DB administrators connect to source datasets and control decisions on resources such as virtual databases. This guide focuses on that interface. The self-service interface is used by non-admin users to access and operate on the data that was provided by the administrators. A guide for self-service can be found <a href="https://github.com/delphix/lab-guides/blob/master/self-service/INSTRUCTIONS.md">here</a>.
 
-Guides for other Delphix's products such as masking and data control tower can be found <a href="masking/INSTRUCTIONS.md">here and <a href="https://docs.delphix.com/cm">here respectively.
+Guides for other Delphix's products such as masking and data control tower can be found <a href="https://github.com/delphix/lab-guides/blob/master/masking/INSTRUCTIONS.md">here</a> and <a href="https://docs.delphix.com/cm">here</a> respectively.
 
 # <a id="_gettingStarted"></a>Getting Started
 
