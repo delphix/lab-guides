@@ -977,7 +977,7 @@ As an advanced exercise, this lab has no corresponding Lab Solution. Instead, we
 
 Note: Once Submitted, the Action will show a working screen for a few seconds. You can choose to let the Action run in the background.
 
-17. Monitor the Actions Pane by clicking on the Actions button on the top right-hand corner. You can get more details about the action by clicking on the &quot;\&gt;&quot;, to the left of the currently running action, to expand it.
+17. Monitor the Actions Pane by clicking on the Actions button on the top right-hand corner. You can get more details about the action by clicking on the >, to the left of the currently running action, to expand it.
 
 ![](images/new/image56.png)
 
@@ -1046,12 +1046,8 @@ As an advanced exercise, this lab has no corresponding Lab Solution. Instead, we
 6. View the results of the throughput test:
    - Get to the throughput test section again by typing: network test throughput
    - List the completed tests by typing: ls
-   - Type select followed by the name of the test from the list.
-
-For example:
-
-select 10.0.1.30-2015-09-18T13:13:08.152Z
-
+   - Type select followed by the name of the test from the list. For example:
+   ```select 10.0.1.30-2015-09-18T13:13:08.152Z```
    - View the results of the test by typing: get
 
 ![](images/new/image61.png)
