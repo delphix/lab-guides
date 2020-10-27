@@ -723,8 +723,8 @@ EOF
 
 ![](images/new/image39.png)
 
-1. Click **Create**
-2. Verify the **Create APPUSER** Hook Operation Template is in the list, then click **Close**
+6. Click **Create**
+7. Verify the **Create APPUSER** Hook Operation Template is in the list, then click **Close**
 
 ![](images/new/image40.png)
 
