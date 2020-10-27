@@ -1,7 +1,3 @@
-![](RackMultipart20201027-4-1999mua_html_720ff838d1cc552a.png)
-
-![](RackMultipart20201027-4-1999mua_html_c1127e3af53cf0f0.gif)
-
 # Delphix Admin Training for Oracle Virtualization
 
 # LAB GUIDE
@@ -88,7 +84,7 @@ Your instructor should have provided you with a **Class Name** and a **Student N
 
 For example, if your **Class Name** is &quot;acmetech&quot; and your **Student Number** is **5** , you would go to the site: [http://acmetech.agile.today/5](http://acmetech.agile.today/5)
 
-![](RackMultipart20201027-4-1999mua_html_510f7a9764cd968d.png)
+![](images/new/image1.png)
 
 The Delphix Labs Login Dialog
 
