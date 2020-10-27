@@ -197,8 +197,9 @@ Note: &quot;. oraenv&quot; can be used to set the environment variable rather th
 6. Use the following details during the running of this script:
    - The user will be created in the default instance **orcl**. This is set by the environment variable ORACLE\_SID. Press **Enter** to accept the default database instance **orcl**
    - Delphix DB User Username:delphix\_db
-   - Delphix DB User Password: delphix\_db    d. Decline the SELECT ANY DICTIONARY privilege. This is a sweeping privilege that is not required, but optional
-   - Type: nand press **Enter**
+   - Delphix DB User Password: delphix\_db
+   - Decline the SELECT ANY DICTIONARY privilege. This is a sweeping privilege that is not required, but optional
+   - Type: n and press **Enter**
 
 ![](images/new/image5.png)
 
@@ -214,57 +215,56 @@ In this exercise, you will:
 **Steps to Validate the Source Environment with Hostchecker**
 
 1. Connect to your Linux Source by opening **Terminal** on your Lab Server
-  1. Type ssh 10.0.x.20 (&#39;x&#39; will be your **Student Number** ).
+   - Type ssh 10.0.x.20 (&#39;x&#39; will be your **Student Number** ).
 2. Set the Oracle environment variables below:
-  1. Type export ORACLE\_HOME=/u01/app/oracle/product/11.2.0/dbhome\_1
-  2. Type export ORACLE\_SID=orcl
-  3. Type export PATH=$ORACLE\_HOME/bin:$PATH
+   - Type export ORACLE\_HOME=/u01/app/oracle/product/11.2.0/dbhome\_1
+   - Type export ORACLE\_SID=orcl
+   - Type export PATH=$ORACLE\_HOME/bin:$PATH
 3. Ensure you are inside the hostchecker location
-  1. Type cd /home/delphix/hostchecker
+   - Type cd /home/delphix/hostchecker
 4. Run Hostchecker utility
-  1. Type ./hostchecker.sh
+   - Type ./hostchecker.sh
 5. Indicate that this machine is a source
-  1. Type source
+   - Type source
 6. Review the available checks that can be run on this system
 7. Type 1 and press **Enter**
-  1. The script will check homedir permissions and return SUCCESS and ALL OK
+   - The script will check homedir permissions and return SUCCESS and ALL OK
 
 ![](images/new/image6.png)
 
-1. Type 3 and press **Enter**
-  1. Enter an IP address of: 10.0.x.10 (&#39;x&#39; will be your **Student Number** ).
-  2. Enter the port: 8415
-  3. The script will test the port and return SUCCESS and ALL OK.
-2. Repeat option 3 for the following ports: 8341 and 873
-3. Type 5 and press **Enter**
-  1. Type 5 to select the ORACLE\_HOME associated with the &#39;orcl&#39; database (/u01/app/oracle/product/11.2.0/dbhome\_1), and press **Enter**
-  2. The script will test the Oracle Home and return SUCCESS and ALL OK
-4. Type 6 and press **Enter**
-  1. Type 3 to select the Oracle Instance associated with the &#39;orcl&#39; database, and press **Enter**
-  2. Provide the Oracle home path at the prompt: /u01/app/oracle/product/11.2.0/dbhome\_1
-  3. Enter the username and password of the Oracle database user created in exercise 2
+8. Type 3 and press **Enter**
+   - Enter an IP address of: 10.0.x.10 (&#39;x&#39; will be your **Student Number** ).
+   - Enter the port: 8415
+   - The script will test the port and return SUCCESS and ALL OK.
+9. Repeat option 3 for the following ports: 8341 and 873
+10. Type 5 and press **Enter**
+    - Type 5 to select the ORACLE\_HOME associated with the &#39;orcl&#39; database (/u01/app/oracle/product/11.2.0/dbhome\_1), and press **Enter**
+    - The script will test the Oracle Home and return SUCCESS and ALL OK
+11. Type 6 and press **Enter**
+    - Type 3 to select the Oracle Instance associated with the &#39;orcl&#39; database, and press **Enter**
+    - Provide the Oracle home path at the prompt: /u01/app/oracle/product/11.2.0/dbhome\_1
+     - Enter the username and password of the Oracle database user created in exercise 2
 
 Username: delphix\_db
-
 Password: delphix\_db
 
 Note: If you created a database user with different credentials from the one shown above, you will enter it at the prompt instead.
 
-  1. The script will test the Oracle Instances and return SUCCESS and ALL OK
-1. Type 7 and press **Enter**
-  1. The script will test the /etc/oratab file and return SUCCESS and ALL OK
-2. Type 8 and press **Enter**
-  1. Enter a password of: delphix
-  2. The script will test the SSH connectivity to the host and return SUCCESS and ALL OK.
-3. Type 9 and press **Enter**
-  1. The script will return a WARNING due to permissions. This is normal.
-4. Type 10 and press **Enter**
-  1. Enter a password of: delphix
-  2. The script will test sudo privileges and return SUCCESS and ALL OK
-5. Type 11 and press **Enter**
-  1. Enter a path of: /u01/app/toolkit
-  2. The script will test the path and return SUCCESS and ALL OK
-6. Type quit to exit hostchecker.
+     - The script will test the Oracle Instances and return SUCCESS and ALL OK
+12. Type 7 and press **Enter**
+    - The script will test the /etc/oratab file and return SUCCESS and ALL OK
+13. Type 8 and press **Enter**
+    - Enter a password of: delphix
+    - The script will test the SSH connectivity to the host and return SUCCESS and ALL OK.
+14. Type 9 and press **Enter**
+    - The script will return a WARNING due to permissions. This is normal.
+15. Type 10 and press **Enter**
+    - Enter a password of: delphix
+    - The script will test sudo privileges and return SUCCESS and ALL OK
+16. Type 11 and press **Enter**
+    - Enter a path of: /u01/app/toolkit
+    - The script will test the path and return SUCCESS and ALL OK
+17. Type quit to exit hostchecker.
 
 Were all tests successful? If not, which ones failed and why?
 
@@ -273,45 +273,44 @@ Note: In a production installation, the sshd\_config test will return a WARNING 
 **Steps to Validate the Target Environment with Hostchecker**
 
 1. Connect to your Linux Target A by opening **Terminal** on your Lab Server
-  1. Type ssh 10.0.x.30 (&#39;x&#39; will be your **Student Number** ).
+   - Type ssh 10.0.x.30 (&#39;x&#39; will be your **Student Number** ).
 2. Extract the **hostchecker\_linux\_x86.tar** file in your home directory
-  1. Type ls -ltr
-  2. Type tar -xvf hostchecker\_linux\_x86.tar
+   - Type ls -ltr
+   - Type tar -xvf hostchecker\_linux\_x86.tar
 3. Ensure you are inside the hostchecker location
-  1. Type cd /home/delphix/hostchecker
+   - Type cd /home/delphix/hostchecker
 4. Run Hostchecker utility
-  1. Type ./hostchecker.sh
+   - Type ./hostchecker.sh
 5. Indicate that this machine is a target
-  1. Type target
+   - Type target
 6. Review the available checks that can be run on this system
-
-1. Type 1 and press **Enter**
-  1. The script will check homedir permissions and return SUCCESS and ALL OK
+7. Type 1 and press **Enter**
+   - The script will check homedir permissions and return SUCCESS and ALL OK
 
 ![](images/new/image7.png)
 
-1. Type 3 and press **Enter**
-  1. Enter an IP address of: 10.0.x.10 (&#39;x&#39; will be your **Student Number** ).
-  2. Enter the port: 8415
-  3. The script will test the port and return SUCCESS and ALL OK.
-2. Repeat option 3 for the following ports: 873, 22, 80 and 443
-3. Type 5 and press **Enter**
-  1. Type option 4 select the current ORACLE\_HOME value, and press **Enter**
-  2. The script will test the Oracle Home and return SUCCESS and ALL OK
-4. Type 6 and press **Enter**
-  1. The script will test the /etc/oratab file and return SUCCESS and ALL OK
-5. Type 7 and press **Enter**
-  1. Enter a password of: delphix
-  2. The script will test the SSH connectivity to the host and return SUCCESS and ALL OK.
-6. Type 8 and press **Enter**
-  1. The script will return WARNING due to permissions. This is normal.
-7. Type 9 and press **Enter**
-  1. Enter a password of: delphix
-  2. The script will test sudo privileges and return SUCCESS and ALL OK
-8. Type 10 and press **Enter**
-  1. Enter a path of: /u01/app/toolkit
-  2. The script will test the path and return SUCCESS and ALL OK
-9. Type quit to exit **hostchecker**.
+8. Type 3 and press **Enter**
+   - Enter an IP address of: 10.0.x.10 (&#39;x&#39; will be your **Student Number** ).
+   - Enter the port: 8415
+   - The script will test the port and return SUCCESS and ALL OK.
+9. Repeat option 3 for the following ports: 873, 22, 80 and 443
+10. Type 5 and press **Enter**
+    - Type option 4 select the current ORACLE\_HOME value, and press **Enter**
+    - The script will test the Oracle Home and return SUCCESS and ALL OK
+11. Type 6 and press **Enter**
+    - The script will test the /etc/oratab file and return SUCCESS and ALL OK
+12. Type 7 and press **Enter**
+    - Enter a password of: delphix
+    - The script will test the SSH connectivity to the host and return SUCCESS and ALL OK.
+13. Type 8 and press **Enter**
+    - The script will return WARNING due to permissions. This is normal.
+14. Type 9 and press **Enter**
+    - Enter a password of: delphix
+    - The script will test sudo privileges and return SUCCESS and ALL OK
+15. Type 10 and press **Enter**
+    - Enter a path of: /u01/app/toolkit
+    - The script will test the path and return SUCCESS and ALL OK
+16. Type quit to exit **hostchecker**.
 
 If you have completed all of the checks and they have returned SUCCESS and ALL OK, you have completed this exercise.
 
