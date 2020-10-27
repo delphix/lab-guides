@@ -100,8 +100,7 @@ Once you have logged in, you will be connected to your lab server. This server c
 
 **IMPORTANT NOTE:** Do not use the &quot;Log Out&quot; function on your lab server. If you do, it will break your lab connection.
 
-![](images/new/image2.png | width=100)
-<img src="images/new/image2.png" width="100" height="100">
+![](images/new/image2.png)
 
 The Delphix Lab Server
 
