@@ -109,7 +109,9 @@ Ensure the system is configured correctly.
 5. Set up directories and change users
 
    ```mkdir /usr/local/pgsql/data -p```
+   
    ```chown postgres /usr/local/pgsql/data```
+   
    ```su - postgres```
 
 6. Initialize Postgres
