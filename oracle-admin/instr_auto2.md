@@ -1,8 +1,8 @@
 # Delphix Admin Training for Oracle Virtualization
 
-# LAB GUIDE
+## LAB GUIDE
 
-# Table of Contents
+## Table of Contents
 
 **[Background](#_background)**
 
@@ -24,39 +24,39 @@
 
 **[Lab Exercises](#_exs)**
 
-[Exercise 1 – Logging into the Delphix Engine UI](#_ex1)
+* [Exercise 1 – Logging into the Delphix Engine UI](#_ex1)
 
-[Exercise 2 – Create the &quot;delphix\_db&quot; User](#_ex2)
+* [Exercise 2 – Create the &quot;delphix\_db&quot; User](#_ex2)
 
-[Exercise 3 – Validate the Source and Target Environment with Hostchecker](#_ex3)
+* [Exercise 3 – Validate the Source and Target Environment with Hostchecker](#_ex3)
 
-[Exercise 4 – Add a Source Environment](#_ex4)
+* [Exercise 4 – Add a Source Environment](#_ex4)
 
-[Exercise 5 – Link a dSource](#_ex5)
+* [Exercise 5 – Link a dSource](#_ex5)
 
-[Exercise 6 – Add Target Environments](#_ex6)
+* [Exercise 6 – Add Target Environments](#_ex6)
 
-[Exercise 7 – Provision a VDB](#_ex7)
+* [Exercise 7 – Provision a VDB](#_ex7)
 
-[Exercise 8 – Refresh a VDB](#_ex8)
+* [Exercise 8 – Refresh a VDB](#_ex8)
 
-[Exercise 9 – Rewind a VDB](#_ex9)
+* [Exercise 9 – Rewind a VDB](#_ex9)
 
-[Exercise 10 – Set a New Retention Policy](#_ex10)
+* [Exercise 10 – Set a New Retention Policy](#_ex10)
 
-[Exercise 11 – Create and Save a Hook Operation Template](#_ex11)
+* [Exercise 11 – Create and Save a Hook Operation Template](#_ex11)
 
-[Exercise 12 – Create a VDB Template](#_ex12)
+* [Exercise 12 – Create a VDB Template](#_ex12)
 
-[Exercise 13 – Provision a VDB with Hook and VDB Template](#_ex13)
+* [Exercise 13 – Provision a VDB with Hook and VDB Template](#_ex13)
 
-[Optional Advanced Exercise – Discover and Link a 12c Container Database dSource](#_ex14)
+* [Optional Advanced Exercise – Discover and Link a 12c Container Database dSource](#_ex14)
 
-[Optional Advanced Exercise – Provision a Virtual PDB (vPDB)](#_ex15)
+* [Optional Advanced Exercise – Provision a Virtual PDB (vPDB)](#_ex15)
 
-[Optional Advanced Exercise – Measure Network Performance Test through the CLI](#_ex16)
+* [Optional Advanced Exercise – Measure Network Performance Test through the CLI](#_ex16)
 
-[Optional Advanced Exercise – Configure Delphix Replication](#_ex17)
+* [Optional Advanced Exercise – Configure Delphix Replication](#_ex17)
 
 # <a id="_background"></a>Background
 
