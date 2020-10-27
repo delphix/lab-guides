@@ -69,8 +69,9 @@ of the attached storage._ _It is expected that this test will take anywhere
 between 6 - 8 minutes to complete with duration set to 5._  
 ![images/download/attachments/90014954/worddav7d1b92b5995f4a0e72c9c086f21df7ea.png](images/download/attachments/90014954/worddav7d1b92b5995f4a0e72c9c086f21df7ea.png)  
 Example Storage Test Configuration
-
+*****HERE IS THE TEST****
 ![images/new/image1.png]
+(images/new/image1.png)  
 
 4. View the storage test results 
     - Get back to the storage test section of the CLI by typing: **storage test** and press the enter key 
