@@ -1,7 +1,5 @@
 # **Delphix Postgres LabGuide**
 
-July, 2020
-
 * [Intro](#_intro)
 
 * [Engine Configuration](#_engineConfig)
@@ -95,7 +93,7 @@ ssh -i ~/internal/dxkey centos@10.0.1.20
 
 cat /etc/centos-release
 
- ![](RackMultipart20201027-4-98fydx_html_ab47d642d692a05d.png)
+ ![](images/image1.png)
 
  CentOS must be 7.4 or greater, depending on the specific Postgres version (below)
 
@@ -155,7 +153,7 @@ select rolname from pg\_roles;
 
  Will return something like:
 
- ![](RackMultipart20201027-4-98fydx_html_c574635e6b570ce9.png)
+ ![](images/image2.png)
 
 4. Create a delphix role:
 
@@ -294,7 +292,7 @@ ssh -i ~/internal/dxkey centos@10.0.1.30
 
 cat /etc/centos-release
 
- ![](RackMultipart20201027-4-98fydx_html_ab47d642d692a05d.png)
+ ![](images/image3.png)
 
  CentOS must be 7.4 or greater, depending on the specific Postgres version (below)
 
@@ -343,13 +341,13 @@ sudo chown postgres /opt/delphix/
 
  ls -ld /usr/pgsql-11/bin
 
- ![](RackMultipart20201027-4-98fydx_html_74ad600b69508127.png)
+ ![](images/image4.png)
 
 2. The &quot;postgres&quot; user must have permission to run mount and umount as the superuser via sudo with neither a password nor a TTY. Edit the sudoers file and uncomment the line allowing people in group &quot;wheel&quot; to run all commands
 
 sudo visudo
 
- ![](RackMultipart20201027-4-98fydx_html_3a2a6cfdc5addee2.png)
+ ![](images/image5.png)
 
 3. Add &quot;postgres&quot; to the wheel group:
 
