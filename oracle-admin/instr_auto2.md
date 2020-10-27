@@ -100,7 +100,7 @@ Once you have logged in, you will be connected to your lab server. This server c
 
 **IMPORTANT NOTE:** Do not use the &quot;Log Out&quot; function on your lab server. If you do, it will break your lab connection.
 
-![](RackMultipart20201027-4-1999mua_html_6fe630a6fb2d091.png)
+![](images/new/image2.png)
 
 The Delphix Lab Server
 
@@ -165,7 +165,7 @@ Alternatively, the engine can be accessed and controlled through the [CLI](https
 2. Login to the Delphix Dynamic Data Platform using the username ***admin*** and password ***delphix***
 3. Click **Log In**
 
-![](RackMultipart20201027-4-1999mua_html_4df0fe5015353ccf.png)
+![](images/new/image3.png)
 
 1. In order to become more familiar with what is available here, browse around the various sections of the landing page.
 2. Click **admin** on the upper right side and **logout**
@@ -173,7 +173,7 @@ Alternatively, the engine can be accessed and controlled through the [CLI](https
 4. Login to **Delphix Setup** using the username ***sysadmin*** and password ***sysadmin***
 5. Click **Log In**
 
-![](RackMultipart20201027-4-1999mua_html_a72c298c099fe58f.png)
+![](images/new/image4.png)
 
 1. In order to become more familiar with what is available here, browse around the various sections of the landing page.
 
@@ -221,7 +221,7 @@ Press **Enter** to accept the default database instance **orcl**
   3. Decline the SELECT ANY DICTIONARY privilege. This is a sweeping privilege that is not required, but optional
   4. Type: nand press **Enter**
 
-![](RackMultipart20201027-4-1999mua_html_6fcef34a41c4a410.png)
+![](images/new/image5.png)
 
 The script should create the user without error.
 
@@ -250,7 +250,7 @@ In this exercise, you will:
 7. Type 1 and press **Enter**
   1. The script will check homedir permissions and return SUCCESS and ALL OK
 
-![](RackMultipart20201027-4-1999mua_html_6e468a4464853d2d.png)
+![](images/new/image6.png)
 
 1. Type 3 and press **Enter**
   1. Enter an IP address of: 10.0.x.10 (&#39;x&#39; will be your **Student Number** ).
@@ -309,7 +309,7 @@ Note: In a production installation, the sshd\_config test will return a WARNING 
 1. Type 1 and press **Enter**
   1. The script will check homedir permissions and return SUCCESS and ALL OK
 
-![](RackMultipart20201027-4-1999mua_html_92a875f13bfe9a0b.png)
+![](images/new/image7.png)
 
 1. Type 3 and press **Enter**
   1. Enter an IP address of: 10.0.x.10 (&#39;x&#39; will be your **Student Number** ).
@@ -362,7 +362,7 @@ Note: If you forgot your admin password, please ask your lab administrator to re
   1. Host OS: **Unix/Linux**
   2. Server Type: **Standalone**
 
-![](RackMultipart20201027-4-1999mua_html_4598de611226ce18.png)
+![](images/new/image8.png)
 
 1. For Environment Settings, provide the following information
   1. Environment Name: Source
@@ -378,13 +378,13 @@ Note: Enter the Toolkit Path before Validating the Username and Password
   1. Toolkit Path: /u01/app/toolkit
   2. Click **Validate**
 
-![](RackMultipart20201027-4-1999mua_html_3389ea14f6bf76ad.png)
+![](images/new/image9.png)
 
 1. Click **Next**
 2. Click **Submit**
 3. You can view the status of the environment creation and discovery by clicking on the **Actions** menu on the top right-hand side of the page. Clicking on the jobs lower right corner, in the Actions pane, will allow you to track its progress
 
-![](RackMultipart20201027-4-1999mua_html_596622a9338308ba.gif) ![](RackMultipart20201027-4-1999mua_html_4dc8b0129e27f62e.png)
+![](images/new/image10.png) ![](images/new/image11.png)
 
 ## <a id="_ex5"></a>Exercise 5 – Link a dSource
 
