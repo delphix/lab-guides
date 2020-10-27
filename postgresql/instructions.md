@@ -221,8 +221,8 @@ Ensure the system is configured correctly.
 
 We may choose to start and stop our lab. Rather than going through the process of starting Postgres each time, we&#39;ll create a rule to ensure that Postgres is started when the system does.
 
-2. As centos, change directories to /etc/systemd/system
-3. Create a new file for our rule:
+1. As centos, change directories to /etc/systemd/system
+2. Create a new file for our rule:
 
    ```sudo touch postgresql.service```
 
@@ -236,21 +236,24 @@ We may choose to start and stop our lab. Rather than going through the process o
 
 5. Enter the following information and save the file:
 
-[Unit]
- Description=PostgreSQL Database Server
- Documentation=man:postgres(1)
+   ```
+   [Unit]
+    Description=PostgreSQL Database Server
+    Documentation=man:postgres(1)
+    
+    [Service]
+    Type=notify
+    User=postgres
+    ExecStart=/usr/pgsql-11/bin/postgres -D /usr/local/pgsql/data
+    ExecReload=/bin/kill -HUP $MAINPID
+    KillMode=mixed
+    KillSignal=SIGINT
+    TimeoutSec=0
 
- [Service]
- Type=notify
- User=postgres
- ExecStart=/usr/pgsql-11/bin/postgres -D /usr/local/pgsql/data
- ExecReload=/bin/kill -HUP $MAINPID
- KillMode=mixed
- KillSignal=SIGINT
- TimeoutSec=0
-
- [Install]
- WantedBy=multi-user.target
+    [Install]
+    WantedBy=multi-user.target
+    ```
+    
 
 6. Reload systemctl
 
