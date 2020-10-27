@@ -3,8 +3,7 @@
 # Table of Contents
 Lab Exercises  
 
-* [Optional Advanced Exercise - Perform a Storage Performance Test through the CLI](#stroragetest)
-* [Exercise 1 - Delphix Data Platform Configuration](#exercise1)
+* [Exercise 1 - Logging into the Delphix Engine UI](#exercise1)
 * [Exercise 2 - Create the "delphix_db" User](#exercise2)
 * [Exercise 3 - Validate the Source Environment with Hostchecker](#exercise3)
 * [Exercise 4 - Add a Source Environment and Link a dSource](#exercise4)
@@ -40,53 +39,7 @@ Lab Solutions
 
 Perform these exercises when instructed by your Delphix Instructor.
 
-## <a id="stroragetest"></a>Optional Advanced Exercise - Perform a Storage Performance Test through the CLI
-
-In this exercise, you will:
-
-  * Log into the Delphix Data Platform prior to configuration via the Delphix Command Line Interface (CLI) 
-  * Perform a Storage Test 
-  * View the Storage Test results 
-
-### Steps  
-As an advanced exercise, this lab has no corresponding Lab Solution. Instead,
-we will walk through the steps to get you acquainted with your lab system and
-the Delphix CLI.
-
-1. On your Lab Server desktop, double-click on Terminal 
-2. Type: _ssh sysadmin@10.0.x.10_ ('x' is your **Student Number** assigned by your instructor) 
-    - If you receive a prompt asking you if you are sure you want to connect, enter: Yes 
-    - Enter the password: sysadmin 
-    - Escape to the standard CLI prompt by typing _discard_ and then press the enter key 
-    - You are now at the root of the Delphix CLI as a System Administrator 
-3. Create a storage test by typing: **storage test create** and press the enter key 
-    - List the default storage test parameters by typing: **get**
-    - Override the duration and set it to 5 minutes: **set duration=5**
-    - Begin the storage test by typing: **commit**
-
-_Note: The actual duration of the test may vary depending on the performance
-of the attached storage._ _It is expected that this test will take anywhere
-between 6 - 8 minutes to complete with duration set to 5._  
-![images/download/attachments/90014954/worddav7d1b92b5995f4a0e72c9c086f21df7ea.png](images/download/attachments/90014954/worddav7d1b92b5995f4a0e72c9c086f21df7ea.png)  
-Example Storage Test Configuration
-
----TESTING-----
-
-![images/new/image1.png](images/new/image1.png)  
-
-4. View the storage test results 
-    - Get back to the storage test section of the CLI by typing: **storage test** and press the enter key 
-    - Type the command `list` and press the enter key 
-      You should see the completed test listed.
-    - Type `select` followed by the name of the test from the list. For example: 
-      `select STORAGE_TEST-1`
-    - Enter the result command by typing: `result`
-    - Then type: `commit`
-
-![images/download/attachments/90014954/worddav4cc92cfa22a23a274b16db2c2edc3fa2.png](images/download/attachments/90014954/worddav4cc92cfa22a23a274b16db2c2edc3fa2.png)  
-Example Storage Test Results
-
-## <a id="exercise1"></a>Exercise 1 - Delphix Data Platform Configuration
+## <a id="exercise1"></a>Logging into the Delphix Engine UI
 
 In this exercise, you will:
 
