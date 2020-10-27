@@ -2,42 +2,40 @@
 
 July, 2020
 
-[Intro](#_d4vji24itlbc)
+* [Intro](#_intro)
 
-[Engine Configuration](#_ylg673fel744)
+* [Engine Configuration](#_engineConfig)
 
-[Configure the Source](#_mm0uky6mu3uj)
+* [Configure the Source](#_sourceConfig)
 
-[Basic Host Configuration](#_z4b3xqxma4k7)
+  * [Basic Host Configuration](#_hostConfig)
 
-[Prepping the Source for Delphix](#_i6gv6fq28q38)
+  * [Prepping the Source for Delphix](#_source)
 
-[Configure Postgres](#_3xy8lahje3yo)
+  * [Configure Postgres](#_postgres)
 
-[Ensure Postgres Starts Upon Restart](#_o9bn18vzzsmf)
+  * [Ensure Postgres Starts Upon Restart](#_start)
 
-[Add Data](#_h0ca45t3opl1)
+  * [Add Data](#_data)
 
-[Configure the Staging Host](#_hayb5ujte7nl)
+* [Configure the Staging Host](#_staging)
 
-[Basic Host Configuration](#_oeikototd4wl)
+  * [Basic Host Configuration](#_hostConfig2)
 
-[Prepping the Staging Host for Delphix](#_2e543u5hxtds)
+  * [Prepping the Staging Host for Delphix](#_stagingPrep)
 
-[Create the Staging Environment on the Delphix Engine](#_xs1i4gwafuxl)
+  * [Create the Staging Environment on the Delphix Engine](#_env)
 
-[Configure the Target](#_hx5irc49cd53)
+ * [Configure the Target](#_targetConfig)
 
-[Create the dSource and VDB](#_6am58lw6wai1)
+ * [Create the dSource and VDB](#_dSource)
 
-[Create the dSource](#_34zf0msre3g9)
+   * [Create the dSource](#dSource2)
 
-[Provision a VDB](#_ldeibed7kdl7)
-
-#
+   * [Provision a VDB](#_vdb)
 
 
-# Intro
+# <a id="_intro"></a>Intro
 
 At the end of this lab exercise, you will have a fully functional system for creating masked copies of Postgres data. This lab starts from scratch, which is perhaps a bit unrealistic but allows for covering Delphix and Postgres in a sufficient level of detail. There are some exercises, of course, that are done for the sake of this seeming like a realistic system. These would be left out when a customer already has a running system.
 
@@ -61,7 +59,7 @@ At the end of this lab exercise, you will have a fully functional system for cre
 - **Delphix Engine:** 10.0.1.10
 - **Jumpbox:** 10.0.1.5
 
-# Engine Configuration
+# <a id="_engineConfig"></a>Engine Configuration
 
 To begin, please do the following:
 
@@ -81,11 +79,11 @@ Support for Postgres requires the installation of the latest plugin. This plugin
 
 This will now show &quot;PostgresDB&quot; as an additional supported plugin.
 
-# Configure the Source
+# <a id="_staging"></a>Configure the Source
 
 Real deployments of Delphix will have an existing source and source database. Since we&#39;re setting up a demo system, we need to configure the source system (like our customers), the source database (somewhat like customers) and create data (not like customers).
 
-## Basic Host Configuration
+## <a id="_hostConfig"></a>Basic Host Configuration
 
 Ensure the system is configured correctly.
 
@@ -124,7 +122,7 @@ pg\_ctl init -D /usr/local/pgsql/data
 
 pg\_ctl start -D /usr/local/pgsql/data -l logfile
 
-## Prepping the Source for Delphix
+## <a id="_source"></a>Prepping the Source for Delphix
 
 **Make Toolkit Directory**
 
@@ -139,7 +137,7 @@ sudo chown postgres /opt/delphix/
 
 3. (Perhaps finish this later) SET Environment Variables
 
-## Configure Postgres
+## <a id="_postgres"></a>Configure Postgres
 
 **Create a role**
 
@@ -219,7 +217,7 @@ vi /usr/local/pgsql/data/pg\_hba.conf
 
 pg\_ctl restart -D /usr/local/pgsql/data -l logfile
 
-## Ensure Postgres Starts Upon Restart
+## <a id="_start"></a>Ensure Postgres Starts Upon Restart
 
 We may choose to start and stop our lab. Rather than going through the process of starting Postgres each time, we&#39;ll create a rule to ensure that Postgres is started when the system does.
 
@@ -266,7 +264,7 @@ sudo systemctl daemon-reload
 
 ps -A | grep postgres
 
-## Add Data
+## <a id="_data"></a>Add Data
 
 For this exercise to be interesting, we must have data in our source database. The following scripts will create two tables of data in the default Postgres database. This is assuming that you&#39;ve kept the standard names and passwords.
 
@@ -282,9 +280,9 @@ java -jar dbmanager.jar insertrows jdbc:postgresql://10.0.1.20:5432/postgres?use
 
 Note, the last step, inserting ten million rows into two tables will take a few minutes. Time for coffee.
 
-# Configure the Staging Host
+# <a id="_staging"></a>Configure the Staging Host
 
-## Basic Host Configuration
+## <a id="_hostConfig2"></a>Basic Host Configuration
 
 The basic configuration for the staging host is the same as the source.
 
@@ -323,7 +321,7 @@ pg\_ctl init -D /usr/local/pgsql/data
 
 pg\_ctl start -D /usr/local/pgsql/data -l logfile
 
-## Prepping the Staging Host for Delphix
+## <a id="_stagingPrep"></a>Prepping the Staging Host for Delphix
 
 **Make Toolkit Directory**
 
@@ -365,7 +363,7 @@ sudo chmod o+w /mnt
 
 sudo chmod o+rwx /opt/delphix/
 
-## Create the Staging Environment on the Delphix Engine
+## <a id="_env"></a>Create the Staging Environment on the Delphix Engine
 
 1. On the Delphix Engine as an administrator, go to **Manage-\&gt;Environments**
 2. Click Add Environment
@@ -400,13 +398,13 @@ chmod 755 ~
 13. Wait for the process to complete.
 14. On the staging server, validate that in the toolkit path, there are now files
 
-# Configure the Target
+# <a id="_targetConfig"></a>Configure the Target
 
 Follow the same steps as configuring the staging host, but with the IP address 10.0.1.40.
 
-# Create the dSource and VDB
+# <a id="_dSource"></a>Create the dSource and VDB
 
-## Create the dSource
+## <a id="_dSource2"></a>Create the dSource
 
 Before creating (one or more) copies of the source database, we need to create the Delphix-managed version, which we call the staging copy. This is managed on the staging host and will get data from the source via replication.
 
@@ -439,7 +437,7 @@ Before creating (one or more) copies of the source database, we need to create t
 17. No hooks
 18. Review the summary and click &quot;Submit&quot;
 
-## Provision a VDB
+## <a id="_vdb"></a>Provision a VDB
 
 Do it
 
