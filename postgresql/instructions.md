@@ -357,13 +357,13 @@ The basic configuration for the staging host is the same as the source.
 
    ```ls -ld /usr/pgsql-11/bin```
 
- ![](images/image4.png)
+   ![](images/image4.png)
 
 2. The &quot;postgres&quot; user must have permission to run mount and umount as the superuser via sudo with neither a password nor a TTY. Edit the sudoers file and uncomment the line allowing people in group &quot;wheel&quot; to run all commands
 
    ```sudo visudo```
 
- ![](images/image5.png)
+   ![](images/image5.png)
 
 3. Add &quot;postgres&quot; to the wheel group:
 
@@ -388,7 +388,7 @@ The basic configuration for the staging host is the same as the source.
 7. Copy the public key
 8. As the &quot;postgres&quot; user on the staging server, edit the ~/.ssh/authorized_keys file and paste the key from the engine:
 
-   ```vi ~/.ssh/authorized\_keys```
+   ```vi ~/.ssh/authorized_keys```
 
  It should look like:
 
@@ -396,7 +396,7 @@ The basic configuration for the staging host is the same as the source.
  
 9. Run the following to allow only the file&#39;s owner to read and write to it:
 
-   ```chmod 600 ~/.ssh/authorized\keys```
+   ```chmod 600 ~/.ssh/authorized_keys```
 
 
 10. Run the following to restrict access to the user&#39;s home directory:
@@ -424,7 +424,7 @@ Before creating (one or more) copies of the source database, we need to create t
 
 **Establish the Installation**
 
-1. On the Delphix Engine as an administrator, navigate the **Manage-\&gt;Environments**
+1. On the Delphix Engine as an administrator, navigate the **Manage->Environments**
 2. Select &quot;Postgres Staging Host&quot;
 3. Click &quot;Databases&quot;
 4. In the &quot;Postgres&quot; Installation Click the **+** to add a new Database
