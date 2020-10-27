@@ -8,8 +8,6 @@
 
 # Table of Contents
 
-**[Table of Contents](#TOC)**
-
 **[Background](#_background)**
 
 **[Getting Started](#_gettingStarted)**
@@ -18,7 +16,7 @@
 
 [Lab Requirements](#_reqs)
 
-[The Delphix Admin Training Cloud Lab](#_clouLab)
+[The Delphix Admin Training Cloud Lab](#_cloudLab)
 
 [Important IP Addresses](#_IPs)
 
@@ -64,7 +62,7 @@
 
 [Optional Advanced Exercise – Configure Delphix Replication](#_ex17)
 
-# <a id="exercise1"></a>Background
+# <a id="_background"></a>Background
 
 This guide will get you started with Delphix&#39;s virtualization for Oracle. You will learn how to to securely copy and share datasets. Using virtualization, you will ingest data sources and create virtual data copies, which are full read-write capable database instances that use a small fraction of the resources a normal database copy would require.
 
@@ -72,19 +70,19 @@ Virtualization has two interfaces: management and self-service. Through the mana
 
 Guides for other Delphix&#39;s products such as masking and data control tower can be found here and here respectively.
 
-# <a id="exercise1"></a>Getting Started
+# <a id="_gettingStarted"></a>Getting Started
 
-## <a id="exercise1"></a>Welcome to the Delphix Admin Training for Oracle Lab Guide
+## <a id="_welcome"></a>Welcome to the Delphix Admin Training for Oracle Lab Guide
 
 This guide is a supplement to the Delphix Admin Training for Oracle course, and provides several exercises to perform throughout the class. If you encounter any issues during the exercises, please do not hesitate to ask your instructor for advice.
 
-## <a id="exercise1"></a>Lab Requirements
+## <a id="_reqs"></a>Lab Requirements
 
 In order to perform these lab exercises, you will need:
 
 - A modern HTML5 capable web browser (IE9+, Chrome, Firefox, Safari)
 
-## <a id="exercise1"></a>The Delphix Admin Training Cloud Lab
+## <a id="_cloudLab"></a>The Delphix Admin Training Cloud Lab
 
 Your instructor should have provided you with a **Class Name** and a **Student Number**. In order to access your lab server, point your web browser to: http:// **classname**.agile.today/ **studentnumber**
 
@@ -110,7 +108,7 @@ Once you have logged in, you will be connected to your lab server. This server c
 
 The Delphix Lab Server
 
-## <a id="exercise1"></a>Important IP Addresses
+## <a id="_IPs"></a>Important IP Addresses
 
 | **Delphix Data Platform** | 10.0.x.10 |
 | --- | --- |
@@ -119,7 +117,7 @@ The Delphix Lab Server
 
 In the above IP addresses, the **x** denotes your **Student Number**. For example, if your student number is **5** , your Delphix Data Platform will be located at 10.0. **5**.10.
 
-## <a id="exercise1"></a>Cloud Lab Usernames and Passwords
+## <a id="_usrs"></a>Cloud Lab Usernames and Passwords
 
 | Initial Delphix **sysadmin** password | sysadmin |
 | --- | --- |
@@ -127,14 +125,14 @@ In the above IP addresses, the **x** denotes your **Student Number**. For exampl
 | Source and Target **delphix** user password (via SSH) | delphix |
 | Source and Target **oracle** user password (via SSH) | delphix |
 
-## <a id="exercise1"></a>Paths
+## <a id="_paths"></a>Paths
 
 | **hostchecker** (after tar extraction) | /home/delphix/hostchecker |
 | --- | --- |
 | **Oracle XE 11g** ORACLE\_HOME | /u01/app/oracle/product/11.2.0/xe |
 | **Toolkit** | /u01/app/toolkit |
 
-# <a id="exercise1"></a>Guide Layout
+# <a id="_layout"></a>Guide Layout
 
 The **Lab Exercises** in this guide provide the full details needed to perform each operation.
 
@@ -148,11 +146,11 @@ The **Lab Exercises** in this guide provide the full details needed to perform e
 
 -
 
-# <a id="exercise1"></a>Lab Exercises
+# <a id="_exs"></a>Lab Exercises
 
 Perform these exercises when instructed by your Delphix Instructor.
 
-## <a id="exercise1"></a>Exercise 1 – Logging into the Delphix Engine UI
+## <a id="_ex1"></a>Exercise 1 – Logging into the Delphix Engine UI
 
 In this exercise, you will:
 
@@ -189,7 +187,7 @@ Alternatively, the engine can be accessed and controlled through the [CLI](https
 
 [Setting Up the Delphix Data Platform](https://docs.delphix.com/docs/deployment/installation-and-initial-system-configurations/initial-setup)
 
-## <a id="exercise1"></a>Exercise 2 – Create the &quot;delphix\_db&quot; User
+## <a id="_ex2"></a>Exercise 2 – Create the &quot;delphix\_db&quot; User
 
 In this exercise, you will:
 
@@ -231,7 +229,7 @@ Press **Enter** to accept the default database instance **orcl**
 
 The script should create the user without error.
 
-## <a id="exercise1"></a>Exercise 3 – Validate the Source and Target Environment with Hostchecker
+## <a id="_ex3"></a>Exercise 3 – Validate the Source and Target Environment with Hostchecker
 
 In this exercise, you will:
 
@@ -344,7 +342,7 @@ If you have completed all of the checks and they have returned SUCCESS and ALL O
 
 Note: In a production installation, the sshd\_config test will return a WARNING response, due to permissions on the file. If hostchecker is run as root, for this test, it will perform the test properly.
 
-## <a id="exercise1"></a>Exercise 4 – Add a Source Environment
+## <a id="_ex4"></a>Exercise 4 – Add a Source Environment
 
 In this exercise, you will:
 
@@ -392,7 +390,7 @@ Note: Enter the Toolkit Path before Validating the Username and Password
 
 ![](RackMultipart20201027-4-1999mua_html_596622a9338308ba.gif) ![](RackMultipart20201027-4-1999mua_html_4dc8b0129e27f62e.png)
 
-## <a id="exercise1"></a>Exercise 5 – Link a dSource
+## <a id="_ex5"></a>Exercise 5 – Link a dSource
 
 In this exercise, you will:
 
@@ -451,7 +449,7 @@ With an environment set-up, users can then sync databases into Delphix. The Delp
 
 You will know this is successful if the dSource completes in the **Actions** pane without Errors. Click on **Actions** in the top menu bar if you don&#39;t see this pane. Also, the **dSource** state will change to **Active**
 
-## <a id="exercise1"></a>Exercise 6 – Add Target Environments
+## <a id="_ex6"></a>Exercise 6 – Add Target Environments
 
 In this exercise, you will:
 
@@ -497,7 +495,7 @@ Click **Next**
   1. Click on the **Environment Name** ( **Target** ) on the left and review information on the **Details** tab
   2. Click on the **Databases** tab to view any discovered database installations and databases
 
-## <a id="exercise1"></a>Exercise 7 – Provision a VDB
+## <a id="_ex7"></a>Exercise 7 – Provision a VDB
 
 In this exercise, you will:
 
@@ -578,7 +576,7 @@ Once the VDB is created, you can verify that the VDB is operational by:
 
 1. Type quitto exit
 
-## <a id="exercise1"></a>Exercise 8 – Refresh a VDB
+## <a id="_ex8"></a>Exercise 8 – Refresh a VDB
 
 In this exercise, you will:
 
@@ -640,7 +638,7 @@ Log into **devdb** to confirm.
 
 If this returns a count of rows, the snapshot/refresh was successful.
 
-## <a id="exercise1"></a>Exercise 9 – Rewind a VDB
+## <a id="_ex9"></a>Exercise 9 – Rewind a VDB
 
 In this exercise, you will:
 
@@ -702,7 +700,7 @@ Once the rewind operation is complete, you can confirm the rewind was successful
 
 ![](RackMultipart20201027-4-1999mua_html_f21660f0915ae942.png)
 
-## <a id="exercise1"></a>Exercise 10 – Set a New Retention Policy
+## <a id="_ex10"></a>Exercise 10 – Set a New Retention Policy
 
 There are four types of Policies in Delphix. In this exercise, you will:
 
@@ -740,7 +738,7 @@ Expand the **policies** menu to validate that the new **Long Term** policy has b
 
 ![](RackMultipart20201027-4-1999mua_html_de23a64905c54cc7.png)
 
-## <a id="exercise1"></a>Exercise 11 – Create and Save a Hook Operation Template
+## <a id="_ex11"></a>Exercise 11 – Create and Save a Hook Operation Template
 
 In this exercise, you will:
 
@@ -778,7 +776,7 @@ EOF
 
 ![](RackMultipart20201027-4-1999mua_html_fa680ec70ae57ec5.png)
 
-## <a id="exercise1"></a>Exercise 12 – Create a VDB Template
+## <a id="_ex12"></a>Exercise 12 – Create a VDB Template
 
 In this exercise, you will:
 
@@ -805,7 +803,7 @@ In this exercise, you will:
 
 You can verify that this was successful by returning to the **VDB Configuration Templates Wizard** and clicking on the **1G Template** item.
 
-## <a id="exercise1"></a>Exercise 13 – Provision a VDB with Hook and VDB Template
+## <a id="_ex13"></a>Exercise 13 – Provision a VDB with Hook and VDB Template
 
 In this exercise, you will:
 
@@ -879,7 +877,7 @@ This will verify that the VDB is online with the **VDB Configuration Template** 
 
 Note: It may take a couple minutes for the VDB creation to complete. You can monitor the progress on the left-hand side of the screen next to the **qadb** object in the **DB Targets** group. On the **Actions** pane on the right-hand side of the screen, you should see the **Provision virtual database &quot;qadb&quot;** item move to the **Recently completed** pane without error. Once the VDB is created, you can verify that the VDB is operational by:
 
-## <a id="exercise1"></a>Optional Advanced Exercise – Discover and Link a 12c Container Database dSource
+## <a id="_ex14"></a>Optional Advanced Exercise – Discover and Link a 12c Container Database dSource
 
 In this exercise, you will:
 
@@ -986,7 +984,7 @@ Also note there is no timeflow available for the container database gotcdb.
 
 ![](RackMultipart20201027-4-1999mua_html_64fd4bb3995854d4.png)
 
-## <a id="exercise1"></a>Optional Advanced Exercise – Provision a Virtual PDB (vPDB)
+## <a id="_ex15"></a>Optional Advanced Exercise – Provision a Virtual PDB (vPDB)
 
 In this exercise you will:
 
@@ -1054,7 +1052,7 @@ Note: Once Action is completed you can see the vCDB we added and the VPDB just p
   2. alter session set container=DEVPDB;
   3. show CON\_NAME
 
-## <a id="exercise1"></a>Optional Advanced Exercise – Measure Network Performance Test through the CLI
+## <a id="_ex16"></a>Optional Advanced Exercise – Measure Network Performance Test through the CLI
 
 In this exercise, you will:
 
@@ -1113,7 +1111,7 @@ select 10.0.1.30-2015-09-18T13:13:08.152Z
 
 ![](RackMultipart20201027-4-1999mua_html_63f829963ec82542.png)
 
-## <a id="exercise1"></a>Optional Advanced Exercise – Configure Delphix Replication
+## <a id="_ex17"></a>Optional Advanced Exercise – Configure Delphix Replication
 
 Note: This exercise is only possible if your classroom has been configured with 2 or more students.
 
