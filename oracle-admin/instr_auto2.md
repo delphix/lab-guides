@@ -82,9 +82,7 @@ Your instructor should have provided you with a **Class Name** and a **Student N
 
 For example, if your **Class Name** is &quot;acmetech&quot; and your **Student Number** is **5** , you would go to the site: [http://acmetech.agile.today/5](http://acmetech.agile.today/5)
 
-![](images/new/image1.png)
-
-The Delphix Labs Login Dialog
+![The Delphix Labs Login Dialog](images/new/image1.png)
 
 At the login screen, enter the username and password: delphix/delphix
 
