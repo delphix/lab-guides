@@ -148,21 +148,23 @@ Alternatively, the engine can be accessed and controlled through the [CLI](https
 
 ![](images/new/image3.png)
 
-1. In order to become more familiar with what is available here, browse around the various sections of the landing page.
-2. Click **admin** on the upper right side and **logout**
-3. Click **Setup** (Located under **Password)** to navigate to **Delphix Setup** login
-4. Login to **Delphix Setup** using the username ***sysadmin*** and password ***sysadmin***
-5. Click **Log In**
+4. In order to become more familiar with what is available here, browse around the various sections of the landing page.
+5. Click **admin** on the upper right side and **logout**
+6. Click **Setup** (Located under **Password)** to navigate to **Delphix Setup** login
+7. Login to **Delphix Setup** using the username ***sysadmin*** and password ***sysadmin***
+8. Click **Log In**
 
 ![](images/new/image4.png)
 
-1. In order to become more familiar with what is available here, browse around the various sections of the landing page.
+9. In order to become more familiar with what is available here, browse around the various sections of the landing page.
 
 **Related Links**
 
 [The admin and sysadmin User Roles](https://docs.delphix.com/docs/configuration/user-and-authentication-management/users-and-groups)
 
 [Setting Up the Delphix Data Platform](https://docs.delphix.com/docs/deployment/installation-and-initial-system-configurations/initial-setup)
+
+
 
 ## <a id="_ex2"></a>Exercise 2 – Create the &quot;delphix\_db&quot; User
 
@@ -177,30 +179,27 @@ Delphix requires access to database users with certain privileges. These are con
 **Steps**
 
 1. Use the **Terminal** app on your Jumpbox desktop to connect into your Linux Source (see the **Important IP Addresses** section of the Getting Started guide above).
-  1. Type ssh 10.0.x.20 (where &quot;x&quot; is your **Student Number)**
+  a. Type ssh 10.0.x.20 (where &quot;x&quot; is your **Student Number)**
 2. Extract the **hostchecker\_linux\_x86.tar** file in your home directory
-  1. Type ls -ltr
-  2. Type tar -xvf hostchecker\_linux\_x86.tar
+  a. Type ls -ltr
+  b. Type tar -xvf hostchecker\_linux\_x86.tar
 3. Navigate to the hostchecker directory
-  1. Type cd hostchecker
-  2. Type ls -ltr (observe the files present in this folder, as we will be using them again)
+  a. Type cd hostchecker
+  b. Type ls -ltr (observe the files present in this folder, as we will be using them again)
 4. Set the Oracle environment variables below:
-  1. Type export ORACLE\_HOME=/u01/app/oracle/product/11.2.0/dbhome\_1
-  2. Type export ORACLE\_SID=orcl
+  a. Type export ORACLE\_HOME=/u01/app/oracle/product/11.2.0/dbhome\_1
+  b. Type export ORACLE\_SID=orcl
 
 Note: &quot;. oraenv&quot; can be used to set the environment variable rather than export commands
 
-1. Run the script to create the delphix\_db user
-  1. Type ./createDelphixDBUser.sh
-2. Use the following details during the running of this script:
-  1. The user will be created in the default instance **orcl**. This is set by the environment variable ORACLE\_SID.
-
-Press **Enter** to accept the default database instance **orcl**
-
-  1. Delphix DB User Username:delphix\_db
-  2. Delphix DB User Password: delphix\_db
-  3. Decline the SELECT ANY DICTIONARY privilege. This is a sweeping privilege that is not required, but optional
-  4. Type: nand press **Enter**
+5. Run the script to create the delphix\_db user
+  a. Type ./createDelphixDBUser.sh
+6. Use the following details during the running of this script:
+  a. The user will be created in the default instance **orcl**. This is set by the environment variable ORACLE\_SID. Press **Enter** to accept the default database instance **orcl**
+  b. Delphix DB User Username:delphix\_db
+  c. Delphix DB User Password: delphix\_db
+  d. Decline the SELECT ANY DICTIONARY privilege. This is a sweeping privilege that is not required, but optional
+  e. Type: nand press **Enter**
 
 ![](images/new/image5.png)
 
