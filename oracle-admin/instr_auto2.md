@@ -427,14 +427,9 @@ The target environment is the host where the virtual databases will be created.
 2. In the top menu bar, click **Manage** and then **Environments**.
 3. Click the ellipses ( **…** ) next to **Environments** then choose **Add Environment**.
 4. Provide the following details in the **Add Environment Wizard**
-
-Host and Server
-
    - Host OS: **Unix/Linux**
    - Server Type: **Standalone**
-
-Click **Next**
-
+   - Click **Next**
 5. On the **Environment Settings** tab, enter the following details
    - Environment Name: ***Target***
    - Host Address: ***10.0.x.30*** (&#39;x&#39; will be your **Student Number** )
