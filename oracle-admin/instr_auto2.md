@@ -18,9 +18,7 @@
 
 * [Cloud Lab Usernames and Passwords](#_usrs)
 
-**[Paths](#_paths)**
-
-**[Guide Layout](#_layout)**
+* [Paths](#_paths)**
 
 **[Lab Exercises](#_exs)**
 
@@ -128,19 +126,6 @@ In the above IP addresses, the **x** denotes your **Student Number**. For exampl
 | **Oracle XE 11g** ORACLE\_HOME | /u01/app/oracle/product/11.2.0/xe |
 | **Toolkit** | /u01/app/toolkit |
 
-# <a id="_layout"></a>Guide Layout
-
-The **Lab Exercises** in this guide provide the full details needed to perform each operation.
-
-- **Bold** text is used to highlight application names (e.g. **Terminal** ), keywords found in the UI (e.g. **Add**** Environment**) and also for words that are part of an action (e.g. Click**Submit**)
-
-- ***Bold and Italicized*** text is used to highlight text that must be typed in the UI, rather than selected (e.g. Enter ***devdb***_)_.
-
-- Courier font is used to reference commands entered on the command line or in sqlplus (e.g. Type sqlplus / as sysdba)
-
-- Dark Red is used to emphasize Notes
-
--
 
 # <a id="_exs"></a>Lab Exercises
 
