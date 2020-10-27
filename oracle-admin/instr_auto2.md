@@ -664,7 +664,7 @@ Rewinding a VDB rolls it back to a previous point in its Timeflow and re-provisi
   5. Type shutdown abort;
   6. Type startup;
 
-![](RackMultipart20201027-4-1999mua_html_ac1855f977f206e1.png)
+![](images/new/image31.png)
 
 Note that the database is unable to come online due to a bootstrap error. The **devdb** database is now corrupted. Now we will rewind the VDB to the last good snapshot to fix this.
 
@@ -673,11 +673,11 @@ Note that the database is unable to come online due to a bootstrap error. The **
 3. Hover over the **Snapshot** to reveal the **Rewind** button.
 4. Click the **Rewind VDB** button on the **Timeflow**
 
-![](RackMultipart20201027-4-1999mua_html_bd0e6d5bc6051658.png)
+![](images/new/image32.png)
 
 1. Confirm that you wish to rewind the VDB by clicking **Rewind**.
 
-![](RackMultipart20201027-4-1999mua_html_368dc885ac2ebf85.png)
+![](images/new/image33.png)
 
 Once the rewind operation is complete, you can confirm the rewind was successful by connecting to the server again and querying the database:
 
@@ -692,7 +692,7 @@ Once the rewind operation is complete, you can confirm the rewind was successful
   4. Type sqlplus / as sysdba
   5. Type select count(\*) from sourcetab;
 
-![](RackMultipart20201027-4-1999mua_html_f21660f0915ae942.png)
+![](images/new/image34.png)
 
 ## <a id="_ex10"></a>Exercise 10 – Set a New Retention Policy
 
@@ -711,7 +711,7 @@ Both dSources and VDBs timeflow is governed by snapshots, which are either creat
 1. In the top menu bar, click on **Manage** and then **Policies**
 2. Click the **Retention** tab, click **+Retention**
 
-![](RackMultipart20201027-4-1999mua_html_1c118b417497125f.png)
+![](images/new/image35.png)
 
 1. Provide the following details:
   1. Policy Name: ***Long Term***
@@ -719,18 +719,18 @@ Both dSources and VDBs timeflow is governed by snapshots, which are either creat
   3. Keep Snapshots for: ***30** ***days**
 2. Click the ***Show advanced*** _link_
 
-![](RackMultipart20201027-4-1999mua_html_915db92d34a651f5.png)
+![](images/new/image36.png)
 
 1. Click the checkbox next to **Keep 3 Snapshot(s) on 1****st **** of every month**
 2. Click **Next**
 3. On the **Datasets** tab click the **checkbox** for the **devdb**
 4. Click **Submit**
 
-![](RackMultipart20201027-4-1999mua_html_807d3f177d5ce120.png)
+![](images/new/image37.png)
 
 Expand the **policies** menu to validate that the new **Long Term** policy has been applied to the **devdb** VDB.
 
-![](RackMultipart20201027-4-1999mua_html_de23a64905c54cc7.png)
+![](images/new/image38.png)
 
 ## <a id="_ex11"></a>Exercise 11 – Create and Save a Hook Operation Template
 
@@ -763,12 +763,12 @@ EOF
 
 **IMPORTANT:** Make sure the carriage returns you see here are the same in the pasted contents.
 
-![](RackMultipart20201027-4-1999mua_html_5146b8a1004fab59.png)
+![](images/new/image39.png)
 
 1. Click **Create**
 2. Verify the **Create APPUSER** Hook Operation Template is in the list, then click **Close**
 
-![](RackMultipart20201027-4-1999mua_html_fa680ec70ae57ec5.png)
+![](images/new/image40.png)
 
 ## <a id="_ex12"></a>Exercise 12 – Create a VDB Template
 
@@ -784,7 +784,7 @@ In this exercise, you will:
 3. Name: ***1G Template***
 4. Click **Create**
 
-![](RackMultipart20201027-4-1999mua_html_a11086c5dcb580e.png)
+![](images/new/image41.png)
 
 1. Click **1G Template** under **VDB Config Templates**
 2. Click the **pencil** icon on the top right of the **VDB Configuration Templates** screen
@@ -827,23 +827,23 @@ In this exercise, you will:
 9. On **the VDB Configure Parameters** tab, click the **1G Template** that we created earlier from the **Select template** drop-down list
 10. Click **Next**
 
-![](RackMultipart20201027-4-1999mua_html_6b4875b1eeee3f55.png)
+![](images/new/image42.png)
 
 1. On the **Policies** tab, accept Default Snapshot Policy and Click **Next**
 2. On the Masking tab, leave Mask this VDB unchecked. Click **Next**
 3. On the **Hooks** tab with **Configure Clone** already selected on the left side of the **Provision VDB Wizard** , click the **plus sign** to the right of the words **Hook Points** and select **Create from Template** from the drop-down list
 
-![](RackMultipart20201027-4-1999mua_html_522015e4d4919514.png)
+![](images/new/image43.png)
 
 1. **Enter a Name** ***QA APPUSER*** for the **Hook Operation**
 2. Click on the **Create APPUSER** template we created earlier
 3. Click the **Create** button
 
-![](RackMultipart20201027-4-1999mua_html_9e3fdf6c5d2c4de.png)
+![](images/new/image44.png)
 
 1. Click Next
 
-![](RackMultipart20201027-4-1999mua_html_bb843e593733e950.png)
+![](images/new/image45.png)
 
 1. Click **Next**
 2. Verify the summary information, and click **Submit**
@@ -867,7 +867,7 @@ Once the VDB is created, you can verify that the VDB is operational by:
 
 This will verify that the VDB is online with the **VDB Configuration Template** we specified, and that the **APPUSER** user was created by our hook.
 
-![](RackMultipart20201027-4-1999mua_html_59d29574e64339c2.png)
+![](images/new/image46.png)
 
 Note: It may take a couple minutes for the VDB creation to complete. You can monitor the progress on the left-hand side of the screen next to the **qadb** object in the **DB Targets** group. On the **Actions** pane on the right-hand side of the screen, you should see the **Provision virtual database &quot;qadb&quot;** item move to the **Recently completed** pane without error. Once the VDB is created, you can verify that the VDB is operational by:
 
@@ -926,7 +926,7 @@ If not already connected, connect to your Delphix Engine as Delphix Admin.
 3. Scroll down to find the home /u01/app/oracle/product/12.2.0/dbhome\_1
 4. Clickon Discover CDB to discover the PDB&#39;s in the CDB
 
-![](RackMultipart20201027-4-1999mua_html_bed2926408d44b2d.png)
+![](images/new/image47.png)
 
 1. On the Discover CDB wizard Popup Enter the following details
   1. Username: c##delphix\_db
@@ -936,7 +936,7 @@ If not already connected, connect to your Delphix Engine as Delphix Admin.
 
 Once complete, PDB **WINTERFELL** should be discovered and displayed under the 12c home
 
-![](RackMultipart20201027-4-1999mua_html_69eb70efbf9f6085.png)
+![](images/new/image48.png)
 
 **Link an Oracle 12c dSource**
 
@@ -948,7 +948,7 @@ Once complete, PDB **WINTERFELL** should be discovered and displayed under the 1
 4. Click on **Verify credentials** to verify the give details.
 5. Click **Next**
 
-![](RackMultipart20201027-4-1999mua_html_8fa6079f1d821166.png)
+![](images/new/image49.png)
 
 1. On the dSource Configuration tab of the Add dSource wizard Click on **Add Dataset Group**
 2. On the Add Dataset Group pop up, add a new group with the name ***Ora12C Sources***.
