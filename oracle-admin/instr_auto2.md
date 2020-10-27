@@ -384,7 +384,7 @@ Note: Enter the Toolkit Path before Validating the Username and Password
 2. Click **Submit**
 3. You can view the status of the environment creation and discovery by clicking on the **Actions** menu on the top right-hand side of the page. Clicking on the jobs lower right corner, in the Actions pane, will allow you to track its progress
 
-![](images/new/image10.png) ![](images/new/image11.png)
+![](images/new/image10.png)
 
 ## <a id="_ex5"></a>Exercise 5 – Link a dSource
 
@@ -402,17 +402,17 @@ With an environment set-up, users can then sync databases into Delphix. The Delp
 1. View the Environment details
   1. Click on the **Environment** on the left on review information on the **Details** tab
 
-![](RackMultipart20201027-4-1999mua_html_4c3e5718135abc27.png)
+![](images/new/image11.png)
 
 1. Click on the **Databases** tab to view any discovered database installations and databases
 
-![](RackMultipart20201027-4-1999mua_html_2880ef2c73391d7f.png)
+![](images/new/image12.png)
 
 1. Link the **orcl** database
   1. On the top menu, click the **Manage** menu and then **Datasets**
   2. Click the **+** next to **Datasets** on the top left portion of your screen and then select **Add dSource**
 
-![](RackMultipart20201027-4-1999mua_html_4bec0799dc89ac18.png)
+![](images/new/image13.png)
 
 1. The Welcome page for the dSource Wizard will be displayed. Review the instructions to get an overview of the process and click **Next**
 2. In the Source tab select the orcl Data source and provide the username and password of the database user
@@ -420,7 +420,7 @@ With an environment set-up, users can then sync databases into Delphix. The Delp
   1. Enter ***orcl*** for the **dSource Name**
   2. Click on the **Add Dataset Group** link and enter ***Source DB*** in the **Name** field.
 
-![](RackMultipart20201027-4-1999mua_html_de3ee65d3512b895.png)
+![](images/new/image14.png)
 
 1. Click **Next**
 2. On the **Data Management** tab accept the defaults
@@ -437,11 +437,11 @@ With an environment set-up, users can then sync databases into Delphix. The Delp
 4. Click **Next**
 5. Review the Summary and click **Submit**.
 
-![](RackMultipart20201027-4-1999mua_html_33df29add9d7991f.png)
+![](images/new/image15.png)
 
 1. Wait for the dSource to be created
 
-![](RackMultipart20201027-4-1999mua_html_39c855e7e0b72875.png)
+![](images/new/image16.png)
 
 You will know this is successful if the dSource completes in the **Actions** pane without Errors. Click on **Actions** in the top menu bar if you don&#39;t see this pane. Also, the **dSource** state will change to **Active**
 
@@ -483,7 +483,7 @@ Click **Next**
   8. Click **Validate**
 2. Click **Next**
 
-![](RackMultipart20201027-4-1999mua_html_e7fc23dc3d832629.png) ![](RackMultipart20201027-4-1999mua_html_a2aa2f77d0ccc3d8.png)
+![](images/new/image17.png) ![](images/new/image18.png)
 
 1. Click **Submit**
 2. You can view the status of the environment creation and discovery by clicking on the **Actions** menu on the top right-hand side of the page. Clicking on the job in the **Actions** pane will allow you to track its progress.
@@ -508,9 +508,7 @@ The objective of Delphix virtualization is to provide easy access to virtualized
 3. On the **Timeflow** tab of the dSource select the most recent (topmost) **Snapshot**. The **Provision VDB** iconwill appear along with the **Open LogSync** icon to the right.
 4. Click on the **Provision VDB** icon to open the **Provision VDB** wizard
 
- ![](RackMultipart20201027-4-1999mua_html_256deb74c7c2ca94.gif)
-
-![](RackMultipart20201027-4-1999mua_html_a6692aad5dc25c1.png)
+![](images/new/image19.png)
 
 1. On the **Target Environment** tab click **Target** from the list of Environments
 2. On the **Target Environment** tab, use the following information
@@ -518,7 +516,7 @@ The objective of Delphix virtualization is to provide easy access to virtualized
   2. Ensure that the Environment **User** is set to **delphix**
   3. Click **Next**
 
-![](RackMultipart20201027-4-1999mua_html_272876ddfe59bb1c.png)
+![](images/new/image20.png)
 
 1. Enter the details below on the **Target Configuration** tab , we will provide a user-friendly name for the VDB as well as assign it to a new group.
   1. Click **Add Dataset Group**
@@ -532,7 +530,7 @@ The objective of Delphix virtualization is to provide easy access to virtualized
   7. **Oracle SID** : ***devdb***
   8. Click **Next**
 
-![](RackMultipart20201027-4-1999mua_html_32cc200efae9b5d9.png)
+![](images/new/image21.png)
 
 1. On the **Advanced** tab
 
@@ -541,7 +539,7 @@ The objective of Delphix virtualization is to provide easy access to virtualized
   3. Check the box next to **Enabled** for **Auto VDB Restart**
   4. Click **Next**
 
-![](RackMultipart20201027-4-1999mua_html_f820e9af3ea8c230.png)
+![](images/new/image22.png)
 
 1. On the **Policies** tab, accept the defaults and click **Next**
 2. On the **Masking** tab, confirm that **Mask this VDB** is not checked
@@ -549,11 +547,11 @@ The objective of Delphix virtualization is to provide easy access to virtualized
 4. Verify the summary information
 5. Click **Submit** tocomplete the VDB creation
 
-![](RackMultipart20201027-4-1999mua_html_9c1dcc95a52b9fd2.png)
+![](images/new/image23.png)
 
 It may take a couple minutes for the VDB creation to complete. You can monitor the status on the left-hand side of the screen next to the **devdb** object in the **DB Targets** group. On the **Actions** pane on the right-hand side of the screen, you should see the **Provision virtual database &quot;devdb&quot;** item move to the **Recently completed** pane without error. **devdb**&#39;s status will be set to **VDB - Running**.
 
-![](RackMultipart20201027-4-1999mua_html_d3b4d246f7bf2602.png)
+![](images/new/image24.png)
 
 Once the VDB is created, you can verify that the VDB is operational by:
 
@@ -568,9 +566,9 @@ Once the VDB is created, you can verify that the VDB is operational by:
   4. Type sqlplus / as sysdba
   5. Type select name from v$database;
 
-![](RackMultipart20201027-4-1999mua_html_4be065e2dbbbeea8.png)
+![](images/new/image25.png)
 
-1. Type quitto exit
+1. Type quit to exit
 
 ## <a id="_ex8"></a>Exercise 8 – Refresh a VDB
 
@@ -604,17 +602,17 @@ VDBs can get out of sync as new data comes into the source system. Refreshing a 
 9. Click the **Timeflow** tab
 10. Click the **Refresh** button on the top right next to the **snapshot** icon.
 
-![](RackMultipart20201027-4-1999mua_html_e599041e71b9e42f.png)
+![](images/new/image26.png)
 
 1. There are two options for refreshing the VDB, choose the **Faster** option to refresh from the most recent snapshot from the **orcl** dSource
 2. Click **Next**
 3. Click **Submit**
 
-![](RackMultipart20201027-4-1999mua_html_4bb7e57e2f75619a.png)
+![](images/new/image27.png)
 
 Once the refresh has completed, a new VDB snapshot will be generated and reflected in the **Timeflow**.
 
-![](RackMultipart20201027-4-1999mua_html_efd482a6c1d8baa5.png)
+![](images/new/image28.png)
 
 Log into **devdb** to confirm.
 
@@ -630,7 +628,7 @@ Log into **devdb** to confirm.
   4. Type sqlplus / as sysdba
   5. Type select count(\*) from sourcetab;
 
-![](RackMultipart20201027-4-1999mua_html_ade3a2c7d397314c.png)
+![](images/new/image29.png)
 
 If this returns a count of rows, the snapshot/refresh was successful.
 
@@ -651,7 +649,7 @@ Rewinding a VDB rolls it back to a previous point in its Timeflow and re-provisi
 1. On the Delphix main screen, select the **devdb** VDB
 2. Click the **Camera icon** on the top right to take a snapshot of the VDB
 
-![](RackMultipart20201027-4-1999mua_html_e3fcd49f24fdf719.png)
+![](images/new/image30.png)
 
 1. A new snapshot card will be created on the **devdb Timeflow**. Make a note of the date/time for the latest snapshot card.
 2. Open Terminal on your Lab Server desktop
