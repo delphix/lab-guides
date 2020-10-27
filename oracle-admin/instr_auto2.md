@@ -850,9 +850,7 @@ We will walk through the steps to get you acquainted with discovering 12C PDB&#3
    - Type export PATH= $ORACLE\_HOME/bin:$PATH
    - Type cd hostchecker
 
-Note: If the hostchecker directory doesn&#39;t exist, untar the hostchecker\_linux\_x86.tar file
-
-(Type tar -xvf hostchecker\_linux\_x86.tar)
+Note: If the hostchecker directory doesn&#39;t exist, untar the hostchecker\_linux\_x86.tar file (Type tar -xvf hostchecker\_linux\_x86.tar)
 
 3. Run the **createDelphixDBUser** Script to first create the **c##delphix\_db** user in the CDB
    - Type ./createDelphixDBUser.sh
@@ -878,7 +876,7 @@ The script will now create delphix\_db user in the PDB winterfell with the neces
 
 If not already connected, connect to your Delphix Engine as Delphix Admin.
 
-1. Navigate to Manage -\&gt; Environments Page
+1. Navigate to Manage -> Environments Page
 2. Select the Source Environment and click on the Databases Tab.
 3. Scroll down to find the home /u01/app/oracle/product/12.2.0/dbhome\_1
 4. Clickon Discover CDB to discover the PDB&#39;s in the CDB
