@@ -879,7 +879,7 @@ If not already connected, connect to your Delphix Engine as Delphix Admin.
 1. Navigate to Manage -> Environments Page
 2. Select the Source Environment and click on the Databases Tab.
 3. Scroll down to find the home /u01/app/oracle/product/12.2.0/dbhome\_1
-4. Clickon Discover CDB to discover the PDB&#39;s in the CDB
+4. Click on Discover CDB to discover the PDB&#39;s in the CDB
 
 ![](images/new/image47.png)
 
@@ -920,7 +920,7 @@ Once complete, PDB **WINTERFELL** should be discovered and displayed under the 1
 
 ![](images/new/image51.png)
 
-15. Once the dSource creation is completed Navigate to **Manage** -\&gt; **Datasets**.
+15. Once the dSource creation is completed Navigate to **Manage** -> **Datasets**.
 16. Expand the Ora12c Sources group to explore the DB&#39;s under it. You should see both the CDB gotcdb and the PDB WINTERFELL listed under it.
 
 Note the Different icons used to represent CDB and PDB&#39;s
@@ -944,7 +944,7 @@ In this exercise you will:
 As an advanced exercise, this lab has no corresponding Lab Solution. Instead, we will walk through the steps to get you acquainted with provisioning a PDB from a 12c dSource.
 
 1. Login to the Delphix Engine if not already logged in.
-2. Navigate to **Manage** -\&gt; **Datasets**
+2. Navigate to **Manage** -> **Datasets**
 3. Expand **Ora12C Sources** Group and click on WINTERFELL PDB
 4. Hover on the latest snapshot card and click on **Provision a VDB**.
 
