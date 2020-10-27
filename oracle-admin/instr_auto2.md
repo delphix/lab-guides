@@ -394,10 +394,7 @@ With an environment set-up, users can then sync databases into Delphix. The Delp
 7. Click **Next**
 8. On the **Data Management** tab accept the defaults
    - Initial Load: **Immediately**
-   - LogSync: **Enable**
-
-**Archive + Online Redo**
-
+   - LogSync: **Enable Archive + Online Redo**
    - Click **Next**
 
 9. Accept the Default SnapSync and Retention policy setting
@@ -426,10 +423,7 @@ The target environment is the host where the virtual databases will be created.
 
 **Steps**
 
-1. Log into the Delphix Data Platform UI as the ***admin*** user and the password that was set during the Engine setup.
-
-_Note: If you forgot your admin password, please ask your lab administrator to reset it._
-
+1. Log into the Delphix Data Platform UI as the ***admin*** user and the password that was set during the Engine setup (_Note: If you forgot your admin password, please ask your lab administrator to reset it_)
 2. In the top menu bar, click **Manage** and then **Environments**.
 3. Click the ellipses ( **…** ) next to **Environments** then choose **Add Environment**.
 4. Provide the following details in the **Add Environment Wizard**
@@ -475,7 +469,7 @@ The objective of Delphix virtualization is to provide easy access to virtualized
 1. Click the **Manage** menu and then **Datasets**
 2. Expand the **Source DB** group and click the **orcl** dSource from the **Datasets** panel on the left. This will reveal the **Timeflow** for the dSource by default.
 3. On the **Timeflow** tab of the dSource select the most recent (topmost) **Snapshot**. The **Provision VDB** iconwill appear along with the **Open LogSync** icon to the right.
-4. Click on the **Provision VDB** icon to open the **Provision VDB** wizard
+4. Click on the **Provision VDB** icon to open the **Provision VDB** wizard. The first of the three icons next to the snapshot time.
 
 ![](images/new/image19.png)
 
@@ -502,7 +496,6 @@ The objective of Delphix virtualization is to provide easy access to virtualized
 ![](images/new/image21.png)
 
 8. On the **Advanced** tab
-
    - Confirm that **Open Database After Provision** is selected
    - Confirm that **Enable Archivelog Mode** is selected
    - Check the box next to **Enabled** for **Auto VDB Restart**
@@ -586,7 +579,7 @@ Once the refresh has completed, a new VDB snapshot will be generated and reflect
 Log into **devdb** to confirm.
 
 14. Open **Terminal** on your Lab Server desktop
-   - Type ssh delphix@10.0.x.30 (&#39;x&#39; will be your **Student Number** )
+    - Type ssh delphix@10.0.x.30 (&#39;x&#39; will be your **Student Number** )
 15. Enter the username: delphix
 16. Enter the password: delphix
 17. Run the following commands:
@@ -681,7 +674,6 @@ Both dSources and VDBs timeflow is governed by snapshots, which are either creat
 2. Click the **Retention** tab, click **+Retention**
 
 ![](images/new/image35.png)
-
 3. Provide the following details:
    - Policy Name: ***Long Term***
    - Keep Logs for: ***30** ***days**
@@ -719,16 +711,13 @@ Hook operations allow users to execute custom operations at select points during
 3. Provide the _Name_: ***Create APPUSER***
 4. Ensure _Type_ is set to: **System Shell Command**
 5. Under **Contents** , enter the following code:
-
+'''
 $ORACLE\_HOME/bin/sqlplus / as sysdba \&lt;\&lt; EOF
-
 create user appuser identified by appuser;
-
 grant connect, resource to appuser;
-
 exit;
-
 EOF
+'''
 
 **IMPORTANT:** Make sure the carriage returns you see here are the same in the pasted contents.
 
