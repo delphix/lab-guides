@@ -93,9 +93,9 @@ Ensure the system is configured correctly.
 
    ```cat /etc/centos-release```
 
- ![](images/image1.png)
+   ![](images/image1.png)
 
- CentOS must be 7.4 or greater, depending on the specific Postgres version (below)
+   CentOS must be 7.4 or greater, depending on the specific Postgres version (below)
 
 3. Check to see if Postgres is running:
 
@@ -203,12 +203,13 @@ Ensure the system is configured correctly.
 
 2. Add five lines to the bottom of the file. This allows connectivity from the Delphix Engine, the staging server and the jump box on lines 2-4.
 
-#Delphix Connections
- host all delphix 10.0.1.10/32 trust
- host all delphix 10.0.1.30/32 trust
- host all delphix 10.0.1.5/32 trust
- host replication delphix 10.0.1.30/32 trust
-
+   ```
+   #Delphix Connections
+    host   all            delphix      10.0.1.10/32   trust
+    host   all            delphix      10.0.1.30/32   trust
+    host   all            delphix      10.0.1.5/32    trust
+    host   replication    delphix      10.0.1.30/32   trust
+    ```
 
 **Restart Postgres**
 
