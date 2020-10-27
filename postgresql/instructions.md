@@ -238,21 +238,21 @@ We may choose to start and stop our lab. Rather than going through the process o
 
    ```
    [Unit]
-    Description=PostgreSQL Database Server
-    Documentation=man:postgres(1)
+   Description=PostgreSQL Database Server
+   Documentation=man:postgres(1)
     
-    [Service]
-    Type=notify
-    User=postgres
-    ExecStart=/usr/pgsql-11/bin/postgres -D /usr/local/pgsql/data
-    ExecReload=/bin/kill -HUP $MAINPID
-    KillMode=mixed
-    KillSignal=SIGINT
-    TimeoutSec=0
+   [Service]
+   Type=notify
+   User=postgres
+   ExecStart=/usr/pgsql-11/bin/postgres -D /usr/local/pgsql/data
+   ExecReload=/bin/kill -HUP $MAINPID
+   KillMode=mixed
+   KillSignal=SIGINT
+   TimeoutSec=0
 
-    [Install]
-    WantedBy=multi-user.target
-    ```
+   [Install]
+   WantedBy=multi-user.target
+   ```
     
 
 6. Reload systemctl
