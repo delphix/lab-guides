@@ -959,11 +959,11 @@ Once complete, PDB **WINTERFELL** should be discovered and displayed under the 1
 7. We will not be configuring hooks at this time. Click on **Next**.
 8. Review Summary and Click **Submit**.
 
-![](RackMultipart20201027-4-1999mua_html_50c15171d9293d2c.png)
+![](images/new/image50.png)
 
 1. Click on Actions on the top right-hand corner if Actions Pane is hidden to monitor progress of the Action and ensure it completes without error.
 
-![](RackMultipart20201027-4-1999mua_html_e2a7d213909464d9.png)
+![](images/new/image51.png)
 
 1. Once the dSource creation is completed Navigate to **Manage** -\&gt; **Datasets**.
 2. Expand the Ora12c Sources group to explore the DB&#39;s under it. You should see both the CDB gotcdb and the PDB WINTERFELL listed under it.
@@ -972,11 +972,11 @@ Note the Different icons used to represent CDB and PDB&#39;s
 
 Also note there is no timeflow available for the container database gotcdb.
 
-![](RackMultipart20201027-4-1999mua_html_ef667bffd65bb683.png)
+![](images/new/image52.png)
 
 1. Click on the PDB WINTERFELL to see the **Timeflow** , **Status** and **Configurations** under the respective tabs.
 
-![](RackMultipart20201027-4-1999mua_html_64fd4bb3995854d4.png)
+![](images/new/image53.png)
 
 ## <a id="_ex15"></a>Optional Advanced Exercise – Provision a Virtual PDB (vPDB)
 
@@ -993,7 +993,7 @@ As an advanced exercise, this lab has no corresponding Lab Solution. Instead, we
 3. Expand **Ora12C Sources** Group and click on WINTERFELL PDB
 4. Hover on the latest snapshot card and click on **Provision a VDB**.
 
-![](RackMultipart20201027-4-1999mua_html_86ec484b141cbcb.png)
+![](images/new/image54.png)
 
 1. On the Provision vPDB Wizard
   1. Click on **Target** under **Environments**.
@@ -1012,7 +1012,7 @@ As an advanced exercise, this lab has no corresponding Lab Solution. Instead, we
   6. SID: VCWINTER
 7. Click **Next**.
 
-![](RackMultipart20201027-4-1999mua_html_f4af47f01d8af342.png)
+![](images/new/image55.png)
 
 1. On the **Advanced** page click the **Auto vCDB Restart Enabled checkbox**
 2. Click **Next**
@@ -1024,13 +1024,13 @@ Note: Once Submitted, the Action will show a working screen for a few seconds. Y
 
 1. Monitor the Actions Pane by clicking on the Actions button on the top right-hand corner. You can get more details about the action by clicking on the &quot;\&gt;&quot;, to the left of the currently running action, to expand it.
 
-![](RackMultipart20201027-4-1999mua_html_13a08e6d16dd764.png)
+![](images/new/image56.png)
 
 Note: Once Action is completed you can see the vCDB we added and the VPDB just provisioned listed under the new Dataset group Ora12C Targets. Expand the group if necessary, to view the objects under it. Note that there is no timeflow for the vCDB.
 
 1. Click on devPDB and review Timeflow, Status and configuration details under the respective tabs.
 
-![](RackMultipart20201027-4-1999mua_html_cdfdda06b87d119f.png)
+![](images/new/image57.png)
 
 1. Using the **Terminal** icon on your lab desktop connect to the **target** server. (Refer to the Important IP Addresses section of the labguide)
   1. Click on the **Terminal** icon on the lab desktop
@@ -1068,7 +1068,7 @@ As an advanced exercise, this lab has no corresponding Lab Solution. Instead, we
   2. Set the remoteHost value to the TargetA environment IP address: set remoteHost=10.0.x.30 (&#39;x&#39; will be your **Student Number** )
   3. Begin the test by typing: commit
 
-![](RackMultipart20201027-4-1999mua_html_bb4164b896b23a35.png)
+![](images/new/image58.png)
 
 _Figure 48 Example Network Latency Test Submission_
 
@@ -1081,7 +1081,7 @@ select 10.0.1.30-2015-09-18T12:47:19.711Z
 
   1. View the results of the test by typing: get
 
-![](RackMultipart20201027-4-1999mua_html_3ccc9ede2297880d.png)
+![](images/new/image59.png)
 
 1. Create a network throughput test
   1. While still logged into the CLI, return to the root by typing: cd /
@@ -1090,7 +1090,7 @@ select 10.0.1.30-2015-09-18T12:47:19.711Z
   4. Set the remoteHost value to the TargetA environment IP address: setremoteHost=10.0.x.30 (&#39;x&#39; will be your **Student Number** )
   5. Begin the test by typing: commit
 
-![](RackMultipart20201027-4-1999mua_html_2834ae427eab20f4.png)
+![](images/new/image60.png)
 
 1. View the results of the throughput test:
   1. Get to the throughput test section again by typing: network test throughput
@@ -1103,7 +1103,7 @@ select 10.0.1.30-2015-09-18T13:13:08.152Z
 
   1. View the results of the test by typing: get
 
-![](RackMultipart20201027-4-1999mua_html_63f829963ec82542.png)
+![](images/new/image61.png)
 
 ## <a id="_ex17"></a>Optional Advanced Exercise – Configure Delphix Replication
 
@@ -1134,7 +1134,7 @@ As an advanced exercise, this lab has no corresponding Lab Solution. Instead, we
   7. For the Objects Being Replicated, select: **Entire Delphix Data Platform**
   8. Click **Create** at the bottom when ready.
 
-![](RackMultipart20201027-4-1999mua_html_c0d41ea35593d139.png)
+![](images/new/image62.png)
 
 _Figure 52 Replication Profile Configuration_
 
@@ -1142,7 +1142,7 @@ _Figure 52 Replication Profile Configuration_
 2. Click **Replicate** to confirm you are ready to begin.
 3. Once the initial full replication is complete, you will see a message stating **Last Replication Successful**.
 
-![](RackMultipart20201027-4-1999mua_html_8cffde8a35596fbc.png)
+![](images/new/image63.png)
 
 _Figure 53__Example Successful Replication_
 
