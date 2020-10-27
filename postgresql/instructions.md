@@ -70,9 +70,9 @@ Ensure the engine is running the latest version of Delphix. The latest can be fo
 Support for Postgres requires the installation of the latest plugin. This plugin tells the Delphix Engine how to discover Postgres instances and provide virtual copies.
 
 1. From download.delphix.com, go to the latest engine download folder (matching what you installed above)
-2. Find the Postgres plugin: \&lt;x.y.z\&gt;/Plugins/PostgreSQL and download. Note: Delphix plugins will have different versioning from that of the Delphix Engine.
+2. Find the Postgres plugin: <x.y.z>/Plugins/PostgreSQL and download. Note: Delphix plugins will have different versioning from that of the Delphix Engine.
 3. Extracting the downloaded file will give a JSON file.
-4. Log in to the Engine and go to **Manage-\&gt;Plugins** and click the **+** icon
+4. Log in to the Engine and go to **Manage->Plugins** and click the **+** icon
 5. Drag (or upload) the downloaded JSON file
 
 This will now show &quot;PostgresDB&quot; as an additional supported plugin.
@@ -86,12 +86,11 @@ Real deployments of Delphix will have an existing source and source database. Si
 Ensure the system is configured correctly.
 
 1. Access the source environment, this IP is matching what you see above:
-
-ssh -i ~/internal/dxkey centos@10.0.1.20
+   ```ssh -i ~/internal/dxkey centos@10.0.1.20```
 
 2. Check that the OS version is supported. Supported versions can be found on the Postgres Support Matrix on docs.delphix.com. Assuming you&#39;re using CentOS:
 
-cat /etc/centos-release
+   ```cat /etc/centos-release```
 
  ![](images/image1.png)
 
@@ -99,7 +98,7 @@ cat /etc/centos-release
 
 3. Check to see if Postgres is running:
 
-ps -A | grep postgres
+   ```ps -A | grep postgres```
 
 4. (Assuming Postgres is not running, if it is, skip ahead). Switch to root and either add the postgres user or reset its password to &quot;postgres&quot;. Linux will complain about the password choice, but ignore it.
 
