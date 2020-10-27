@@ -110,7 +110,7 @@ In the above IP addresses, the **x** denotes your **Student Number**. For exampl
 ## <a id="_usrs"></a>Cloud Lab Usernames and Passwords
 
 | Initial Delphix **sysadmin** password | sysadmin |
-| --- | --- |
+| :--- | :--- |
 | Initial Delphix **admin** password | delphix |
 | Source and Target **delphix** user password (via SSH) | delphix |
 | Source and Target **oracle** user password (via SSH) | delphix |
@@ -118,7 +118,7 @@ In the above IP addresses, the **x** denotes your **Student Number**. For exampl
 ## <a id="_paths"></a>Paths
 
 | **hostchecker** (after tar extraction) | /home/delphix/hostchecker |
-| --- | --- |
+| :--- | :--- |
 | **Oracle XE 11g** ORACLE\_HOME | /u01/app/oracle/product/11.2.0/xe |
 | **Toolkit** | /u01/app/toolkit |
 
