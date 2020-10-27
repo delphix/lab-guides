@@ -243,14 +243,14 @@ In this exercise, you will:
 11. Type 6 and press **Enter**
     - Type 3 to select the Oracle Instance associated with the &#39;orcl&#39; database, and press **Enter**
     - Provide the Oracle home path at the prompt: /u01/app/oracle/product/11.2.0/dbhome\_1
-     - Enter the username and password of the Oracle database user created in exercise 2
+    - Enter the username and password of the Oracle database user created in exercise 2
 
 Username: delphix\_db
+
 Password: delphix\_db
 
 Note: If you created a database user with different credentials from the one shown above, you will enter it at the prompt instead.
-
-     - The script will test the Oracle Instances and return SUCCESS and ALL OK
+    - The script will test the Oracle Instances and return SUCCESS and ALL OK
 12. Type 7 and press **Enter**
     - The script will test the /etc/oratab file and return SUCCESS and ALL OK
 13. Type 8 and press **Enter**
