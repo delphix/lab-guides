@@ -711,13 +711,13 @@ Hook operations allow users to execute custom operations at select points during
 3. Provide the _Name_: ***Create APPUSER***
 4. Ensure _Type_ is set to: **System Shell Command**
 5. Under **Contents** , enter the following code:
-'''
-$ORACLE\_HOME/bin/sqlplus / as sysdba \&lt;\&lt; EOF
-create user appuser identified by appuser;
-grant connect, resource to appuser;
-exit;
+```
+$ORACLE_HOME/bin/sqlplus / as sysdba << EOF
+  create user appuser identified by appuser;
+  grant connect, resource to appuser;
+  exit;
 EOF
-'''
+```
 
 **IMPORTANT:** Make sure the carriage returns you see here are the same in the pasted contents.
 
