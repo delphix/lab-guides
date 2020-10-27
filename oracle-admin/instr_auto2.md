@@ -8,15 +8,15 @@
 
 **[Getting Started](#_gettingStarted)**
 
-[Welcome to the Delphix Admin Training for Oracle Lab Guide](#_welcome)
+* [Welcome to the Delphix Admin Training for Oracle Lab Guide](#_welcome)
 
-[Lab Requirements](#_reqs)
+* [Lab Requirements](#_reqs)
 
-[The Delphix Admin Training Cloud Lab](#_cloudLab)
+* [The Delphix Admin Training Cloud Lab](#_cloudLab)
 
-[Important IP Addresses](#_IPs)
+* [Important IP Addresses](#_IPs)
 
-[Cloud Lab Usernames and Passwords](#_usrs)
+* [Cloud Lab Usernames and Passwords](#_usrs)
 
 **[Paths](#_paths)**
 
