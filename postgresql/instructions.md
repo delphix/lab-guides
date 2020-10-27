@@ -86,6 +86,7 @@ Real deployments of Delphix will have an existing source and source database. Si
 Ensure the system is configured correctly.
 
 1. Access the source environment, this IP is matching what you see above:
+
    ```ssh -i ~/internal/dxkey centos@10.0.1.20```
 
 2. Check that the OS version is supported. Supported versions can be found on the Postgres Support Matrix on docs.delphix.com. Assuming you&#39;re using CentOS:
@@ -102,22 +103,22 @@ Ensure the system is configured correctly.
 
 4. (Assuming Postgres is not running, if it is, skip ahead). Switch to root and either add the postgres user or reset its password to &quot;postgres&quot;. Linux will complain about the password choice, but ignore it.
 
-sudo su -
- passwd postgres (set password as &quot;postgres&quot;)
+   ```sudo su -```
+   ```passwd postgres ```(set password as &quot;postgres&quot;)
 
 5. Set up directories and change users
 
-mkdir /usr/local/pgsql/data -p
- chown postgres /usr/local/pgsql/data
- su - postgres
+   ```mkdir /usr/local/pgsql/data -p```
+   ```chown postgres /usr/local/pgsql/data```
+   ```su - postgres```
 
 6. Initialize Postgres
 
-pg\_ctl init -D /usr/local/pgsql/data
+   ```pg\_ctl init -D /usr/local/pgsql/data```
 
 7. Start Postgres
 
-pg\_ctl start -D /usr/local/pgsql/data -l logfile
+   ```pg\_ctl start -D /usr/local/pgsql/data -l logfile```
 
 ## <a id="_source"></a>Prepping the Source for Delphix
 
