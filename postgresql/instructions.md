@@ -104,6 +104,7 @@ Ensure the system is configured correctly.
 4. (Assuming Postgres is not running, if it is, skip ahead). Switch to root and either add the postgres user or reset its password to &quot;postgres&quot;. Linux will complain about the password choice, but ignore it.
 
    ```sudo su -```
+   
    ```passwd postgres ```(set password as &quot;postgres&quot;)
 
 5. Set up directories and change users
@@ -128,12 +129,13 @@ Ensure the system is configured correctly.
 
 1. As the centos user (if you&#39;re still using the &quot;postgres&quot; user, you may use &quot;exit&quot; to transition), create the directory for the Delphix toolkit
 
-sudo mkdir /opt/delphix
+   ```sudo mkdir /opt/delphix```
 
 2. Assign ownership to the &quot;postgres&quot; user
 
-sudo chown postgres /opt/delphix/
- sudo chmod 770 /opt/delphix/
+   ```sudo chown postgres /opt/delphix/```
+   
+   ```sudo chmod 770 /opt/delphix/```
 
 3. (Perhaps finish this later) SET Environment Variables
 
@@ -143,15 +145,15 @@ sudo chown postgres /opt/delphix/
 
 1. If you are not already using the &quot;postgres&quot; user, switch to the &quot;postgres&quot; user (password, set before, is &quot;postgres&quot;).
 
-su - postgres
+   ```su - postgres```
 
 2. Start using psql
 
-psql
+   ```psql```
 
 3. Review existing roles. The role &quot;delphix&quot; should not exist.
 
-select rolname from pg\_roles;
+   ```select rolname from pg\roles;```
 
  Will return something like:
 
@@ -159,40 +161,37 @@ select rolname from pg\_roles;
 
 4. Create a delphix role:
 
-create role delphix superuser login replication password &#39;delphix&#39;;
+   ```create role delphix superuser login replication password 'delphix';```
 
 5. Validate that the role exists now:
 
-select rolname from pg\_roles;
+   ```select rolname from pg_roles;```
 
 6. Exit the client
 
-exit
+   ```exit```
 
 **Edit the Postgres Configuration File**
 
-1. **Edit the postgres.conf file:** Here we will enable remote listeners
+1. **Edit the postgres.conf file:** Here we will enable remote listeners. As the root user:
 
- As the root user
-
-vi /usr/local/pgsql/data/postgresql.conf
-
+   ```vi /usr/local/pgsql/data/postgresql.conf```
 
 2. Enable remote connections. Find the line that starts with &quot;listen\_addresses&quot; and set this to all by:
 
-listen\_addresses = &#39;\*&#39;
+   ```listen_addresses='*';```
 
 3. Ensure &quot;port&quot; is in the file (may remain commented)
 
-#port = 5432
+   ```#port = 5432```
 
 4. Set the amount of data that is recorded in the write-ahead logs. In the Write-ahead log section, set wal\_level to logical
 
-wal\_level = logical
+   ```wal_level = logical```
 
 5. If the number is low, Increase concurrent connections by four. In the replication section, set &quot;max\_wal\_senders&quot; by four. Setting to 10 should be sufficient.
 
-max\_wal\_senders = 10
+   ```max_wal_senders = 10```
 
 6. Save the file
 
@@ -200,7 +199,7 @@ max\_wal\_senders = 10
 
 1. Edit the pg\_hba.conf file to allow client connections from the Delphix Engine, the staging
 
-vi /usr/local/pgsql/data/pg\_hba.conf
+   ```vi /usr/local/pgsql/data/pg_hba.conf```
 
 2. Add five lines to the bottom of the file. This allows connectivity from the Delphix Engine, the staging server and the jump box on lines 2-4.
 
@@ -215,24 +214,24 @@ vi /usr/local/pgsql/data/pg\_hba.conf
 
 1. As the user &quot;postgres&quot;
 
-pg\_ctl restart -D /usr/local/pgsql/data -l logfile
+   ```pg_ctl restart -D /usr/local/pgsql/data -l logfile```
 
 ## <a id="_start"></a>Ensure Postgres Starts Upon Restart
 
 We may choose to start and stop our lab. Rather than going through the process of starting Postgres each time, we&#39;ll create a rule to ensure that Postgres is started when the system does.
 
-1. As centos, change directories to /etc/systemd/system
-2. Create a new file for our rule:
+2. As centos, change directories to /etc/systemd/system
+3. Create a new file for our rule:
 
-sudo touch postgresql.service
+   ```sudo touch postgresql.service```
 
 3. Set the proper permissions
 
-sudo chmod 644 postgresql.service
+   ```sudo chmod 644 postgresql.service```
 
 4. Edit the file:
 
-sudo vi postgresql.service
+   ```sudo vi postgresql.service```
 
 5. Enter the following information and save the file:
 
@@ -254,15 +253,15 @@ sudo vi postgresql.service
 
 6. Reload systemctl
 
-sudo systemctl daemon-reload
+   ```sudo systemctl daemon-reload```
 
 7. Enable our script to run at startup:
 
- sudo systemctl enable postgresql
+   ```sudo systemctl enable postgresql```
 
 8. If you wish this prove this works, restart your lab class and check that Postgres is running by running:
 
-ps -A | grep postgres
+   ```ps -A | grep postgres```
 
 ## <a id="_data"></a>Add Data
 
@@ -272,11 +271,17 @@ For this exercise to be interesting, we must have data in our source database. T
 2. In that folder, you&#39;ll find dbmanager.jar
 3. Execute these statements in order (opening this on the jump box and copying pasting is your friend):
 
-java -jar dbmanager.jar setupdb jdbc:postgresql://10.0.1.20:5432/postgres?username=delphix?password=delphix --table DEMO\_TABLE\_1?rows=5?orderby=id:ASCENDING --columns DEMO\_TABLE\_1:SEQUENCE?name=id,FIRST\_NAME,LAST\_NAME,SSN --table DEMO\_TABLE\_2?rows=5 --columns DEMO\_TABLE\_2:CREDIT\_CARD,TIMESTAMP?name=birthday?sequence=RANDOM --outputdb demo.cfg
+```
+java -jar dbmanager.jar setupdb jdbc:postgresql://10.0.1.20:5432/postgres?username=delphix?password=delphix --table DEMO_TABLE_1?rows=5?orderby=id:ASCENDING --columns DEMO_TABLE_1:SEQUENCE?name=id,FIRST_NAME,LAST_NAME,SSN --table DEMO_TABLE_2?rows=5 --columns DEMO_TABLE_2:CREDIT_CARD,TIMESTAMP?name=birthday?sequence=RANDOM --outputdb demo.cfg
+```
 
+```
 java -jar dbmanager.jar createtables jdbc:postgresql://10.0.1.20:5432/postgres?username=delphix?password=delphix --inputdb ./demo.cfg
+```
 
+```
 java -jar dbmanager.jar insertrows jdbc:postgresql://10.0.1.20:5432/postgres?username=delphix?password=delphix --inputdb ./demo.cfg --setrows 10000000
+```
 
 Note, the last step, inserting ten million rows into two tables will take a few minutes. Time for coffee.
 
@@ -288,11 +293,11 @@ The basic configuration for the staging host is the same as the source.
 
 1. Access the environment, this IP is matching what you see above:
 
-ssh -i ~/internal/dxkey centos@10.0.1.30
+   ```ssh -i ~/internal/dxkey centos@10.0.1.30```
 
 2. Check OS version is supported. Assuming CentOS:
 
-cat /etc/centos-release
+   ```cat /etc/centos-release```
 
  ![](images/image3.png)
 
@@ -300,26 +305,29 @@ cat /etc/centos-release
 
 3. Check to see if Postgres is running:
 
-ps -A | grep postgres
+   ```ps -A | grep postgres```
 
 4. (Assuming Postgres is not running, if it is, skip ahead). Switch to root and either add the &quot;postgres&quot; user or reset its password to &quot;postgres&quot;. Linux will complain about the password choice but ignore it.
 
-sudo su -
- passwd postgres (set password as &quot;postgres&quot;)
+   ```sudo su -```
+   
+   ```passwd postgres``` (set password as &quot;postgres&quot;)
 
 5. Set up directories and change users
 
-mkdir /usr/local/pgsql/data -p
- chown postgres /usr/local/pgsql/data
- su - postgres
+   ```mkdir /usr/local/pgsql/data -p```
+   
+   ```chown postgres /usr/local/pgsql/data```
+   
+   ```su - postgres```
 
 6. Initialize Postgres
 
-pg\_ctl init -D /usr/local/pgsql/data
+   ```pg_ctl init -D /usr/local/pgsql/data```
 
 7. Start Postgres
 
-pg\_ctl start -D /usr/local/pgsql/data -l logfile
+   ```pg_ctl start -D /usr/local/pgsql/data -l logfile```
 
 ## <a id="_stagingPrep"></a>Prepping the Staging Host for Delphix
 
@@ -327,13 +335,15 @@ pg\_ctl start -D /usr/local/pgsql/data -l logfile
 
 1. As the centos user, create the directory for the Delphix toolkit
 
-sudo mkdir /opt/delphix
+   ```sudo mkdir /opt/delphix```
 
 2. Assign ownership to the &quot;postgres&quot; user
 
-sudo chown postgres /opt/delphix/
- sudo chmod 770 /opt/delphix/
- sudo chgrp postgres /opt/delphix/
+   ```sudo chown postgres /opt/delphix/```
+   
+   ```sudo chmod 770 /opt/delphix/```
+   
+    ```sudo chgrp postgres /opt/delphix/```
 
 3. (Perhaps finish this later) SET Environment Variables
 
@@ -341,27 +351,27 @@ sudo chown postgres /opt/delphix/
 
 1. The operating system user must have read and execute privileges on the PostgreSQL binaries installed on the target environment. Run the fully query and ensure the last three letters match (r-x):
 
- ls -ld /usr/pgsql-11/bin
+   ```ls -ld /usr/pgsql-11/bin```
 
  ![](images/image4.png)
 
 2. The &quot;postgres&quot; user must have permission to run mount and umount as the superuser via sudo with neither a password nor a TTY. Edit the sudoers file and uncomment the line allowing people in group &quot;wheel&quot; to run all commands
 
-sudo visudo
+   ```sudo visudo```
 
  ![](images/image5.png)
 
 3. Add &quot;postgres&quot; to the wheel group:
 
-sudo usermod -aG wheel postgres
+   ```sudo usermod -aG wheel postgres```
 
 4. Ensure the direction /mnt exists and has read/write/execute access for others:
 
-sudo chmod o+w /mnt
+   ```sudo chmod o+w /mnt```
 
 5. Ensure the &quot;postgres&quot; user has access to the toolkit directory
 
-sudo chmod o+rwx /opt/delphix/
+   ```sudo chmod o+rwx /opt/delphix/```
 
 ## <a id="_env"></a>Create the Staging Environment on the Delphix Engine
 
@@ -372,26 +382,26 @@ sudo chmod o+rwx /opt/delphix/
 5. Select &quot;username and public key&quot;
 6. Click view public key
 7. Copy the public key
-8. As the &quot;postgres&quot; user on the staging server, edit the ~/.ssh/authorized\_keys file and paste the key from the engine:
+8. As the &quot;postgres&quot; user on the staging server, edit the ~/.ssh/authorized_keys file and paste the key from the engine:
 
-vi ~/.ssh/authorized\_keys
+   ```vi ~/.ssh/authorized\_keys```
 
  It should look like:
 
  ![](images/image6.png)
+ 
 9. Run the following to allow only the file&#39;s owner to read and write to it:
 
-chmod 600 ~/.ssh/authorized\_keys
+   ```chmod 600 ~/.ssh/authorized\keys```
 
 
 10. Run the following to restrict access to the user&#39;s home directory:
 
-chmod 755 ~
-
+   ```chmod 755 ~```
 
 11. Back on the Delphix Engine, enter the toolkit path (whatever you specified above)
 
-/opt/delphix/
+   ```/opt/delphix/```
 
 
 12. Click Next
