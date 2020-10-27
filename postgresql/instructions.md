@@ -105,7 +105,7 @@ Ensure the system is configured correctly.
 
    ```sudo su -```
    
-   ```passwd postgres ```(set password as &quot;postgres&quot;)
+   ```passwd postgres```(set password as &quot;postgres&quot;)
 
 5. Set up directories and change users
 
@@ -117,11 +117,11 @@ Ensure the system is configured correctly.
 
 6. Initialize Postgres
 
-   ```pg\_ctl init -D /usr/local/pgsql/data```
+   ```pg_ctl init -D /usr/local/pgsql/data```
 
 7. Start Postgres
 
-   ```pg\_ctl start -D /usr/local/pgsql/data -l logfile```
+   ```pg_ctl start -D /usr/local/pgsql/data -l logfile```
 
 ## <a id="_source"></a>Prepping the Source for Delphix
 
@@ -153,11 +153,11 @@ Ensure the system is configured correctly.
 
 3. Review existing roles. The role &quot;delphix&quot; should not exist.
 
-   ```select rolname from pg\roles;```
+   ```select rolname from pg_roles;```
 
- Will return something like:
+    Will return something like:
 
- ![](images/image2.png)
+    ![](images/image2.png)
 
 4. Create a delphix role:
 
