@@ -82,7 +82,7 @@ Your instructor should have provided you with a **Class Name** and a **Student N
 
 For example, if your **Class Name** is &quot;acmetech&quot; and your **Student Number** is **5** , you would go to the site: [http://acmetech.agile.today/5](http://acmetech.agile.today/5)
 
-![The Delphix Labs Login Dialog](images/new/image1.png)
+![](images/new/image1.png)
 
 At the login screen, enter the username and password: delphix/delphix
 
@@ -97,8 +97,6 @@ Once you have logged in, you will be connected to your lab server. This server c
 **IMPORTANT NOTE:** Do not use the &quot;Log Out&quot; function on your lab server. If you do, it will break your lab connection.
 
 ![](images/new/image2.png)
-
-The Delphix Lab Server
 
 ## <a id="_IPs"></a>Important IP Addresses
 
