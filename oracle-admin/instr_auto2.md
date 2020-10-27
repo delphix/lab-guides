@@ -179,27 +179,26 @@ Delphix requires access to database users with certain privileges. These are con
 **Steps**
 
 1. Use the **Terminal** app on your Jumpbox desktop to connect into your Linux Source (see the **Important IP Addresses** section of the Getting Started guide above).
-  a. Type ssh 10.0.x.20 (where &quot;x&quot; is your **Student Number)**
+   - Type ssh 10.0.x.20 (where &quot;x&quot; is your **Student Number)**
 2. Extract the **hostchecker\_linux\_x86.tar** file in your home directory
-  a. Type ls -ltr
-  b. Type tar -xvf hostchecker\_linux\_x86.tar
+   - Type ls -ltr
+   - Type tar -xvf hostchecker\_linux\_x86.tar
 3. Navigate to the hostchecker directory
-  a. Type cd hostchecker
-  b. Type ls -ltr (observe the files present in this folder, as we will be using them again)
+   - Type cd hostchecker
+   - Type ls -ltr (observe the files present in this folder, as we will be using them again)
 4. Set the Oracle environment variables below:
-  a. Type export ORACLE\_HOME=/u01/app/oracle/product/11.2.0/dbhome\_1
-  b. Type export ORACLE\_SID=orcl
+   - Type export ORACLE\_HOME=/u01/app/oracle/product/11.2.0/dbhome\_1
+   - Type export ORACLE\_SID=orcl
 
 Note: &quot;. oraenv&quot; can be used to set the environment variable rather than export commands
 
 5. Run the script to create the delphix\_db user
-  a. Type ./createDelphixDBUser.sh
+   - Type ./createDelphixDBUser.sh
 6. Use the following details during the running of this script:
-  a. The user will be created in the default instance **orcl**. This is set by the environment variable ORACLE\_SID. Press **Enter** to accept the default database instance **orcl**
-  b. Delphix DB User Username:delphix\_db
-  c. Delphix DB User Password: delphix\_db
-  d. Decline the SELECT ANY DICTIONARY privilege. This is a sweeping privilege that is not required, but optional
-  e. Type: nand press **Enter**
+   - The user will be created in the default instance **orcl**. This is set by the environment variable ORACLE\_SID. Press **Enter** to accept the default database instance **orcl**
+   - Delphix DB User Username:delphix\_db
+   - Delphix DB User Password: delphix\_db    d. Decline the SELECT ANY DICTIONARY privilege. This is a sweeping privilege that is not required, but optional
+   - Type: nand press **Enter**
 
 ![](images/new/image5.png)
 
