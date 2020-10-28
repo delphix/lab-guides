@@ -569,19 +569,19 @@ VDBs can get out of sync as new data comes into the source system. Refreshing a 
 9. Click the **Timeflow** tab
 10. Click the **Refresh** button on the top right next to the **snapshot** icon.
 
-![](images/new/image26.png)
+    ![](images/new/image26.png)
 
 11. There are two options for refreshing the VDB, choose the **Faster** option to refresh from the most recent snapshot from the **orcl** dSource
 12. Click **Next**
 13. Click **Submit**
 
-![](images/new/image27.png)
+    ![](images/new/image27.png)
 
-Once the refresh has completed, a new VDB snapshot will be generated and reflected in the **Timeflow**.
+    - Once the refresh has completed, a new VDB snapshot will be generated and reflected in the **Timeflow**.
 
-![](images/new/image28.png)
+    ![](images/new/image28.png)
 
-Log into **devdb** to confirm.
+    - Log into **devdb** to confirm.
 
 14. Open **Terminal** on your Lab Server desktop
     - Type ssh delphix@10.0.x.30 (&#39;x&#39; will be your **Student Number** )
@@ -595,7 +595,7 @@ Log into **devdb** to confirm.
     - Type sqlplus / as sysdba
     - Type select count(\*) from sourcetab;
 
-![](images/new/image29.png)
+      ![](images/new/image29.png)
 
 If this returns a count of rows, the snapshot/refresh was successful.
 
@@ -618,7 +618,7 @@ Rewinding a VDB rolls it back to a previous point in its Timeflow and re-provisi
 1. On the Delphix main screen, select the **devdb** VDB
 2. Click the **Camera icon** on the top right to take a snapshot of the VDB
 
-![](images/new/image30.png)
+   ![](images/new/image30.png)
 
 3. A new snapshot card will be created on the **devdb Timeflow**. Make a note of the date/time for the latest snapshot card.
 4. Open Terminal on your Lab Server desktop
@@ -633,9 +633,9 @@ Rewinding a VDB rolls it back to a previous point in its Timeflow and re-provisi
    - Type shutdown abort;
    - Type startup;
 
-![](images/new/image31.png)
+     ![](images/new/image31.png)
 
-Note that the database is unable to come online due to a bootstrap error. The **devdb** database is now corrupted. Now we will rewind the VDB to the last good snapshot to fix this.
+    - Note that the database is unable to come online due to a bootstrap error. The **devdb** database is now corrupted. Now we will rewind the VDB to the last good snapshot to fix this.
 
 8. In the Delphix Data Platform (web browser), click on the **devdb** VDB if it is not already selected
 9. Click on the **Timeflow** tab and select the snapshot associated with the date/time you recorded prior to corrupting your database. This will most likely be the latest snapshot.
