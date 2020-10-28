@@ -191,7 +191,7 @@ Delphix requires access to database users with certain privileges. These are con
 4. Set the Oracle environment variables below:
    - Type export ORACLE\_HOME=/u01/app/oracle/product/11.2.0/dbhome\_1
    - Type export ORACLE\_SID=orcl
-     Note: &quot;. oraenv&quot; can be used to set the environment variable rather than export commands
+   - Note: &quot;. oraenv&quot; can be used to set the environment variable rather than export commands
 5. Run the script to create the delphix\_db user
    - Type ./createDelphixDBUser.sh
 6. Use the following details during the running of this script:
@@ -266,6 +266,7 @@ Were all tests successful? If not, which ones failed and why?
 
 Note: In a production installation, the sshd\_config test will return a WARNING response due to permissions on the file. If hostchecker is run as root, for this test, it will perform the test properly.
 
+
 **Steps to Validate the Target Environment with Hostchecker**
 
 1. Connect to your Linux Target A by opening **Terminal** on your Lab Server
@@ -328,12 +329,9 @@ Before users can create their own virtual databases, Delphix needs to connect to
 **Steps**
 
 1. Log into the Delphix Data Platform UI as the ***admin*** user and the password that was set during the Engine setup.
-
-Note: If you forgot your admin password, please ask your lab administrator to reset it.
-
+   - Note: If you forgot your admin password, please ask your lab administrator to reset it.
 2. Click the **Manage** menu and select **Environments** from the list
 3. Click the ellipses ( **…** ) next to **Environments** then choose **Add Environment**
-
 4. On the Host and Server select the following:
    - Host OS: **Unix/Linux**
    - Server Type: **Standalone**
