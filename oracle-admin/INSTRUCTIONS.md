@@ -82,7 +82,7 @@ Your instructor should have provided you with a **Class Name** and a **Student N
 
 For example, if your **Class Name** is &quot;acmetech&quot; and your **Student Number** is **5** , you would go to the site: [http://acmetech.agile.today/5](http://acmetech.agile.today/5)
 
-![](images/new/image1.png)
+   ![](images/new/image1.png)
 
 At the login screen, enter the username and password: delphix/delphix
 
@@ -96,7 +96,7 @@ Once you have logged in, you will be connected to your lab server. This server c
 
 **IMPORTANT NOTE:** Do not use the &quot;Log Out&quot; function on your lab server. If you do, it will break your lab connection.
 
-![](images/new/image2.png)
+   ![](images/new/image2.png)
 
 ## <a id="_IPs"></a>Important IP Addresses
 
@@ -148,7 +148,7 @@ Alternatively, the engine can be accessed and controlled through the [CLI](https
 2. Login to the Delphix Dynamic Data Platform using the username ***admin*** and password ***delphix***
 3. Click **Log In**
 
-![](images/new/image3.png)
+   ![](images/new/image3.png)
 
 4. In order to become more familiar with what is available here, browse around the various sections of the landing page.
 5. Click **admin** on the upper right side and **logout**
@@ -156,7 +156,7 @@ Alternatively, the engine can be accessed and controlled through the [CLI](https
 7. Login to **Delphix Setup** using the username ***sysadmin*** and password ***sysadmin***
 8. Click **Log In**
 
-![](images/new/image4.png)
+   ![](images/new/image4.png)
 
 9. In order to become more familiar with what is available here, browse around the various sections of the landing page.
 
@@ -203,7 +203,7 @@ Note: &quot;. oraenv&quot; can be used to set the environment variable rather th
    - Decline the SELECT ANY DICTIONARY privilege. This is a sweeping privilege that is not required, but optional
    - Type: n and press **Enter**
 
-![](images/new/image5.png)
+     ![](images/new/image5.png)
 
 The script should create the user without error.
 
@@ -234,7 +234,7 @@ In this exercise, you will:
 7. Type 1 and press **Enter**
    - The script will check homedir permissions and return SUCCESS and ALL OK
 
-![](images/new/image6.png)
+     ![](images/new/image6.png)
 
 8. Type 3 and press **Enter**
    - Enter an IP address of: 10.0.x.10 (&#39;x&#39; will be your **Student Number** ).
@@ -285,7 +285,7 @@ Note: In a production installation, the sshd\_config test will return a WARNING 
 7. Type 1 and press **Enter**
    - The script will check homedir permissions and return SUCCESS and ALL OK
 
-![](images/new/image7.png)
+     ![](images/new/image7.png)
 
 8. Type 3 and press **Enter**
    - Enter an IP address of: 10.0.x.10 (&#39;x&#39; will be your **Student Number** ).
@@ -340,7 +340,7 @@ Note: If you forgot your admin password, please ask your lab administrator to re
    - Host OS: **Unix/Linux**
    - Server Type: **Standalone**
 
-![](images/new/image8.png)
+     ![](images/new/image8.png)
 
 5. For Environment Settings, provide the following information
    - Environment Name: Source
@@ -353,13 +353,13 @@ Note: If you forgot your admin password, please ask your lab administrator to re
    - Toolkit Path: /u01/app/toolkit
    - Click **Validate**
 
-![](images/new/image9.png)
+     ![](images/new/image9.png)
 
 6. Click **Next**
 7. Click **Submit**
 8. You can view the status of the environment creation and discovery by clicking on the **Actions** menu on the top right-hand side of the page. Clicking on the jobs lower right corner, in the Actions pane, will allow you to track its progress
 
-![](images/new/image10.png)
+   ![](images/new/image10.png)
 
 
 
@@ -379,17 +379,17 @@ With an environment set-up, users can then sync databases into Delphix. The Delp
 1. View the Environment details
    - Click on the **Environment** on the left on review information on the **Details** tab
 
-![](images/new/image11.png)
+     ![](images/new/image11.png)
 
 2. Click on the **Databases** tab to view any discovered database installations and databases
 
-![](images/new/image12.png)
+   ![](images/new/image12.png)
 
 3. Link the **orcl** database
    - On the top menu, click the **Manage** menu and then **Datasets**
    - Click the **+** next to **Datasets** on the top left portion of your screen and then select **Add dSource**
 
-![](images/new/image13.png)
+     ![](images/new/image13.png)
 
 4. The Welcome page for the dSource Wizard will be displayed. Review the instructions to get an overview of the process and click **Next**
 5. In the Source tab select the orcl Data source and provide the username and password of the database user
@@ -397,7 +397,7 @@ With an environment set-up, users can then sync databases into Delphix. The Delp
    - Enter ***orcl*** for the **dSource Name**
    - Click on the **Add Dataset Group** link and enter ***Source DB*** in the **Name** field.
 
-![](images/new/image14.png)
+     ![](images/new/image14.png)
 
 7. Click **Next**
 8. On the **Data Management** tab accept the defaults
@@ -411,11 +411,11 @@ With an environment set-up, users can then sync databases into Delphix. The Delp
 12. Click **Next**
 13. Review the Summary and click **Submit**.
 
-![](images/new/image15.png)
+    ![](images/new/image15.png)
 
 14. Wait for the dSource to be created
 
-![](images/new/image16.png)
+    ![](images/new/image16.png)
 
 You will know this is successful if the dSource completes in the **Actions** pane without Errors. Click on **Actions** in the top menu bar if you don&#39;t see this pane. Also, the **dSource** state will change to **Active**
 
@@ -451,7 +451,7 @@ The target environment is the host where the virtual databases will be created.
    - Click **Validate**
 6. Click **Next**
 
-![](images/new/image17.png) ![](images/new/image18.png)
+   ![](images/new/image17.png) ![](images/new/image18.png)
 
 7. Click **Submit**
 8. You can view the status of the environment creation and discovery by clicking on the **Actions** menu on the top right-hand side of the page. Clicking on the job in the **Actions** pane will allow you to track its progress.
@@ -478,7 +478,7 @@ The objective of Delphix virtualization is to provide easy access to virtualized
 3. On the **Timeflow** tab of the dSource select the most recent (topmost) **Snapshot**. The **Provision VDB** iconwill appear along with the **Open LogSync** icon to the right.
 4. Click on the **Provision VDB** icon to open the **Provision VDB** wizard. The first of the three icons next to the snapshot time.
 
-![](images/new/image19.png)
+   ![](images/new/image19.png)
 
 5. On the **Target Environment** tab click **Target** from the list of Environments
 6. On the **Target Environment** tab, use the following information
@@ -486,7 +486,7 @@ The objective of Delphix virtualization is to provide easy access to virtualized
    - Ensure that the Environment **User** is set to **delphix**
    - Click **Next**
 
-![](images/new/image20.png)
+     ![](images/new/image20.png)
 
 7. Enter the details below on the **Target Configuration** tab , we will provide a user-friendly name for the VDB as well as assign it to a new group.
    - Click **Add Dataset Group**
@@ -500,7 +500,7 @@ The objective of Delphix virtualization is to provide easy access to virtualized
    - **Oracle SID** : ***devdb***
    - Click **Next**
 
-![](images/new/image21.png)
+     ![](images/new/image21.png)
 
 8. On the **Advanced** tab
    - Confirm that **Open Database After Provision** is selected
@@ -508,7 +508,7 @@ The objective of Delphix virtualization is to provide easy access to virtualized
    - Check the box next to **Enabled** for **Auto VDB Restart**
    - Click **Next**
 
-![](images/new/image22.png)
+     ![](images/new/image22.png)
 
 9. On the **Policies** tab, accept the defaults and click **Next**
 10. On the **Masking** tab, confirm that **Mask this VDB** is not checked
@@ -516,11 +516,11 @@ The objective of Delphix virtualization is to provide easy access to virtualized
 12. Verify the summary information
 13. Click **Submit** tocomplete the VDB creation
 
-![](images/new/image23.png)
+    ![](images/new/image23.png)
 
 It may take a couple minutes for the VDB creation to complete. You can monitor the status on the left-hand side of the screen next to the **devdb** object in the **DB Targets** group. On the **Actions** pane on the right-hand side of the screen, you should see the **Provision virtual database &quot;devdb&quot;** item move to the **Recently completed** pane without error. **devdb**&#39;s status will be set to **VDB - Running**.
 
-![](images/new/image24.png)
+   ![](images/new/image24.png)
 
 Once the VDB is created, you can verify that the VDB is operational by:
 
@@ -535,7 +535,7 @@ Once the VDB is created, you can verify that the VDB is operational by:
     - Type sqlplus / as sysdba
     - Type select name from v$database;
 
-![](images/new/image25.png)
+      ![](images/new/image25.png)
 
 18. Type quit to exit
 
