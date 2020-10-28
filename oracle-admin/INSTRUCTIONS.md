@@ -60,9 +60,9 @@
 
 This guide will get you started with Delphix&#39;s virtualization for Oracle. You will learn how to to securely copy and share datasets. Using virtualization, you will ingest data from sources and create virtual copies, which are full read-write capable database instances that use a small fraction of the resources a normal database copy would require.
 
-Delphix Virtualization's functionality is exposed through two interfaces: management/admin and self-service. Through the management/admin interface, DB administrators connect to source datasets and control decisions on resources such as virtual databases. This guide focuses on that interface. The self-service interface is used by non-admin users to access and operate on the data that was provided by the administrators. A guide for self-service can be found <a href="https://github.com/delphix/lab-guides/blob/master/self-service/INSTRUCTIONS.md">here</a>.
+Delphix Virtualization's functionality is exposed through two interfaces: management/admin and self-service. Through the management/admin interface, DB administrators connect to source datasets and control decisions on resources such as virtual databases. This guide focuses on that interface. The self-service interface is used by non-admin users to access and operate on data provided by administrators. A guide for self-service can be found <a href="https://github.com/delphix/lab-guides/blob/master/self-service/INSTRUCTIONS.md">here</a>.
 
-We also provide a guide for Delphix <a href="https://github.com/delphix/lab-guides/blob/master/masking/INSTRUCTIONS.md">masking</a> and Virtualization guides for other data sources such as <a href="https://github.com/delphix/lab-guides/blob/master/mssql-admin/INSTRUCTIONS.md"> MS SQL </a> and <a href="https://github.com/robertodelphix/lab-guides/blob/master/postgresql/instructions.md"> postgresql </a>.
+We also provide a guide for Delphix <a href="https://github.com/delphix/lab-guides/blob/master/masking/INSTRUCTIONS.md">masking</a>, and for other virtualization data sources such as <a href="https://github.com/delphix/lab-guides/blob/master/mssql-admin/INSTRUCTIONS.md"> MS SQL </a> and <a href="https://github.com/robertodelphix/lab-guides/blob/master/postgresql/instructions.md"> postgresql </a>.
 
 # <a id="_gettingStarted"></a>Getting Started
 
@@ -137,9 +137,9 @@ In this exercise, you will:
 
 **Context**
 
-The Delphix virtualization GUI has two layers: management and setup. The management GUI is accessed by admin users who control data assets and objects. The setup GUI is controlled by the sysadmin who manages the engine and creates new admin users.
+The Delphix virtualization GUI has two layers: management and setup. The management GUI is accessed by admins who control data assets and objects. The setup GUI is controlled by sysadmins who manage the engine and create new admin users.
 
-Alternatively, the engine can be accessed and controlled through the [CLI](https://docs.delphix.com/docs/developer-s-guide/command-line-interface-guide/command-line-interface-overview) or [APIs](https://docs.delphix.com/docs/developer-s-guide/web-services-api-guide)
+Alternatively, the engine can be controlled through the [CLI](https://docs.delphix.com/docs/developer-s-guide/command-line-interface-guide/command-line-interface-overview) or [APIs](https://docs.delphix.com/docs/developer-s-guide/web-services-api-guide).
 
 **Steps**
 
@@ -320,7 +320,7 @@ In this exercise, you will:
 
 **Context**
 
-Before users can create their own virtual databases, Delphix needs to connect to source data. In Delphix, an environment is either a single instance host or cluster of hosts that run database software. For example, a Linux system running Oracle. the environment is where the Delphix engine will search for available data sources. Credentials to access the host need to be provided while configuring an environment.
+Before users can create their own virtual databases, Delphix needs to connect to source data. In Delphix, an environment is a host that runs database software. For example, a Linux system running Oracle. the environment is where the Delphix engine will search for available data sources. Credentials to access the host need to be provided while configuring an environment.
 
 **Steps**
 
@@ -458,8 +458,7 @@ In this exercise, you will:
 
 **Context**
 
-The objective of Delphix virtualization is to provide easy access to virtualized databases that resemble production or any other data system. In Exercise 7, we provision a Virtual Database (VDB). VDBs are fully functional database images that can be created from dSources; specifically, from the snapshots of dSources.
-
+The objective of Delphix virtualization is to provide easy access to virtualized databases that resemble production and other data systems. In Exercise 7, we provision a Virtual Database (VDB). VDBs are fully functional database images that can be created from dSources.
 **Steps**
 
 1. Click the **Manage** menu and then **Datasets**
@@ -540,7 +539,7 @@ In this exercise, you will:
 
 **Context**
 
-VDBs can get out of sync as new data comes into the source system. Refreshing a VDB will re-provision it from the dSource. Refreshing a VDB will delete any changes that have been made to it over time. To revert a VDB to match the dSource, the following steps are followed:
+VDBs can get out of sync as new data comes into the source system. Refreshing a VDB will re-provision it from the dSource. Refreshing a VDB will delete any changes that have been made to it over time.
 
 **Steps**
 
@@ -665,7 +664,7 @@ There are four types of Policies in Delphix. In this exercise, you will:
 
 **Context**
 
-Both dSources and VDBs timeflow is governed by snapshots, which are either created manually or through policies. Retention policies govern the lifespan of such snapshots and help clean older snapshots that are no longer being used.
+Both dSources and VDBs timeflow is governed by snapshots, which are either created manually or through policies. Retention policies govern the lifespan of such snapshots and help clean older ones that are no longer relevant.
 
 **Steps**
 
