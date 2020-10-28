@@ -62,7 +62,7 @@ This guide will get you started with Delphix&#39;s virtualization for Oracle. Yo
 
 Delphix Virtualization's functionality is exposed through two interfaces: management/admin and self-service. Through the management/admin interface (the topic of this guide), DB administrators connect to source datasets and create resources such as virtual databases. Through the self-service interface, non-admin users can operate on data provided by administrators. A guide for self-service can be found <a href="https://github.com/delphix/lab-guides/blob/master/self-service/INSTRUCTIONS.md">here</a>.
 
-We also provide a guide for Delphix <a href="https://github.com/delphix/lab-guides/blob/master/masking/INSTRUCTIONS.md">masking</a>, and for other virtualization data sources such as <a href="https://github.com/delphix/lab-guides/blob/master/mssql-admin/INSTRUCTIONS.md"> MS SQL </a> and <a href="https://github.com/robertodelphix/lab-guides/blob/master/postgresql/instructions.md"> postgresql </a>.
+We also provide a guide for Delphix <a href="https://github.com/delphix/lab-guides/blob/master/masking/INSTRUCTIONS.md">masking</a>, and for other virtualization data sources such as <a href="https://github.com/delphix/lab-guides/blob/master/mssql-admin/INSTRUCTIONS.md"> MS SQL </a> and <a href="https://github.com/robertodelphix/lab-guides/blob/master/postgresql/instructions.md"> postgresql</a>.
 
 # <a id="_gettingStarted"></a>Getting Started
 
