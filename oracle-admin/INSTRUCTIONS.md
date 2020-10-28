@@ -127,8 +127,8 @@ In the above IP addresses, the **x** denotes your **Student Number**. For exampl
 
 Perform these exercises when instructed by your Delphix Instructor.
 
-
-
+<br></br>
+<br></br>
 ## <a id="_ex1"></a>Exercise 1 – Logging into the Delphix Engine UI
 
 In this exercise, you will:
@@ -166,9 +166,6 @@ Alternatively, the engine can be accessed and controlled through the [CLI](https
 
 [Setting Up the Delphix Data Platform](https://docs.delphix.com/docs/deployment/installation-and-initial-system-configurations/initial-setup)
 
-
-<br></br>
-<br></br>
 <br></br>
 <br></br>
 ## <a id="_ex2"></a>Exercise 2 – Create the &quot;delphix\_db&quot; User
@@ -208,8 +205,8 @@ Delphix requires access to database users with certain privileges. These are con
 
 The script should create the user without error.
 
-
-
+<br></br>
+<br></br>
 ## <a id="_ex3"></a>Exercise 3 – Validate the Source and Target Environment with Hostchecker
 
 In this exercise, you will:
@@ -316,8 +313,8 @@ If you have completed all of the checks and they have returned SUCCESS and ALL O
 
 Note: In a production installation, the sshd\_config test will return a WARNING response, due to permissions on the file. If hostchecker is run as root, for this test, it will perform the test properly.
 
-
-
+<br></br>
+<br></br>
 ## <a id="_ex4"></a>Exercise 4 – Add a Source Environment
 
 In this exercise, you will:
@@ -360,8 +357,8 @@ Before users can create their own virtual databases, Delphix needs to connect to
 
    ![](images/new/image10.png)
 
-
-
+<br></br>
+<br></br>
 ## <a id="_ex5"></a>Exercise 5 – Link a dSource
 
 In this exercise, you will:
@@ -418,8 +415,8 @@ With an environment set-up, users can then sync databases into Delphix. The Delp
 
 You will know this is successful if the dSource completes in the **Actions** pane without Errors. Click on **Actions** in the top menu bar if you don&#39;t see this pane. Also, the **dSource** state will change to **Active**
 
-
-
+<br></br>
+<br></br>
 ## <a id="_ex6"></a>Exercise 6 – Add Target Environments
 
 In this exercise, you will:
@@ -458,8 +455,8 @@ The target environment is the host where the virtual databases will be created.
    - Click on the **Environment Name** ( **Target** ) on the left and review information on the **Details** tab
    - Click on the **Databases** tab to view any discovered database installations and databases
 
-
-
+<br></br>
+<br></br>
 ## <a id="_ex7"></a>Exercise 7 – Provision a VDB
 
 In this exercise, you will:
@@ -538,8 +535,8 @@ Once the VDB is created, you can verify that the VDB is operational by:
 
 18. Type quit to exit
 
-
-
+<br></br>
+<br></br>
 ## <a id="_ex8"></a>Exercise 8 – Refresh a VDB
 
 In this exercise, you will:
@@ -602,8 +599,8 @@ VDBs can get out of sync as new data comes into the source system. Refreshing a 
 
 If this returns a count of rows, the snapshot/refresh was successful.
 
-
-
+<br></br>
+<br></br>
 ## <a id="_ex9"></a>Exercise 9 – Rewind a VDB
 
 In this exercise, you will:
@@ -666,8 +663,8 @@ Once the rewind operation is complete, you can confirm the rewind was successful
 
       ![](images/new/image34.png)
 
-
-
+<br></br>
+<br></br>
 ## <a id="_ex10"></a>Exercise 10 – Set a New Retention Policy
 
 There are four types of Policies in Delphix. In this exercise, you will:
@@ -705,8 +702,8 @@ Expand the **policies** menu to validate that the new **Long Term** policy has b
 
 ![](images/new/image38.png)
 
-
-
+<br></br>
+<br></br>
 ## <a id="_ex11"></a>Exercise 11 – Create and Save a Hook Operation Template
 
 In this exercise, you will:
@@ -742,8 +739,8 @@ Hook operations allow users to execute custom operations at select points during
 
    ![](images/new/image40.png)
 
-
-
+<br></br>
+<br></br>
 ## <a id="_ex12"></a>Exercise 12 – Create a VDB Template
 
 In this exercise, you will:
@@ -771,8 +768,8 @@ In this exercise, you will:
 
 You can verify that this was successful by returning to the **VDB Configuration Templates Wizard** and clicking on the **1G Template** item.
 
-
-
+<br></br>
+<br></br>
 ## <a id="_ex13"></a>Exercise 13 – Provision a VDB with Hook and VDB Template
 
 In this exercise, you will:
@@ -846,8 +843,8 @@ This will verify that the VDB is online with the **VDB Configuration Template** 
 
 Note: It may take a couple minutes for the VDB creation to complete. You can monitor the progress on the left-hand side of the screen next to the **qadb** object in the **DB Targets** group. On the **Actions** pane on the right-hand side of the screen, you should see the **Provision virtual database &quot;qadb&quot;** item move to the **Recently completed** pane without error. Once the VDB is created, you can verify that the VDB is operational by:
 
-
-
+<br></br>
+<br></br>
 ## <a id="_ex14"></a>Optional Advanced Exercise – Discover and Link a 12c Container Database dSource
 
 In this exercise, you will:
@@ -951,8 +948,8 @@ Once complete, PDB **WINTERFELL** should be discovered and displayed under the 1
 
     ![](images/new/image53.png)
 
-
-
+<br></br>
+<br></br>
 ## <a id="_ex15"></a>Optional Advanced Exercise – Provision a Virtual PDB (vPDB)
 
 In this exercise you will:
@@ -1021,8 +1018,8 @@ Note: Once Action is completed you can see the vCDB we added and the VPDB just p
     - alter session set container=DEVPDB;
     - show CON\_NAME
 
-
-
+<br></br>
+<br></br>
 ## <a id="_ex16"></a>Optional Advanced Exercise – Measure Network Performance Test through the CLI
 
 In this exercise, you will:
@@ -1074,8 +1071,8 @@ As an advanced exercise, this lab has no corresponding Lab Solution. Instead, we
 
      ![](images/new/image61.png)
 
-
-
+<br></br>
+<br></br>
 ## <a id="_ex17"></a>Optional Advanced Exercise – Configure Delphix Replication
 
 Note: This exercise is only possible if your classroom has been configured with 2 or more students.
