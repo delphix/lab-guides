@@ -432,7 +432,7 @@ Before creating (one or more) copies of the source database, we need to create t
 
 **Add a dSource**
 
-1. Navigate to **Manage-\&gt;Datasets**
+1. Navigate to **Manage->Datasets**
 2. Click the **+** and &quot;Add dSource&quot;
 3. Click &quot;Next&quot;
 4. On the &quot;Source&quot; window select &quot;Postgres&quot;
