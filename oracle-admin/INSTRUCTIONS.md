@@ -58,11 +58,13 @@
 
 # <a id="_background"></a>Background
 
-This guide will get you started with Delphix&#39;s virtualization for Oracle. You will learn how to to securely copy and share datasets. Using virtualization, you will ingest data sources and create virtual data copies, which are full read-write capable database instances that use a small fraction of the resources a normal database copy would require.
+This guide will get you started with Delphix&#39;s virtualization for Oracle. You will learn how to to securely copy and share datasets. Using virtualization, you will ingest data from sources and create virtual copies, which are full read-write capable database instances that use a small fraction of the resources a normal database copy would require.
 
-Virtualization has two interfaces: management and self-service. Through the management interface, DB administrators connect to source datasets and control decisions on resources such as virtual databases. This guide focuses on that interface. The self-service interface is used by non-admin users to access and operate on the data that was provided by the administrators. A guide for self-service can be found <a href="https://github.com/delphix/lab-guides/blob/master/self-service/INSTRUCTIONS.md">here</a>.
+Virtualization operates with two interfaces: management and self-service. Through the management/admin interface, DB administrators connect to source datasets and control decisions on resources such as virtual databases. This guide focuses on that interface. The self-service interface is used by non-admin users to access and operate on the data that was provided by the administrators. We also provide a guide for <a href="https://github.com/delphix/lab-guides/blob/master/self-service/INSTRUCTIONS.md">self-service</a>.
 
-Guides for other Delphix's products such as masking and data control tower can be found <a href="https://github.com/delphix/lab-guides/blob/master/masking/INSTRUCTIONS.md">here</a> and <a href="https://docs.delphix.com/cm">here</a> respectively.
+We also provide guides for Delphix <a href="https://github.com/delphix/lab-guides/blob/master/masking/INSTRUCTIONS.md">masking here</a> and for other data sources such as <a href="https://github.com/delphix/lab-guides/blob/master/mssql-admin/INSTRUCTIONS.md"> MS SQL </a> and  <a href="https://github.com/robertodelphix/lab-guides/blob/master/postgresql/instructions.md"> postgresql </a>.
+
+Similar to this guide, 
 
 # <a id="_gettingStarted"></a>Getting Started
 
