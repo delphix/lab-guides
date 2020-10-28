@@ -112,10 +112,10 @@ In the above IP addresses, the **x** denotes your **Student Number**. For exampl
 
 | User | Password |
 | :--- | :--- |
-| Initial Delphix **sysadmin** password | sysadmin |
-| Initial Delphix **admin** password | delphix |
-| Source and Target **delphix** user password (via SSH) | delphix |
-| Source and Target **oracle** user password (via SSH) | delphix |
+| Initial Delphix **sysadmin** | sysadmin |
+| Initial Delphix **admin** | delphix |
+| Source and Target **delphix** user (via SSH) | delphix |
+| Source and Target **oracle** user (via SSH) | delphix |
 
 ## <a id="_paths"></a>Paths
 
