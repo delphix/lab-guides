@@ -100,7 +100,7 @@ Once you have logged in, you will be connected to your lab server. This server c
 
 ## <a id="_IPs"></a>Important IP Addresses
 
-|host|IP|  
+| Host | IP |  
 | --- | --- |
 | **Delphix Data Platform** | 10.0.x.10 |
 | **Linux Source** | 10.0.x.20 |
@@ -110,16 +110,18 @@ In the above IP addresses, the **x** denotes your **Student Number**. For exampl
 
 ## <a id="_usrs"></a>Cloud Lab Usernames and Passwords
 
-| Initial Delphix **sysadmin** password | sysadmin |
+| User | Password |
 | :--- | :--- |
+| Initial Delphix **sysadmin** password | sysadmin |
 | Initial Delphix **admin** password | delphix |
 | Source and Target **delphix** user password (via SSH) | delphix |
 | Source and Target **oracle** user password (via SSH) | delphix |
 
 ## <a id="_paths"></a>Paths
 
-| **hostchecker** (after tar extraction) | /home/delphix/hostchecker |
+| Object/Tool | Path |
 | :--- | :--- |
+| **hostchecker** (after tar extraction) | /home/delphix/hostchecker |
 | **Oracle XE 11g** ORACLE\_HOME | /u01/app/oracle/product/11.2.0/xe |
 | **Toolkit** | /u01/app/toolkit |
 
