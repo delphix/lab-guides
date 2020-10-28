@@ -691,7 +691,7 @@ Both dSources and VDBs timeflow is governed by snapshots, which are either creat
 
    ![](images/new/image36.png)
 
-5. Click the checkbox next to **Keep 3 Snapshot(s) on 1****st **** of every month**
+5. Click the checkbox next to **Keep 3 Snapshot(s) on 1st of every month**
 6. Click **Next**
 7. On the **Datasets** tab click the **checkbox** for the **devdb**
 8. Click **Submit**
@@ -785,7 +785,7 @@ In this exercise, you will:
 1. Return to the Delphix home screen by clicking the **Delphix** logo on the top left of the screen
 2. Click on the **orcl** dSource object in the **Datasets** panel
 3. Select the latest **Snapshot** , click the **Provision** button
-4. On the left hand side of the **Target Environment** tab, click the **Target**** Environment ****Target**
+4. On the left hand side of the **Target Environment** tab, click the **Target Environment Target**
 5. Click **Next**
 6. On the **Target Configuration** tab, enter the following details:
    - **Select DB Targets** from the **Datasets Group** drop-down list,
