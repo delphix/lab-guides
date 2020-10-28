@@ -642,11 +642,11 @@ Rewinding a VDB rolls it back to a previous point in its Timeflow and re-provisi
 10. Hover over the **Snapshot** to reveal the **Rewind** button.
 11. Click the **Rewind VDB** button on the **Timeflow**
 
-![](images/new/image32.png)
+    ![](images/new/image32.png)
 
 12. Confirm that you wish to rewind the VDB by clicking **Rewind**.
 
-![](images/new/image33.png)
+    ![](images/new/image33.png)
 
 Once the rewind operation is complete, you can confirm the rewind was successful by connecting to the server again and querying the database:
 
@@ -661,7 +661,7 @@ Once the rewind operation is complete, you can confirm the rewind was successful
     - Type sqlplus / as sysdba
     - Type select count(\*) from sourcetab;
 
-![](images/new/image34.png)
+      ![](images/new/image34.png)
 
 
 
@@ -682,21 +682,21 @@ Both dSources and VDBs timeflow is governed by snapshots, which are either creat
 1. In the top menu bar, click on **Manage** and then **Policies**
 2. Click the **Retention** tab, click **+Retention**
 
-![](images/new/image35.png)
+   ![](images/new/image35.png)
 3. Provide the following details:
    - Policy Name: ***Long Term***
    - Keep Logs for: ***30** ***days**
    - Keep Snapshots for: ***30** ***days**
 4. Click the ***Show advanced*** _link_
 
-![](images/new/image36.png)
+   ![](images/new/image36.png)
 
 5. Click the checkbox next to **Keep 3 Snapshot(s) on 1****st **** of every month**
 6. Click **Next**
 7. On the **Datasets** tab click the **checkbox** for the **devdb**
 8. Click **Submit**
 
-![](images/new/image37.png)
+   ![](images/new/image37.png)
 
 Expand the **policies** menu to validate that the new **Long Term** policy has been applied to the **devdb** VDB.
 
@@ -722,22 +722,22 @@ Hook operations allow users to execute custom operations at select points during
 3. Provide the _Name_: ***Create APPUSER***
 4. Ensure _Type_ is set to: **System Shell Command**
 5. Under **Contents** , enter the following code:
-```
-$ORACLE_HOME/bin/sqlplus / as sysdba << EOF
-  create user appuser identified by appuser;
-  grant connect, resource to appuser;
-  exit;
-EOF
-```
+   ```
+   $ORACLE_HOME/bin/sqlplus / as sysdba << EOF
+     create user appuser identified by appuser;
+     grant connect, resource to appuser;
+     exit;
+   EOF
+   ```
 
-**IMPORTANT:** Make sure the carriage returns you see here are the same in the pasted contents.
+   **IMPORTANT:** Make sure the carriage returns you see here are the same in the pasted contents.
 
-![](images/new/image39.png)
+   ![](images/new/image39.png)
 
 6. Click **Create**
 7. Verify the **Create APPUSER** Hook Operation Template is in the list, then click **Close**
 
-![](images/new/image40.png)
+   ![](images/new/image40.png)
 
 
 
@@ -755,7 +755,7 @@ In this exercise, you will:
 3. Name: ***1G Template***
 4. Click **Create**
 
-![](images/new/image41.png)
+   ![](images/new/image41.png)
 
 5. Click **1G Template** under **VDB Config Templates**
 6. Click the **pencil** icon on the top right of the **VDB Configuration Templates** screen
@@ -800,23 +800,23 @@ In this exercise, you will:
 9. On **the VDB Configure Parameters** tab, click the **1G Template** that we created earlier from the **Select template** drop-down list
 10. Click **Next**
 
-![](images/new/image42.png)
+    ![](images/new/image42.png)
 
 11. On the **Policies** tab, accept Default Snapshot Policy and Click **Next**
 12. On the Masking tab, leave Mask this VDB unchecked. Click **Next**
 13. On the **Hooks** tab with **Configure Clone** already selected on the left side of the **Provision VDB Wizard** , click the **plus sign** to the right of the words **Hook Points** and select **Create from Template** from the drop-down list
 
-![](images/new/image43.png)
+    ![](images/new/image43.png)
 
 14. **Enter a Name** ***QA APPUSER*** for the **Hook Operation**
 15. Click on the **Create APPUSER** template we created earlier
 16. Click the **Create** button
 
-![](images/new/image44.png)
+    ![](images/new/image44.png)
 
 17. Click Next
 
-![](images/new/image45.png)
+    ![](images/new/image45.png)
 
 18. Click **Next**
 19. Verify the summary information, and click **Submit**
@@ -898,7 +898,7 @@ If not already connected, connect to your Delphix Engine as Delphix Admin.
 3. Scroll down to find the home /u01/app/oracle/product/12.2.0/dbhome\_1
 4. Click on Discover CDB to discover the PDB&#39;s in the CDB
 
-![](images/new/image47.png)
+   ![](images/new/image47.png)
 
 5. On the Discover CDB wizard Popup Enter the following details
    - Username: c##delphix\_db
@@ -920,7 +920,7 @@ Once complete, PDB **WINTERFELL** should be discovered and displayed under the 1
 4. Click on **Verify credentials** to verify the give details.
 5. Click **Next**
 
-![](images/new/image49.png)
+   ![](images/new/image49.png)
 
 6. On the dSource Configuration tab of the Add dSource wizard Click on **Add Dataset Group**
 7. On the Add Dataset Group pop up, add a new group with the name ***Ora12C Sources***.
@@ -931,24 +931,22 @@ Once complete, PDB **WINTERFELL** should be discovered and displayed under the 1
 12. We will not be configuring hooks at this time. Click on **Next**.
 13. Review Summary and Click **Submit**.
 
-![](images/new/image50.png)
+    ![](images/new/image50.png)
 
 14. Click on Actions on the top right-hand corner if Actions Pane is hidden to monitor progress of the Action and ensure it completes without error.
 
-![](images/new/image51.png)
+    ![](images/new/image51.png)
 
 15. Once the dSource creation is completed Navigate to **Manage** -> **Datasets**.
 16. Expand the Ora12c Sources group to explore the DB&#39;s under it. You should see both the CDB gotcdb and the PDB WINTERFELL listed under it.
+    - Note the Different icons used to represent CDB and PDB&#39;s
+    - Also note there is no timeflow available for the container database gotcdb.
 
-Note the Different icons used to represent CDB and PDB&#39;s
-
-Also note there is no timeflow available for the container database gotcdb.
-
-![](images/new/image52.png)
+    ![](images/new/image52.png)
 
 17. Click on the PDB WINTERFELL to see the **Timeflow** , **Status** and **Configurations** under the respective tabs.
 
-![](images/new/image53.png)
+    ![](images/new/image53.png)
 
 
 
@@ -967,7 +965,7 @@ As an advanced exercise, this lab has no corresponding Lab Solution. Instead, we
 3. Expand **Ora12C Sources** Group and click on WINTERFELL PDB
 4. Hover on the latest snapshot card and click on **Provision a VDB**.
 
-![](images/new/image54.png)
+   ![](images/new/image54.png)
 
 5. On the Provision vPDB Wizard
    - Click on **Target** under **Environments**.
@@ -986,7 +984,7 @@ As an advanced exercise, this lab has no corresponding Lab Solution. Instead, we
     - SID: VCWINTER
 11. Click **Next**.
 
-![](images/new/image55.png)
+    ![](images/new/image55.png)
 
 12. On the **Advanced** page click the **Auto vCDB Restart Enabled checkbox**
 13. Click **Next**
@@ -998,13 +996,13 @@ Note: Once Submitted, the Action will show a working screen for a few seconds. Y
 
 17. Monitor the Actions Pane by clicking on the Actions button on the top right-hand corner. You can get more details about the action by clicking on the >, to the left of the currently running action, to expand it.
 
-![](images/new/image56.png)
+    ![](images/new/image56.png)
 
 Note: Once Action is completed you can see the vCDB we added and the VPDB just provisioned listed under the new Dataset group Ora12C Targets. Expand the group if necessary, to view the objects under it. Note that there is no timeflow for the vCDB.
 
 18. Click on devPDB and review Timeflow, Status and configuration details under the respective tabs.
 
-![](images/new/image57.png)
+    ![](images/new/image57.png)
 
 19. Using the **Terminal** icon on your lab desktop connect to the **target** server. (Refer to the Important IP Addresses section of the labguide)
     - Click on the **Terminal** icon on the lab desktop
@@ -1044,7 +1042,7 @@ As an advanced exercise, this lab has no corresponding Lab Solution. Instead, we
    - Set the remoteHost value to the TargetA environment IP address: set remoteHost=10.0.x.30 (&#39;x&#39; will be your **Student Number** )
    - Begin the test by typing: commit
 
-![](images/new/image58.png)
+     ![](images/new/image58.png)
 
 4. View the results of the latency test:
    - Get to the latency test section again by typing: network test latency
@@ -1053,7 +1051,7 @@ As an advanced exercise, this lab has no corresponding Lab Solution. Instead, we
    ```select 10.0.1.30-2015-09-18T12:47:19.711Z```
    - View the results of the test by typing: get
 
-![](images/new/image59.png)
+     ![](images/new/image59.png)
 
 5. Create a network throughput test
    - While still logged into the CLI, return to the root by typing: cd /
@@ -1062,7 +1060,7 @@ As an advanced exercise, this lab has no corresponding Lab Solution. Instead, we
    - Set the remoteHost value to the TargetA environment IP address: setremoteHost=10.0.x.30 (&#39;x&#39; will be your **Student Number** )
    - Begin the test by typing: commit
 
-![](images/new/image60.png)
+     ![](images/new/image60.png)
 
 6. View the results of the throughput test:
    - Get to the throughput test section again by typing: network test throughput
@@ -1071,7 +1069,7 @@ As an advanced exercise, this lab has no corresponding Lab Solution. Instead, we
    ```select 10.0.1.30-2015-09-18T13:13:08.152Z```
    - View the results of the test by typing: get
 
-![](images/new/image61.png)
+     ![](images/new/image61.png)
 
 
 
@@ -1104,13 +1102,13 @@ As an advanced exercise, this lab has no corresponding Lab Solution. Instead, we
    - For the Objects Being Replicated, select: **Entire Delphix Data Platform**
    - Click **Create** at the bottom when ready.
 
-![](images/new/image62.png)
+   ![](images/new/image62.png)
 
 3. Start the Replication by clicking the **Replicate Now** button on the top right of your screen.
 4. Click **Replicate** to confirm you are ready to begin.
 5. Once the initial full replication is complete, you will see a message stating **Last Replication Successful**.
 
-![](images/new/image63.png)
+   ![](images/new/image63.png)
 
 6. Check the results on your target Delphix Data Platform
    - In your lab server browser, enter ***the IP address*** you used for the Target Engine in your replica profile. For example, if you are Student 1, your Delphix Data Platform is at 10.0.1.10, and your target would have been 10.0.2.10.
