@@ -167,7 +167,10 @@ Alternatively, the engine can be accessed and controlled through the [CLI](https
 [Setting Up the Delphix Data Platform](https://docs.delphix.com/docs/deployment/installation-and-initial-system-configurations/initial-setup)
 
 
-
+<br></br>
+<br></br>
+<br></br>
+<br></br>
 ## <a id="_ex2"></a>Exercise 2 – Create the &quot;delphix\_db&quot; User
 
 In this exercise, you will:
