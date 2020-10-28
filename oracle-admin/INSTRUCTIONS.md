@@ -60,9 +60,9 @@
 
 This guide will get you started with Delphix&#39;s virtualization for Oracle. You will learn how to to securely copy and share datasets. Using virtualization, you will ingest data from sources and create virtual copies, which are full read-write capable database instances that use a small fraction of the resources a normal database copy would require.
 
-Virtualization operates with two interfaces: management and self-service. Through the management/admin interface, DB administrators connect to source datasets and control decisions on resources such as virtual databases. This guide focuses on that interface. The self-service interface is used by non-admin users to access and operate on the data that was provided by the administrators. We also provide a guide for <a href="https://github.com/delphix/lab-guides/blob/master/self-service/INSTRUCTIONS.md">self-service</a>.
+Delphix Virtualization's functionality is exposed through two interfaces: management/admin and self-service. Through the management/admin interface, DB administrators connect to source datasets and control decisions on resources such as virtual databases. This guide focuses on that interface. The self-service interface is used by non-admin users to access and operate on the data that was provided by the administrators. A guide for self-service can be found <a href="https://github.com/delphix/lab-guides/blob/master/self-service/INSTRUCTIONS.md">here</a>.
 
-We also provide guides for Delphix <a href="https://github.com/delphix/lab-guides/blob/master/masking/INSTRUCTIONS.md">masking</a> and, similar to this guide, we also provide analogous ones for other data sources such as <a href="https://github.com/delphix/lab-guides/blob/master/mssql-admin/INSTRUCTIONS.md"> MS SQL </a> and <a href="https://github.com/robertodelphix/lab-guides/blob/master/postgresql/instructions.md"> postgresql </a>.
+We also provide a guide for Delphix <a href="https://github.com/delphix/lab-guides/blob/master/masking/INSTRUCTIONS.md">masking</a> and Virtualization guides for other data sources such as <a href="https://github.com/delphix/lab-guides/blob/master/mssql-admin/INSTRUCTIONS.md"> MS SQL </a> and <a href="https://github.com/robertodelphix/lab-guides/blob/master/postgresql/instructions.md"> postgresql </a>.
 
 # <a id="_gettingStarted"></a>Getting Started
 
