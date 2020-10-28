@@ -303,7 +303,7 @@ The basic configuration for the staging host is the same as the source.
 
    ```cat /etc/centos-release```
 
- ![](images/image3.png)
+   ![](images/image3.png)
 
  CentOS must be 7.4 or greater, depending on the specific Postgres version (below)
 
