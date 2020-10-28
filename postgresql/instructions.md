@@ -305,7 +305,7 @@ The basic configuration for the staging host is the same as the source.
 
    ![](images/image3.png)
 
- CentOS must be 7.4 or greater, depending on the specific Postgres version (below)
+   CentOS must be 7.4 or greater, depending on the specific Postgres version (below)
 
 3. Check to see if Postgres is running:
 
@@ -379,7 +379,7 @@ The basic configuration for the staging host is the same as the source.
 
 ## <a id="_env"></a>Create the Staging Environment on the Delphix Engine
 
-1. On the Delphix Engine as an administrator, go to **Manage-\&gt;Environments**
+1. On the Delphix Engine as an administrator, go to **Manage->Environments**
 2. Click Add Environment
 3. Add an environment name &quot;Postgres Staging Host&quot;
 4. Add the host address &quot;10.0.1.30&quot;
@@ -401,11 +401,11 @@ The basic configuration for the staging host is the same as the source.
 
 10. Run the following to restrict access to the user&#39;s home directory:
 
-   ```chmod 755 ~```
+    ```chmod 755 ~```
 
 11. Back on the Delphix Engine, enter the toolkit path (whatever you specified above)
 
-   ```/opt/delphix/```
+    ```/opt/delphix/```
 
 
 12. Click Next
