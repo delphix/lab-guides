@@ -191,9 +191,7 @@ Delphix requires access to database users with certain privileges. These are con
 4. Set the Oracle environment variables below:
    - Type export ORACLE\_HOME=/u01/app/oracle/product/11.2.0/dbhome\_1
    - Type export ORACLE\_SID=orcl
-
-Note: &quot;. oraenv&quot; can be used to set the environment variable rather than export commands
-
+     Note: &quot;. oraenv&quot; can be used to set the environment variable rather than export commands
 5. Run the script to create the delphix\_db user
    - Type ./createDelphixDBUser.sh
 6. Use the following details during the running of this script:
