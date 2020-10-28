@@ -101,7 +101,7 @@ Once you have logged in, you will be connected to your lab server. This server c
 ## <a id="_IPs"></a>Important IP Addresses
 
 | Host | IP |  
-| --- | --- |
+| :--- | :--- |
 | **Delphix Data Platform** | 10.0.x.10 |
 | **Linux Source** | 10.0.x.20 |
 | **Linux Target** | 10.0.x.30 |
