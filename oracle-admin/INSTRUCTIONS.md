@@ -1,1466 +1,1111 @@
-#  Delphix Admin for Oracle Lab Guide
+# Delphix Admin Training for Oracle Virtualization
 
-# Table of Contents
-Lab Exercises  
+## LAB GUIDE
 
-* [Optional Advanced Exercise - Perform a Storage Performance Test through the CLI](#stroragetest)
-* [Exercise 1 - Delphix Data Platform Configuration](#exercise1)
-* [Exercise 2 - Create the "delphix_db" User](#exercise2)
-* [Exercise 3 - Validate the Source Environment with Hostchecker](#exercise3)
-* [Exercise 4 - Add a Source Environment and Link a dSource](#exercise4)
-* [Exercise 5 - Validate the Target Environment with Hostchecker](#exercise5)
-* [Exercise 6 - Add Target Environments](#exercise6)
-* [Exercise 7 - Provision a VDB](#exercise7)
-* [Exercise 8 - Refresh a VDB](#exercise8)
-* [Exercise 9 - Rewind a VDB](#exercise9)
-* [Exercise 10 - Set a New Retention Policy](#exercise10)
-* [Exercise 11 - Create and Save a Hook Operation Template](#exercise11)
-* [Exercise 12 - Create a VDB Template](#exercise12)
-* [Exercise 13 - Provision a VDB with Hook and VDB Template](#exercise13)
-* [Optional Advanced Exercise - Measure Network Performance Test through the CLI](#opt_network_perf_test)
-* [Optional Advanced Exercise - Configure Delphix Replication](#opt_delphix_replication)
+## Table of Contents
 
-Lab Solutions
+**[Background](#_background)**
 
-* [Exercise 1 - Delphix Data Platform Setup](#exercise1_sol)
-* [Exercise 2 - Create the "delphix_db" User](#exercise2_sol)
-* [Exercise 3 - Validate the Source Environment with Hostchecker](#exercise3_sol)
-* [Exercise 4 - Add a Source Environment and Link a dSource](#exercise4_sol)
-* [Exercise 5 - Validate the Target Environment with Hostchecker](#exercise5_sol)
-* [Exercise 6 - Add Target Environment](#exercise6_sol)
-* [Exercise 7 - Provision a VDB](#exercise7_sol)
-* [Exercise 8 - Refresh a VDB](#exercise8_sol)
-* [Exercise 9 - Rewind a VDB](#exercise9_sol)
-* [Exercise 10 - Set a New Retention Policy](#exercise10_sol)
-* [Exercise 11 - Create and Save a Hook Operation Template](#exercise11_sol)
-* [Exercise 12 - Create a VDB Template](#exercise12_sol)
-* [Exercise 13 - Provision a VDB with Hook and VDB Template](#exercise13_sol)
+**[Getting Started](#_gettingStarted)**
 
-#  Lab Exercises
+* [Welcome to the Delphix Admin Training for Oracle Lab Guide](#_welcome)
+
+* [Lab Requirements](#_reqs)
+
+* [The Delphix Admin Training Cloud Lab](#_cloudLab)
+
+* [Important IP Addresses](#_IPs)
+
+* [Cloud Lab Usernames and Passwords](#_usrs)
+
+* [Paths](#_paths)
+
+**[Lab Exercises](#_exs)**
+
+* [Exercise 1 – Logging into the Delphix Engine UI](#_ex1)
+
+* [Exercise 2 – Create the &quot;delphix\_db&quot; User](#_ex2)
+
+* [Exercise 3 – Validate the Source and Target Environment with Hostchecker](#_ex3)
+
+* [Exercise 4 – Add a Source Environment](#_ex4)
+
+* [Exercise 5 – Link a dSource](#_ex5)
+
+* [Exercise 6 – Add Target Environments](#_ex6)
+
+* [Exercise 7 – Provision a VDB](#_ex7)
+
+* [Exercise 8 – Refresh a VDB](#_ex8)
+
+* [Exercise 9 – Rewind a VDB](#_ex9)
+
+* [Exercise 10 – Set a New Retention Policy](#_ex10)
+
+* [Exercise 11 – Create and Save a Hook Operation Template](#_ex11)
+
+* [Exercise 12 – Create a VDB Template](#_ex12)
+
+* [Exercise 13 – Provision a VDB with Hook and VDB Template](#_ex13)
+
+* [Optional Advanced Exercise – Discover and Link a 12c Container Database dSource](#_ex14)
+
+* [Optional Advanced Exercise – Provision a Virtual PDB (vPDB)](#_ex15)
+
+* [Optional Advanced Exercise – Measure Network Performance Test through the CLI](#_ex16)
+
+* [Optional Advanced Exercise – Configure Delphix Replication](#_ex17)
+
+# <a id="_background"></a>Background
+
+This guide will get you started with Delphix&#39;s virtualization for Oracle. You will learn how to to securely copy and share datasets. Using virtualization, you will ingest data from sources and create virtual copies, which are full read-write capable database instances that use a small fraction of the resources a normal database copy would require.
+
+Delphix Virtualization's functionality is exposed through two interfaces: management/admin and self-service. Through the management/admin interface (the topic of this guide), DB administrators connect to source datasets and create resources such as virtual databases. Through the self-service interface, non-admin users can operate on data provided by administrators. A guide for self-service can be found <a href="https://github.com/delphix/lab-guides/blob/master/self-service/INSTRUCTIONS.md">here</a>.
+
+We also provide a guide for Delphix <a href="https://github.com/delphix/lab-guides/blob/master/masking/INSTRUCTIONS.md">masking</a>, and for other virtualization data sources such as <a href="https://github.com/delphix/lab-guides/blob/master/mssql-admin/INSTRUCTIONS.md"> MS SQL </a> and <a href="https://github.com/robertodelphix/lab-guides/blob/master/postgresql/instructions.md"> postgresql</a>.
+
+# <a id="_gettingStarted"></a>Getting Started
+
+## <a id="_welcome"></a>Welcome to the Delphix Admin Training for Oracle Lab Guide
+
+This guide is a supplement to the Delphix Admin Training for Oracle course, and provides several exercises to perform throughout the class. If you encounter any issues during the exercises, please do not hesitate to ask your instructor for advice.
+
+## <a id="_reqs"></a>Lab Requirements
+
+In order to perform these lab exercises, you will need:
+
+- A modern HTML5 capable web browser (IE9+, Chrome, Firefox, Safari)
+
+## <a id="_cloudLab"></a>The Delphix Admin Training Cloud Lab
+
+Your instructor should have provided you with a **Class Name** and a **Student Number**. In order to access your lab server, point your web browser to: http:// **classname**.agile.today/ **studentnumber**
+
+For example, if your **Class Name** is &quot;acmetech&quot; and your **Student Number** is **5** , you would go to the site: [http://acmetech.agile.today/5](http://acmetech.agile.today/5)
+
+   ![](images/new/image1.png)
+
+At the login screen, enter the username and password: delphix/delphix
+
+Once you have logged in, you will be connected to your lab server. This server contains everything you will need to perform your lab exercises including:
+
+- Terminal with SSH (or Putty) to connect to Linux source/target database servers
+- Chrome Web Browser to connect to your Delphix Data Platform
+- A copy of this lab guide
+- Notepad for class notes
+- Oracle SQL Developer for remote connections
+
+**IMPORTANT NOTE:** Do not use the &quot;Log Out&quot; function on your lab server. If you do, it will break your lab connection.
+
+   ![](images/new/image2.png)
+
+## <a id="_IPs"></a>Important IP Addresses
+
+| Host | IP |  
+| :--- | :--- |
+| **Delphix Data Platform** | 10.0.x.10 |
+| **Linux Source** | 10.0.x.20 |
+| **Linux Target** | 10.0.x.30 |
+
+In the above IP addresses, the **x** denotes your **Student Number**. For example, if your student number is **5** , your Delphix Data Platform will be located at 10.0. **5**.10.
+
+## <a id="_usrs"></a>Cloud Lab Usernames and Passwords
+
+| User | Password |
+| :--- | :--- |
+| Initial Delphix **sysadmin** | sysadmin |
+| Initial Delphix **admin** | delphix |
+| Source and Target **delphix** user (via SSH) | delphix |
+| Source and Target **oracle** user (via SSH) | delphix |
+
+## <a id="_paths"></a>Paths
+
+| Object/Tool | Path |
+| :--- | :--- |
+| **hostchecker** (after tar extraction) | /home/delphix/hostchecker |
+| **Oracle XE 11g** ORACLE\_HOME | /u01/app/oracle/product/11.2.0/xe |
+| **Toolkit** | /u01/app/toolkit |
+
+
+# <a id="_exs"></a>Lab Exercises
 
 Perform these exercises when instructed by your Delphix Instructor.
 
-## <a id="stroragetest"></a>Optional Advanced Exercise - Perform a Storage Performance Test through the CLI
+<br></br>
+## <a id="_ex1"></a>Exercise 1 – Logging into the Delphix Engine UI
 
 In this exercise, you will:
 
-  * Log into the Delphix Data Platform prior to configuration via the Delphix Command Line Interface (CLI) 
-  * Perform a Storage Test 
-  * View the Storage Test results 
+- Access the Delphix Data Platform GUI as the Delphix admin user
+- Access the Delphix Data Platform Setup GUI as the sysadmin user
 
-### Steps  
-As an advanced exercise, this lab has no corresponding Lab Solution. Instead,
-we will walk through the steps to get you acquainted with your lab system and
-the Delphix CLI.
+**Context**
 
-1. On your Lab Server desktop, double-click on Terminal 
-2. Type: _ssh sysadmin@10.0.x.10_ ('x' is your **Student Number** assigned by your instructor) 
-    - If you receive a prompt asking you if you are sure you want to connect, enter: Yes 
-    - Enter the password: sysadmin 
-    - Escape to the standard CLI prompt by typing _discard_ and then press the enter key 
-    - You are now at the root of the Delphix CLI as a System Administrator 
-3. Create a storage test by typing: **storage test create** and press the enter key 
-    - List the default storage test parameters by typing: **get**
-    - Override the duration and set it to 5 minutes: **set duration=5**
-    - Begin the storage test by typing: **commit**
+The Delphix virtualization GUI has two layers: management and setup. The management GUI is accessed by admins who control data assets and objects. The setup GUI is controlled by sysadmins who manage the engine and create new admin users.
 
-_Note: The actual duration of the test may vary depending on the performance
-of the attached storage._ _It is expected that this test will take anywhere
-between 6 - 8 minutes to complete with duration set to 5._  
-![images/download/attachments/90014954/worddav7d1b92b5995f4a0e72c9c086f21df7ea.png](images/download/attachments/90014954/worddav7d1b92b5995f4a0e72c9c086f21df7ea.png)  
-Example Storage Test Configuration
+Alternatively, the engine can be controlled through the [CLI](https://docs.delphix.com/docs/developer-s-guide/command-line-interface-guide/command-line-interface-overview) or [APIs](https://docs.delphix.com/docs/developer-s-guide/web-services-api-guide).
 
-4. View the storage test results 
-    - Get back to the storage test section of the CLI by typing: **storage test** and press the enter key 
-    - Type the command `list` and press the enter key 
-      You should see the completed test listed.
-    - Type `select` followed by the name of the test from the list. For example: 
-      `select STORAGE_TEST-1`
-    - Enter the result command by typing: `result`
-    - Then type: `commit`
+**Steps**
 
-![images/download/attachments/90014954/worddav4cc92cfa22a23a274b16db2c2edc3fa2.png](images/download/attachments/90014954/worddav4cc92cfa22a23a274b16db2c2edc3fa2.png)  
-Example Storage Test Results
+1. Connect to your Delphix Engine using Chrome on your lab server (see the **Important IP Addresses** section of the Getting Started guide above). The IP address will be 10.0.x.10, where &quot;x&quot; is your **Student Number**
+2. Login to the Delphix Dynamic Data Platform using the username ***admin*** and password ***delphix***
+3. Click **Log In**
 
-## <a id="exercise1"></a>Exercise 1 - Delphix Data Platform Configuration
+   ![](images/new/image3.png)
+
+4. In order to become more familiar with what is available here, browse around the various sections of the landing page.
+5. Click **admin** on the upper right side and **logout**
+6. Click **Setup** (Located under **Password)** to navigate to **Delphix Setup** login
+7. Login to **Delphix Setup** using the username ***sysadmin*** and password ***sysadmin***
+8. Click **Log In**
+
+   ![](images/new/image4.png)
+
+9. In order to become more familiar with what is available here, browse around the various sections of the landing page.
+
+**Related Links**
+
+[The admin and sysadmin User Roles](https://docs.delphix.com/docs/configuration/user-and-authentication-management/users-and-groups)
+
+[Setting Up the Delphix Data Platform](https://docs.delphix.com/docs/deployment/installation-and-initial-system-configurations/initial-setup)
+
+<br></br>
+## <a id="_ex2"></a>Exercise 2 – Create the &quot;delphix\_db&quot; User
 
 In this exercise, you will:
 
-  * Access the Delphix Data Platform GUI for the first time 
+- Create a Delphix DB User on your source database
 
-  * Set up the Delphix SYSADMIN user 
+**Context**
 
-  * Configure Timezone Preferences 
+Delphix requires access to database users with certain privileges. These are configured through automated scripts.
 
-  * Configure Network Settings 
+**Steps**
 
-  * Configure Storage 
+1. Use the **Terminal** app on your Jumpbox desktop to connect into your Linux Source (see the **Important IP Addresses** section of the Getting Started guide above).
+   - Type ssh 10.0.x.20 (where &quot;x&quot; is your **Student Number)**
+2. Extract the **hostchecker\_linux\_x86.tar** file in your home directory
+   - Type ls -ltr
+   - Type tar -xvf hostchecker\_linux\_x86.tar
+3. Navigate to the hostchecker directory
+   - Type cd hostchecker
+   - Type ls -ltr (observe the files present in this folder, as we will be using them again)
+4. Set the Oracle environment variables below:
+   - Type export ORACLE\_HOME=/u01/app/oracle/product/11.2.0/dbhome\_1
+   - Type export ORACLE\_SID=orcl
+   - Note: &quot;. oraenv&quot; can be used to set the environment variable rather than export commands
+5. Run the script to create the delphix\_db user
+   - Type ./createDelphixDBUser.sh
+6. Use the following details during the running of this script:
+   - The user will be created in the default instance **orcl**. This is set by the environment variable ORACLE\_SID. Press **Enter** to accept the default database instance **orcl**
+   - Delphix DB User Username:delphix\_db
+   - Delphix DB User Password: delphix\_db
+   - Decline the SELECT ANY DICTIONARY privilege. This is a sweeping privilege that is not required, but optional
+   - Type: n and press **Enter**
 
-  * Complete the Delphix Data Platform configuration 
+     ![](images/new/image5.png)
 
-  * Set up the DELPHIX_ADMIN user 
+The script should create the user without error.
 
-### Steps
-
-1. Connect to your Delphix Data Platform using Chrome on your lab server (see the **Important IP Addresses** section of the Getting Started guide above). 
-
-2. Set the new sysadmin password to: delphix 
-
-3. Configure the Delphix Data Platform with the following details: 
-
-    - NTP on using pool.ntp.org with your local timezone 
-
-    - Default network settings 
-
-    - Three 8GB volumes in the data pool 
-
-    - Uncheck the "Enable phone home service" box in the Serviceability tab 
-
-    - Default Authentication Service options 
-
-    - Registration is not required for this lab 
-
-    - Completed and saved System setup. 
-
-4. Log in with the initial _delphix_admin_ user credentials 
-
-5. Set the new delphix_admin password to: delphix 
-
-You will know this is successful when you see the main Delphix UI screen with
-a single group (Untitled) on the left hand side.  
- **Related Links**  
-[The delphix_admin and sysadmin User
-Roles](https://docs.delphix.com/docs/system-installation-configuration-and-management/installation-and-initial-system-configuration/the-delphix_admin-and-sysadmin-user-roles)  
-[Setting Up the Delphix Data
-Platform](https://docs.delphix.com/docs/system-installation-configuration-and-management/installation-and-initial-system-configuration/setting-up-the-delphix-engine)
-
-##  <a id="exercise2"></a>Exercise 2 - Create the "delphix_db" User
+<br></br>
+## <a id="_ex3"></a>Exercise 3 – Validate the Source and Target Environment with Hostchecker
 
 In this exercise, you will:
 
-  * Create a Delphix DB User on your source database 
+- Use the hostchecker program to run validation tests on your Linux Source
+- Use the hostchecker program to run validation tests on your Linux Target
 
-### Steps
+**Steps to Validate the Source Environment with Hostchecker**
 
-1. Use **Terminal** to SSH into your Linux Source (see the **Important IP Addresses** section of the Getting Started guide above). 
+1. Connect to your Linux Source by opening **Terminal** on your Lab Server
+   - Type ssh 10.0.x.20 (&#39;x&#39; will be your **Student Number** ).
+2. Set the Oracle environment variables below:
+   - Type export ORACLE\_HOME=/u01/app/oracle/product/11.2.0/dbhome\_1
+   - Type export ORACLE\_SID=orcl
+   - Type export PATH=$ORACLE\_HOME/bin:$PATH
+3. Ensure you are inside the hostchecker location
+   - Type cd /home/delphix/hostchecker
+4. Run Hostchecker utility
+   - Type ./hostchecker.sh
+5. Indicate that this machine is a source
+   - Type source
+6. Review the available checks that can be run on this system
+7. Type 1 and press **Enter**
+   - The script will check homedir permissions and return SUCCESS and ALL OK
 
-2. Untar the hostchecker_linux_x86.tar file in your home directory 
+     ![](images/new/image6.png)
 
-3. Inside the hostchecker folder run the _createDelphixDBUser.sh_ command 
+8. Type 3 and press **Enter**
+   - Enter an IP address of: 10.0.x.10 (&#39;x&#39; will be your **Student Number** ).
+   - Enter the port: 8415
+   - The script will test the port and return SUCCESS and ALL OK.
+9. Repeat option 3 for the following ports: 8341 and 873
+10. Type 5 and press **Enter**
+    - Type 5 to select the ORACLE\_HOME associated with the &#39;orcl&#39; database (/u01/app/oracle/product/11.2.0/dbhome\_1), and press **Enter**
+    - The script will test the Oracle Home and return SUCCESS and ALL OK
+11. Type 6 and press **Enter**
+    - Type 3 to select the Oracle Instance associated with the &#39;orcl&#39; database, and press **Enter**
+    - Provide the Oracle home path at the prompt: /u01/app/oracle/product/11.2.0/dbhome\_1
+    - Enter the username and password of the Oracle database user created in exercise 2 (Username: delphix\_db and Password: delphix\_db or the credentials provided above)
+    - The script will test the Oracle Instances and return SUCCESS and ALL OK
+12. Type 7 and press **Enter**
+    - The script will test the /etc/oratab file and return SUCCESS and ALL OK
+13. Type 8 and press **Enter**
+    - Enter a password of: delphix
+    - The script will test the SSH connectivity to the host and return SUCCESS and ALL OK.
+14. Type 9 and press **Enter**
+    - The script will return a WARNING due to permissions. This is normal.
+15. Type 10 and press **Enter**
+    - Enter a password of: delphix
+    - The script will test sudo privileges and return SUCCESS and ALL OK
+16. Type 11 and press **Enter**
+    - Enter a path of: /u01/app/toolkit
+    - The script will test the path and return SUCCESS and ALL OK
+17. Type quit to exit hostchecker.
 
-    ```
-    export ORACLE_SID= orcl
-    export ORACLE_HOME= /u01/app/oracle/product/11.2.0/dbhome_1
-    cd hostchecker 
-    ./createDelphixDBUser.sh 
-    ```
+Were all tests successful? If not, which ones failed and why?
 
-4. Use the following details during the running of this script: 
+Note: In a production installation, the sshd\_config test will return a WARNING response due to permissions on the file. If hostchecker is run as root, for this test, it will perform the test properly.
 
-    - Instance Name: **orcl**
 
-    - Delphix DB User Username: **delphix_db**
+**Steps to Validate the Target Environment with Hostchecker**
 
-    - Delphix DB User Password: **delphix_db**
+1. Connect to your Linux Target A by opening **Terminal** on your Lab Server
+   - Type ssh 10.0.x.30 (&#39;x&#39; will be your **Student Number** ).
+2. Extract the **hostchecker\_linux\_x86.tar** file in your home directory
+   - Type ls -ltr
+   - Type tar -xvf hostchecker\_linux\_x86.tar
+3. Ensure you are inside the hostchecker location
+   - Type cd /home/delphix/hostchecker
+4. Run Hostchecker utility
+   - Type ./hostchecker.sh
+5. Indicate that this machine is a target
+   - Type target
+6. Review the available checks that can be run on this system
+7. Type 1 and press **Enter**
+   - The script will check homedir permissions and return SUCCESS and ALL OK
 
-    - Decline the SELECT ANY DICTIONARY privilege. This is a sweeping privilege that is not required, but optional. 
+     ![](images/new/image7.png)
 
-The script should configure and create the user without error.
+8. Type 3 and press **Enter**
+   - Enter an IP address of: 10.0.x.10 (&#39;x&#39; will be your **Student Number** ).
+   - Enter the port: 8415
+   - The script will test the port and return SUCCESS and ALL OK.
+9. Repeat option 3 for the following ports: 873, 22, 80 and 443
+10. Type 5 and press **Enter**
+    - Type option 4 select the current ORACLE\_HOME value, and press **Enter**
+    - The script will test the Oracle Home and return SUCCESS and ALL OK
+11. Type 6 and press **Enter**
+    - The script will test the /etc/oratab file and return SUCCESS and ALL OK
+12. Type 7 and press **Enter**
+    - Enter a password of: delphix
+    - The script will test the SSH connectivity to the host and return SUCCESS and ALL OK.
+13. Type 8 and press **Enter**
+    - The script will return WARNING due to permissions. This is normal.
+14. Type 9 and press **Enter**
+    - Enter a password of: delphix
+    - The script will test sudo privileges and return SUCCESS and ALL OK
+15. Type 10 and press **Enter**
+    - Enter a path of: /u01/app/toolkit
+    - The script will test the path and return SUCCESS and ALL OK
+16. Type quit to exit **hostchecker**.
 
-##  <a id="exercise3"></a>Exercise 3 - Validate the Source Environment with Hostchecker
+If you have completed all of the checks and they have returned SUCCESS and ALL OK, you have completed this exercise.
 
-In this exercise, you will:
+Note: In a production installation, the sshd\_config test will return a WARNING response, due to permissions on the file. If hostchecker is run as root, for this test, it will perform the test properly.
 
-  * Use the 'hostchecker' program to run validation tests on your Linux Source 
-
-### Steps
-
-1. Use **Terminal** to SSH into your Linux Source (see the **Important IP Addresses** section of the Getting Started guide above). 
-
-2. Go to the hostchecker directory created in the previous exercise and type: ./hostchecker.sh 
-
-**Note: If you exited your session or created a new session after completing
-the previous exercise, you need to set your environment variables again.**  
-  ```
-  export ORACLE_SID=orcl  
-  export ORACLE_HOME=/u01/app/oracle/product/11.2.0/dbhome_1
-  ```
-1. Run hostchecker for a source and perform the following checks: 
-    - Check on the delphix homedir 
-    - Check the following ports on your Delphix Data Platform (10.0.x.10): 8415, 8341, 50001, and 873 
-    - Check the Oracle installation for your current $ORACLE_HOME value 
-    - Check the oratab file 
-    - Check all instances on the machine 
-    - Check for ssh connectivity 
-    - Check for sudo privileges as the delphix user 
-    - Check sshd_config for timeout 
-    - Check the toolkit path of: /u01/app/toolkit 
-
-Were all tests successful? If not, which ones failed and why?  
- **Note** : The sshd_config test will return a WARNING response, which is
-normal in a production installation due to permissions on the file. If
-hostchecker is run as root for this test, it will perform the test properly.
-
-##  <a id="exercise4"></a>Exercise 4 - Add a Source Environment and Link a dSource
-
-In this exercise, you will:
-
-  * Connect Delphix to your Source Oracle Database server 
-  * Create an Oracle dSource by syncing with your Source Oracle Database 
-  * Create a Delphix Group to hold your dSource object 
-
-### Steps
-
-1. Log into the Delphix Data Platform as _delphix_admin_
-
-2. Add your Linux Source as an Environment with the following details: 
-    - Host OS: Unix/Linux 
-    - Server Type: Standalone 
-    - Environment Name: Source 
-    - Host Address: 10.0.x.20 ('x' will be your **Student Number** ) 
-    - OS Username: delphix 
-    - OS Password: delphix 
-    - Toolkit Path: /u01/app/toolkit 
-
-Now, link the **_orcl_** dSource:
-
-1. Add the **_orcl_** dSource with the following details: 
-    - DB Username and Password: The username/password you created in Exercise 2 
-    - Use a new Group called: **DB Sources**
-    - Accept defaults for the Loading Options and Hooks 
-
-You will know this is successful if the dSource completes in the **Actions**
-pane without Errors. Click on **Actions** in the top menu bar if you don't see
-this pane.
-
-##   <a id="exercise5"></a>Exercise 5 - Validate the Target Environment with Hostchecker
-
-In this exercise, you will:
-
-  * Use the 'hostchecker' program to run validation tests on your Linux Target 
-
-### Steps
-
-1. Use **Terminal** to SSH into your Linux Target A (see the **Important IP Addresses** section of the Getting Started guide above). 
-
-2. Untar the hostchecker_linux_x86.tar file in your home directory 
-
-3. Set the Oracle environment variables for the delphix os user as follows: 
-    ```bash
-    export ORACLE_SID= orcl
-    export ORACLE_HOME= /u01/app/oracle/product/11.2.0/dbhome_1
-    ```
-4. Run hostchecker for a target and perform the following checks: 
-
-    - Check on the delphix homedir 
-    - Check the following ports on your Delphix Data Platform (10.0.x.10): 8415, 873, 22, 80, 443 
-    - Check the Oracle installation for your current $ORACLE_HOME value 
-    - Check for ssh connectivity 
-    - Check the oratab file 
-    - Check for sudo privileges as the delphix user 
-    - Check sshd_config for timeout 
-    -  Check the toolkit path of: /u01/app/toolkit 
-
-If you have completed all of the checks and they have returned SUCCESS and ALL
-OK, you have completed this exercise.  
- **Note** : The _sshd_config_ test will return a WARNING response, which is
-normal in a production installation due to permissions on the file. If
-hostchecker is run as root for this test, it will perform the test properly.
-
-##  <a id="exercise6"></a>Exercise 6 - Add Target Environments
+<br></br>
+## <a id="_ex4"></a>Exercise 4 – Add a Source Environment
 
 In this exercise, you will:
 
-  * Connect Delphix to your Target Oracle server 
+- Connect Delphix to your Source Oracle Database server
+- Create a Source Environment
 
-### Steps
+**Context**
 
-1. Add your Linux Target Environment with the following details: 
+Before users can create their own virtual databases, Delphix needs to connect to source data. In Delphix, an environment is a host that runs database software. For example, a Linux system running Oracle. the environment is where the Delphix engine will search for available data sources. Credentials to access the host need to be provided while configuring an environment.
 
-    - Environment Name: **Target**
-    - Host Address: 10.0.x.30 ('x' will be your **Student Number** ) 
-    - OS Username: **delphix**
-    - OS Password: **delphix**
-    - Toolkit Path: **/u01/app/toolkit**
+**Steps**
 
-You can verify that this is complete by waiting for the _Create and discover
-environment "10.0.x.30"_ action to complete on the right hand side of the
-screen in the _Actions_ pane. Once it is complete, the _Target_ environment
-will appear on the left side of the _Environments_ page.
+1. Log into the Delphix Data Platform UI as the ***admin*** user and the password that was set during the Engine setup.
+   - Note: If you forgot your admin password, please ask your lab administrator to reset it.
+2. Click the **Manage** menu and select **Environments** from the list
+3. Click the ellipses ( **…** ) next to **Environments** then choose **Add Environment**
+4. On the Host and Server select the following:
+   - Host OS: **Unix/Linux**
+   - Server Type: **Standalone**
 
-##   <a id="exercise7"></a>Exercise 7 - Provision a VDB
+     ![](images/new/image8.png)
 
-In this exercise, you will:
+5. For Environment Settings, provide the following information
+   - Environment Name: Source
+   - Host Address: ***10.0.x.20*** (&#39;x&#39; will be your **Student Number** )
+   - NFS Addresses: ***10.0.x.20*** (&#39;x&#39; will be your **Student Number** )
+   - Leave the **DSP** fields blank
+   - Set **Login Type** to **Username and Password**
+   - OS Username: ***delphix***
+   - OS Password: ***Delphix*** (Note: Enter the Toolkit Path before Validating the Username and Password)
+   - Toolkit Path: /u01/app/toolkit
+   - Click **Validate**
 
-  * Create a VDB called **devdb**
+     ![](images/new/image9.png)
 
-### Steps
+6. Click **Next**
+7. Click **Submit**
+8. You can view the status of the environment creation and discovery by clicking on the **Actions** menu on the top right-hand side of the page. Clicking on the jobs lower right corner, in the Actions pane, will allow you to track its progress
 
-1. Select the **orcl** dSource and Provision a VDB with the following details: 
-    - Destination Environment: **Target**
-    - Database Unique Name: **devdb**
-    - SID: **devdb**
-    - Database Name: **devdb**
-    - Mount Base: **/mnt/provision**
-2. Add the VDB to a new group called **DB Targets**
+   ![](images/new/image10.png)
 
-3. Complete the VDB creation 
-
-It may take a couple minutes for the VDB creation to complete. You can monitor
-the progress on the left-hand side of the screen next to the **devdb** object
-in the _DB Targets_ group. On the _Actions_ pane on the right-hand side of the
-screen, you should see the _Provision virtual database "devdb"_ item move to
-the _Recently completed_ pane without error. Once the VDB is created, you can
-verify that the VDB is operational by:
-
-  1. SSH to Linux Target as the delphix user 
-
-  2. Run the following commands: 
-
-  ```
-  export ORACLE_HOME=/u01/app/oracle/product/11.2.0/dbhome_1  
-  export ORACLE_SID=devdb  
-  export PATH=$ORACLE_HOME/bin:$PATH  
-  sqlplus / as sysdba  
-  select name from v$database;
-  ```
-##  <a id="exercise8"></a>Exercise 8 - Refresh a VDB
+<br></br>
+## <a id="_ex5"></a>Exercise 5 – Link a dSource
 
 In this exercise, you will:
 
-  * Create a new table on your source database 
+- Create an Oracle dSource by syncing with your Source Oracle Database
+- Create a Delphix Group to hold your dSource object
 
-  * Snapshot the dSource 
+**Context**
 
-  * Refresh your VDB - **devdb**
+With an environment set-up, users can then sync databases into Delphix. The Delphix engine will read the source database and create a dSource (a custom object). The dSource is not a functional image of the database but a storage-efficient object from which virtual databases can be created. When creating a dSource, Delphix will pull over the complete data set using standard database protocols. Subsequent sync operations, as governed by user-defined policies, will pull only incremental changes. At the end of each sync operation, a snapshot is created that serves as the base point for provisioning operations. These sync operations are called SnapSync. Additional details on sync functionality can be found [here](https://docs.delphix.com/docs/datasets/getting-started/managing-data-sources-and-syncing-data).
 
-  * Verify the new table appears on the VDB 
+**Steps**
 
-### Steps
+1. View the Environment details
+   - Click on the **Environment** on the left on review information on the **Details** tab
 
-1. Connect to your Linux Source server as the delphix user via SSH 
+     ![](images/new/image11.png)
 
-2. Run the following commands: 
-  ```
-  export ORACLE_HOME=/u01/app/oracle/product/11.2.0/dbhome_1  
-  export ORACLE_SID=orcl  
-  export PATH=$ORACLE_HOME/bin:$PATH  
-  sqlplus / as sysdba  
-  create table sourcetab as select * from dba_objects;
-  ```
+2. Click on the **Databases** tab to view any discovered database installations and databases
 
-3. Go back to the Delphix Data Platform GUI 
+   ![](images/new/image12.png)
 
-4. Take a snapshot of the **orcl** dSource 
+3. Link the **orcl** database
+   - On the top menu, click the **Manage** menu and then **Datasets**
+   - Click the **+** next to **Datasets** on the top left portion of your screen and then select **Add dSource**
 
-5. Select the _devdb_ VDB and click the _Refresh_ button 
+     ![](images/new/image13.png)
 
-6. Refresh the _devdb_ VDB using the latest snapshot from the **orcl** dSource 
+4. The Welcome page for the dSource Wizard will be displayed. Review the instructions to get an overview of the process and click **Next**
+5. In the Source tab select the orcl Data source and provide the username and password of the database user
+6. Under the **dSource Configuration** tab we will provide a user-friendly name for the dSource and create a new Dataset Group to place it in.
+   - Enter ***orcl*** for the **dSource Name**
+   - Click on the **Add Dataset Group** link and enter ***Source DB*** in the **Name** field.
 
-  Once the refresh has completed, you can log into **devdb** to confirm.
+     ![](images/new/image14.png)
 
-1. Connect to your Linux Target server as the delphix user via SSH 
+7. Click **Next**
+8. On the **Data Management** tab accept the defaults
+   - Initial Load: **Immediately**
+   - LogSync: **Enable Archive + Online Redo**
+   - Click **Next**
 
-2. Run the following commands: 
+9. Accept the Default SnapSync and Retention policy setting
+10. Click **Next**
+11. Accept defaults for the Hooks. No Hooks will be used.
+12. Click **Next**
+13. Review the Summary and click **Submit**.
 
-  ```
-  export ORACLE_HOME=/u01/app/oracle/product/11.2.0/dbhome_1  
-  export ORACLE_SID=devdb  
-  export PATH=$ORACLE_HOME/bin:$PATH  
-  sqlplus / as sysdba  
-  select count(*)
-  from sourcetab;  
-  ```
+    ![](images/new/image15.png)
+
+14. Wait for the dSource to be created
+
+    ![](images/new/image16.png)
+
+You will know this is successful if the dSource completes in the **Actions** pane without Errors. Click on **Actions** in the top menu bar if you don&#39;t see this pane. Also, the **dSource** state will change to **Active**
+
+<br></br>
+## <a id="_ex6"></a>Exercise 6 – Add Target Environments
+
+In this exercise, you will:
+
+- Connect Delphix to your Target Oracle server
+
+**Context**
+
+The target environment is the host where the virtual databases will be created.
+
+**Steps**
+
+1. Log into the Delphix Data Platform UI as the ***admin*** user and the password that was set during the Engine setup (_Note: If you forgot your admin password, please ask your lab administrator to reset it_)
+2. In the top menu bar, click **Manage** and then **Environments**.
+3. Click the ellipses ( **…** ) next to **Environments** then choose **Add Environment**.
+4. Provide the following details in the **Add Environment Wizard**
+   - Host OS: **Unix/Linux**
+   - Server Type: **Standalone**
+   - Click **Next**
+5. On the **Environment Settings** tab, enter the following details
+   - Environment Name: ***Target***
+   - Host Address: ***10.0.x.30*** (&#39;x&#39; will be your **Student Number** )
+   - NFS Addresses: ***10.0.x.30*** (&#39;x&#39; will be your **Student Number** )
+   - Leave the **DSP** fields blank
+   - OS Username: ***delphix***
+   - OS Password: ***delphix***
+   - Toolkit Path: ***/u01/app/toolkit*** (The Toolkit Path must be entered prior to clicking Validate)
+   - Click **Validate**
+6. Click **Next**
+
+   ![](images/new/image17.png) ![](images/new/image18.png)
+
+7. Click **Submit**
+8. You can view the status of the environment creation and discovery by clicking on the **Actions** menu on the top right-hand side of the page. Clicking on the job in the **Actions** pane will allow you to track its progress.
+9. View the Environment details
+   - Click on the **Environment Name** ( **Target** ) on the left and review information on the **Details** tab
+   - Click on the **Databases** tab to view any discovered database installations and databases
+
+<br></br>
+## <a id="_ex7"></a>Exercise 7 – Provision a VDB
+
+In this exercise, you will:
+
+- Create a VDB called devdb
+
+**Context**
+
+The objective of Delphix virtualization is to provide easy access to virtualized databases that resemble production and other data systems. In Exercise 7, we provision a Virtual Database (VDB). VDBs are fully functional database images that can be created from dSources.
+**Steps**
+
+1. Click the **Manage** menu and then **Datasets**
+2. Expand the **Source DB** group and click the **orcl** dSource from the **Datasets** panel on the left. This will reveal the **Timeflow** for the dSource by default.
+3. On the **Timeflow** tab of the dSource select the most recent (topmost) **Snapshot**. The **Provision VDB** iconwill appear along with the **Open LogSync** icon to the right.
+4. Click on the **Provision VDB** icon to open the **Provision VDB** wizard. The first of the three icons next to the snapshot time.
+
+   ![](images/new/image19.png)
+
+5. On the **Target Environment** tab click **Target** from the list of Environments
+6. On the **Target Environment** tab, use the following information
+   - Verify that the **Installation Home** is set to **/u01/app/oracle/product/11.2.0/dbhome\_1 (11.2.0.1.0)**
+   - Ensure that the Environment **User** is set to **delphix**
+   - Click **Next**
+
+     ![](images/new/image20.png)
+
+7. Enter the details below on the **Target Configuration** tab , we will provide a user-friendly name for the VDB as well as assign it to a new group.
+   - Click **Add Dataset Group**
+     - Type ***DB Targets*** for the **Group Name**
+     - Click **Add**
+   - Verify that **DB Targets** is selected as the **Target Group**
+   - **Mount Base** : Type ***/mnt/provision***
+   - **Oracle Database Name** : Type ***devdb***
+   - **VDB Name** : Type ***devdb***
+   - **Oracle Database Unique Name** : Type ***devdb***
+   - **Oracle SID** : ***devdb***
+   - Click **Next**
+
+     ![](images/new/image21.png)
+
+8. On the **Advanced** tab
+   - Confirm that **Open Database After Provision** is selected
+   - Confirm that **Enable Archivelog Mode** is selected
+   - Check the box next to **Enabled** for **Auto VDB Restart**
+   - Click **Next**
+
+     ![](images/new/image22.png)
+
+9. On the **Policies** tab, accept the defaults and click **Next**
+10. On the **Masking** tab, confirm that **Mask this VDB** is not checked
+11. Accept the defaults on the **Hooks** tab and click **Next**
+12. Verify the summary information
+13. Click **Submit** tocomplete the VDB creation
+
+    ![](images/new/image23.png)
+
+It may take a couple minutes for the VDB creation to complete. You can monitor the status on the left-hand side of the screen next to the **devdb** object in the **DB Targets** group. On the **Actions** pane on the right-hand side of the screen, you should see the **Provision virtual database &quot;devdb&quot;** item move to the **Recently completed** pane without error. **devdb**&#39;s status will be set to **VDB - Running**.
+
+   ![](images/new/image24.png)
+
+Once the VDB is created, you can verify that the VDB is operational by:
+
+14. Using **Terminal** on your lab server, use SSH to connect to your **Linux Target** server
+    - Type ssh 10.0.x.30 (&#39;x&#39; will be your **Student Number** ).
+15. Enter the username: delphix
+16. Enter the password: delphix
+17. Run the following commands on the **target** server command line:
+    - Type export ORACLE\_HOME=/u01/app/oracle/product/11.2.0/dbhome\_1
+    - Type export ORACLE\_SID=devdb
+    - Type export PATH=$ORACLE\_HOME/bin:$PATH
+    - Type sqlplus / as sysdba
+    - Type select name from v$database;
+
+      ![](images/new/image25.png)
+
+18. Type quit to exit
+
+<br></br>
+## <a id="_ex8"></a>Exercise 8 – Refresh a VDB
+
+In this exercise, you will:
+
+- Create a new table on your source database
+- Snapshot the dSource
+- Refresh your VDB - devdb
+- Verify the new table appears on the VDB
+
+**Context**
+
+VDBs can get out of sync as new data comes into the source system. Refreshing a VDB will re-provision it from the dSource. Refreshing a VDB will delete any changes that have been made to it over time.
+
+**Steps**
+
+1. Open **Terminal** on your Lab Server desktop
+   - Type ssh delphix@10.0.x.20 (&#39;x&#39; will be your **Student Number** )
+2. Enter the username: delphix
+3. Enter the password: delphix
+4. Run the following commands:
+   - Type export ORACLE\_HOME=/u01/app/oracle/product/11.2.0/dbhome\_1
+   - Type export ORACLE\_SID=orcl
+   - Type export PATH=$ORACLE\_HOME/bin:$PATH
+   - Type sqlplus / as sysdba
+   - Type create table sourcetab as select \* from dba\_objects;
+5. Go back to the **Delphix Data Platform** in your browser (click the **Delphix** logo to go back to the main screen if required)
+6. Click on the **orcl** dSource object on the left side of your screen (expand **DB Source** group if needed)
+7. Click the **Camera** Icon on the top-right to take a snapshot
+8. Click on the **devdb** VDB on the left side of your screen
+9. Click the **Timeflow** tab
+10. Click the **Refresh** button on the top right next to the **snapshot** icon.
+
+    ![](images/new/image26.png)
+
+11. There are two options for refreshing the VDB, choose the **Faster** option to refresh from the most recent snapshot from the **orcl** dSource
+12. Click **Next**
+13. Click **Submit**
+
+    ![](images/new/image27.png)
+
+    - Once the refresh has completed, a new VDB snapshot will be generated and reflected in the **Timeflow**.
+
+    ![](images/new/image28.png)
+
+    - Log into **devdb** to confirm.
+
+14. Open **Terminal** on your Lab Server desktop
+    - Type ssh delphix@10.0.x.30 (&#39;x&#39; will be your **Student Number** )
+15. Enter the username: delphix
+16. Enter the password: delphix
+17. Run the following commands:
+
+    - Type export ORACLE\_HOME=/u01/app/oracle/product/11.2.0/dbhome\_1
+    - Type export ORACLE\_SID=devdb
+    - Type export PATH=$ORACLE\_HOME/bin:$PATH
+    - Type sqlplus / as sysdba
+    - Type select count(\*) from sourcetab;
+
+      ![](images/new/image29.png)
 
 If this returns a count of rows, the snapshot/refresh was successful.
 
-##  <a id="exercise9"></a>Exercise 9 - Rewind a VDB
+<br></br>
+## <a id="_ex9"></a>Exercise 9 – Rewind a VDB
 
 In this exercise, you will:
 
-  * Take a snapshot of the _devdb_ VDB 
+- Take a snapshot of the devdb VDB
+- Corrupt the devdb VDB to introduce a bootstrap error
+- Rewind the devdb VDB to recover from the error
 
-  * Corrupt the _devdb_ VDB to introduce a bootstrap error 
+**Context**
 
-  * Rewind the _devdb_ VDB to recover from the error 
+Rewinding a VDB rolls it back to a previous point in its Timeflow and re-provisions the VDB. The VDB will no longer contain changes after the rewind point. it can be triggered when changes to the VDB do not need to be saved.
 
-### Steps
+**Steps**
 
-1. Take a snapshot of the _devdb_ VDB and note the time 
+1. On the Delphix main screen, select the **devdb** VDB
+2. Click the **Camera icon** on the top right to take a snapshot of the VDB
 
-2. Connect to your Linux Target server as the delphix user via SSH 
+   ![](images/new/image30.png)
 
-3. Run the following commands: 
+3. A new snapshot card will be created on the **devdb Timeflow**. Make a note of the date/time for the latest snapshot card.
+4. Open Terminal on your Lab Server desktop
+   - Type: ssh delphix@10.0.x.30 (&#39;x&#39; will be your **Student Number** )
+5. Enter the username: delphix
+6. Enter the password: delphix
+7. Run the following commands:
+   - Type export ORACLE\_SID=devdb
+   - Type sqlplus / as sysdba
+   - Type delete from sys.obj$;
+   - Type commit;
+   - Type shutdown abort;
+   - Type startup;
 
-  ```
-  export ORACLE_HOME=/u01/app/oracle/product/11.2.0/dbhome_1  
-  export ORACLE_SID=devdb  
-  export PATH=$ORACLE_HOME/bin:$PATH  
-  sqlplus / as sysdba  
-  delete from sys.obj$;  
-  commit;  
-  shutdown abort;  
-  startup;  
-  ```
-Note that the database is unable to come online due to a bootstrap error. The
-_devdb_ database is now corrupted. Now we will rewind the VDB to the last good
-snapshot to fix this.
+     ![](images/new/image31.png)
 
-1. Select the _devdb_ VDB 
+    - Note that the database is unable to come online due to a bootstrap error. The **devdb** database is now corrupted. Now we will rewind the VDB to the last good snapshot to fix this.
 
-2. Select the snapshot associated with the date/time you recorded prior to corrupting your database. 
+8. In the Delphix Data Platform (web browser), click on the **devdb** VDB if it is not already selected
+9. Click on the **Timeflow** tab and select the snapshot associated with the date/time you recorded prior to corrupting your database. This will most likely be the latest snapshot.
+10. Hover over the **Snapshot** to reveal the **Rewind** button.
+11. Click the **Rewind VDB** button on the **Timeflow**
 
-3. Rewind the VDB to the snapshot you took prior to the corruption. 
+    ![](images/new/image32.png)
 
-Once the rewind operation is complete, you can confirm the rewind was
-successful by connecting to the server again and querying the database:
+12. Confirm that you wish to rewind the VDB by clicking **Rewind**.
 
-1. Connect to your Linux Target server as the delphix user via SSH 
+    ![](images/new/image33.png)
 
-2. Run the following commands: 
-  ```
-  export ORACLE_HOME=/u01/app/oracle/product/11.2.0/dbhome_1  
-  export ORACLE_SID=devdb  
-  export PATH=$ORACLE_HOME/bin:$PATH  
-  sqlplus / as sysdba  
-  select count (*)
-  from dba_objects;
-  ```
-The count should come back clean, and the database is online
+Once the rewind operation is complete, you can confirm the rewind was successful by connecting to the server again and querying the database:
 
-##  <a id="exercise10"></a>Exercise 10 - Set a New Retention Policy
+13. Open Terminal on your Lab Server desktop
+14. Type ssh delphix@10.0.x.30 (&#39;x&#39; will be your **Student Number** )
+15. Enter the username: delphix
+16. Enter the password: delphix
+17. Run the following commands:
+    - Type export ORACLE\_HOME=/u01/app/oracle/product/11.2.0/dbhome\_1
+    - Type export ORACLE\_SID=devdb
+    - Type export PATH=$ORACLE\_HOME/bin:$PATH
+    - Type sqlplus / as sysdba
+    - Type select count(\*) from sourcetab;
+
+      ![](images/new/image34.png)
+
+<br></br>
+## <a id="_ex10"></a>Exercise 10 – Set a New Retention Policy
 
 There are four types of Policies in Delphix. In this exercise, you will:
 
-  * Create a Retention Policy 
+- Create a Retention Policy
+- Set the new policy to keep snapshots and logs for 30 days, along with 3 monthly snapshots
+- Apply the policy to the VDB we created in the previous exercise
 
-  * Set the new policy to keep snapshots and logs for 30 days, along with 3 monthly snapshots 
+**Context**
 
-  * Apply the policy to the VDB we created in the previous exercise 
+Both dSources and VDBs timeflow is governed by snapshots, which are either created manually or through policies. Retention policies govern the lifespan of such snapshots and help clean older ones that are no longer relevant.
 
-### Steps
+**Steps**
 
-1. Navigate to Manage -> Policies 
+1. In the top menu bar, click on **Manage** and then **Policies**
+2. Click the **Retention** tab, click **+Retention**
 
-2. Create a new retention policy for **devdb** with the following details: 
+   ![](images/new/image35.png)
+3. Provide the following details:
+   - Policy Name: ***Long Term***
+   - Keep Logs for: ***30** ***days**
+   - Keep Snapshots for: ***30** ***days**
+4. Click the ***Show advanced*** _link_
 
-    - Name: Long Term 
-    - 30 days of snapshot and log retention 
-    - 3 monthly snapshots taken on the 1st of the month 
+   ![](images/new/image36.png)
 
-##  <a id="exercise11"></a>Exercise 11 - Create and Save a Hook Operation Template
+5. Click the checkbox next to **Keep 3 Snapshot(s) on 1st of every month**
+6. Click **Next**
+7. On the **Datasets** tab click the **checkbox** for the **devdb**
+8. Click **Submit**
 
-In this exercise, you will:
+   ![](images/new/image37.png)
 
-  * Create a Hook Operation Template called _Create APPUSER_
+Expand the **policies** menu to validate that the new **Long Term** policy has been applied to the **devdb** VDB.
 
-  * Insert code into the template that will log into a database and add a user named _appuser_
+![](images/new/image38.png)
 
-### Steps
-
-1. Create a new Hook Operation Template called: Create APPUSER 
-
-    - Type: Shell Command 
-    - Contents (enter exactly): 
-  ```
-  $ORACLE_HOME/bin/sqlplus / as sysdba << EOF  
-  create user appuser identified by appuser;  
-  grant connect, resource to appuser;  
-  exit;  
-  EOF
-  ```
-**IMPORTANT:** Make sure the carriage returns you see here are the same in
-the pasted contents.
-
-2. Finish and verify the Hook Operation Template appears in the list. 
-
-## <a id="exercise12"></a>Exercise 12 - Create a VDB Template
+<br></br>
+## <a id="_ex11"></a>Exercise 11 – Create and Save a Hook Operation Template
 
 In this exercise, you will:
 
-  * Create a VDB Configuration template called _1G Template_
+- Create a Hook Template called Create APPUSER
+- Insert code into the template that will log into a database and add a user named appuser
 
-  * Set a custom Oracle parameter for this template 
+**Context**
 
-### Steps
+Hook operations allow users to execute custom operations at select points during linking sources and managing virtual datasets.
 
-1. Navigate to Manage -> VDB Config Templates 
+**Steps**
 
-2. Create a new Template with the name: 1G Template 
+1. In the top menu bar, click **Manage** , then **Hook Templates**
+2. Click the **plus sign** to the right of the word **Templates** in the **Hook Templates Wizard**
+3. Provide the _Name_: ***Create APPUSER***
+4. Ensure _Type_ is set to: **System Shell Command**
+5. Under **Contents** , enter the following code:
+   ```
+   $ORACLE_HOME/bin/sqlplus / as sysdba << EOF
+     create user appuser identified by appuser;
+     grant connect, resource to appuser;
+     exit;
+   EOF
+   ```
 
-3. Add a parameter to the template with the details: 
+   **IMPORTANT:** Make sure the carriage returns you see here are the same in the pasted contents.
 
-    - Name: **memory_target**
-    - Value: **1G**
+   ![](images/new/image39.png)
 
-You can verify that this was successful by returning to the _VDB Configuration
-Templates Wizard_ and clicking on the _1G Template_ item.
+6. Click **Create**
+7. Verify the **Create APPUSER** Hook Operation Template is in the list, then click **Close**
 
-##  <a id="exercise13"></a>Exercise 13 - Provision a VDB with Hook and VDB Template
+   ![](images/new/image40.png)
 
-In this exercise, you will:
-
-  * Create a VDB called **qadb** on _Target_
-
-  * Use the VDB Configuration Template we created previously 
-
-  * Use the Hook Operation Template we created previously 
-
-  * Log into the VDB 
-
-  * Verify the VDB Configuration Template and Hook Operation Template were successful 
-
-### Steps
-
-1. Select the **orcl** dSource and Provision a VDB with the following details: 
-
-    - Destination Environment: Target 
-    - Database Unique Name: **qadb**
-    - SID: **qadb**
-    - Database Name: **qadb**
-    - Mount Base: **/mnt/provision**
-    - Configuration Template: **1G Template**
-    - Group: **DB Targets**
-    - Configure Clone hook: Create APPUSER 
-
-2. Complete the VDB creation 
-
-It may take a couple minutes for the VDB creation to complete. You can monitor
-the progress on the left-hand side of the screen next to the _qadb_ object in
-the _DB Targets_ group. On the _Actions_ pane on the right-hand side of the
-screen, you should see the _Provision virtual database "qadb"_ item move to
-the _Recently completed_ pane without error. Once the VDB is created, you can
-verify that the VDB is operational by:
-
-3. SSH to Linux Target as the delphix user 
-
-4. Run the following commands: 
-
-  ```
-  export ORACLE_HOME=/u01/app/oracle/product/11.2.0/dbhome_1  
-  export ORACLE_SID=qadb  
-  export PATH=$ORACLE_HOME/bin:$PATH  
-  sqlplus / as sysdba  
-  show parameter memory_target  
-  connect appuser/appuser  
-  ```
-This will verify that the VDB is online with the VDB Configuration Template we
-specified, and that the APPUSER user was created by our hook.
-
-## <a id="opt_network_perf_test"></a>Optional Advanced Exercise - Measure Network Performance Test through the CLI
+<br></br>
+## <a id="_ex12"></a>Exercise 12 – Create a VDB Template
 
 In this exercise, you will:
 
-  * Log into the Delphix Data Platform CLI as delphix_admin 
+- Create a VDB Configuration template called _Small DB Template_
+- Set a custom Oracle parameter for this template
 
-  * Perform a network latency test to Target 
+**Steps**
 
-  * Perform a network throughput test to Target 
+1. In the top menu bar, click **Manage** , then **VDB Config Templates**
+2. Click the **plus sign** next to the word **VDB Config Templates** and select **New Template** from the drop-down.
+3. Name: ***1G Template***
+4. Click **Create**
 
-### Steps  
-As an advanced exercise, this lab has no corresponding Lab Solution. Instead,
-we will walk through the steps to get you acquainted the Delphix CLI for
-delphix_admin.
+   ![](images/new/image41.png)
 
-1. On your Lab Server desktop, double-click on Terminal 
+5. Click **1G Template** under **VDB Config Templates**
+6. Click the **pencil** icon on the top right of the **VDB Configuration Templates** screen
+7. Click the **plus sign** on the **top right** to add a new parameter
+   - Double-click the row to enter a new value
+8. In the row that is now highlighted, enter the following information:
+   - Name: ***sga***_**\_**_***max\_size***
+   - Value: ***1G***
+9. Click the **checkmark** to save the **Template**.
 
-2. Type: `ssh delphix_admin@10.0.x.10` ('x' is your **Student Number** assigned by your instructor) 
+You can verify that this was successful by returning to the **VDB Configuration Templates Wizard** and clicking on the **1G Template** item.
 
-    - If you receive a prompt asking you if you are sure you want to connect, enter: Yes 
-    - Enter the password: `delphix`
-    - You are now at the root of the Delphix CLI as a Delphix Administrator 
+<br></br>
+## <a id="_ex13"></a>Exercise 13 – Provision a VDB with Hook and VDB Template
 
-3. Create a network latency test by typing: **network test latency create**
-
-    - List the default/required parameters by typing: **get**
-    - Set the remoteHost value to the TargetA environment IP address: set remoteHost=10.0.x.30 ('x' will be your **Student Number** ) 
-    - Begin the test by typing: **commit**
-
-![images/download/attachments/90014970/worddav0139095d623cae0998262de02bb1691f.png](images/download/attachments/90014970/worddav0139095d623cae0998262de02bb1691f.png)  
-Example Network Latency Test Submission
-
-4. View the results of the latency test: 
-    - Get to the latency test section again by typing: **network test latency**
-    - List the completed tests by typing: **ls**
-    - Type "select" followed by the name of the test from the list. For example: 
-      `select 10.0.1.30-2015-09-18T12:47:19.711Z`
-    - View the results of the test by typing: **get**
-
-![images/download/attachments/90014970/worddav5cd595732a91c4949a7d45cc11817a03.png](images/download/attachments/90014970/worddav5cd595732a91c4949a7d45cc11817a03.png)  
-Example Network Latency Test Results
-
-5. Create a network throughput test 
-    - While still logged into the CLI, return to the root by typing: **cd /**
-    - Begin a network throughput test by typing: **network test throughput create**
-    - List the default/required parameters by typing: **get**
-    - Set the remoteHost value to the TargetA environment IP address: **set remoteHost=10.0.x.30** ('x' will be your **Student Number** ) 
-    - Begin the test by typing: **commit**
-
-![images/download/attachments/90014970/worddave239dfc61608945149c6149c28b02a47.png](images/download/attachments/90014970/worddave239dfc61608945149c6149c28b02a47.png)  
-Example Network Throughput Test Submission
-
-6. View the results of the throughput test: 
-
-    - Get to the throughput test section again by typing: **network test throughput**
-    - List the completed tests by typing: **ls**
-    - Type "select" followed by the name of the test from the list. 
-For example:  
- `select 10.0.1.30-2015-09-18T13:13:08.152Z`
-
-    - View the results of the test by typing: **get**
-
-![images/download/attachments/90014970/worddav9e53b8c32beb01659562abff9d1d08f2.png](images/download/attachments/90014970/worddav9e53b8c32beb01659562abff9d1d08f2.png)  
-Example Network Throughput Test Results
-
-## <a id="opt_delphix_replication"></a>Optional Advanced Exercise - Configure Delphix Replication
-
-Note: This exercise is only possible if your classroom has been configured
-with 2 or more students.  
 In this exercise, you will:
 
-  * Set up a replication profile 
+- Create a VDB called **qadb** onTarget
+- Use the VDB Configuration Template we created previously
+- Use the Hook Operation Template we created previously
+- Log into the VDB
+- Verify the VDB Configuration Template and Hook Operation Template were successful
+
+**Steps**
+
+1. Return to the Delphix home screen by clicking the **Delphix** logo on the top left of the screen
+2. Click on the **orcl** dSource object in the **Datasets** panel
+3. Select the latest **Snapshot** , click the **Provision** button
+4. On the left hand side of the **Target Environment** tab, click the **Target Environment Target**
+5. Click **Next**
+6. On the **Target Configuration** tab, enter the following details:
+   - **Select DB Targets** from the **Datasets Group** drop-down list,
+   - **Mount Base** : **/mnt/provision** (this should already be filled in)
+   - **Database Name** : ***qadb***
+   - **Database Unique Name** : ***qadb***
+   - **SID** : ***qadb***
+   - Click **Configure VDB Parameters** checkbox under **VDB Database Parameters**
+   - Click **Next**
+7. On the **Advanced** tab, click the **Enabled** checkbox under **Auto VDB Restart**
+8. Click **Next**
+9. On **the VDB Configure Parameters** tab, click the **1G Template** that we created earlier from the **Select template** drop-down list
+10. Click **Next**
+
+    ![](images/new/image42.png)
+
+11. On the **Policies** tab, accept Default Snapshot Policy and Click **Next**
+12. On the Masking tab, leave Mask this VDB unchecked. Click **Next**
+13. On the **Hooks** tab with **Configure Clone** already selected on the left side of the **Provision VDB Wizard** , click the **plus sign** to the right of the words **Hook Points** and select **Create from Template** from the drop-down list
+
+    ![](images/new/image43.png)
+
+14. **Enter a Name** ***QA APPUSER*** for the **Hook Operation**
+15. Click on the **Create APPUSER** template we created earlier
+16. Click the **Create** button
+
+    ![](images/new/image44.png)
+
+17. Click Next
+
+    ![](images/new/image45.png)
+
+18. Click **Next**
+19. Verify the summary information, and click **Submit**
+
+Note: It may take a couple minutes for the VDB creation to complete. You can monitor the progress on the left-hand side of the screen next to the **qadb** object in the **DB Targets** group. On the **Actions** pane on the right-hand side of the screen, you should see the **Provision virtual database &quot;qadb&quot;** item move to the **Recently completed** pane without error.
 
-  * Replicate your entire Delphix Data Platform to another Delphix Data Platform 
-
-  * View the replicas in the target Delphix Data Platform 
-
-### Steps
-As an advanced exercise, this lab has no corresponding Lab Solution. Instead,
-we will walk through the steps to get you acquainted the Delphix Replication
-capability.
-
-  1. In the Delphix GUI, select _System_ and then _Replication_ on the top menu bar 
-
-  2. Add a Replication Profile called DR Replica 
-
-    1. Click the _plus sign_ next to Replication Profiles on the top left 
-
-    2. Enter a Replica Profile Name: **DR Replica**
-
-    3. For Target Engine, enter the Delphix Data Platform IP address for the next student in your classroom environment. If you are the last student, use the Delphix Data Platform IP address for Student 1. For example, in a class with 3 students: 
-
-      1. Student 1 Delphix Data Platform is at 10.0.1.10, and they will replicate to 10.0.2.10 
-
-      2. Student 2 Delphix Data Platform is at 10.0.2.10, and they will replicate to 10.0.3.10 
-
-      3. Student 3 Delphix Data Platform is at 10.0.3.10, and they will replicate to 10.0.1.10 
-
-      4. Ask your instructor if you have any questions or confusion about this configuration. 
-
-    4. Enter the User Name: **delphix_admin**
-
-    5. Enter the Password: **delphix**
-
-    6. Do not enable Automatic Replication or configure Traffic Options 
-
-    7. For the Objects Being Replicated, select: Entire Delphix Data Platform 
-
-    8. Click Create at the bottom when ready. 
-
-![images/download/attachments/90014975/worddav892f37fcc41eec5642f2ce204a8ac523.png](images/download/attachments/90014975/worddav892f37fcc41eec5642f2ce204a8ac523.png)  
-Replication Profile Configuration
-
-  1. Start the Replication by clicking the _Replicate Now_ button on the top right of your screen. 
-
-  2. Click _Replicate_ to confirm you are ready to begin. 
-
-  3. Once the initial full replication is complete, you will see a message stating "Last Replication Successful."
-
-![images/download/attachments/90014975/worddav8d798fb1b60e755ddef9b7fd43921cb4.png](images/download/attachments/90014975/worddav8d798fb1b60e755ddef9b7fd43921cb4.png)  
-Example Successful Replication
-
-  1. Check the results on your target Delphix Data Platform 
-
-    1. In your lab server browser, enter the IP address you used for the Target Engine in your replica profile. For example, if you are Student 1, your Delphix Data Platform is at 10.0.1.10, and your target would have been 10.0.2.10. 
-
-    2. Log in as user delphix_admin with the password delphix 
-
-    3. Observe the dropdown list under Datasets on the top left corner of your screen. It should have _Default_ _shown_ which is the default **Namespace** for Delphix replica targets. 
-
-    4. In order to see the replica objects, click on the dropdown list and select the second entry, which should reflect the hostname of the source Delphix Data Platform that sent the replica. 
-
-_Note: The hostname shown in the labs is based on the default hostname given
-to the Delphix Data Platform in Amazon AWS, consisting of the prefix "ip"
-followed by the IP address separated by hyphens._  
-![images/download/attachments/90014975/worddavd8dc04440e9526f5f74c484752534a9e.png](images/download/attachments/90014975/worddavd8dc04440e9526f5f74c484752534a9e.png)  
-Example Received Replica
-
-  1. While still logged into your target Delphix Data Platform, click on _System_ and then _Replication_
-
-  2. Observe the _Received Replicas_ section at the bottom, indicating and verifying the target's receipt of replication data. 
-
-    1. Note: The _Failover Now_ option will not work for these labs due to namespace collisions. This is an inherent outcome to plan for when using Active/Active replication. 
-
-#  Lab Solutions
-
-## <a id="exercise1_sol"></a>Exercise 1 - Delphix Data Platform Setup
-
-  1. Connect to your Delphix Data Platform using Firefox on your lab server. The IP address will be 10.0.x.10, where "x" is your **Student Number**. 
-
-  2. Review the Welcome page to understand the setup process 
-
-  3. Set an email address and new password for the _sysadmin_ user and click _Next_. 
-
-  4. Configure Delphix to use NTP time with the pool.ntp.org NTP server. Change the timezone to your local timezone. Then click _Next_. 
-
-  5. Review the network configuration and click _Next_. Do not make any changes to this section. 
-
-  6. Review the disk layout and click _Next_. Do not make any changes to this section. 
-
-  7. Review the Serviceability options and uncheck the "Enable phone home service" box then click _Next_. 
-
-  8. Review the Authentication Service options and click _Next_. Do not make any changes to this section. 
-
-  9. Click _Next_ on the Registration page without making any changes. 
-
-  10. Review the summary and click _Submit_ to complete the System configuration. 
-
-![images/download/attachments/90014980/worddav884803a671a3a90197b7d01229216b13.png](images/download/attachments/90014980/worddav884803a671a3a90197b7d01229216b13.png)  
-_Figure 1 Delphix Setup Summary Screen_
-
-  1. Click _Submit_ to save the configuration. 
-
-  2. Click _OK_ to acknowledge completion 
-
-  3. Log in with credentials: 
-
-    1. Username: delphix_admin 
-
-    2. Password: delphix 
-
-![images/download/attachments/90014980/worddav7d861fd3e487a3858cfa4de610f1c8a4.png](images/download/attachments/90014980/worddav7d861fd3e487a3858cfa4de610f1c8a4.png)  
-_Figure 2_ _Delphix Data Platform Login_
-
-  1. Set an email address and new password for the _delphix_admin_ user 
-
-![images/download/attachments/90014980/worddaveb7137980f717f6ec84593bf29eb5cd5.png](images/download/attachments/90014980/worddaveb7137980f717f6ec84593bf29eb5cd5.png)  
-_Figure 3_ _Delphix Data Platform Home Page_
-
-##  <a id="exercise2_sol"></a>Exercise 2 - Create the "delphix_db" User
-
-  1. Connect to your Linux Source by opening **Terminal** on your Lab Server and running: conn 10.0.x.20 ('x' will be your **Student Number** ). 
-
-  2. Observe the name and location of the hostchecker package by running the command: ls -ltr 
-
-  3. Expand the hostchecker package by running: tar -xvf hostchecker_linux_x86.tar 
-
-  4. Type: cd hostchecker 
-
-  5. Observe the files present in this folder, which we will be using again: ls -ltr 
-
-  6. Set the Oracle environment variables below: 
-
-    1. export ORACLE_SID= **orcl**
-
-    2. export ORACLE_HOME= **/u01/app/oracle/product/11.2.0/dbhome_1**
-
-  7. Run the command: **_./createDelphixDBUser.sh_**
-
-  8. Press Enter to accept the default instance name (orcl) 
-
-  9. Enter the Delphix DB User Username: **delphix_db**
-
-  10. Enter the Delphix DB User Password: **delphix_db**
-
-  11. Type 'n' and press enter to accept the default to grant SELECT ANY DICTIONARY 
-
-![images/download/attachments/90014984/worddavcc5beabba99812ed323b1a4c642a1f82.png](images/download/attachments/90014984/worddavcc5beabba99812ed323b1a4c642a1f82.png)  
-_Figure 4_ _hostchecker createDelphixUser.sh_
-
-##  <a id="exercise3_sol"></a>Exercise 3 - Validate the Source Environment with Hostchecker
-
-  1. Connect to your Linux Source by opening **Terminal** on your Lab Server and running: conn 10.0.x.20 ('x' will be your **Student Number** ). 
-
-  2. Set the Oracle environment variables below: 
-
-    1. export ORACLE_HOME=/u01/app/oracle/product/11.2.0/dbhome_1 
-
-    2. export ORACLE_SID=devdb 
-
-    3. export PATH=$ORACLE_HOME/bin:$PATH 
-
-  3. Ensure you are inside the hostchecker location with the command: **cd /home/delphix/hostchecker**
-
-  4. Run Hostchecker utility by typing1 the command: **./hostchecker.sh**
-
-  5. Indicate that this machine is a "source" by typing: **source**
-
-  6. Review the available checks that can be run on this system 
-
-  7. Type "1" and press Enter. The script will check homedir permissions and return SUCCESS and ALL OK. 
-
-![images/download/attachments/90014986/worddav69c02f4111ca93cfa86a348cb497e2c4.png](images/download/attachments/90014986/worddav69c02f4111ca93cfa86a348cb497e2c4.png)  
-_Figure 5_ _Hostchecker Options_
-
-  1. Type "3" and press Enter. 
-
-    1. Enter an IP address of: 10.0.x.10 ('x' will be your **Student Number** ). 
-
-    2. Enter the port: 8415 
-
-    3. The script will test the port and return SUCCESS and ALL OK. 
-
-  2. Repeat the previous step for the following ports: 8341, 50001, and 873 
-
-  3. Type "5" and press Enter. 
-
-    1. Type "1" to select the current ORACLE_HOME value, and press Enter 
-
-    2. The script will test the Oracle Home and return SUCCESS and ALL OK 
-
-  4. Type "6" and press Enter. 
-
-    1. Type "0" to select all Oracle Instances, and press Enter 
-
-    2. The script will test the Oracle Instances and return SUCCESS and ALL OK 
-
-  5. Type "7" and press Enter. The script will test the /etc/oratab file and return SUCCESS and ALL OK 
-
-  6. Type "8" and press Enter. 
-
-    1. Enter a password of: delphix 
-
-    2. The script will test the SSH connectivity to the host and return SUCCESS and ALL OK. 
-
-  7. Type "9" and press Enter. 
-
-    1. The script will return a WARNING due to permissions. This is normal. 
-
-  8. Type "10" and press Enter. 
-
-    1. Enter a password of: delphix 
-
-    2. The script will test sudo privileges and return SUCCESS and ALL OK 
-
-  9. Type "11" and press Enter. 
-
-    1. Enter a path of: /u01/app/toolkit 
-
-    2. The script will test the path and return SUCCESS and ALL OK 
-
-  10. Type "quit" to exit hostchecker. 
-
-## <a id="exercise4_sol"></a>Exercise 4 - Add a Source Environment and Link a dSource
-
-Add Source Environment
-
-  1. If you are not already logged in, login to your Delphix Data Platform as _delphix_admin_ using the password you set in the last exercise. 
-
-  2. In the top menu bar, click _Manage_ and then _Environments_. 
-
-  3. Click on the fly-out menu next to _Environments_ and select Add Environment. 
-
-  4. Provide the following details in the Add Environment Wizard 
-
-Host and Server
-
-  1.     1. Host OS: **Unix/Linux**
-
-    2. Server Type: **Standalone**
-
-Click Next
-
-  1. On the Environment Settings tab, enter the following details 
-
-    1. Environment Name: **Source**
-
-    2. Host Address: **10.0.x.20** ('x' will be your **Student Number** ) 
-
-    3. OS Username: **delphix**
-
-    4. OS Password: **delphix**
-
-    5. Toolkit Path: **/u01/app/toolkit** ![images/download/attachments/90014988/worddavc3796a976e24745bf4ac3024f9785ddd.png](images/download/attachments/90014988/worddavc3796a976e24745bf4ac3024f9785ddd.png)
-
-_Figure 6 Add Source Environment_
-
-  1. Click _Submit_
-
-  2. You can view the status of the environment creation and discovery by clicking on the Actions menu on the top right-hand side of the page. Clicking on the job in the Actions pane will allow you to track its progress 
-
-![images/download/attachments/90014988/worddav83163305f2e41324dae86bd4c1ddc762.png](images/download/attachments/90014988/worddav83163305f2e41324dae86bd4c1ddc762.png)  
-_Figure 7 Environment Creation Progress_
-
-  1. View the Environment details 
-
-    1. Click on the Environment on the left on review information on the Details tab 
-
-![images/download/attachments/90014988/worddavdf8f03c9636175dcbd6b8c44f66b55d1.png](images/download/attachments/90014988/worddavdf8f03c9636175dcbd6b8c44f66b55d1.png)
-
-  1.     1. Click on the Databases tab to view any discovered database installations and databases 
-
-![images/download/attachments/90014988/worddava75f3fd10684bdddcb7734fc874bb0da.png](images/download/attachments/90014988/worddava75f3fd10684bdddcb7734fc874bb0da.png)  
-Create dSource:
-
-  1. On the top menu bar, click _Manage_ , then _Datasets_
-
-  2. Click the _plus sign_ next to the word _Datasets_ on the top left portion of your screen and select the _Add dSource_ option. 
-
-![images/download/attachments/90014988/worddave4d3707d49d69a42344c9d73c7c6478c.png](images/download/attachments/90014988/worddave4d3707d49d69a42344c9d73c7c6478c.png)  
-_Figure 8 Add dSource_
-
-  1. The Welcome page for the dSource Wizard will be displayed. Review the instructions to get an overview of the process and click Next. 
-
-  2. Enter the following information on the Source tab 
-
-    1. Select the **_orcl_** database from Data Source list 
-
-    2. Choose delphix from the Environment User drop-down list (default) 
-
-    3. Enter the DB Username and Password: 
-
-      1. DB Username: **delphix_db**
-
-      2. DB Password: **delphix_db**
-
-    4. Click _Verify Credentials_
-
-![images/download/attachments/90014988/worddavd3e4a62eb517e9fd74c2bcb075f768ad.png](images/download/attachments/90014988/worddavd3e4a62eb517e9fd74c2bcb075f768ad.png)
-
-  1. Under the dSource Configuration tab we will provide a user-friendly name for the dSource and create a new Dataset Group to place it in. 
-
-    1. Enter " **orcl** " for the dSource name 
-
-    2. Click on the Add Dataset Group link and enter " _DB Sources_ " in the Name field. ![images/download/attachments/90014988/worddavd3aa2dfac65d5d47a50341d99c62b2ef.png](images/download/attachments/90014988/worddavd3aa2dfac65d5d47a50341d99c62b2ef.png)
-
-_Figure 9 dSource Configuration_
-
-  1. Click _Next_
-
-  2. On the Data Management tab, accept the default values and 
-
-  3. Click Next 
-
-  4. Accept the default policies 
-
-  5. Click _Next_
-
-  6. No Hooks will be added at this point. Click Next 
-
-  7. Review the summary and click _Submit_
-
-![images/download/attachments/90014988/worddavf2df57af70118181aec443407a2d7375.png](images/download/attachments/90014988/worddavf2df57af70118181aec443407a2d7375.png)  
-_Figure 10 Add dSource Summary_
-
-  1. Wait for the dSource to be created 
-
-![images/download/attachments/90014988/worddave89d449f4724681413577b38c45eab54.png](images/download/attachments/90014988/worddave89d449f4724681413577b38c45eab54.png)  
-_Figure 11 Completed dSource_
-
-##  <a id="exercise5_sol"></a>Exercise 5 - Validate the Target Environment with Hostchecker
-
-  1. Connect to your Linux Target A by opening **Terminal** on your Lab Server and running: conn 10.0.x.30 ('x' will be your **Student Number** ). 
-
-  2. Observe the name and location of the hostchecker package by running the command: ls -ltr 
-
-  3. Expand the hostchecker package by running: tar -xvf hostchecker_linux_x86.tar 
-
-  4. Type: cd hostchecker 
-
-  5. Run hostchecker.jar with the command: ./hostchecker.sh 
-
-  6. Indicate that this machine is a "target" by typing: target 
-
-  7. Review the available checks that can be run on this system 
-
-  8. Type "1" and press Enter. The script will check homedir permissions and return SUCCESS and ALL OK. 
-
-![images/download/attachments/90014998/worddav6886302ffb660551c4940da4f14632d8.png](images/download/attachments/90014998/worddav6886302ffb660551c4940da4f14632d8.png)  
-_Figure 12_ _Hostchecker Target Options_
-
-  1. Type "3" and press Enter. 
-
-    1. Enter an IP address of: 10.0.x.10 ('x' will be your **Student Number** ). 
-
-    2. Enter the port: 8415 
-
-    3. The script will test the port and return SUCCESS and ALL OK. 
-
-  2. Repeat the previous step for the following ports: 873, 22, 80, 443 
-
-  3. Type "5" and press Enter. 
-
-    1. Type "1" to select the current ORACLE_HOME value, and press Enter 
-
-    2. The script will test the Oracle Home and return SUCCESS and ALL OK 
-
-  4. Type "6" and press Enter. The script will test the /etc/oratab file and return SUCCESS and ALL OK 
-
-  5. Type "7" and press Enter. 
-
-    1. Enter a password of: delphix 
-
-    2. The script will test the SSH connectivity to the host and return SUCCESS and ALL OK. 
-
-  6. Type "8" and press Enter. 
-
-    1. The script will return WARNING due to permissions. This is normal. 
-
-  7. Type "9" and press Enter. 
-
-    1. Enter a password of: delphix 
-
-    2. The script will test sudo privileges and return SUCCESS and ALL OK 
-
-  8. Type "10" and press Enter. 
-
-    1. Enter a path of: /u01/app/toolkit 
-
-    2. The script will test the path and return SUCCESS and ALL OK 
-
-  9. Type "quit" to exit hostchecker. 
-
-## <a id="exercise6_sol"></a>Exercise 6 - Add Target Environment
-
-  1. If you are not already logged in, login to your Delphix Data Platform as _delphix_admin_ using the password you set in the last exercise. 
-
-  2. In the top menu bar, click _Manage_ and then _Environments_. 
-
-  3. Click on the fly-out menu next to _Environments_ and select Add Environment. 
-
-  4. Provide the following details in the Add Environment Wizard 
-
-Host and Server
-
-  1.     1. Host OS: Unix/Linux 
-
-    2. Server Type: Standalone 
-
-Click Next
-
-  1. On the Environment Settings tab, enter the following details 
-
-    1. Environment Name 
-
-    2. Host Address: 10.0.x.30 ('x' will be your **Student Number** ) 
-
-    3. OS Username: delphix 
-
-    4. OS Password: delphix 
-
-    5. Click Validate 
-
-    6. Toolkit Path: /u01/app/toolkit ![images/download/attachments/90015000/worddavb03522a9c56f481e4d8c97d5363ccc53.png](images/download/attachments/90015000/worddavb03522a9c56f481e4d8c97d5363ccc53.png)
-
-_Figure 13 Add Target Environment_
-
-  1. Click _Submit_
-
-  2. You can view the status of the environment creation and discovery by clicking on the Actions menu on the top right-hand side of the page. Clicking on the job in the Actions pane will allow you to track its progress. 
-
-  3. View the Environment details 
-
-    1. Click on the Environment Name on the left on review information on the Details tab 
-
-![images/download/attachments/90015000/worddav3ed706f710a17f6500b5fb4222895be8.png](images/download/attachments/90015000/worddav3ed706f710a17f6500b5fb4222895be8.png)
-
-  1.     1. Click on the Databases tab to view any discovered database installations and databases 
-
-![images/download/attachments/90015000/worddav700443e673fbfa191ffbfd0e690470d1.png](images/download/attachments/90015000/worddav700443e673fbfa191ffbfd0e690470d1.png)
-
-## <a id="exercise7_sol"></a>Exercise 7 - Provision a VDB
-
-  1. Go the Datasets Home page by Clicking on the Manage menu and selecting Datasets 
-
-  2. Expand the DB Source group and click on the **_orcl_** dSource object. This will reveal the Timeflow for the dSource by default. 
-
-  3. Hovering over the Timeflow snapshot will reveal icons to provision a VDB, view LogSync and other information. 
-
-Click on the Provision VDB icon
-![images/download/attachments/90015004/worddav91efaac4bb798dddfe0bd8e7bade7c37.png](images/download/attachments/90015004/worddav91efaac4bb798dddfe0bd8e7bade7c37.png)  
-![images/download/attachments/90015004/worddav989c427644b4991a211f98289a04819d.png](images/download/attachments/90015004/worddav989c427644b4991a211f98289a04819d.png)  
-_Figure 14 Provision VDB_
-
-  1. On the Target Environment tab, use the following information 
-
-    1. Choose _Target_ under the list of Environments 
-
-    2. Verify that the Installation Home is set to  /u01/app/oracle/product/11.2.0/dbhome_1 (11.2.0.1.0) 
-
-    3. Ensure that the Environment User is set to delphix 
-
-    4. Click Next 
-
-![images/download/attachments/90015004/worddaveb19d81e3200d1a3f524dffb40482c11.png](images/download/attachments/90015004/worddaveb19d81e3200d1a3f524dffb40482c11.png)  
-_Figure 15 Provision VDB - Target Environment_
-
-  1. Enter the details below on the Target Configuration tab 
-
-    1. Database Unique Name: **devdb**
-
-    2. Database Name: **devdb**
-
-    3. SID: **devdb**
-
-    4. Mount Base: **/mnt/provision**
-
-![images/download/attachments/90015004/worddav8e509b20735b750221a4029655e89848.png](images/download/attachments/90015004/worddav8e509b20735b750221a4029655e89848.png)  
-_Figure 16 Provision VDB - Target Configuration_
-
-  1. Click _Next_
-
-  2. On the Configuration tab, we will provide a user-friendly name for the VDB as well as assign it to a new group. 
-
-    1. VDB Name: **devdb**
-
-    2. Click Add Dataset Group 
-
-      1. Enter _DB Targets_ for the Group Name 
-
-      2. Click Add 
-
-    3. Verify that the _DB Targets_ Group is selected 
-
-    4. Masking Job should be set to None 
-
-    5. Check the box next to Enabled for _Auto VDB Restart_
-
-    6. Click _Next_
-
-![images/download/attachments/90015004/worddavd52bd451ed02c87a21986691c5d674c1.png](images/download/attachments/90015004/worddavd52bd451ed02c87a21986691c5d674c1.png)  
-_Figure 17 Provision VDB - Configuration_
-
-  1. On the Policies tab, accept the defaults and click _Next_
-
-  2. Accept the defaults on the Hooks tab and click _Next_
-
-  3. Verify the summary information, and click _Submit_
-
-![images/download/attachments/90015004/worddava1ce2c267131273f14a4411a4c34dff4.png](images/download/attachments/90015004/worddava1ce2c267131273f14a4411a4c34dff4.png)  
-_Figure 18 Provision VDB Summary_  
-It may take a couple minutes for the VDB creation to complete. You can monitor
-the progress on the left hand side of the screen next to the _devdb_ object in
-the _DB Targets_ group. On the _Actions_ pane on the right hand side of the
-screen, you should see the _Provision virtual database "devdb"_ item move to
-the _Recently completed_ pane without error.  
 Once the VDB is created, you can verify that the VDB is operational by:
 
-  1. Using Terminal on your lab server, SSH to your Linux Target server at 10.0.x.30 ('x' will be your **Student Number** ). 
+20. Using **Terminal** on your lab server, use SSH to connect to your Linux Target server
+    - Type ssh 10.0.x.30 (&#39;x&#39; will be your **Student Number** ).
+21. Enter the username: delphix
+22. Enter the password: delphix
+23. Run the following commands:
+    - Type export ORACLE\_SID=qadb
+    - Type export ORACLE\_HOME=/u01/app/oracle/product/11.2.0/dbhome\_1
+    - Type export PATH=$ORACLE\_HOME/bin:$PATH
+    - Type sqlplus / as sysdba
+    - Type show parameter memory\_target
+    - Type connect appuser/appuser
 
-  2. Enter the username: delphix 
+This will verify that the VDB is online with the **VDB Configuration Template** we specified, and that the **APPUSER** user was created by our hook.
 
-  3. Enter the password: delphix 
+![](images/new/image46.png)
 
-  4. Run the following commands: 
-```
-export ORACLE_HOME=/u01/app/oracle/product/11.2.0/dbhome_1  
-export ORACLE_SID=devdb  
-export PATH=$ORACLE_HOME/bin:$PATH  
-sqlplus / as sysdba  
-select name from v$database;  
-```
-![images/download/attachments/90015004/worddav778ba7ea300ef97f096a94007d8263f3.png](images/download/attachments/90015004/worddav778ba7ea300ef97f096a94007d8263f3.png)  
-_Figure 19 Validate VDB_
+Note: It may take a couple minutes for the VDB creation to complete. You can monitor the progress on the left-hand side of the screen next to the **qadb** object in the **DB Targets** group. On the **Actions** pane on the right-hand side of the screen, you should see the **Provision virtual database &quot;qadb&quot;** item move to the **Recently completed** pane without error. Once the VDB is created, you can verify that the VDB is operational by:
 
-##  <a id="exercise8_sol"></a>Exercise 8 - Refresh a VDB
+<br></br>
+## <a id="_ex14"></a>Optional Advanced Exercise – Discover and Link a 12c Container Database dSource
 
-  1. Open Terminal on your Lab Server desktop and type: ssh delphix@10.0.x.20 ('x' will be your **Student Number** ) 
+In this exercise, you will:
 
-  2. Enter the username: delphix 
+- Using the createDelphixDBUser script to create the c##delphix\_db user in CDB$Root.
+- Using the createDelphixDBUser script to create the delphix\_db user in the PDB WINTERFELL
+- Discover the 12C Database to identify pluggable database WINTERFELL
+- Add a dSource for the PDB WINTERFELL
 
-  3. Enter the password: delphix 
+**Steps**
 
-  4. Run the following commands: 
-```
-export ORACLE_HOME=/u01/app/oracle/product/11.2.0/dbhome_1  
-export ORACLE_SID=orcl  
-export PATH=$ORACLE_HOME/bin:$PATH  
-sqlplus / as sysdba  
-create table sourcetab as select * from dba_objects;
-```
+We will walk through the steps to get you acquainted with discovering 12C PDB&#39;s and creating a dSource from them.
 
-  1. Go back to the Delphix Data Platform in your browser (click the Delphix logo to go back to the main screen if required) 
+1. Using the Terminal icon on the Lab desktop connect to the Linux Source Server
+   - Type ssh 10.0.x.20 (&#39;x&#39; will be your **Student Number** ).
+   - Enter the password delphix
+2. Set the appropriate environment variables for the 12c Database and cd to the hostchecker directory :
+   - Type export ORACLE\_HOME=/u02/app/oracle/product/12.2.0/dbhome\_1
+   - Type export ORACLE\_SID=gotcdb.
+   - Type export PATH= $ORACLE\_HOME/bin:$PATH
+   - Type cd hostchecker
 
-  2. Click on the **orcl** dSource object on the left side of your screen (expand DB Source group if needed) 
+Note: If the hostchecker directory doesn&#39;t exist, untar the hostchecker\_linux\_x86.tar file (Type tar -xvf hostchecker\_linux\_x86.tar)
 
-  3. Click the _Camera Icon_ on the top-right to take a snapshot 
+3. Run the **createDelphixDBUser** Script to first create the **c##delphix\_db** user in the CDB
+   - Type ./createDelphixDBUser.sh
+   - Enter the Database Instance enter : gotcdb
+   - When prompted to verify if you want to create the user in CDB#ROOT press Enter
+   - Enter the DB User name: c##delphix\_db
+   - Enter password : delphix
+   - When prompted for select any dictionary privileges : n
 
-![images/download/attachments/90015012/worddav1e2715ebc1af0cb0f3ed12c9f73a33a6.png](images/download/attachments/90015012/worddav1e2715ebc1af0cb0f3ed12c9f73a33a6.png)  
-_Figure 20 Snapshot dSource_
+The script will create the c##delphix\_db user with necessary privileges.
 
-  1. Click on the _devdb_ VDB on the left side of your screen 
+4. Run the **createDelphixDBUser** script again to create the **delphix\_db** user in the PDB **WINTERFELL**
+   - ./createDelphixDBUser.sh
+   - When Prompted for the Database Instance enter gotcdb
+   - When Prompted for pluggable database name enter winterfell
+   - When Prompted for the Database User enter delphix\_db
+   - When Prompted for the password use : delphix
+   - When prompted for select any dictionary privileges : n
 
-  2. Click the Timeflow tab 
+The script will now create delphix\_db user in the PDB winterfell with the necessary privileges.
 
-  3. Click the _Refresh_ button on the top right next to the snapshot icon. 
+**Discover the CDB**
 
-  4. There are two options for refreshing the VDB, choose the "Faster" option to refresh from the most recent snapshot and click Next. 
+If not already connected, connect to your Delphix Engine as Delphix Admin.
 
-![images/download/attachments/90015012/worddav39620dd80c9e65dff3a32083ab8f6477.png](images/download/attachments/90015012/worddav39620dd80c9e65dff3a32083ab8f6477.png)  
-_Figure 21 Refresh VDB_
+1. Navigate to Manage -> Environments Page
+2. Select the Source Environment and click on the Databases Tab.
+3. Scroll down to find the home /u01/app/oracle/product/12.2.0/dbhome\_1
+4. Click on Discover CDB to discover the PDB&#39;s in the CDB
 
-  1. Click the _Submit_ button 
+   ![](images/new/image47.png)
 
-![images/download/attachments/90015012/worddav563e9fc2b32b04a4a50e75ec6e968432.png](images/download/attachments/90015012/worddav563e9fc2b32b04a4a50e75ec6e968432.png)  
-_Figure 22 Refresh VDB from dSource_  
-Once the refresh has completed, a new VDB snapshot will be generated and
-reflected in the Timeflow.  
-![images/download/attachments/90015012/worddav7df25fdd3dbcc04ee889b719a02c0aa9.png](images/download/attachments/90015012/worddav7df25fdd3dbcc04ee889b719a02c0aa9.png)  
-_Figure 23 VDB Refresh - Post Refresh_  
-Log into _devdb_ to confirm.
+5. On the Discover CDB wizard Popup Enter the following details
+   - Username: c##delphix\_db
+   - Password: delphix
+6. Click on OK
+7. Click and monitor the Actions tab to ensure it completes without error.
 
-  1. Open Terminal on your Lab Server desktop and type: ssh delphix@10.0.x.30 ('x' will be your **Student Number** ) 
+Once complete, PDB **WINTERFELL** should be discovered and displayed under the 12c home
 
-  2. Enter the username: delphix 
+![](images/new/image48.png)
 
-  3. Enter the password: delphix 
+**Link an Oracle 12c dSource**
 
-  4. Run the following commands: 
-```
-export ORACLE_HOME=/u01/app/oracle/product/11.2.0/dbhome_1  
-export ORACLE_SID=devdb  
-export PATH=$ORACLE_HOME/bin:$PATH  
-sqlplus / as sysdba  
-select count (*)
-from sourcetab; 
-```
-![images/download/attachments/90015012/worddav6ca36a61e719ef0579cd3dee626b0fb7.png](images/download/attachments/90015012/worddav6ca36a61e719ef0579cd3dee626b0fb7.png)  
-_Figure 24 Validate Refresh_  
-If this returns a count of rows, the snapshot/refresh was successful.
+1. Click on the Add dSource button to add a dSource from this database
+2. On the Add dSource Wizard make sure the PDB **WINTERFELL** is selected.
+3. Scroll down and add db user details
+   - DB Username: delphix\_db
+   - DB Password: delphix
+4. Click on **Verify credentials** to verify the give details.
+5. Click **Next**
 
-## <a id="exercise9_sol"></a>Exercise 9 - Rewind a VDB
+   ![](images/new/image49.png)
 
-  1. On the Delphix main screen, select the _devdb_ VDB 
+6. On the dSource Configuration tab of the Add dSource wizard Click on **Add Dataset Group**
+7. On the Add Dataset Group pop up, add a new group with the name ***Ora12C Sources***.
+8. Click **Add**.
+9. Make sure the new dataset group is selected and click **Next**.
+10. Review and Accept the defaults on the Data Management tab by clicking **Next**
+11. Review the defaults on the Policies tab and click on **Next**.
+12. We will not be configuring hooks at this time. Click on **Next**.
+13. Review Summary and Click **Submit**.
 
-  2. Click the _Camera_ icon on the top right to take a snapshot of the VDB 
+    ![](images/new/image50.png)
 
-![images/download/attachments/90015018/worddav6491094f2b9c725dd7e347cd35c52fe6.png](images/download/attachments/90015018/worddav6491094f2b9c725dd7e347cd35c52fe6.png)  
-_Figure 25 Snapshot VDB_
+14. Click on Actions on the top right-hand corner if Actions Pane is hidden to monitor progress of the Action and ensure it completes without error.
 
-  1. A new snapshot card will be created on the _devdb_ Timeflow. Make a note of the date/time for the latest snapshot card. 
+    ![](images/new/image51.png)
 
-  2. Open Terminal on your Lab Server desktop and type: ssh delphix@10.0.x.30 ('x' will be your **Student Number** ) 
+15. Once the dSource creation is completed Navigate to **Manage** -> **Datasets**.
+16. Expand the Ora12c Sources group to explore the DB&#39;s under it. You should see both the CDB gotcdb and the PDB WINTERFELL listed under it.
+    - Note the Different icons used to represent CDB and PDB&#39;s
+    - Also note there is no timeflow available for the container database gotcdb.
 
-  3. Enter the username: delphix 
+    ![](images/new/image52.png)
 
-  4. Enter the password: delphix 
+17. Click on the PDB WINTERFELL to see the **Timeflow** , **Status** and **Configurations** under the respective tabs.
 
-  5. Run the following commands: 
-```
-export ORACLE_SID=devdb  
-sqlplus / as sysdba  
-delete from sys.obj$;  
-commit;  
-shutdown abort;  
-startup; 
-```
-![images/download/attachments/90015018/worddav1a870f563672c4eb83819214421fe5f9.png](images/download/attachments/90015018/worddav1a870f563672c4eb83819214421fe5f9.png)  
-_Figure 26 Corrupt VDB_  
-Note that the database is unable to come online due to a bootstrap error. The
-_devdb_ database is now corrupted. Now we will rewind the VDB to the last good
-snapshot to fix this.
+    ![](images/new/image53.png)
 
-  1. In the Delphix Data Platform (web browser), click on the _devdb_ VDB if it is not already selected 
+<br></br>
+## <a id="_ex15"></a>Optional Advanced Exercise – Provision a Virtual PDB (vPDB)
 
-  2. Click on the Timeflow tab and select the snapshot associated with the date/time you recorded prior to corrupting your database. This will most likely be the latest snapshot. 
+In this exercise you will:
 
-  3. Hover over the snapshot to reveal the Rewind button. 
+- Provision a VPDB from a 12c dSource.
 
-  4. Click the _Rewind VDB_ button on the Timeflow 
+**Steps**
 
-![images/download/attachments/90015018/worddaveeaed3b3e48c0485fe1799716c0ee02c.png](images/download/attachments/90015018/worddaveeaed3b3e48c0485fe1799716c0ee02c.png)  
-_Figure 27 Rewind VDB_
+As an advanced exercise, this lab has no corresponding Lab Solution. Instead, we will walk through the steps to get you acquainted with provisioning a PDB from a 12c dSource.
 
-  1. Confirm that you wish to rewind the VDB by clicking _Rewind_. 
+1. Login to the Delphix Engine if not already logged in.
+2. Navigate to **Manage** -> **Datasets**
+3. Expand **Ora12C Sources** Group and click on WINTERFELL PDB
+4. Hover on the latest snapshot card and click on **Provision a VDB**.
 
-![images/download/attachments/90015018/worddavd091785c07b9e696c21c15421e23369a.png](images/download/attachments/90015018/worddavd091785c07b9e696c21c15421e23369a.png)  
-_Figure 28 Rewind VDB Dialog_  
-Once the rewind operation is complete, you can confirm the rewind was
-successful by connecting to the server again and querying the database:
+   ![](images/new/image54.png)
 
-  1. Open Terminal on your Lab Server desktop and type: ssh delphix@10.0.x.30 ('x' will be your **Student Number** ) 
+5. On the Provision vPDB Wizard
+   - Click on **Target** under **Environments**.
+   - And click the check box for **Create a New Container Database**.
+   - Click **Next**.
+6. On the Target Configuration tab click **Add Dataset Group**
+7. On the Add Dataset Group Wizard create a new group with the name ***Ora12C Targets***.
+8. Click **Add**
+9. Back on the **Target Configuration** page make sure the new Dataset group **Ora12C Targets** is selected.
+10. Add the following details. (Database Name and SID limited to 8 characters).
+    - Pluggable Database Name : devPDB
+    - vPDB Name : devPDB
+    - Database Name: VCWINTER
+    - vCDB Name : VCWINTER
+    - Database Unique Name: VCWINTER
+    - SID: VCWINTER
+11. Click **Next**.
 
-  2. Enter the username: delphix 
+    ![](images/new/image55.png)
 
-  3. Enter the password: delphix 
+12. On the **Advanced** page click the **Auto vCDB Restart Enabled checkbox**
+13. Click **Next**
+14. Accept the Default policies. Click **Next**
+15. We will not be configuring hooks now. Click **Next**.
+16. Review the summary page and click **Submit**.
 
-  4. Run the following commands: 
-```
-export ORACLE_HOME=/u01/app/oracle/product/11.2.0/dbhome_1  
-export ORACLE_SID=devdb  
-export PATH=$ORACLE_HOME/bin:$PATH  
-sqlplus / as sysdba  
-select count
-from dba_objects;  
-```
-![images/download/attachments/90015018/worddav0bc5f85f988526df169c88ee2c1d76da.png](images/download/attachments/90015018/worddav0bc5f85f988526df169c88ee2c1d76da.png)  
-_Figure 29 Validate VDB Rewind_
+Note: Once Submitted, the Action will show a working screen for a few seconds. You can choose to let the Action run in the background.
 
-##  <a id="exercise10_sol"></a>Exercise 10 - Set a New Retention Policy
+17. Monitor the Actions Pane by clicking on the Actions button on the top right-hand corner. You can get more details about the action by clicking on the >, to the left of the currently running action, to expand it.
 
-  1. In the top menu bar, click on _Manage_ and then _Policies_
+    ![](images/new/image56.png)
 
-  2. Click the _Retention_ tab, click _+Retention_
+Note: Once Action is completed you can see the vCDB we added and the VPDB just provisioned listed under the new Dataset group Ora12C Targets. Expand the group if necessary, to view the objects under it. Note that there is no timeflow for the vCDB.
 
-  3. Provide the following details: 
+18. Click on devPDB and review Timeflow, Status and configuration details under the respective tabs.
 
-    1. Policy Name: **Long Term**
+    ![](images/new/image57.png)
 
-    2. Keep Logs for: **30 days**
+19. Using the **Terminal** icon on your lab desktop connect to the **target** server. (Refer to the Important IP Addresses section of the labguide)
+    - Click on the **Terminal** icon on the lab desktop
+    - Type ssh 10.0.x.30 (replace # with the student number assigned to you).
+20. Set up the environment variables for 12C
+    - Type export ORACLE\_SID=VCWINTER
+    - Type export ORACLE\_HOME=/u02/app/oracle/product/12.2.0/dbhome\_1
+    - Type export PATH=$ORACLE\_HOME/bin:$PATH
+21. Connect to sqlplus and verify the CDB and PDB details
+    - Type sqlplus / as sysdba
+22. At the SQL> prompt type
+    - select name from v$database;
+    - alter session set container=DEVPDB;
+    - show CON\_NAME
 
-    3. Keep Snapshots for: **30 days**
+<br></br>
+## <a id="_ex16"></a>Optional Advanced Exercise – Measure Network Performance Test through the CLI
 
-  4. Click the Show a _dvanced link_
+In this exercise, you will:
 
-  5. Click the checkbox next to _Keep 3 Snapshot(s) on 1 st of every month_
+- Log into the Delphix Data Platform CLI as admin
+- Perform a network latency test to Target
+- Perform a network throughput test to Target
 
-![images/download/attachments/90015024/worddave2f1002a30fe0f11542ce0595fc2fe20.png](images/download/attachments/90015024/worddave2f1002a30fe0f11542ce0595fc2fe20.png)  
-_Figure 30 Create Retention Policy_
+**Steps**
 
-  1. Click _Next_
+As an advanced exercise, this lab has no corresponding Lab Solution. Instead, we will walk through the steps to get you acquainted the Delphix CLI for admin.
 
-  2. On the Datasets tab click the checkbox for the _devdb_
+1. On your Lab Server desktop, double-click on **Terminal**
+2. Type: ssh admin@10.0.x.10 (&#39;x&#39; is your **Student Number** assigned by your instructor)
+   - If you receive a prompt asking you if you are sure you want to connect, enter: Yes
+   - Enter the password: delphix
+   - You are now at the root of the Delphix CLI as a Delphix Administrator
+3. Create a network latency test by typing: network test latency create
+   - List the default/required parameters by typing: get
+   - Set the remoteHost value to the TargetA environment IP address: set remoteHost=10.0.x.30 (&#39;x&#39; will be your **Student Number** )
+   - Begin the test by typing: commit
 
-  3. Click Submit 
+     ![](images/new/image58.png)
 
-![images/download/attachments/90015024/worddavfe351459ddc92242ccc386ab4ae6676e.png](images/download/attachments/90015024/worddavfe351459ddc92242ccc386ab4ae6676e.png)  
-_Figure 31 Apply Retention Policy_  
-Expand the policies menu to validate that the new Long Term policy has been
-applied to the _devdb_ VDB.  
-![images/download/attachments/90015024/worddavd0368a84bb343d0bb229d9ff5b37909a.png](images/download/attachments/90015024/worddavd0368a84bb343d0bb229d9ff5b37909a.png)  
-_Figure 32 Retention Policy Settings_
+4. View the results of the latency test:
+   - Get to the latency test section again by typing: network test latency
+   - List the completed tests by typing: ls
+   - Type select followed by the name of the test from the list. For example:
+   ```select 10.0.1.30-2015-09-18T12:47:19.711Z```
+   - View the results of the test by typing: get
 
-##  <a id="exercise11_sol"></a>Exercise 11 - Create and Save a Hook Operation Template
+     ![](images/new/image59.png)
 
-  1. In the top menu bar, click _Manage_ , then _Operation Templates_
+5. Create a network throughput test
+   - While still logged into the CLI, return to the root by typing: cd /
+   - Begin a network throughput test by typing: network test throughput create
+   - List the default/required parameters by typing: get
+   - Set the remoteHost value to the TargetA environment IP address: setremoteHost=10.0.x.30 (&#39;x&#39; will be your **Student Number** )
+   - Begin the test by typing: commit
 
-  2. Click the plus sign under the word _Templates_ in the Hook Operation Templates Wizard 
+     ![](images/new/image60.png)
 
-  3. Provide the _Name_ : Create APPUSER 
+6. View the results of the throughput test:
+   - Get to the throughput test section again by typing: network test throughput
+   - List the completed tests by typing: ls
+   - Type select followed by the name of the test from the list. For example:
+   ```select 10.0.1.30-2015-09-18T13:13:08.152Z```
+   - View the results of the test by typing: get
 
-  4. Ensure _Type_ is set to: System Shell Command 
+     ![](images/new/image61.png)
 
-  5. Under _Contents_ , enter the following code: 
+<br></br>
+## <a id="_ex17"></a>Optional Advanced Exercise – Configure Delphix Replication
 
-$ORACLE_HOME/bin/sqlplus / as sysdba << EOF  
-create user appuser identified by appuser;  
-grant connect, resource to appuser;  
-exit;  
-EOF  
-![images/download/attachments/90015028/worddav61896caeb79d4fe0ed7906fc6d1286c8.png](images/download/attachments/90015028/worddav61896caeb79d4fe0ed7906fc6d1286c8.png)  
-_Figure 33 Create Hook Operation Template_
+Note: This exercise is only possible if your classroom has been configured with 2 or more students.
 
-  1. Click _Create_
+In this exercise, you will:
 
-  2. Verify the Hook Operation Template is in the list, then click _Close_
+- Set up a replication profile
+- Replicate your entire Delphix Data Platform to another Delphix Data Platform
+- View the replicas in the target Delphix Data Platform
 
-![images/download/attachments/90015028/worddavc67c614cf40ab88039d43969df0ab068.png](images/download/attachments/90015028/worddavc67c614cf40ab88039d43969df0ab068.png)  
-_Figure 34 Hook Template_
+**Steps**
 
-  1. Figure Verify Hook Operation Template 
+As an advanced exercise, this lab has no corresponding Lab Solution. Instead, we will walk through the steps to get you acquainted the Delphix Replication capability.
 
-## <a id="exercise12_sol"></a>Exercise 12 - Create a VDB Template
+1. In the Delphix GUI, select **System** and then **Replication** on the top menu bar
+2. Add a **Replication Profile** called DR Replica
+   - Click the **plus sign** next to **Replication Profiles** on the top left
+   - Enter a **Replica Profile Name** : ***DR Replica***
+   - For Target Engine, enter the **Delphix Data Platform IP address** for the next student in your classroom environment. If you are the last student, use the Delphix Data Platform IP address for Student 1. For example, in a class with 3 students:
+     - Student 1 Delphix Data Platform is at 10.0.1.10, and they will replicate to 10.0.2.10
+     - Student 2 Delphix Data Platform is at 10.0.2.10, and they will replicate to 10.0.3.10
+     - Student 3 Delphix Data Platform is at 10.0.3.10, and they will replicate to 10.0.1.10
+     - Ask your instructor if you have any questions or confusion about this configuration.
+   - Enter the User Name: ***admin***
+   - Enter the Password: ***delphix***
+   - Do not enable Automatic Replication or configure Traffic Options
+   - For the Objects Being Replicated, select: **Entire Delphix Data Platform**
+   - Click **Create** at the bottom when ready.
 
-  1. In the top menu bar, click _Manage_ , then _VDB Config Templates_
+   ![](images/new/image62.png)
 
-  2. Click the _plus sign_ next to the word _VDB Config_ _Templates_ and select _New Template_ from the drop-down. 
+3. Start the Replication by clicking the **Replicate Now** button on the top right of your screen.
+4. Click **Replicate** to confirm you are ready to begin.
+5. Once the initial full replication is complete, you will see a message stating **Last Replication Successful**.
 
-  3. Name: 1G Template 
+   ![](images/new/image63.png)
 
-  4. Click _Create_
+6. Check the results on your target Delphix Data Platform
+   - In your lab server browser, enter ***the IP address*** you used for the Target Engine in your replica profile. For example, if you are Student 1, your Delphix Data Platform is at 10.0.1.10, and your target would have been 10.0.2.10.
+   - Log in as user ***admin*** with the password ***delphix***
+   - Observe the dropdown list under **Datasets** on the top left corner of your screen. It should have **Default shown** which is the default **Namespace** for Delphix replica targets.
+   - In order to see the replica objects, click on the dropdown list and select the second entry, which should reflect the hostname of the source Delphix Data Platform that sent the replica.
 
-  5. Click the pencil icon on the top right of the VDB Configuration Templates screen 
+_Note: The hostname shown in the labs is based on the default hostname given to the Delphix Data Platform in Amazon AWS, consisting of the prefix &quot;ip&quot; followed by the IP address separated by hyphens._
 
-  6. Click the plus sign on the **top right** to add a new parameter 
+7. While still logged into your target Delphix Data Platform, click on **System** and then **Replication**
+8. Observe the **Received Replicas** section at the bottom, indicating and verifying the target&#39;s receipt of replication data.
+   - Note: The **Failover Now** option will not work for these labs due to namespace collisions. This is an inherent outcome to plan for when using Active/Active replication.
 
-    1. Double-click the row to enter a new value 
-
-  7. In the row that is now highlighted, enter the following information: 
-
-    1. Name: **memory_target**
-
-    2. Value: **1G**
-
-  8. Click the checkmark to save the Template. 
-
-![images/download/attachments/90015031/worddav3c33aac4d97f34b4d862fb8068a134b2.png](images/download/attachments/90015031/worddav3c33aac4d97f34b4d862fb8068a134b2.png)  
-_Figure 35 Create VDB Configuration Template_
-
-##  <a id="exercise13_sol"></a>Exercise 13 - Provision a VDB with Hook and VDB Template
-
-  1. Return to the Delphix home screen by clicking the Delphix logo on the top left of the screen 
-
-  2. Click on the **_orcl_** dSource object in the Datasets panel 
-
-  3. Select the latest Snapshot, click the _Provision_ button 
-
-  4. On the left hand side of the _Target Environment_ tab, click the _Target_ environment Target 
-
-  5. Click Next 
-
-  6. On the Target Configuration tab, enter the following details: 
-
-    1. Database Unique Name: **qadb**
-
-    2. SID: **qadb**
-
-    3. Database Name: **qadb**
-
-    4. Mount Base: **/mnt/provision** (this should already be filled in) 
-
-  7. Click the _Show advanced_ link and check the box next to _Configure VDB Config Templates_
-
-![images/download/attachments/90015033/worddavae596b706fa619afdb84d4baaad680fa.png](images/download/attachments/90015033/worddavae596b706fa619afdb84d4baaad680fa.png)  
-_Figure 36 Provision VDB w/ Config Template_
-
-  1. Click Next 
-
-  2. Click the _1G Template_ that we created earlier from the Select template drop-down list 
-
-![images/download/attachments/90015033/worddav6102cae626377b6055d24ab01d0b5b9d.png](images/download/attachments/90015033/worddav6102cae626377b6055d24ab01d0b5b9d.png)  
-_Figure 37 Apply VDB Config Template_
-
-  1. Click _Next_
-
-  2. Accept the default VDB Name - qadb 
-
-  3. Select _DB Targets_ from the Datasets Group drop-down list, then click _Next_
-
-  4. Accept the default policies and click Next 
-
-  5. On the Hooks tab with _Configure Clone_ already selected on the left side of the _Provision VDB Wizard_ , click the _plus sign_ on the right hand side of the wizard and select  "Create New from Template" from the drop-down list 
-
-  6. Enter the name QA APPUSER for the Hook Operation and click the Create button 
-
-![images/download/attachments/90015033/worddav7803f21c6a8565d2dada17c7b1e6446e.png](images/download/attachments/90015033/worddav7803f21c6a8565d2dada17c7b1e6446e.png)  
-_Figure 38 Add Hook Template_
-
-  1. Click on the _Create APPUSER_ template we created earlier, then click _Import_
-
-![images/download/attachments/90015033/worddava8380050555bf3d5d16dca6dc82597b5.png](images/download/attachments/90015033/worddava8380050555bf3d5d16dca6dc82597b5.png)  
-_Figure 39 Configure Clone Hook Operation Template_
-
-  1. Click _Next_
-
-![images/download/attachments/90015033/worddav4b552b06226adda4792d6b73429f3aa4.png](images/download/attachments/90015033/worddav4b552b06226adda4792d6b73429f3aa4.png)  
-_Figure 40 Provision VDB Summary_
-
-  1. Verify the summary information, and click _Submit_
-
-It may take a couple minutes for the VDB creation to complete. You can monitor
-the progress on the left-hand side of the screen next to the _qadb_ object in
-the _DB Targets_ group. On the _Actions_ pane on the right-hand side of the
-screen, you should see the _Provision virtual database "qadb"_ item move to
-the _Recently completed_ pane without error.  
-Once the VDB is created, you can verify that the VDB is operational by:
-
-  1. Using Terminal on your lab server, SSH to your Linux Target server at 10.0.x.30 ('x' will be your **Student Number** ). 
-
-  2. Enter the username: delphix 
-
-  3. Enter the password: delphix 
-
-  4. Run the following commands: 
-```
-export ORACLE_SID=qadb  
-export ORACLE_HOME=/u01/app/oracle/product/11.2.0/dbhome_1  
-export PATH=$ORACLE_HOME/bin:$PATH  
-sqlplus / as sysdba  
-show parameter memory_target  
-connect appuser/appuser
-```
-This will verify that the VDB is online with the VDB Configuration Template we
-specified, and that the APPUSER user was created by our hook.  
-![images/download/attachments/90015033/worddav577a9fc094da1d2e2115572064923b12.png](images/download/attachments/90015033/worddav577a9fc094da1d2e2115572064923b12.png)  
-_Figure 41 View VDB Parameters_
+© 2015 Delphix Corp. All rights reserved
 
