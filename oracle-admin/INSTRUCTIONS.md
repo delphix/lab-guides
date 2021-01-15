@@ -344,7 +344,7 @@ Before users can create their own virtual databases, Delphix needs to connect to
    - Leave the **DSP** fields blank
    - Set **Login Type** to **Username and Password**
    - OS Username: ***delphix***
-   - OS Password: ***Delphix*** (Note: Enter the Toolkit Path before Validating the Username and Password)
+   - OS Password: ***delphix*** (Note: Enter the Toolkit Path before Validating the Username and Password)
    - Toolkit Path: /u01/app/toolkit
    - Click **Validate**
 
@@ -352,7 +352,7 @@ Before users can create their own virtual databases, Delphix needs to connect to
 
 6. Click **Next**
 7. Click **Submit**
-8. You can view the status of the environment creation and discovery by clicking on the **Actions** menu on the top right-hand side of the page. Clicking on the jobs lower right corner, in the Actions pane, will allow you to track its progress
+8. You can view the status of the environment creation and discovery by clicking on the **Actions** menu on the top right-hand side of the page. Clicking on a job in the Actions pane will allow you to track its progress. 
 
    ![](images/new/image10.png)
 
@@ -386,7 +386,7 @@ With an environment set-up, users can then sync databases into Delphix. The Delp
      ![](images/new/image13.png)
 
 4. The Welcome page for the dSource Wizard will be displayed. Review the instructions to get an overview of the process and click **Next**
-5. In the Source tab select the orcl Data source and provide the username and password of the database user
+5. In the Source tab select the orcl Data source and provide the username and password of the database user (user and password are both ***delphix_db***)
 6. Under the **dSource Configuration** tab we will provide a user-friendly name for the dSource and create a new Dataset Group to place it in.
    - Enter ***orcl*** for the **dSource Name**
    - Click on the **Add Dataset Group** link and enter ***Source DB*** in the **Name** field.
@@ -467,7 +467,7 @@ The objective of Delphix virtualization is to provide easy access to virtualized
 1. Click the **Manage** menu and then **Datasets**
 2. Expand the **Source DB** group and click the **orcl** dSource from the **Datasets** panel on the left. This will reveal the **Timeflow** for the dSource by default.
 3. On the **Timeflow** tab of the dSource select the most recent (topmost) **Snapshot**. The **Provision VDB** iconwill appear along with the **Open LogSync** icon to the right.
-4. Click on the **Provision VDB** icon to open the **Provision VDB** wizard. The first of the three icons next to the snapshot time.
+4. Click on the **Provision VDB** icon (on the right of the Snapshot) to open the **Provision VDB** wizard. The first of the three icons next to the snapshot time.
 
    ![](images/new/image19.png)
 
@@ -1043,7 +1043,7 @@ As an advanced exercise, this lab has no corresponding Lab Solution. Instead, we
    - While still logged into the CLI, return to the root by typing: cd /
    - Begin a network throughput test by typing: network test throughput create
    - List the default/required parameters by typing: get
-   - Set the remoteHost value to the TargetA environment IP address: setremoteHost=10.0.x.30 (&#39;x&#39; will be your **Student Number** )
+   - Set the remoteHost value to the TargetA environment IP address: set remoteHost=10.0.x.30 (&#39;x&#39; will be your **Student Number** )
    - Begin the test by typing: commit
 
      ![](images/new/image60.png)
