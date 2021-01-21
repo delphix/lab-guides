@@ -30,54 +30,6 @@
 
 Perform these exercises when instructed by your Delphix Instructor.
 
-###  <a id="joindomain"></a>Prerequisite - Join the Delphix Domain
-From your Student Desktop home screen, double click the **RDP** icon. This
-will open Remmina Remote Desktop client. Before we can continue these labs,
-you must connect to your Windows Source and Target and join them to the
-_delphix.local_ domain.
-
-Please note, it may take some time for the Windows servers to come online. If
-the _Connecting_ dialog stays open for more than 5-10 seconds, cancel and try
-again in a few minutes.
-### Steps
-
-  1. Double click on **Windows Source**
-  2. When prompted, enter the password: delphix
-  3. Once you are logged in, click on **Start** and then **Run**
-  4. Type: sysdm.cpl
-  5. Press Enter
-  6. Click the **Change** button
-  7. Under the **Member of** section, click the radio button next to **Domain**
-  8. Enter the domain: delphix.local
-  9. Click OK
-  10. When prompted, enter the login details:
-    * delphix_src
-    * delphix
-  11. Wait for the Welcome message and click OK, then click OK again to acknowledge the need to restart
-  12. Click **Close**
-  13. Click **Restart Now**
-
-Once you have completed these steps, perform the following steps to set up the
-**Windows Target** :
-  1. Go back to your **Student Desktop** click on **Windows Target** in your RDP application
-  2. When prompted, enter the password: delphix
-  3. Once you are logged in, click on **Start** and then **Run**
-  4. Type: sysdm.cpl
-  5. Press Enter
-  6. Click the **Change** button
-  7. Under the **Member of** section, click the radio button next to **Domain**
-  8. Enter the domain: delphix.local
-  9. Click OK
-  10. When prompted, enter the login details:
-    * delphix_trgt
-    * delphix
-  11. Wait for the Welcome message and click OK, then click OK again to acknowledge the need to restart
-  12. Click **Close**
-  13. Click **Restart Now**
-
-See **The RDP Client** under **Getting Started** for more information on using
-the RDP application.
-
 ##  <a id="stroragetest"></a>Optional Advanced Exercise - Perform a Storage Performance Test through the CLI
 
 In this exercise, you will:
@@ -113,6 +65,55 @@ Example Storage Test Configuration
 ![images/download/attachments/90015915/worddav83df38c4c21b62a68a39b3286e9634f4.png](images/download/attachments/90015915/worddav83df38c4c21b62a68a39b3286e9634f4.png)
 Example Storage Test Results
 
+###  <a id="joindomain"></a>Prerequisite - Join the Delphix Domain
+From your Student Desktop home screen, double click the **RDP** icon. This
+will open Remmina Remote Desktop client. Before we can continue these labs,
+you must connect to your Windows Source and Target and join them to the
+_delphix.local_ domain.
+
+Please note, it may take some time for the Windows servers to come online. If
+the _Connecting_ dialog stays open for more than 5-10 seconds, cancel and try
+again in a few minutes.
+### Steps
+
+  1. Double click on **Windows Source**
+  2. When prompted, enter the password: delphix
+  3. Once you are logged in, click on **Start** and then **Run**. (Note: you might need to expand the screen to see **Start** on the Windows server.) 
+  4. Type: sysdm.cpl
+  5. Press Enter
+  6. Click the **Change** button
+  7. Under the **Member of** section, click the radio button next to **Domain**
+  8. Enter the domain: delphix.local
+  9. Click OK
+  10. When prompted, enter the login details:
+    * delphix_src
+    * delphix
+  11. Wait for the Welcome message and click OK, then click OK again to acknowledge the need to restart
+  12. Click **Close**
+  13. Click **Restart Now**
+
+Once you have completed these steps, perform the following steps to set up the
+**Windows Target** :
+  1. Go back to your **Student Desktop** click on **Windows Target** in your RDP application
+  2. When prompted, enter the password: delphix
+  3. Once you are logged in, click on **Start** and then **Run**
+  4. Type: sysdm.cpl
+  5. Press Enter
+  6. Click the **Change** button
+  7. Under the **Member of** section, click the radio button next to **Domain**
+  8. Enter the domain: delphix.local
+  9. Click OK
+  10. When prompted, enter the login details:
+    * delphix_trgt
+    * delphix
+  11. Wait for the Welcome message and click OK, then click OK again to acknowledge the need to restart
+  12. Click **Close**
+  13. Click **Restart Now**
+
+See **The RDP Client** under **Getting Started** for more information on using
+the RDP application.
+
+
 ## <a id="exercise1"></a>Exercise 1 - Delphix Engine Configuration
 
 In this exercise, you will:
@@ -136,8 +137,8 @@ In this exercise, you will:
     * Default Authentication Service options
     * Appliance marked registered (no support credentials are required for this lab)
     * Completed and saved System setup.
-  4. Log in with the initial delphix_admin user credentials
-  5. Set the new _delphix_admin_ password to: delphix
+  4. Log in with the _admin_ user (password = 'delphix')
+  5. When prompted, set the new _admin_ password to: delphix
 
 You will know this is successful when you see the main Delphix UI screen with
 a single group (Untitled) on the left hand side.
@@ -274,7 +275,7 @@ are the same.
      * Click "Next"
      * Agree to the terms and conditions and click Next
      * Accept the default Connector Port of 9100 by clicking Next
-     * Accept the default location of C:\Program Files\Delphix\DelphixConnector\ by pressing Next
+     * Accept the default location of C:\Program Files\Delphix\DelphixConnector\ by pressing Next. (Note: you do not need to fill this in, it will auto-populate on the next screen after you press next)
      * Click Next to install
      * Click Yes to allow the installation when the User Account Control (UAC) dialog pops up
      * Once it finishes, click Close
@@ -367,11 +368,13 @@ In this exercise, you will:
 
     1. Environment User: **delphix\delphix_src**
 
-    2. Database Username: **delphix_db**
+    2. Select the **Database User** radio button
 
-    3. Database Password: **delphix**
+    3. Database Username: **delphix_db**
 
-  3. Click Verify Credentials
+    4. Database Password: **delphix**
+
+  3. Click **Validate**
 
 ![images/download/attachments/90015915/worddav8bb0df9f181973de20b59b9d42146c90.png](images/download/attachments/90015915/worddav8bb0df9f181973de20b59b9d42146c90.png)
 
@@ -494,12 +497,12 @@ In this exercise, you will:
 
   4. Right click AdventureWorks2008R2, then select New Query
 
-  5. Run the following command:
+  5. Run the following command (by clicking **Execute**):
 
 _select * into sourcetab_ _from
 AdventureWorks2008R2.HumanResources.vEmployee;_
 
-  1. Take a transaction log backup (follow Exercise 3 and choose Backup type: Transaction Log in the "Back up Database" window
+  1. Take a transaction log backup, by right-clicking the **AdventureWorks2008R2** folder, selecting **Tasks** and **Back Up**, and then choose Backup Type = "Transaction Log."
 
 ![images/download/attachments/90015915/worddava5a77e557a0072bcfa9542d42a5b36c6.png](images/download/attachments/90015915/worddava5a77e557a0072bcfa9542d42a5b36c6.png)
 
@@ -535,9 +538,8 @@ Once the refresh has completed, you can log into _devdb_ to confirm.
 
   5. Run the following command:
 
-_select
-count![images/s/en_GB/7104/0e21dd459285e7b3b5e0deaa2193b2af8bbb7c8b/_/images/icons/emoticons/star_yellow.png](images/s/en_GB/7104/0e21dd459285e7b3b5e0deaa2193b2af8bbb7c8b/_/images/icons/emoticons/star_yellow.png)
-from_ _sourcetab;_
+_select count(*) from_ _sourcetab;_
+
 If this returns a count of rows, the snapshot/refresh was successful.
 
 ## <a id="exercise10">Exercise10 - Rewind a VDB
@@ -571,9 +573,8 @@ In this exercise, you will:
   5. Run the following commands:
 
 _drop table sourcetab;_
- _select
-count![images/s/en_GB/7104/0e21dd459285e7b3b5e0deaa2193b2af8bbb7c8b/_/images/icons/emoticons/star_yellow.png](images/s/en_GB/7104/0e21dd459285e7b3b5e0deaa2193b2af8bbb7c8b/_/images/icons/emoticons/star_yellow.png)
-from sourcetab;_
+ _select count(*) from sourcetab;_
+
 You will receive an error "Invalid Object name 'sourctab'.
 Do not close the query window.
 Now we will rewind the VDB to the last good snapshot to recover the table.
@@ -589,8 +590,7 @@ recovered:
 Go to SQL Server Management Studio on Target SQL server and run the following
 command.
  _select
-count![images/s/en_GB/7104/0e21dd459285e7b3b5e0deaa2193b2af8bbb7c8b/_/images/icons/emoticons/star_yellow.png](images/s/en_GB/7104/0e21dd459285e7b3b5e0deaa2193b2af8bbb7c8b/_/images/icons/emoticons/star_yellow.png)
-from sourcetab;_
+count(*) from sourcetab;_
 The should receive a count of the table.
 
 ## <a id="exercise11">Exercise 11 - Set a New Retention Policy
@@ -607,7 +607,7 @@ There are four types of Policies in Delphix. In this exercise, you will:
 
   1. Navigate to Manage -> Policies
 
-  2. Create a new retention policy for _devdb_ with the following details:
+  2. Create a new retention policy (by going to the "Retention" tab and clicking the "+ Retention" blue button) for _devdb_ with the following details:
 
     1. Name: Long Term
 
@@ -635,9 +635,7 @@ In this exercise, you will:
 
     1. Click on the **Manage** menu
 
-    2. Click on Operation Templates
-
-![images/download/attachments/90015915/worddavb87c766fa4287494644c3ccd91f0c354.png](images/download/attachments/90015915/worddavb87c766fa4287494644c3ccd91f0c354.png)
+    2. Click on Hook Templates
 
   1.     1. Click on Plus sign
 
@@ -645,7 +643,7 @@ In this exercise, you will:
 
     3. Type - Powershell Script
 
-    4. Contents (enter exactly):
+    4. Contents (enter exactly - opening the lab in the lab server and copy/pasting this is highly recommended):
 
 <ac:structured-macro ac:name="unmigrated-wiki-markup" ac:schema-version="1" ac
 :macro-id="ca55a59d-af5a-4542-a9ee-0410936e41d6"><ac:plain-text-body><![CDATA[
@@ -653,24 +651,19 @@ In this exercise, you will:
 |
 
 [System.Reflection.Assembly]::LoadWithPartialName('Microsoft.SqlServer.SMO')
-]]></ac:plain-text-body></ac:structured-macro>
 $sqlserver = "."
 $dbname = $env:VDB_DATABASE_NAME
 $name = "appuser"
 $Server = New-Object ('Microsoft.SqlServer.Management.Smo.Server') $sqlserver
 if (-Not $Server.Logins.Contains($name))
 {
-$Login = New-Object -TypeName Microsoft.SqlServer.Management.Smo.Login
--ArgumentList $Server, $name
+$Login = New-Object -TypeName Microsoft.SqlServer.Management.Smo.Login -ArgumentList $Server,
+$name
 $Login.LoginType = 'SqlLogin'
 $Login.Create('delphix')
 }
-<ac:structured-macro ac:name="unmigrated-wiki-markup" ac:schema-version="1" ac
-:macro-id="2da4592c-e576-41bf-9411-2ab5384400cf"><ac:plain-text-
-body><![CDATA[$database = $server.Databases["$dbname"]
-]]></ac:plain-text-body></ac:structured-macro>
-$user = new-object ('Microsoft.SqlServer.Management.Smo.User') $database,
-$name
+$database = $server.Databases["$dbname"]
+$user = new-object ('Microsoft.SqlServer.Management.Smo.User') $database, $name
 $user.Login = $name
 $user.Create()
 
@@ -699,37 +692,31 @@ In this exercise, you will:
 
   1. Click the AdventureWorks2008R2 dSource in the MS SQL Databases group
 
-  2. Select the most recent snapshot and click Provision
+  2. Select the most recent snapshot and click the Provision icon
 
-  3. Select WINTARGET on the left pane of the wizard and click Next.
+  3. Select WINTARGET on the left pane of the wizard and click Next
 
-  4. Enter the Database Name: qadb
+  4. Select the dataset group "MS SQL Databases group"
 
-  5. Click Next
+  5. Enter the Database Name: qadb
 
-  6. Select the dataset group "MS SQL Databases group"
+  6. Click Next to accept default policies
 
-  7. Click Next
+  7. Click Next to proceed without masking
 
-  8. Keep the defaults values for retention and click Next
-
-  9. On the Hooks tab add a Configure Clone Hook
-
-    1. Click on the Plus ![images/s/en_GB/7104/0e21dd459285e7b3b5e0deaa2193b2af8bbb7c8b/_/images/icons/emoticons/add.png](images/s/en_GB/7104/0e21dd459285e7b3b5e0deaa2193b2af8bbb7c8b/_/images/icons/emoticons/add.png)
-
-    2. Click on _Create from Template_
+  8. On the Hooks tab add a Configure Clone Hook (1. Click on the Plus sign. 2. Click on **Create from Template**)
 
 ![images/download/attachments/90015915/worddav38749211acfde4eff7ac3bf7655f8a59.png](images/download/attachments/90015915/worddav38749211acfde4eff7ac3bf7655f8a59.png)
 
-  1.     1. On the Hook Operation dialog box, verify that _Configure Clone_ is selected for the Hook Point
+  9. On the Hook Operation dialog box, verify that _Configure Clone_ is selected for the Hook Point
 
-    2. Enter a name - APPUSER
+  10. Enter a name - APPUSER
 
-    3. Click Create
+  11. Click Create
 
 ![images/download/attachments/90015915/worddav4582bd5da8fc427a3f271cfc84034e48.png](images/download/attachments/90015915/worddav4582bd5da8fc427a3f271cfc84034e48.png)
 
-  1. Verify settings and click Submit
+  12. Verify settings and click Submit
 
 ![images/download/attachments/90015915/worddav3757b2259242a2385de9cf75736032ff.png](images/download/attachments/90015915/worddav3757b2259242a2385de9cf75736032ff.png)
 It may take a couple minutes for the VDB creation to complete. You can monitor
@@ -768,21 +755,20 @@ by our hook.
 **Steps**
 
   1. Create a table as follows on source server
-
-_select * into Logsync_tab from
-AdventureWorks2008R2.HumanResources.vEmployee;_
+    _select * into Logsync_tab from AdventureWorks2008R2.HumanResources.vEmployee;_
 (  Note the time  )
 
-  1. Wait for few mins
+  2. Wait for few minutes (to give time for the table to be created)
 
-  2. Drop the table _Logsync_tab_
+  3. Drop the table _Logsync_tab_
+    drop table Logsync_tab;
 
 Drop table _Logsync_tab;_
 (  Note the time  )
 
-  1. Take a transaction log backup
+  1. Take a transaction log backup (right-click on AdventureWorks2008R2 folder, click Tasks --> Back Up, and select Transaction Log from the dropdown labeled "Backup Type")
 
-  2. Wait until the dSource time flow reflects this Transaction log
+  2. Wait until the dSource Timeflow reflects this Transaction log time
 
   3. Create a VDB by selecting date and time from the Timeflow
 
@@ -858,15 +844,11 @@ In this exercise you will
 
 ![images/download/attachments/90015915/worddav0cfd19785f03d75d5b881f05d5b0b4ff.png](images/download/attachments/90015915/worddav0cfd19785f03d75d5b881f05d5b0b4ff.png)
 
-  1. Click on + sign to add user
+  1. Click on the + sign to add user
 
-![images/download/attachments/90015915/worddavc8de813d0445edcc9b398fd3aa9fbbbe.png](images/download/attachments/90015915/worddavc8de813d0445edcc9b398fd3aa9fbbbe.png)
+  2. Create a new Engine Administrator user called **DA_User** (set in "User Type" dropdown). You can set password as 'delphix'
 
-  1. Create a new Delphix Admin called **DA_User** (see the figure below)
-
-![images/download/attachments/90015915/worddav090fe932e979d863ee4d20f1cee70a1c.png](images/download/attachments/90015915/worddav090fe932e979d863ee4d20f1cee70a1c.png)
-
-  1. Login to the Delphix UI as **DA_User**
+  3. Log out and re-login to the Delphix UI as **DA_User**
 
 ##  <a id="exercise17">Exercise 17 - Check the Audit logs for user related actions
 
@@ -878,12 +860,9 @@ In this exercise you will:
 
 **Steps** :
 
-  1. Navigate to the Audit page on Delphix UI
+  1. Login to the Delphix UI as the admin user. 
 
-Login to the Delphix UI as a user with Delphix Admin privileges if not already
-logged in.
-
-  1. Navigate to SystemAudit
+  2. Navigate to SystemAudit
 
 ![images/download/attachments/90015915/worddavc69309b4d950f51776cbcff8279c019b.png](images/download/attachments/90015915/worddavc69309b4d950f51776cbcff8279c019b.png)
 
