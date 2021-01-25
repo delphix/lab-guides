@@ -137,8 +137,6 @@ Ensure the system is configured correctly.
    
    ```sudo chmod 770 /opt/delphix/```
 
-3. (Perhaps finish this later) SET Environment Variables
-
 ## <a id="_postgres"></a>Configure Postgres
 
 **Create a role**
@@ -213,7 +211,11 @@ Ensure the system is configured correctly.
 
 **Restart Postgres**
 
-1. As the user &quot;postgres&quot;
+1. Switch to the postgres user
+  
+   ```su - postgres```
+
+2. As the user &quot;postgres&quot;
 
    ```pg_ctl restart -D /usr/local/pgsql/data -l logfile```
 
@@ -221,7 +223,10 @@ Ensure the system is configured correctly.
 
 We may choose to start and stop our lab. Rather than going through the process of starting Postgres each time, we&#39;ll create a rule to ensure that Postgres is started when the system does.
 
-1. As centos, change directories to /etc/systemd/system
+1. As centos, change directories:
+
+   ```cd /etc/systemd/system```
+
 2. Create a new file for our rule:
 
    ```sudo touch postgresql.service```
@@ -382,7 +387,7 @@ The basic configuration for the staging host is the same as the source.
 1. On the Delphix Engine as an administrator, go to **Manage->Environments**
 2. Click Add Environment
 3. Add an environment name &quot;Postgres Staging Host&quot;
-4. Add the host address &quot;10.0.1.30&quot;
+4. Add the host address &quot;10.0.1.30&quot; and the OS username
 5. Select &quot;username and public key&quot;
 6. Click view public key
 7. Copy the public key
@@ -453,6 +458,12 @@ Before creating (one or more) copies of the source database, we need to create t
 
 ## <a id="_vdb"></a>Provision a VDB
 
-Do it
+**Context**
 
-Just do it™
+The objective of Delphix virtualization is to provide easy access to virtualized databases that resemble production and other data systems. Here, we provision a Virtual Database (VDB). VDBs are fully functional database images that can be created from dSources.
+
+1. Go to Manage -> Datasets, select the most recent Snapshot, and click on the leftmost icon to provision a database (you can hover over each icon to see what it does)
+2. In the Wizard, select "Postgres Target Host" as the environment and ensure the user = "postgres"
+3. Select "Add Dataset Group" and name this target group "DB Target", and set name = "devdb"
+4. Accept all other defaults and click through the Wizard. 
+5. Review the summary page, click Submit, and watch in the Actions tab to confirm it runs successfully.
