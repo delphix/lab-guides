@@ -28,7 +28,7 @@
 
 ## Lab Exercises
 
-Perform these exercises when instructed by your Delphix Instructor.
+Perform these exercises when instructed by your Delphix Instructor. It is suggested that you use the latest version of the Windows MS SQL lab. This lab guide is designed for version 6.0.6 and on.
 
 ##  <a id="stroragetest"></a>Optional Advanced Exercise - Perform a Storage Performance Test through the CLI
 
@@ -51,6 +51,10 @@ In this exercise, you will:
   * Check all values by typing `ls` at the command prompt
   * Begin the storage test by typing: `commit`
   * Note that this test will take anywhere between 7-10 minutes to complete
+  * Note: If you receive an error, it could be because the Delphix Engine is already configured. In this case:
+    * Connect to your Delphix Engine using Chrome on your lab server (see the **Important IP Addresses** section of the Getting Started guide above).
+    * Log into the setup console as the sysadmin user 
+    * Click on the 3 dots in the upper right hand corner and select **Factory Reset** - this may take several minutes to complete.
 
 ![images/download/attachments/90015915/worddavc276fac4332b81539a6114b6f823b7ec.png](images/download/attachments/90015915/worddavc276fac4332b81539a6114b6f823b7ec.png)
 Example Storage Test Configuration
@@ -74,6 +78,7 @@ _delphix.local_ domain.
 Please note, it may take some time for the Windows servers to come online. If
 the _Connecting_ dialog stays open for more than 5-10 seconds, cancel and try
 again in a few minutes.
+
 ### Steps
 
 1. Double click on **Windows Source**
@@ -246,8 +251,9 @@ In this exercise, you will:
 Before we start this exercise is important to mention that in Delphix, a
 Target and Staging server have the same configuration. It's a Delphix best
 practice to isolate the Staging workload from the VDB workload, so that's why
-we call them in a different way, but from a requirements point of view, they
+it has a different name, but from a requirements point of view, they
 are the same.
+
 ### Steps
 
 1. Double click "RDP" icon on the Student Desktop
@@ -298,6 +304,8 @@ In this exercise, you will:
 
   * Connect Delphix to your Windows Target server
 
+The target environment is the host where the virtual databases will be created.
+
 ## Steps
 1. Navigate to your Delphix Engine at 10.0.x.10 ('x' is your **Student Number** )
   * Log in as the delphix_admin user
@@ -328,6 +336,8 @@ In this exercise, you will:
 
   * Connect Delphix to your Windows Source Server
 
+Before users can create their own virtual databases, Delphix needs to connect to source data. In Delphix, an environment is a host that runs database software. The environment is where the Delphix engine will search for available data sources. Credentials to access the host need to be provided while configuring an environment.
+
 ### Steps
 
 1. Navigate to your Delphix Engine at 10.0.x.10 ('x' is your **Student Number** )
@@ -354,6 +364,8 @@ page
 In this exercise, you will:
 
   * Add the AdventureWorks2008R2 dSource into Delphix and bring in the initial backup
+
+With an environment set up, users can then sync databases into Delphix. The Delphix engine will read the source database and create a dSource (a custom object). The dSource is not a functional image of the database but a storage-efficient object from which virtual databases can be created. When creating a dSource, Delphix will pull over the complete data set using standard database protocols. Subsequent sync operations, as governed by user-defined policies, will pull only incremental changes.
 
 ### Steps
 
@@ -422,6 +434,8 @@ In this exercise, you will:
 
   * Log into the VDB
 
+The objective of Delphix virtualization is to provide easy access to virtualized databases (VDBs) that resemble production and other data systems. VDBs are fully functional database images that can be created from dSources.
+
 **Steps**
 
 1. Click the AdventureWorks2008R2 dSource in the MS SQL Databases group
@@ -484,6 +498,8 @@ In this exercise, you will:
   * Refresh your VDB - devdb
 
   * Verify the new table appears on the VDB
+
+VDBs can get out of sync as new data comes into the source system. Refreshing a VDB will re-provision it from the dSource. Refreshing a VDB will delete any changes that have been made to it over time.
 
 **Steps**
 
@@ -554,6 +570,8 @@ In this exercise, you will:
 
   * Rewind the _devdb_ VDB to recover the table
 
+Rewinding a VDB rolls it back to a previous point in its Timeflow and re-provisions the VDB. The VDB will no longer contain changes after the rewind point. it can be triggered when changes to the VDB do not need to be saved.
+
 **Steps**
 
   1. Take a snapshot of the _devdb_ VDB and note the time
@@ -605,6 +623,8 @@ There are four types of Policies in Delphix. In this exercise, you will:
 
   * Apply the policy to the VDB we created in the previous exercise
 
+Both dSources and VDBs timeflow is governed by snapshots, which are either created manually or through policies. Retention policies govern the lifespan of such snapshots and help clean older ones that are no longer relevant.
+
 **Steps**
 
   1. Navigate to Manage -> Policies
@@ -630,6 +650,8 @@ In this exercise, you will:
   * Create a Hook Operation Template called: _CREATE APPUSER_
 
   * Insert code into the template that will create a Login and database user named _appuser_
+  
+Hook operations allow users to execute custom operations at select points during linking sources and managing virtual datasets.
 
 **Steps**
 

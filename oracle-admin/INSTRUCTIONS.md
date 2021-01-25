@@ -323,7 +323,7 @@ In this exercise, you will:
 
 **Context**
 
-Before users can create their own virtual databases, Delphix needs to connect to source data. In Delphix, an environment is a host that runs database software. For example, a Linux system running Oracle. the environment is where the Delphix engine will search for available data sources. Credentials to access the host need to be provided while configuring an environment.
+Before users can create their own virtual databases, Delphix needs to connect to source data. In Delphix, an environment is a host that runs database software. For example, a Linux system running Oracle. The environment is where the Delphix engine will search for available data sources. Credentials to access the host need to be provided while configuring an environment.
 
 **Steps**
 

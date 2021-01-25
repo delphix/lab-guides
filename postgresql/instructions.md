@@ -458,6 +458,12 @@ Before creating (one or more) copies of the source database, we need to create t
 
 ## <a id="_vdb"></a>Provision a VDB
 
-Do it
+**Context**
 
-Just do it™
+The objective of Delphix virtualization is to provide easy access to virtualized databases that resemble production and other data systems. Here, we provision a Virtual Database (VDB). VDBs are fully functional database images that can be created from dSources.
+
+1. Go to Manage -> Datasets, select the most recent Snapshot, and click on the leftmost icon to provision a database (you can hover over each icon to see what it does)
+2. In the Wizard, select "Postgres Target Host" as the environment and ensure the user = "postgres"
+3. Select "Add Dataset Group" and name this target group "DB Target", and set name = "devdb"
+4. Accept all other defaults and click through the Wizard. 
+5. Review the summary page, click Submit, and watch in the Actions tab to confirm it runs successfully.
