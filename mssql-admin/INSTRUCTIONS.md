@@ -57,6 +57,7 @@ In this exercise, you will:
     * Click on the 3 dots in the upper right hand corner and select **Factory Reset** - this may take several minutes to complete.
 
 ![images/download/attachments/90015915/worddavc276fac4332b81539a6114b6f823b7ec.png](images/download/attachments/90015915/worddavc276fac4332b81539a6114b6f823b7ec.png)
+
 Example Storage Test Configuration
 1. View the storage test results
   * Get back to the storage test section of the CLI by typing: `storage test`
@@ -67,6 +68,7 @@ Example Storage Test Configuration
   * Scroll up to view the Test Grades section
 
 ![images/download/attachments/90015915/worddav83df38c4c21b62a68a39b3286e9634f4.png](images/download/attachments/90015915/worddav83df38c4c21b62a68a39b3286e9634f4.png)
+
 Example Storage Test Results
 
 ###  <a id="joindomain"></a>Prerequisite - Join the Delphix Domain
@@ -186,6 +188,7 @@ see the Windows Start button or expand the screen_.
   * Check the box next to "master"
   * Select "db_datareader" for the database role membership
   * Click OK
+  
 ![images/download/attachments/90015915/worddavdab58dcd241bf78681ef20fd35fb29ca.png](images/download/attachments/90015915/worddavdab58dcd241bf78681ef20fd35fb29ca.png)
 
 6. Right click Logins
@@ -311,11 +314,13 @@ The target environment is the host where the virtual databases will be created.
   * Log in as the delphix_admin user
   * Go to Manage -> Environments
   * Click the ellipses (…) and select _Add Environment_
+  
 ![images/download/attachments/90015915/worddava57004a26ec15405b106bc030428200a.png](images/download/attachments/90015915/worddava57004a26ec15405b106bc030428200a.png)
 
 2. On the _Host and Server_ tab choose **Windows** as the _Host OS_ and **Target** as the _Host Type_ then click Next
 
   ![images/download/attachments/90015915/worddav8207f96e2ec2346bb3593fca6d19d381.png](images/download/attachments/90015915/worddav8207f96e2ec2346bb3593fca6d19d381.png)
+  
 3. Under the Environment Settings tab, enter the details:
   * Environment Name: WINTARGET
   * Host Address: 10.0.x.60 (`x` is your **Student Number** )
@@ -465,7 +470,9 @@ The objective of Delphix virtualization is to provide easy access to virtualized
 10. Verify settings and click Submit
 
 ![images/download/attachments/90015915/worddavedaf9dd2350c832578b57088bdf5261c.png](images/download/attachments/90015915/worddavedaf9dd2350c832578b57088bdf5261c.png)
+
 ![images/download/attachments/90015915/worddavd168a0bfbee6ce0b7c49ad670fae3cfd.png](images/download/attachments/90015915/worddavd168a0bfbee6ce0b7c49ad670fae3cfd.png)
+
 It may take a couple minutes for the VDB creation to complete. You can monitor
 the progress on the left hand side of the screen next to the _devdb_ object in
 the MS SQL Databases group. On the _Actions_ pane on the right hand side of
@@ -690,6 +697,7 @@ Hook operations allow users to execute custom operations at select points during
 ---|---
 
 **IMPORTANT:** Make sure the carriage returns you see here are the same in the pasted contents.
+
 ![images/download/attachments/90015915/worddav776c4bc8f6c814c302fb74e649b7599b.png](images/download/attachments/90015915/worddav776c4bc8f6c814c302fb74e649b7599b.png)
 
   2. Click Create
@@ -739,6 +747,7 @@ In this exercise, you will:
 12. Verify settings and click Submit
 
 ![images/download/attachments/90015915/worddav3757b2259242a2385de9cf75736032ff.png](images/download/attachments/90015915/worddav3757b2259242a2385de9cf75736032ff.png)
+
 It may take a couple minutes for the VDB creation to complete. You can monitor
 the progress on the left hand
 side of the screen next to the _qadb_ object in the MS SQL Databases group. On
