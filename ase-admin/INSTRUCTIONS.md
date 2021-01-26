@@ -1,11 +1,11 @@
 Table of Contents
 =================
 
-* [Background](#_background)
+**[Background](#_background)**
 
-* [Lab Exercises](#lab-exercises)
+**[Lab Exercises](#lab-exercises)**
 
-* [Part I](#part-i)
+**[Part I](#part-i)**
 
 * [Optional Advanced Exercise – Perform a Storage Performance Test through the CLI](#option1)
 
@@ -19,7 +19,7 @@ Table of Contents
 
 * [Exercise 5 – Link a dSource](#exercise5)
 
-* [PartII](#part-ii)
+**[Part II](#part-ii)**
 
 * [Exercise 6 – Create and Save a Hook Operation Template](#exercise6)
 
