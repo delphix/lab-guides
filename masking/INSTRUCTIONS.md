@@ -24,7 +24,32 @@ Table of Contents
 Lab Exercises
 =============
 
-Perform these exercises when instructed by your Delphix Instructor.
+Welcome to the Delphix Masking Lab Guide. This guide is a supplement to the Delphix Admin Training for Oracle course, and provides several exercises to perform throughout the class. If you encounter any issues during the exercises, please do not hesitate to ask your instructor for advice. 
+
+Your instructor should have provided you with a Class Name and a Student Number. In order to access your lab server, point your web browser to: http://classname.agile.today/studentnumber
+ 
+For example, if your Class Name is "acmetech" and your Student Number is 5, you would go to the 
+site: http://acmetech.agile.today/5 
+
+## <a id="_IPs"></a>Important IP Addresses
+
+| Host | IP |  
+| :--- | :--- |
+| **Delphix Masking Engine** | 10.0.x.10 |
+| **Linux Source** | 10.0.x.20 |
+| **Linux Target** | 10.0.x.30 |
+
+In the above IP addresses, the **x** denotes your **Student Number**. For example, if your student number is **5** , your Delphix Data Platform will be located at 10.0. **5**.10.
+
+## <a id="_usrs"></a>Cloud Lab Usernames and Passwords
+
+|  | Credentials |  
+| :--- | :--- |
+| Initial Delphix Masking Engine **Admin** user | Admin |
+| Initial Delphix Masking Engine **Admin** password| Admin-12 |
+| Initial Delphix Virtualization Engine **admin** password | delphix |
+| Source and Target **delphix** user (via SSH) | delphix |
+| Source and Target **oracle** user (via SSH) | delphix |
 
 Part I
 ======
@@ -44,15 +69,20 @@ In this exercise, you will:
     server (see the **Important IP Addresses** section of the Getting
     Started guide above).
 
-    http://10.0.x.10:8282/dmsuite (replace 'x' with your student number)
+    http://10.0.x.10/masking (replace 'x' with your student number)
+
+    **Troubleshooting tip:** If the above URL doesn't work, you might need to set up the masking engine first. In this case, you should log into the Delphix engine using the sysadmin user (user and password both = _sysadmin_ and follow the Masking setup wizard).
 
 2.  Enter your User Id and Password
 
-    a.  Default Username is **delphix\_admin**
+    a.  Default Username is **Admin**
 
-    b.  Default Password is **Delphix\_123**
+    b.  Default Password is **Admin-12**
 
-![](./images/image4.png)
+3. Close the Welcome Wizard by clicking on the X on the top right corner of the page. You should now be viewing the **Environments** page. 
+
+In the proceeding exercises we will add an application and associate with an environment.
+
 
 Exercise 2 - Add an Application
 --------------------------------
@@ -71,7 +101,7 @@ In this exercise, you will:
 
     ![](./images/image5.png)
 
-3.  Click Save
+3.  Click on the Save button
 
 The application should be added successfully.
 
@@ -89,18 +119,18 @@ In this exercise, you will:
 
     ![](./images/image6.png)
 
-2.  Select the Application from the drop-down list created in the
+2.  Select the **Application Name** from the drop-down list created in the
     previous exercise
 
 3.  Enter "**Oracle Dev DB**" for the Environment Name
 
-4.  Select *Mask* from the Purpose drop-drown list
+4.  Select *Mask* from the **Purpose** drop-drown list
 
     ![](./images/image7.png)
 
 5.  Click on the Save button
 
-The environment should be visible in the Environment List/Summary
+The environment should now be visible in the Environment List/Summary
 screen.
 
 ![](./images/image8.png)
@@ -116,8 +146,8 @@ In this exercise, you will:
 
 **Steps**
 
-**Note: If your class was stopped you will need to manually start it
-from the Delphix Engine before proceeding with the following exercise.**
+**Note:** If your class was stopped you will need to manually start it
+from the Delphix Engine before proceeding with the following exercise. Ask your instructor if you are unable to complete this step.
 
 1.  Log into the Masking Engine
 
@@ -132,15 +162,15 @@ from the Delphix Engine before proceeding with the following exercise.**
 
 5.  Enter Connection Details
 
-    a.  Chose *Database - Oracle* from the Type drop-down list
+    a.  Chose *Database - Oracle* from the **Type** drop-down list
 
     b.  Verify that the *Basic* radio button next to the Type
 
     c.  Enter "**Oracle 11g Dev**" for the connection name
 
-    d.  Type **DELPHIXDB** (in uppercase) in the Schema Name text box
+    d.  Type **DELPHIXDB** (in uppercase) in the **Schema Name** text box
 
-    e.  Enter the IP address of TargetA (10.0.x.30) in the Host Name/IP field
+    e.  Enter the IP address of TargetA (10.0.x.30 where 'x' is your Student Number) in the Host Name/IP field
 
     f.  Enter **devdb** as the SID
 
@@ -148,7 +178,7 @@ from the Delphix Engine before proceeding with the following exercise.**
 
     h.  Enter **DELPHIXDB** (in uppercase) as the DB login ID
 
-    i.  Provide the password **delphix**
+    i.  Provide the password: _delphix_
 
     j.  Click the *Test Connection* button. A Success message indicates whether the test was successful or not.
 
@@ -168,6 +198,8 @@ In this exercise, you will:
 
 -   Create a Rule Set for Patient data
 
+**Note:** A "rule set" points to a collection of tables or flat files that the masking engine uses for profiling, provisioning, and masking, and certifying data. For mainframe systems, the rule set represents a copybook definition for a file.
+
 **Steps**
 
 1.  On the Environment List/Summary screen, click on the Environment
@@ -177,11 +209,11 @@ In this exercise, you will:
 
 3.  Click on the *Create Rule Set* button
 
-4.  Provide the details for the rule set as follows
+4.  Provide the details for the rule set as follows:
 
     a.  Enter "**Patient Rule Set**" in the name field for the Rule Set
 
-    b.  Select **Oracle 11g Dev** from the Connector drop-down list
+    b.  Select **Oracle 11g Dev** from the **Connector** drop-down list
 
     c.  Check the boxes next to MEDICAL\_RECORDS, PATIENT and PATIENT\_DETAILS tables
 
@@ -189,7 +221,7 @@ In this exercise, you will:
 
 5.  Click on the Save button
 
-You will see the newly created Rule Set in the list for the environment
+You will see the newly created Rule Set in the list for the environment.
 
 Exercise 6 - Manage the Inventory
 ----------------------------------
@@ -210,7 +242,7 @@ In this exercise, you will:
 3.  From the Select Rule Set drop-down menu choose the **Patient Rule
     Set** created previously
 
-4.  A list of tables will be displayed under the Contents section.
+4.  A list of tables will be displayed under the **Contents** section.
     Clicking on the name of each table will allow you to view the table
     metadata.
 
@@ -218,7 +250,7 @@ In this exercise, you will:
 
     b.  Verify if there are any primary keys, foreign keys or indexes identified
 
-    c.  Validate the datatype of each column
+    c.  Validate the **Data Type** of each **Column**
 
 5.  Edit the ADDRESS column by clicking on the corresponding pencil icon
 
@@ -235,7 +267,6 @@ In this exercise, you will:
  ![](./images/image14.png)
 
 g.  Click Save
-This concludes the exercise.
 
 Exercise 7 - Create a Profiling Job
 ------------------------------------
@@ -293,7 +324,7 @@ In the next part of the exercise we will create and execute a profiling job.
 
     f.  Choose **HIPAA** from the Profile Sets drop-down list
 
-    g.  Change No. of Streams from 20 to 1
+    g.  Set **No. of Streams** to 1
 
     h.  Leave other fields at their default values
 
@@ -394,7 +425,7 @@ In this exercise, you will:
 
  > Note: You may need to widen your terminal window to prevent the output from wrapping. After typing in each command press the Enter or Return key on your keyboard.
 
-  a. `cd Scripts/Masking`
+  a. `cd Scripts/Masking602` (Note: the number after masking could be different if you are using a more up-to-date classrooom; confirm with your lab instructor should you have difficult here, or `ls` to find the correct selection.)
 
   b.  `./check_patient_devdb.sh`
 
@@ -426,7 +457,9 @@ In this exercise, you will:
 
 ![](./images/image35.png)
 
-13. Open a new terminal window on the lab desktop and execute the **check\_patient\_devdb.sh** script.
+13. Open a new terminal window on the lab desktop and execute the following script:
+
+    `~/Scripts/Masking602/check_patient_devdb.sh`
 
 
  ![](./images/image36.png)
@@ -451,26 +484,23 @@ In this exercise, you will:
 
 1.  Open the text editor on the desktop (mousepad)
 
-2.  Enter several names in the editor, one value per line and save to desktop as FN2
+2.  Enter several names in the editor, one value per line, and save to desktop as FN2.txt
 
  ![](./images/image37.png)
 
-3.  Navigate to SETTINGS/ALGORITHMS in the masking UI
+3.  Navigate to SETTINGS -> ALGORITHMS in the masking UI
 
 4.  Select ![](./images/image38.png)
 
-5.  With Secure Lookup Algorithm radial button selected enter algorithm name, description as shown below and select the file created in step 2 from your desktop
+5.  With Secure Lookup Algorithm radial button selected enter Algorithm Name: Name2SL, a Description as shown below, and click Select to select the file you created in step 2 from your desktop
 
 ![](./images/image39.png)
 
-6.  Save the algorithm and navigate to the inventory of the Patient Rule Set
+6.  Save the algorithm and navigate to the **Inventory** of the Patient Rule Set
 
 7.  Select the Patient table from the table list on the left hand margin
 
-8.  On the Algorithm drop down select the new FN2 algorithm and save the
-    change
-
-    ![](./images/image40.png)
+8.  On the Algorithm drop down select the new First Name2 SL algorithm (you will need to click on the Edit pencil next to the FIRSTNAME column to get here) and click Save
 
 Exercise 10 - Create a Segmented Mapping algorithm
 ---------------------------------------------------
@@ -487,17 +517,17 @@ In this exercise, you will:
 
 **Steps**
 
-1.  Navigate to Settings / Algorithm
+1.  Navigate to Settings -> Algorithm
 
-2.  Select Add Algorithm
+2.  Select **Add Algorithm**
 
-3.  With the Segmented Mapping Algorithm radio button selected
+3.  With the **Segmented Mapping Algorithm** radio button selected
 
-    a.  Name the algorithm SSN SM
+    a.  Name the algorithm _SSN SM_
 
     b.  Define 3 alpha numeric segments of 3, 2, and 4 length
 
-    c.  Click the Ignore comma checkbox
+    c.  Click the **Ignore comma** checkbox
 
     d.  Define ignore characters of "-"," ","/" (dash, space, forward slash)
 
@@ -565,7 +595,7 @@ In this exercise, you will:
 This concludes the exercise.
 
 
-Exercise 12 - Modify an Inventory
+Exercise 12 - Modify an Inventory using the exported CSV file
 ---------------------------------
 
 In this exercise, you will:
@@ -573,6 +603,7 @@ In this exercise, you will:
 -   View exported Inventory
 
 -   Modify an exported Inventory
+
 >  Note: You should have completed the "Export an Inventory" exercise before proceeding.
 
 **Steps**
@@ -595,11 +626,13 @@ In this exercise, you will:
 
     d.  Save the changes
 
+    **Note:** A confirmation dialog box will pop up asking to confirm the file format. Click the "Use Text CSV Format" button.
+
  ![](./images/image47.png)
 
-3.  Navigate to the inventory for this ruleset and press the import button
+3.  Switch back to the Masking UI in the web browser and navigate to the **Inventory** for the Patient Rule Set and press the **Import** button
 
-4.  Select the modified CSV file from your desktop
+4.  Select the modified CSV file from your desktop (Note: you may need to scroll down on the import dialog box to see the Save button)
 
 5.  Refresh the masking UI browser session
 
@@ -608,8 +641,6 @@ In this exercise, you will:
  ![](./images/image48.png)
 
 Note: This method of modifying an inventory can be used to speed up a large number of changes as compared to making inventory changes via the UI
-
-This concludes the exercise.
 
 Exercise 13 - Refresh a Rule Set
 ----------------------------------
@@ -620,13 +651,13 @@ In this exercise, you will:
 
 **Steps**
 
-1.  Using SQL developer add a new column called BIRTHDAY to the PATIENT\_DETAILS table, data type is date
+1.  Using **SQL Developer** add a new column called BIRTHDAY to the PATIENT\_DETAILS table, data type is date
 
  ![](./images/image49.png)
 
  ![](./images/image50.png)
 
-2.  Navigate to the inventory tab in the Masking UI and select our Patient Rule Set
+2.  Navigate to the **Inventory** tab in the Masking UI and select our Patient Rule Set
 
 3.  Select the PATIENT\_DETAILS table in the table list on the left
 
@@ -634,17 +665,13 @@ In this exercise, you will:
 
     ![](./images/image51.png)
 
-4.  Click the Rule Set tab and select the blue refresh symbol
+4.  Click the **Rule Set** tab and select the blue Refresh icon
 
-![](./images/image52.png)
-
-5.  Click the Inventory tab and note that the new column now appears in the inventory
+5.  Click the **Inventory** tab and note that the new column now appears in the Inventory
 
 ![](./images/image53.png)
 
 > Note: This method is used to bring schema changes into the masking inventory
-
-This concludes the exercise.
 
 Exercise 14 - Copy a Rule Set
 -------------------------------
@@ -657,25 +684,23 @@ In this exercise, you will:
 
 1.  Navigate to the Rule Set tab in the UI
 
-2.  Click the Copy icon
+2.  Click the **Copy** icon
 
 ![](./images/image54.png)
 
-3.  Name the new Rule Set Patient Copy and click Save
+3.  Name the new Rule Set _Patient Copy_ and click Save
 
     ![](./images/image55.png)
 
     ![](./images/image56.png)
 
-4.  Click the Inventory tab, select the new Rule Set from the "Select Rule Set" drop down
+4.  Click the Inventory tab, select the new Rule Set from the **Select Rule Set** drop down
 
 ![](./images/image57.png)
 
 5.  Confirm that the Masking Inventory is copied along with column definitions
 
  > Note: This method is used to duplicate an inventory
-
-This concludes the exercise.
 
 Exercise 15 - Export an Environment
 ------------------------------------
@@ -693,13 +718,13 @@ In this exercise, you will:
 
  ![](./images/image58.png)
 
-3.  On the Export Environment dialog box accept the default Environment name and File Name
+3.  On the Export Environment dialog box accept the default Environment Name and File Name
 
  ![](./images/image59.png)
 
 4.  Click the *Export* button
 
->Note that a pop-up window should appear with a link to Download the environment XML file. If the pop-up window does not appear, check the browser to see if it was blocked and allow it to display pop-ups.
+>Note: A pop-up window should appear with a link to Download the environment XML file. If the pop-up window does not appear, check the browser to see if it was blocked and allow it to display pop-ups.
 
 5.  Right-click on the link that appears on the pop-up window and select
     "Save link as..."
@@ -709,9 +734,6 @@ In this exercise, you will:
 6.  Save the file to the Desktop
 
  ![](./images/image61.png)
-
-This concludes the exercise.
-
 
 Exercise 16 - Import an Environment
 ------------------------------------
