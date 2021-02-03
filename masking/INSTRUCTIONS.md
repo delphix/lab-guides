@@ -1,23 +1,40 @@
 Table of Contents
 =================
 
-* [Lab Exercises](#lab-exercises)
-* [Part I](#part-i)
+**[Lab Exercises](#lab-exercises)**
+
+**[Part I](#part-i)**
+
 * [Exercise 1 - Logging in to the Masking Engine](#exercise-1-logging-in-to-the-masking-engine)
+
 * [Exercise 2 - Add an Application](#exercise-2-add-an-application)
+
 * [Exercise 3 - Add an Environment](#exercise-3-add-an-environment)
+
 * [Exercise 4 - Create a Basic Connector](#exercise-4-create-a-basic-connector)
+
 * [Exercise 5 - Create a Ruleset](#exercise-5-create-a-ruleset)
+
 * [Exercise 6 - Manage the Inventory](#exercise-6-manage-the-inventory)
+
 * [Exercise 7 - Create a Profiling Job](#exercise-7-create-a-profiling-job)
+
 * [Exercise 8 - Create a Masking Job](#exercise-8-create-a-masking-job)
-* [Part II](#part-ii)
+
+**[Part II](#part-ii)**
+
 * [Exercise 9 - Create a Secure Lookup algorithm](#exercise-9-create-a-secure-lookup-algorithm)
+
 * [Exercise 10 - Create a Segmented Mapping algorith](#exercise-10-create-a-segmented-mapping-algorithm)
+
 * [Exercise 11 - Export an Inventory](#exercise-11-export-an-inventory)
+
 * [Exercise 13 - Refresh a Rule Set](#exercise-13-refresh-a-rule-set)
+
 * [Exercise 14 - Copy a Rule Set](#exercise-14-copy-a-rule-set)
+
 * [Exercise 15 - Export an Environment](#exercise-15-export-an-environment)
+
 * [Exercise 16 - Import an Environment](#exercise-16-import-an-environment)
 
 
