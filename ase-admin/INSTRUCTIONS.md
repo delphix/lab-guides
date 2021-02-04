@@ -1,11 +1,11 @@
 Table of Contents
 =================
 
-* [Background](#_background)
+**[Background](#_background)**
 
-* [Lab Exercises](#lab-exercises)
+**[Lab Exercises](#lab-exercises)**
 
-* [Part I](#part-i)
+**[Part I](#part-i)**
 
 * [Optional Advanced Exercise – Perform a Storage Performance Test through the CLI](#option1)
 
@@ -19,7 +19,7 @@ Table of Contents
 
 * [Exercise 5 – Link a dSource](#exercise5)
 
-* [PartII](#part-ii)
+**[Part II](#part-ii)**
 
 * [Exercise 6 – Create and Save a Hook Operation Template](#exercise6)
 
@@ -67,9 +67,8 @@ In the above IP addresses, the **x** denotes your **Student Number**. For exampl
 At the login screen for the lab server, enter the username and password: delphix/delphix
 
 ## <a id="part-i"></a>Part I
-======
 
-## <a id="option1"></a>Optional Advanced Exercise - Perform a Storage Performance Test through the CLI
+### <a id="option1"></a>Optional Advanced Exercise - Perform a Storage Performance Test through the CLI
 
 In this exercise, you will:
 -  Log into the Delphix Engine *prior to configuration* via the Delphix Command Line Interface (CLI)
@@ -119,7 +118,7 @@ As an advanced exercise, this lab has no corresponding Lab Solution. Instead, we
     
     e.  Then type: commit
 
-## <a id="exercise1"></a>Exercise 1 - Delphix Engine Configuration
+### <a id="exercise1"></a>Exercise 1 - Delphix Engine Configuration
 
 In this exercise, you will:
 * Access the Delphix Engine GUI for the first time
@@ -149,7 +148,7 @@ Additional resources to learn more:
 
 [Setting Up the Delphix Data Platform](https://docs.delphix.com/docs/deployment/installation-and-initial-system-configurations/initial-setup)
 
-## <a id="exercise2"></a>Exercise 2 - Create delphix_disc login on Source and delphix_db login on target
+### <a id="exercise2"></a>Exercise 2 - Create delphix_disc login on Source and delphix_db login on target
 
 In this exercise, you will:
 * Create a Delphix delphix_disc user on your source Sybase Instance
@@ -202,7 +201,7 @@ Started guide above).
     exit
     ```
 
-## <a id="exercise3"></a>Exercise 3 - Validate Environment with Hostchecker
+### <a id="exercise3"></a>Exercise 3 - Validate Environment with Hostchecker
 
 **a. Validate Source Environment with Hostchecker**
 
@@ -256,7 +255,7 @@ this exercise. You can type `quit` to exit hostchecker.
 Note: The sshd_config test may again return a WARNING response, which is normal in a production installation due
 to permissions on the file. If hostchecker is run as root for this test, it will perform the test properly
 
-## <a id="exercise4"></a>Exercise 4 - Add a Source and Target Environment
+### <a id="exercise4"></a>Exercise 4 - Add a Source and Target Environment
 
 In this exercise, you will:
 
@@ -308,7 +307,7 @@ The target environment is the host where the virtual databases will be created.
 
 You should now see the Target environment listed under the Environments panel.
 
-## <a id="exercise5"></a>Exercise 5 - Link a dSource
+### <a id="exercise5"></a>Exercise 5 - Link a dSource
 
 **Context**
 
@@ -350,7 +349,7 @@ You will know this is successful if the dSource completes in the Actions pane wi
 
 ## <a id="part-ii"></a>Part II
 
-## <a id="exercise6"></a>Exercise 6 - Create and Save a Hook Operation Template
+### <a id="exercise6"></a>Exercise 6 - Create and Save a Hook Operation Template
 
 In this exercise, you will:
 
@@ -382,7 +381,7 @@ EOF
 
 2. Verify the Hook Operation Template appears in the list on the left side of the screen.
 
-## <a id="exercise7"></a>Exercise 7 - Provision a VDB
+### <a id="exercise7"></a>Exercise 7 - Provision a VDB
 
 In this exercise, you will:
 
@@ -429,7 +428,7 @@ go
 
 This will verify that the VDB is online with the VDB Operation Template we specified, and that the appuser user was created by our hook.
 
-## <a id="exercise8"></a>Exercise 8 - Set a New Retention Policy
+### <a id="exercise8"></a>Exercise 8 - Set a New Retention Policy
 
 There are four types of Policies in Delphix. In this exercise, you will:
 * Create a Retention Policy
@@ -449,7 +448,7 @@ Both dSources and VDBs timeflow is governed by snapshots, which are either creat
     c. 3 monthly snapshots taken on the 1st of the month (this may be in the "Advanced" section)
 3. Click Next, review the summary, and click Submit.
     
-## <a id="exercise9"></a>Exercise 9 - Refresh a VDB
+### <a id="exercise9"></a>Exercise 9 - Refresh a VDB
 
 In this exercise, you will:
 
@@ -504,7 +503,7 @@ go
 
 If this returns a count of 1 row, the refresh was successful.
 
-## <a id="exercise10"></a>Exercise 10 - Rewind a VDB
+### <a id="exercise10"></a>Exercise 10 - Rewind a VDB
 
 In this exercise, you will:
 
@@ -562,7 +561,7 @@ go
 The count should return 2 rows. You are back in action!
 
 
-## <a id="option3"></a>Optional Advanced Exercise - Configure Delphix Replication
+### <a id="option3"></a>Optional Advanced Exercise - Configure Delphix Replication
 
 Note: This exercise is only possible if your classroom has been configured with 2 or more students.
 
@@ -622,7 +621,6 @@ says Available which is the default Namespace for Delphix replica targets.
     d. In order to see the replica objects, click on the dropdown list and select the second entry, which
 should be the IP address of the Source Delphix Engine that sent the replica.
 
- 
 7. While still logged into your target Delphix Engine, click on System and then Replication
 8. Observe the Received Replicas section at the bottom, indicating and verifying the target’s receipt of
 replication data.

@@ -23,6 +23,7 @@
  * [Self-Service](/self-service/INSTRUCTIONS.md)
  * [Postgres](/postgresql/instructions.md)
  * [Masking ](/masking/INSTRUCTIONS.md)
+ * [ASE](/ase-admin/INSTRUCTIONS.md)
 
 ## <a id="welcome"></a>Welcome to the Lab Guide
 
