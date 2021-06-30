@@ -823,7 +823,7 @@ Once the VDB is created, you can verify that the VDB is operational by:
     - Type export ORACLE\_HOME=/u01/app/oracle/product/11.2.0/dbhome\_1
     - Type export PATH=$ORACLE\_HOME/bin:$PATH
     - Type sqlplus / as sysdba
-    - Type show parameter memory\_target
+    - Type show parameter sga\_max\_size
     - Type connect appuser/appuser
 
 This will verify that the VDB is online with the **VDB Configuration Template** we specified, and that the **APPUSER** user was created by our hook.
