@@ -684,8 +684,7 @@ Hook operations allow users to execute custom operations at select points during
     $Server = New-Object ('Microsoft.SqlServer.Management.Smo.Server') $sqlserver
     if (-Not $Server.Logins.Contains($name))
     {
-    $Login = New-Object -TypeName Microsoft.SqlServer.Management.Smo.Login -ArgumentList $Server,
-    $name
+    $Login = New-Object -TypeName Microsoft.SqlServer.Management.Smo.Login -ArgumentList $Server, $name
     $Login.LoginType = 'SqlLogin'
     $Login.Create('delphix')
     }
