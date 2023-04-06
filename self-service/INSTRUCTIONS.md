@@ -14,14 +14,14 @@ Table of Contents
 <a name="exercise1"></a>
 ## Exercise 1 - Create a Data Template
 In this exercise, you will:
-- Login to the SelfService UI as a SelfService Admin User (delphix_admin)
+- Login to the SelfService UI as a SelfService Admin User (admin)
 - Create a Data Template
 
 ### Steps
 1. Open a browser on your Delphix student lab desktop
 1.	Enter the IP address of the Delphix engine assigned to you in the browser (IP address of Delphix engine is 10.0.x.10 where x is the student number)
 1.	Log in with credentials:
-    - Username: *delphix_admin*
+    - Username: *admin*
     - Password: *delphix*
 1.	Click on the *delphix_admin* username on the top right of the GUI and select **Self-Service**
 1.	Click on **Add Template**
@@ -37,33 +37,35 @@ In this exercise, you will:
 1.	View the Dataset Details on the right-hand side. The *orcl* dSource should listed under Jet Stream Templates
 
 <a name="exercise2"></a>
-## Exercise 2 – Create a JetStream Data User
+## Exercise 2 – Create a SelfService User
 In this exercise, you will:
- - Create a JetStream user
+ - Create two SelfService users: qa and dev
 
 ### Steps
 1.	Click on **Manage -> Users** on the menu to view existing users
 1.	Click on + to create a new user.
-    - Select the *Authentication Type* as Delphix
-    - Username: *jsuser*
-    - Password: *jsuser*
-    - Confirm Password: *jsuser*
-    - Email Address: *jsuser@example.com*
-    - User Type: *Jet Stream Only*
+    - Select the *User Type* as *Self-Service Only*
+    - Username: *qa*
+    - Password: *delphix*
+    - Click **Submit**
+1.	Click on + to create a new user.
+    - Select the *User Type* as *Self-Service Only*
+    - Username: *dev*
+    - Password: *delphix*
     - Click **Submit**
 
 <a name="exercise3"></a>
 ## Exercise 3 – Create Data Containers
 In this exercise, you will:
-- Create a Data Container for the developers
-- Optionally create a second container for QA team
+- Create a Data Container for the DEV team
+- Create a second container for QA team
 
 ### Steps
 1. Open a browser window on your Delphix student lab desktop and enter the IP address of your Delphix engine.
 1. Log in with credentials:
-   - Username: *delphix_admin*
+   - Username: *admin*
    - Password: *delphix*
-1. Click on the *delphix_admin* username on the top right of the GUI and select **Self-Service**
+1. Click on the *admin* username on the top right of the GUI and select **Self-Service**
 1. On the **Self-Service** page, click on the link which is the name of the **orcl** template
 1. Click on **Add Container** to create a new Data Container
    - Name of container: *ORCL Dev*
@@ -81,7 +83,7 @@ In this exercise, you will:
    The container name *ORCL Dev* will be listed under “Jet Stream Container”
 1. Go back on the *delphix_admin* username link on the top right of the GUI and select **Self-Service**
 1. Please repeat step 5 above to create another container named *ORCL QA* owned by the qa
-JetStream-only user, assigning the VDB named *qadb* as a data source.
+Self-Service Only user, assigning the VDB named *qadb* as a data source.
 Choose “Add data sources to container as-is” when adding the qadb VDB data source.
 
 <a name="exercise4"></a>
@@ -105,6 +107,7 @@ In this exercise, you will:
    SELECT COUNT(*) FROM sourcetab1;
    ```
 1. Open a browser window on your Delphix student lab desktop and enter the IP address of your Delphix engine
+1. Open the Delphix Engine, navigate to Manage > Datasets, select the orcl DSource and click on the Snapshot button
 1. Login to the Self-Service interface
    - Username: *dev*
    - Password: *delphix*
